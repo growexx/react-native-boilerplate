@@ -23,15 +23,45 @@ consist of:
 2. Go to project's root directory, `cd <your project name>`
 3. Remove `.git` folder, `rm -rf .git`
 4. Use React Native Rename to update project name `$ npx react-native-rename <newName>`
-5. Run `npm install` to install dependencies
-6. Run `npx pod-install` from root of your project
-7. Start the packager with `npm start`
-8. Connect your device or use emulator that's installed in your pc
-9. Run the test application:
+5. Go to ios folder and rename DevRNBoilerplate & StagRNBoilerplate to DevNewName & StagNewName
+6. Run `npm install` to install dependencies
+7. Run `cd ios` and `pod install`
+8. Follow all the instructions listed just after this section in Configuring iOS environment
+9. Follow renaming steps given below to rename displayname
+10. Start the packager with `npm start`
+11. Connect your device or use emulator that's installed in your pc
+12. Run the test application:
 
 - Check package.json to run project
+- Enjoy!!!
 
-10. Enjoy!!!
+## Configuring iOS environment
+
+1. Open .xcworkspace file in Xcode
+2. Click on schemes beside the run button and the click on 'manage schemes'
+![image](https://user-images.githubusercontent.com/80036991/110120505-25ca5f80-7de3-11eb-9717-788b4aa26da8.png)
+3. Select DevRNBoilerplate and StagRNBoilerplate and delete them by clicking '-' button on left bottom of the popup
+![image](https://user-images.githubusercontent.com/80036991/110120747-7772ea00-7de3-11eb-820e-ac913e3f6785.png)
+4. Now select DevAppName and click on edit (AppName is your project name)
+5. Expand the build section on left and click on build
+6. Then click on '+' button on bottom left of the popup and Select 'React' and click on 'Add' button
+![image](https://user-images.githubusercontent.com/80036991/110121204-1d265900-7de4-11eb-8cdd-4c4f085c0d1d.png)
+7. Now click on Pre-actions from expanded section and click on '+' button and select 'New Run Script Action'
+![image](https://user-images.githubusercontent.com/80036991/110121430-62e32180-7de4-11eb-9d14-6e339055b54e.png)
+8. Add `echo ".env.development" > /tmp/envfile` in textbox
+![image](https://user-images.githubusercontent.com/80036991/110121631-a50c6300-7de4-11eb-95d3-2c483c58242f.png)
+9. Repeat step 4 to 8 for StagAppName
+
+## Rename Displayname
+
+### iOS
+- Click on each target and rename the displayname and bundle-id
+![image](https://user-images.githubusercontent.com/80036991/110122374-8d81aa00-7de5-11eb-846b-e54613bedef2.png)
+
+### Android
+- In `android/app/build.gradle`, change the app_name value in product flavors
+![image](https://user-images.githubusercontent.com/80036991/110122735-fff28a00-7de5-11eb-9c78-90759bb22c9a.png)
+
 
 ## Notes:
 
