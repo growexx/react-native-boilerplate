@@ -188,8 +188,7 @@ android {
             resValue "string", "app_name", "StagRNBoilerplate"
         }
         production {
-            resValue "string", "app_name", "MyRNBoilerplate" +
-                    ""
+            resValue "string", "app_name", "MyRNBoilerplate"
         }
     }
 
