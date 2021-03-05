@@ -6,7 +6,7 @@ import configs from '@constants/configs'
 const { CODE_PUSH_KEY_ANDROID, CODE_PUSH_KEY_IOS, ENV } = configs
 
 if (ENV === 'Production') {
-  // console.log = () => {}
+  console.log = () => {}
 }
 console.log(configs)
 const getDeploymentKey = () => {
