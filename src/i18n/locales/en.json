@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "email-placeholder": "Enter email address",
+    "password-placeholder": "Enter password",
+    "login": "Login"
+  },
+  "validation": {
+    "invalid-email": "Invalid email address",
+    "invalid-password": "Invalid password"
+  }
+}

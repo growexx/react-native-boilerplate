@@ -1,0 +1,61 @@
+{
+  "name": "RNBoilerplate",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "android:dev": "react-native run-android --variant=developmentDebug",
+    "android:stg": "react-native run-android --variant=stagingDebug",
+    "android:prod": "react-native run-android --variant=productionDebug",
+    "ios:dev": "react-native run-ios --scheme 'devReactNativeBoilerplate'",
+    "ios:stg": "react-native run-ios --scheme 'stagReactNativeBoilerplate'",
+    "ios:prod": "react-native run-ios --scheme 'reactNativeBoilerplate'",
+    "codepush:android:dev": "appcenter codepush release-react -a prince.dholiya/ReactNativeBoilerplate-Android -d Development",
+    "codepush:android:stg": "appcenter codepush release-react -a prince.dholiya/ReactNativeBoilerplate-Android -d Staging",
+    "codepush:android:prod": "appcenter codepush release-react -a prince.dholiya/ReactNativeBoilerplate-Android -d Production",
+    "codepush:ios:dev": "appcenter codepush release-react -a prince.dholiya/ReactNativeBoilerplate-iOS -d Development",
+    "codepush:ios:stg": "appcenter codepush release-react -a prince.dholiya/ReactNativeBoilerplate-iOS -d Staging",
+    "codepush:ios:prod": "appcenter codepush release-react -a prince.dholiya/ReactNativeBoilerplate-iOS -d Production",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.13.2",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/bottom-tabs": "^5.11.2",
+    "@react-navigation/material-top-tabs": "^5.3.10",
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+    "axios": "^0.21.1",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-code-push": "^7.0.0",
+    "react-native-config": "^1.4.2",
+    "react-native-gesture-handler": "^1.9.0",
+    "react-native-i18n": "^2.0.15",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-safe-area-context": "^3.1.9",
+    "react-native-screens": "^2.15.0",
+    "react-native-splash-screen": "^3.2.0",
+    "react-native-tab-view": "^2.15.2",
+    "react-native-vector-icons": "^7.1.0",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.14.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.64.0",
+    "react-test-renderer": "16.13.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
