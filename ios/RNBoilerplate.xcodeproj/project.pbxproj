@@ -21,7 +21,7 @@
 		849C380D25F0B7CC0080EB40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		C801FB85B7A983D5A775715C /* libPods-App-RNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7836B0C73B40C0FC77A10D95 /* libPods-App-RNBoilerplate.a */; };
 		CB31926FDE748C0EC4247E83 /* libPods-App-StagRNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7CA8B9D9E3C902A3F1068 /* libPods-App-StagRNBoilerplate.a */; };
-		D437E5E9BDE64CBB2CA3E1F9 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		D437E5E9BDE64CBB2CA3E1F9 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		FCC8C66FC4D3E58584135A1E /* libPods-App-DevRNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A948110CC4F266588D8077E /* libPods-App-DevRNBoilerplate.a */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D437E5E9BDE64CBB2CA3E1F9 /* (null) in Frameworks */,
+				D437E5E9BDE64CBB2CA3E1F9 /* BuildFile in Frameworks */,
 				C801FB85B7A983D5A775715C /* libPods-App-RNBoilerplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +241,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				2894178B51B83AF715FF45EC /* [CP] Copy Pods Resources */,
+				B592D9BDAD884D33C51DFB6B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +263,7 @@
 				849C378825F0AF080080EB40 /* Resources */,
 				849C378B25F0AF080080EB40 /* Bundle React Native code and images */,
 				849C378C25F0AF080080EB40 /* [CP] Copy Pods Resources */,
+				DFE783AC669BB629EE2C3527 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,6 +285,7 @@
 				849C380B25F0B7CC0080EB40 /* Resources */,
 				849C380E25F0B7CC0080EB40 /* Bundle React Native code and images */,
 				849C380F25F0B7CC0080EB40 /* [CP] Copy Pods Resources */,
+				8A3AF1148A77D1A5C353BC54 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -629,6 +632,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-App-StagRNBoilerplate/Pods-App-StagRNBoilerplate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A3AF1148A77D1A5C353BC54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-App-StagRNBoilerplate/Pods-App-StagRNBoilerplate-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-App-StagRNBoilerplate/Pods-App-StagRNBoilerplate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B592D9BDAD884D33C51DFB6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-App-RNBoilerplate/Pods-App-RNBoilerplate-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-App-RNBoilerplate/Pods-App-RNBoilerplate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFE783AC669BB629EE2C3527 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-App-DevRNBoilerplate/Pods-App-DevRNBoilerplate-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-App-DevRNBoilerplate/Pods-App-DevRNBoilerplate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ECBD57CB5FC7FA231C31CC3D /* [CP] Check Pods Manifest.lock */ = {
