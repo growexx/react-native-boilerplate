@@ -65,6 +65,11 @@ consist of:
 
 ## Notes:
 
+  #### Social Login
+  Social logins are implemented for Development environment only.
+  So, if you want to implement in Staging and Production env, then add required keys and urls to specific env.
+  Reference articles links are provided in bottom 'Resources' section
+
   #### Handling console logs
   In src/withcodePush.js line 8-11, logs are disabled for Production
   `if (ENV === 'Production') {
