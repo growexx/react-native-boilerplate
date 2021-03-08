@@ -141,6 +141,7 @@ android {
 
     defaultConfig {
         applicationId "com.reactnativeboilerplate"
+        multiDexEnabled true
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -182,6 +183,7 @@ android {
         development {
             applicationIdSuffix ".development"
             resValue "string", "app_name", "DevRNBoilerplate"
+            resValue "string", "facebook_app_id", "269165128028315"
         }
         staging {
             applicationIdSuffix ".staging"

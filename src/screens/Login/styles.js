@@ -44,7 +44,13 @@ const styles = StyleSheet.create({
     color: colors.WHITE,
     fontSize: 18,
     fontWeight: 'bold'
-  }
+  },
+  socialButton: {
+    height: 40,
+    width: '100%',
+    borderRadius: 10,
+    justifyContent: 'center',
+  },
 })
 
 export default styles

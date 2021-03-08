@@ -5,6 +5,12 @@ import {
   LOGIN_FAILED,
   CLEAR_REDUX
 } from '@types/auth.types'
+import {
+  AccessToken,
+  GraphRequest,
+  GraphRequestManager
+} from 'react-native-fbsdk'
+import { GoogleSignin } from '@react-native-community/google-signin'
 
 export const loginRequest = () => {
   return {
@@ -38,5 +44,48 @@ export const login = () => async dispatch => {
     dispatch(loginSuccess(data))
   } catch (error) {
     dispatch(loginFail())
+  }
+}
+
+export const signInwithFacebook = (error, result) => {
+  if (error) {
+    alert('login has error: ' + result.error)
+  } else if (result.isCancelled) {
+    alert('User cancelled!')
+  } else {
+    AccessToken.getCurrentAccessToken().then(data => {
+      const accessToken = data.accessToken.toString()
+      getInfoFromToken(accessToken)
+    })
+  }
+}
+
+export const getInfoFromToken = token => {
+  const PROFILE_REQUEST_PARAMS = {
+    fields: {
+      string: 'id, name,  first_name, last_name'
+    }
+  }
+  const profileRequest = new GraphRequest(
+    '/me',
+    { token, parameters: PROFILE_REQUEST_PARAMS },
+    (error, result) => {
+      if (error) {
+        alert(error.code)
+      } else {
+        alert('Signed In as: ' + result.name)
+      }
+    }
+  )
+  new GraphRequestManager().addRequest(profileRequest).start()
+}
+
+export const signInWithGoogle = async () => {
+  try {
+    await GoogleSignin.hasPlayServices()
+    const userInfo = await GoogleSignin.signIn()
+    alert('Signed In as: ' + userInfo.user.name)
+  } catch (error) {
+    alert(error.message)
   }
 }

@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.13.2",
+    "@react-native-community/google-signin": "^5.0.0",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/bottom-tabs": "^5.11.2",
     "@react-navigation/material-top-tabs": "^5.3.10",
@@ -31,6 +32,7 @@
     "react-native": "0.63.4",
     "react-native-code-push": "^7.0.0",
     "react-native-config": "^1.4.2",
+    "react-native-fbsdk": "^3.0.0",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-i18n": "^2.0.15",
     "react-native-reanimated": "^1.13.2",

@@ -19,9 +19,10 @@
 		849C380825F0B7CC0080EB40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		849C380C25F0B7CC0080EB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		849C380D25F0B7CC0080EB40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		84B62CD225F5FFFF00EB1DA0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B62CD125F5FFFF00EB1DA0 /* File.swift */; };
 		C801FB85B7A983D5A775715C /* libPods-App-RNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7836B0C73B40C0FC77A10D95 /* libPods-App-RNBoilerplate.a */; };
 		CB31926FDE748C0EC4247E83 /* libPods-App-StagRNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7CA8B9D9E3C902A3F1068 /* libPods-App-StagRNBoilerplate.a */; };
-		D437E5E9BDE64CBB2CA3E1F9 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		D437E5E9BDE64CBB2CA3E1F9 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		FCC8C66FC4D3E58584135A1E /* libPods-App-DevRNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A948110CC4F266588D8077E /* libPods-App-DevRNBoilerplate.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		849C379025F0AF080080EB40 /* DevRNBoilerplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevRNBoilerplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849C379125F0AF080080EB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/admin/Workspace/React_Native/Boilerplate/RNBoilerplate/ios/Info.plist; sourceTree = "<absolute>"; };
 		849C381325F0B7CC0080EB40 /* StagRNBoilerplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StagRNBoilerplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B62CD025F5FFFE00EB1DA0 /* DevRNBoilerplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DevRNBoilerplate-Bridging-Header.h"; sourceTree = "<group>"; };
+		84B62CD125F5FFFF00EB1DA0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8C00911C97688EAEE6331A28 /* Pods-App-DevRNBoilerplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-DevRNBoilerplate.debug.xcconfig"; path = "Target Support Files/Pods-App-DevRNBoilerplate/Pods-App-DevRNBoilerplate.debug.xcconfig"; sourceTree = "<group>"; };
 		8EF62396373668C3214B487F /* Pods-RNBoilerplate-RNBoilerplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNBoilerplate-RNBoilerplateTests.release.xcconfig"; path = "Target Support Files/Pods-RNBoilerplate-RNBoilerplateTests/Pods-RNBoilerplate-RNBoilerplateTests.release.xcconfig"; sourceTree = "<group>"; };
 		9DFEECC74B3021BA331D61E9 /* Pods-RNBoilerplate-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNBoilerplate-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RNBoilerplate-tvOS/Pods-RNBoilerplate-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D437E5E9BDE64CBB2CA3E1F9 /* BuildFile in Frameworks */,
+				D437E5E9BDE64CBB2CA3E1F9 /* (null) in Frameworks */,
 				C801FB85B7A983D5A775715C /* libPods-App-RNBoilerplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				849C379125F0AF080080EB40 /* Info.plist */,
+				84B62CD125F5FFFF00EB1DA0 /* File.swift */,
+				84B62CD025F5FFFE00EB1DA0 /* DevRNBoilerplate-Bridging-Header.h */,
 			);
 			path = DevRNBoilerplate;
 			sourceTree = "<group>";
@@ -307,6 +312,9 @@
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
 					};
+					849C378025F0AF080080EB40 = {
+						LastSwiftMigration = 1200;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RNBoilerplate" */;
@@ -381,6 +389,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App-RNBoilerplate/Pods-App-RNBoilerplate-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -401,6 +411,8 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -486,6 +498,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App-DevRNBoilerplate/Pods-App-DevRNBoilerplate-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -506,6 +520,8 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -591,6 +607,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App-StagRNBoilerplate/Pods-App-StagRNBoilerplate-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -611,6 +629,8 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -746,6 +766,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849C378425F0AF080080EB40 /* AppDelegate.m in Sources */,
+				84B62CD225F5FFFF00EB1DA0 /* File.swift in Sources */,
 				849C378525F0AF080080EB40 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -939,6 +960,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DevRNBoilerplate/DevRNBoilerplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -962,6 +984,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DevRNBoilerplate/DevRNBoilerplate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

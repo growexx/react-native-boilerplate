@@ -6,9 +6,16 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView
 } from 'react-native'
+import { LoginButton } from 'react-native-fbsdk'
+import { GoogleSigninButton } from '@react-native-community/google-signin'
 import styles from './styles'
 import { connect, useDispatch } from 'react-redux'
-import { login, clearRedux } from '@actions/auth.action'
+import {
+  login,
+  clearRedux,
+  signInwithFacebook,
+  signInWithGoogle
+} from '@actions/auth.action'
 import { TextInput } from 'react-native-gesture-handler'
 import { strings } from '@i18n'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
@@ -49,6 +56,17 @@ const Login = props => {
             onPress={() => dispatch(login())}>
             <Text style={styles.buttonText}>{strings('auth.login')}</Text>
           </TouchableOpacity>
+          <LoginButton
+            style={styles.socialButton}
+            onLoginFinished={signInwithFacebook}
+            onLogoutFinished={() => {}}
+          />
+          <GoogleSigninButton
+            style={styles.socialButton}
+            size={GoogleSigninButton.Size.Wide}
+            color={GoogleSigninButton.Color.Dark}
+            onPress={signInWithGoogle}
+          />
         </KeyboardAvoidingView>
       </SafeAreaView>
     </>
