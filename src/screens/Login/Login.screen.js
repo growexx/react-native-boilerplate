@@ -21,6 +21,7 @@ import {
 } from '@actions/auth.action'
 import { TextInput } from 'react-native-gesture-handler'
 import { strings } from '@i18n'
+import configs from '@constants/configs'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
 import images from '@images'
 
@@ -41,6 +42,7 @@ const Login = props => {
   return (
     <>
       <SafeAreaView style={styles.SafeAreaView}>
+        <Text>Environment: {configs.ENV}</Text>
         <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text>
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
           <Image source={images.appLogo} style={styles.logoImage} />

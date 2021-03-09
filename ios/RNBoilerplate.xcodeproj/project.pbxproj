@@ -11,6 +11,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		846018D625F78F9300CE89D2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846018D525F78F9300CE89D2 /* File.swift */; };
+		846018DC25F78FAC00CE89D2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846018DB25F78FAC00CE89D2 /* File.swift */; };
 		849C378425F0AF080080EB40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		849C378525F0AF080080EB40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		849C378925F0AF080080EB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -22,7 +24,7 @@
 		84B62CD225F5FFFF00EB1DA0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B62CD125F5FFFF00EB1DA0 /* File.swift */; };
 		C801FB85B7A983D5A775715C /* libPods-App-RNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7836B0C73B40C0FC77A10D95 /* libPods-App-RNBoilerplate.a */; };
 		CB31926FDE748C0EC4247E83 /* libPods-App-StagRNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7CA8B9D9E3C902A3F1068 /* libPods-App-StagRNBoilerplate.a */; };
-		D437E5E9BDE64CBB2CA3E1F9 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		D437E5E9BDE64CBB2CA3E1F9 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		FCC8C66FC4D3E58584135A1E /* libPods-App-DevRNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A948110CC4F266588D8077E /* libPods-App-DevRNBoilerplate.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,12 @@
 		7836B0C73B40C0FC77A10D95 /* libPods-App-RNBoilerplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App-RNBoilerplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DF1107150C4B63EB8BD9A0 /* Pods-RNBoilerplate-RNBoilerplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNBoilerplate-RNBoilerplateTests.debug.xcconfig"; path = "Target Support Files/Pods-RNBoilerplate-RNBoilerplateTests/Pods-RNBoilerplate-RNBoilerplateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNBoilerplate/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		846018D425F78F9200CE89D2 /* StagRNBoilerplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StagRNBoilerplate-Bridging-Header.h"; sourceTree = "<group>"; };
+		846018D525F78F9300CE89D2 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		846018DA25F78FAC00CE89D2 /* RNBoilerplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNBoilerplate-Bridging-Header.h"; sourceTree = "<group>"; };
+		846018DB25F78FAC00CE89D2 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		846018E025F7967100CE89D2 /* StagRNBoilerplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StagRNBoilerplate.entitlements; sourceTree = "<group>"; };
+		846018E125F7967600CE89D2 /* RNBoilerplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RNBoilerplate.entitlements; path = RNBoilerplate/RNBoilerplate.entitlements; sourceTree = "<group>"; };
 		849C379025F0AF080080EB40 /* DevRNBoilerplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevRNBoilerplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849C379125F0AF080080EB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/admin/Workspace/React_Native/Boilerplate/RNBoilerplate/ios/Info.plist; sourceTree = "<absolute>"; };
 		849C381325F0B7CC0080EB40 /* StagRNBoilerplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StagRNBoilerplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D437E5E9BDE64CBB2CA3E1F9 /* BuildFile in Frameworks */,
+				D437E5E9BDE64CBB2CA3E1F9 /* (null) in Frameworks */,
 				C801FB85B7A983D5A775715C /* libPods-App-RNBoilerplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +120,7 @@
 		13B07FAE1A68108700A75B9A /* RNBoilerplate */ = {
 			isa = PBXGroup;
 			children = (
+				846018E125F7967600CE89D2 /* RNBoilerplate.entitlements */,
 				C20B9F00257B659500BB8406 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -120,6 +129,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				846018DB25F78FAC00CE89D2 /* File.swift */,
+				846018DA25F78FAC00CE89D2 /* RNBoilerplate-Bridging-Header.h */,
 			);
 			name = RNBoilerplate;
 			sourceTree = "<group>";
@@ -185,6 +196,9 @@
 		849C380225F0B7730080EB40 /* StagRNBoilerplate */ = {
 			isa = PBXGroup;
 			children = (
+				846018E025F7967100CE89D2 /* StagRNBoilerplate.entitlements */,
+				846018D525F78F9300CE89D2 /* File.swift */,
+				846018D425F78F9200CE89D2 /* StagRNBoilerplate-Bridging-Header.h */,
 			);
 			path = StagRNBoilerplate;
 			sourceTree = "<group>";
@@ -312,9 +326,12 @@
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1200;
 					};
 					849C378025F0AF080080EB40 = {
+						LastSwiftMigration = 1200;
+					};
+					849C380325F0B7CC0080EB40 = {
 						LastSwiftMigration = 1200;
 					};
 				};
@@ -759,6 +776,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				846018DC25F78FAC00CE89D2 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,6 +796,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849C380725F0B7CC0080EB40 /* AppDelegate.m in Sources */,
+				846018D625F78F9300CE89D2 /* File.swift in Sources */,
 				849C380825F0B7CC0080EB40 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -791,6 +810,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RNBoilerplate/RNBoilerplate.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -803,6 +823,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate;
 				PRODUCT_NAME = RNBoilerplate;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNBoilerplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -815,6 +836,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RNBoilerplate/RNBoilerplate.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = RNBoilerplate/Info.plist;
@@ -826,6 +848,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate;
 				PRODUCT_NAME = RNBoilerplate;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNBoilerplate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -961,7 +984,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate.development;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DevRNBoilerplate/DevRNBoilerplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -986,7 +1009,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate.development;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DevRNBoilerplate/DevRNBoilerplate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1000,6 +1023,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = StagRNBoilerplate/StagRNBoilerplate.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -1010,8 +1034,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate.staging;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StagRNBoilerplate/StagRNBoilerplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1024,6 +1049,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = StagRNBoilerplate/StagRNBoilerplate.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = StagRNBoilerplate/Info.plist;
@@ -1033,8 +1059,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate.staging;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnboilerplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StagRNBoilerplate/StagRNBoilerplate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

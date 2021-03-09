@@ -140,13 +140,13 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.reactnativeboilerplate"
+        applicationId "com.rnboilerplate"
         multiDexEnabled true
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        resValue "string", "build_config_package", "com.reactnativeboilerplate"
+        resValue "string", "build_config_package", "com.rnboilerplate"
     }
     splits {
         abi {
@@ -181,16 +181,16 @@ android {
     flavorDimensions "app"
     productFlavors {
         development {
-            applicationIdSuffix ".development"
             resValue "string", "app_name", "DevRNBoilerplate"
             resValue "string", "facebook_app_id", "269165128028315"
         }
         staging {
-            applicationIdSuffix ".staging"
             resValue "string", "app_name", "StagRNBoilerplate"
+            resValue "string", "facebook_app_id", "269165128028315"
         }
         production {
-            resValue "string", "app_name", "MyRNBoilerplate"
+            resValue "string", "app_name", "RNBoilerplate"
+            resValue "string", "facebook_app_id", "269165128028315"
         }
     }
 

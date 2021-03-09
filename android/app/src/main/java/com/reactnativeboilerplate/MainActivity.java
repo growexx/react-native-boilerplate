@@ -1,4 +1,4 @@
-package com.reactnativeboilerplate;
+package com.rnboilerplate;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import org.devio.rn.splashscreen.SplashScreen;
