@@ -11,6 +11,7 @@ import {
   GraphRequestManager
 } from 'react-native-fbsdk'
 import { GoogleSignin } from '@react-native-community/google-signin'
+import { appleAuth } from '@invertase/react-native-apple-authentication'
 
 export const loginRequest = () => {
   return {
@@ -85,6 +86,19 @@ export const signInWithGoogle = async () => {
     await GoogleSignin.hasPlayServices()
     const userInfo = await GoogleSignin.signIn()
     alert('Signed In as: ' + userInfo.user.name)
+  } catch (error) {
+    alert(error.message)
+  }
+}
+
+export const signInWithApple = async () => {
+  try {
+    const appleAuthRequestResponse = await appleAuth.performRequest({
+      requestedOperation: appleAuth.Operation.LOGIN,
+      requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME]
+    })
+    console.log(appleAuthRequestResponse)
+    alert('Signed In as: ' + appleAuthRequestResponse.fullName)
   } catch (error) {
     alert(error.message)
   }

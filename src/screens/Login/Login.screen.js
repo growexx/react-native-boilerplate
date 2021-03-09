@@ -4,17 +4,20 @@ import {
   SafeAreaView,
   Text,
   TouchableOpacity,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  Platform
 } from 'react-native'
 import { LoginButton } from 'react-native-fbsdk'
 import { GoogleSigninButton } from '@react-native-community/google-signin'
+import { AppleButton } from '@invertase/react-native-apple-authentication'
 import styles from './styles'
 import { connect, useDispatch } from 'react-redux'
 import {
   login,
   clearRedux,
   signInwithFacebook,
-  signInWithGoogle
+  signInWithGoogle,
+  signInWithApple
 } from '@actions/auth.action'
 import { TextInput } from 'react-native-gesture-handler'
 import { strings } from '@i18n'
@@ -38,6 +41,7 @@ const Login = props => {
   return (
     <>
       <SafeAreaView style={styles.SafeAreaView}>
+        <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text>
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
           <Image source={images.appLogo} style={styles.logoImage} />
           <Text style={styles.h1}>{strings('auth.login')}</Text>
@@ -67,6 +71,14 @@ const Login = props => {
             color={GoogleSigninButton.Color.Dark}
             onPress={signInWithGoogle}
           />
+          {Platform.OS === 'ios' && (
+            <AppleButton
+              buttonStyle={AppleButton.Style.BLACK}
+              buttonType={AppleButton.Type.SIGN_IN}
+              style={styles.socialButton}
+              onPress={signInWithApple}
+            />
+          )}
         </KeyboardAvoidingView>
       </SafeAreaView>
     </>
@@ -75,7 +87,8 @@ const Login = props => {
 
 const mapStateToProps = state => {
   return {
-    auth: state.authReducer
+    auth: state.authReducer,
+    deviceInfo: state.deviceInfoReducer
   }
 }
 
