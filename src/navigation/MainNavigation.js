@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { connect, useDispatch } from 'react-redux'
 import NetInfo from '@react-native-community/netinfo'
@@ -28,7 +28,7 @@ const MainNavigation = props => {
   }, [])
 
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={DefaultTheme}>
       <Stack.Navigator headerMode="none">
         {!isLoggedIn ? (
           <Stack.Screen name="Login" component={Login} />
