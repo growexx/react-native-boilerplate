@@ -3,6 +3,7 @@ import {
   LOGIN_PENDING,
   LOGIN_SUCCESS,
   LOGIN_FAILED,
+  LOGOUT_SUCCESS,
   CLEAR_REDUX
 } from '@types/auth.types'
 import {
@@ -45,6 +46,13 @@ export const login = () => async dispatch => {
     dispatch(loginSuccess(data))
   } catch (error) {
     dispatch(loginFail())
+  }
+}
+
+export const logout = () => dispatch => {
+  try {
+    dispatch({ type: LOGOUT_SUCCESS })
+  } catch (error) {
   }
 }
 

@@ -17,7 +17,7 @@ if (configs.ENV !== 'Production') {
 export const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: []
+  whitelist: ['authReducer']
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)

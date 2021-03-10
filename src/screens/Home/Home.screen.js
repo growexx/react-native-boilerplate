@@ -13,6 +13,7 @@ import { FETCH_NEWS_SUCCESS } from '@types/news.types'
 import { NewsCard } from '@components'
 import styles from './styles'
 import colors from '@constants/colors'
+import { logout } from '@actions/auth.action'
 
 const Home = props => {
   const dispatch = useDispatch()
@@ -79,6 +80,7 @@ const Home = props => {
   }
 
   const onFilterClick = (filter) => {
+    setPage(1)
     setActiveFilter(filter)
     dispatch(clearRedux())
     dispatch(fetchNews(1, filter))
@@ -93,7 +95,7 @@ const Home = props => {
           <TouchableOpacity style={styles.headerItem} onPress={() => {}}>
             <Icon name="user" size={30} color={colors.DARK_GREY} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.headerItem} onPress={() => {}}>
+          <TouchableOpacity style={styles.headerItem} onPress={() => dispatch(logout())}>
             <Icon name="sign-out" size={30} color={colors.DARK_GREY} />
           </TouchableOpacity>
         </View>

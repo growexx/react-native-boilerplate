@@ -2,6 +2,7 @@ import {
   LOGIN_PENDING,
   LOGIN_SUCCESS,
   LOGIN_FAILED,
+  LOGOUT_SUCCESS,
   CLEAR_REDUX
 } from '@types/auth.types'
 
@@ -37,6 +38,16 @@ export const authReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         error,
+        type
+      }
+
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        isLoggedIn: false,
+        loginData: null,
+        error: null,
         type
       }
 
