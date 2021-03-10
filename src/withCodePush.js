@@ -8,7 +8,7 @@ const { CODE_PUSH_KEY_ANDROID, CODE_PUSH_KEY_IOS, ENV } = configs
 if (ENV === 'Production') {
   console.log = () => {}
 }
-console.log(configs)
+
 const getDeploymentKey = () => {
   if (Platform.OS === 'android') {
     return CODE_PUSH_KEY_ANDROID

@@ -34,7 +34,6 @@ const Login = props => {
       dispatch(clearRedux())
     }
     if (props.auth.type === LOGIN_SUCCESS) {
-      alert('Login success')
       dispatch(clearRedux())
     }
   }, [props.auth])
