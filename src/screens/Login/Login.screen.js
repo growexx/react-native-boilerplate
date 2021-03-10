@@ -3,6 +3,7 @@ import {
   Image,
   SafeAreaView,
   Text,
+  TextInput,
   TouchableOpacity,
   KeyboardAvoidingView,
   Platform
@@ -19,7 +20,6 @@ import {
   signInWithGoogle,
   signInWithApple
 } from '@actions/auth.action'
-import { TextInput } from 'react-native-gesture-handler'
 import { strings } from '@i18n'
 import { configs } from '@constants'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
