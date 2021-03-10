@@ -21,7 +21,7 @@ import {
 } from '@actions/auth.action'
 import { TextInput } from 'react-native-gesture-handler'
 import { strings } from '@i18n'
-import configs from '@constants/configs'
+import { configs } from '@constants'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
 import images from '@images'
 

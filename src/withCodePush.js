@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Platform } from 'react-native'
 import CodePush from 'react-native-code-push'
-import configs from '@constants/configs'
+import { configs } from '@constants'
 
 const { CODE_PUSH_KEY_ANDROID, CODE_PUSH_KEY_IOS, ENV } = configs
 

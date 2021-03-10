@@ -12,7 +12,7 @@ import { fetchNews, clearRedux } from '@actions/news.action'
 import { FETCH_NEWS_SUCCESS } from '@types/news.types'
 import { NewsCard } from '@components'
 import styles from './styles'
-import colors from '@constants/colors'
+import { colors } from '@constants'
 import { logout } from '@actions/auth.action'
 
 const Home = props => {

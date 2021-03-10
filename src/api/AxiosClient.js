@@ -1,5 +1,5 @@
 import axios from 'axios'
-import configs from '@constants/configs'
+import { configs } from '@constants'
 
 export const GET = async url => {
   return new Promise((resolve, reject) => {

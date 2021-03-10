@@ -5,8 +5,7 @@ import { connect, useDispatch } from 'react-redux'
 import NetInfo from '@react-native-community/netinfo'
 import { updateNetStatus } from '@actions/deviceInfo.action'
 import SplashScreen from 'react-native-splash-screen'
-import Login from '@screens/Login/Login.screen'
-import Home from '@screens/Home/Home.screen'
+import { Home, Login } from '@screens'
 
 var unsubscribeNetListener
 const Stack = createStackNavigator()

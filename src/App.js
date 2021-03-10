@@ -4,7 +4,7 @@ import MainNavigation from '@navigation/MainNavigation'
 import { Provider } from 'react-redux'
 import { GoogleSignin } from '@react-native-community/google-signin'
 import { store } from '@stores'
-import configs from '@constants/configs'
+import { configs } from '@constants'
 import { enableScreens } from 'react-native-screens'
 import withCodePush from './withCodePush'
 enableScreens()
