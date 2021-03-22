@@ -9,13 +9,14 @@ consist of:
 
 - react-native": "0.63.4"
 - react-navigation and its dependencies
-- redux, redux persist redux thunk and redux logger
+- redux, redux-persist, redux-thunk and redux-logger
 - react native vector icons
 - react-native async storage
 - react-native-config
 - react-native-axios
 - react-native-splash-screen
-- react-native-code-push
+- react-native-code-push (Silent update)
+- Facebook and Google login
 
 ## Getting Started
 
@@ -68,16 +69,18 @@ consist of:
   #### Social Login
   Social logins are implemented for Development environment only.
   So, if you want to implement in Staging and Production env, then add required keys and urls to specific env.
-  Reference articles links are provided in bottom 'Resources' section
+  Reference article links are provided in bottom 'Resources' section
 
   #### Handling console logs
   In src/withcodePush.js line 8-11, logs are disabled for Production
+  
   `if (ENV === 'Production') {
     console.log = () => {}
   }`
 
   #### Handling redux logs
   In src/stores/index.js line 12-15, logs are disabled for Production
+  
   `if (configs.ENV !== 'Production') {
     const { logger } = require('redux-logger')
     middlewares.push(logger)
@@ -102,6 +105,9 @@ consist of:
   - Replace `USERNAME` with your PC username
 
 ## Resources:
+
+  ### BoilerPlate basic code
+  - https://github.com/handi-dev/react-native-boilerplate
 
   ### Setting up react-native environments
   - https://medium.com/swlh/setting-up-multiple-environments-on-react-native-for-ios-and-android-c43f3128754f
