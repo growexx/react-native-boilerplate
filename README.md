@@ -1,22 +1,5 @@
 # react-native-boilerplate
-
-## What is React Native Boilerplate
  It is a template that you can clone and reuse for every project. It is starting point for React Native application.
-
-## React Native Boilerplate
-
-consist of:
-
-- react-native": "0.63.4"
-- react-navigation and its dependencies
-- redux, redux-persist, redux-thunk and redux-logger
-- react native vector icons
-- react-native async storage
-- react-native-config
-- react-native-axios
-- react-native-splash-screen
-- react-native-code-push (Silent update)
-- Facebook and Google login
 
 ## Getting Started
 
@@ -35,6 +18,37 @@ consist of:
 
 - Check package.json to run project
 - Enjoy!!!
+
+## Packages
+| Package | Description |
+| --------------------- | ------------------------------------------------ |
+| @invertase/react-native-apple-authentication | Apple authentication |
+| @react-native-async-storage/async-storage | Localstorage |
+| @react-native-community/google-signin | Google Authentication |
+| @react-native-community/netinfo | Internet connectivity listener |
+| @react-navigation/bottom-tabs | Bottom tab navigator |
+| @react-navigation/material-top-tabs | Top tab navigator |
+| @react-navigation/native | To compose navigators |
+| @react-navigation/stack | Stack navigator |
+| axios | Api client |
+| moment | Format dates |
+| react | React |
+| react-native | React Native |
+| react-native-code-push | To push hot(silent) updates |
+| react-native-config | Manages standard environments |
+| react-native-device-info | To get device information |
+| react-native-fbsdk | Facebook authentication |
+| react-native-gesture-handler | Handle gestures |
+| react-native-i18n | Support multiple languages |
+| react-native-reanimated | Creates animations |
+| react-native-safe-area-context | SafeAreaView for iPhones |
+| react-native-splash-screen | Configures splash screen |
+| react-native-vector-icons | Icons |
+| react-redux | Manages shared state |
+| redux | Manages shared state |
+| redux-logger | Logs after state update |
+| redux-persist | Saves current state to local storage |
+| redux-thunk | To manage asynchronous tasks |
 
 ## Configuring iOS environment
 
@@ -62,7 +76,6 @@ consist of:
 ### Android
 - In `android/app/build.gradle`, change the app_name value in product flavors
 ![image](https://user-images.githubusercontent.com/80036991/110122735-fff28a00-7de5-11eb-9c78-90759bb22c9a.png)
-
 
 ## Notes:
 
@@ -106,20 +119,11 @@ consist of:
 
 ## Resources:
 
-  ### BoilerPlate basic code
-  - https://github.com/handi-dev/react-native-boilerplate
-
-  ### Setting up react-native environments
-  - https://medium.com/swlh/setting-up-multiple-environments-on-react-native-for-ios-and-android-c43f3128754f
-
-  ### Adding Splash screen
-  - https://medium.com/@appstud/add-a-splash-screen-to-a-react-native-app-810492e773f9
-
-  ### Login with facebook
-  - https://medium.com/@mehrankhandev/integrating-fbsdk-facebook-login-in-react-native-7b7600ce74a7
-
-  ### Login with Google
-  - https://github.com/react-native-google-signin/google-signin
-
-  ### React native code push (Hot update)
-  - https://www.npmjs.com/package/react-native-code-push
+| Name | Description |
+| --------------------- | ------------------------------------------------ |
+| BoilerPlate basic code | https://github.com/handi-dev/react-native-boilerplate |
+| Setting up react-native environments | https://medium.com/swlh/setting-up-multiple-environments-on-react-native-for-ios-and-android-c43f3128754f |
+| Adding Splash screen | https://medium.com/@appstud/add-a-splash-screen-to-a-react-native-app-810492e773f9 |
+| Login with facebook | https://medium.com/@mehrankhandev/integrating-fbsdk-facebook-login-in-react-native-7b7600ce74a7 |
+| Login with Google | https://github.com/react-native-google-signin/google-signin |
+| React native code push (Hot update) | https://www.npmjs.com/package/react-native-code-push |
