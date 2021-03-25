@@ -57,6 +57,7 @@ const Login = props => {
             style={styles.inputField}
           />
           <TouchableOpacity
+            testID={'ManualLoginButton'}
             style={styles.buttonWrapper}
             onPress={() => dispatch(login())}>
             <Text style={styles.buttonText}>{strings('auth.login')}</Text>
