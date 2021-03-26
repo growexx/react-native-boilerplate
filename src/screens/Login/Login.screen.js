@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react'
 import {
   Image,
-  SafeAreaView,
   Text,
   TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView,
+  View,
   Platform
 } from 'react-native'
 import { LoginButton } from 'react-native-fbsdk'
 import { GoogleSigninButton } from '@react-native-community/google-signin'
 import { AppleButton } from '@invertase/react-native-apple-authentication'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from './styles'
 import { connect, useDispatch } from 'react-redux'
 import {
@@ -40,10 +40,10 @@ const Login = props => {
 
   return (
     <>
-      <SafeAreaView style={styles.SafeAreaView}>
+      <KeyboardAwareScrollView keyboardShouldPersistTaps={'handled'} contentContainerStyle={styles.SafeAreaView}>
         <Text>Environment: {configs.ENV}</Text>
         <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text>
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <View style={styles.container}>
           <Image source={images.appLogo} style={styles.logoImage} />
           <Text style={styles.h1}>{strings('auth.login')}</Text>
           <TextInput
@@ -80,8 +80,8 @@ const Login = props => {
               onPress={signInWithApple}
             />
           )}
-        </KeyboardAvoidingView>
-      </SafeAreaView>
+        </View>
+      </KeyboardAwareScrollView>
     </>
   )
 }
