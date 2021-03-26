@@ -8,6 +8,7 @@ import Login from '../Login.screen'
 import { store } from '@stores'
 import { loginUser } from '@api/fakeApiLogin'
 import { signInwithFacebook, signInWithGoogle, signInWithApple } from '@actions/auth.action'
+import { getLoginResponse } from '../Login.util'
 
 jest.mock('@api/fakeApiLogin')
 
@@ -25,14 +26,7 @@ describe('render login component properly', () => {
 
   test('On Login Success', async () => {
     loginUser.mockImplementation(() =>
-      Promise.resolve({
-        status: 'success',
-        data: {
-          token: 'oidehcfhioienwfszdfsf',
-          username: 'Test User',
-          email: 'user@test.com'
-        }
-      })
+      Promise.resolve(getLoginResponse('default'))
     )
     const { getByTestId } = render(Wrapper)
     await act(() => fireEvent.press(getByTestId('ManualLoginButton')))
@@ -53,9 +47,7 @@ describe('render login component properly', () => {
 
   test('On login with facebook success', () => {
     AccessToken.getCurrentAccessToken.mockImplementation(() =>
-      Promise.resolve({
-        accessToken: '89923h8jenwjr9238yr9hjnidfjnswe98f'
-      })
+      Promise.resolve(getLoginResponse('facebook'))
     )
     const result = {
       isCancelled: false,
@@ -84,12 +76,7 @@ describe('render login component properly', () => {
 
   test('On login with google success', async () => {
     GoogleSignin.signIn.mockImplementation(() =>
-      Promise.resolve({
-        user: {
-          name: 'name',
-          email: 'test@email.com'
-        }
-      })
+      Promise.resolve(getLoginResponse('google'))
     )
     await act(() => signInWithGoogle())
     expect(window.alert).toHaveBeenCalledWith('Signed In as: name')
@@ -105,10 +92,7 @@ describe('render login component properly', () => {
 
   test('On login with apple success', async () => {
     appleAuth.performRequest.mockImplementation(() =>
-      Promise.resolve({
-          fullName: 'name',
-          email: 'test@email.com'
-      })
+      Promise.resolve(getLoginResponse('apple'))
     )
     await act(() => signInWithApple())
     expect(window.alert).toHaveBeenCalledWith('Signed In as: name')

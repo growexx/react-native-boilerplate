@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import Home from '../Home.screen'
 import { store } from '@stores'
 import { fetchNews, clearRedux } from '@actions/news.action'
-import { mockedGetRequest } from '@utils/responseUtils'
+import { mockedGetRequest } from '../Home.util'
 
 jest.mock('@api/AxiosClient')
 
