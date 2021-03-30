@@ -1,15 +1,14 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
 import { colors } from '@constants'
 
 const styles = StyleSheet.create({
   SafeAreaView: {
-    flex: 1,
+    height: Dimensions.get('window').height,
     backgroundColor: colors.WHITE,
     justifyContent: 'center',
     alignItems: 'center'
   },
   container: {
-    height: '60%',
     width: '80%',
     justifyContent: 'space-evenly',
     alignItems: 'center'
