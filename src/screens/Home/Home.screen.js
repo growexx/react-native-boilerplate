@@ -55,6 +55,7 @@ const Home = props => {
           Please check your internet connection
         </Text>
         <TouchableOpacity
+          testID={'RetryButton'}
           style={styles.retryButton}
           onPress={() => dispatch(fetchNews(page, activeFilter))}>
           <Text style={styles.retryText}>Retry</Text>
@@ -63,10 +64,11 @@ const Home = props => {
     )
   }
 
-  const renderFilterItem = ({ item }) => {
+  const renderFilterItem = ({ item, index }) => {
     const isActiveFilter = item === activeFilter
     return (
       <TouchableOpacity
+        testID={`FilterButton-${index}`}
         style={isActiveFilter ? styles.activeView : styles.inactiveView}
         onPress={() => onFilterClick(item)}>
         <Text
@@ -95,7 +97,7 @@ const Home = props => {
           <TouchableOpacity style={styles.headerItem} onPress={() => {}}>
             <Icon name="user" size={30} color={colors.DARK_GREY} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.headerItem} onPress={() => dispatch(logout())}>
+          <TouchableOpacity testID={'LogoutButton'} style={styles.headerItem} onPress={() => dispatch(logout())}>
             <Icon name="sign-out" size={30} color={colors.DARK_GREY} />
           </TouchableOpacity>
         </View>
@@ -113,6 +115,7 @@ const Home = props => {
             renderError()
           ) : (
             <FlatList
+              testID={'FlatList'}
               data={props.newsList}
               keyExtractor={(item, index) => index.toString()}
               renderItem={NewsCard}
