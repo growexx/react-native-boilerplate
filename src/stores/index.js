@@ -5,8 +5,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import reducers from '@reducers'
 import { configs } from '@constants'
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-
 var middlewares = [thunk]
 
 if (configs.ENV !== 'Production') {
@@ -24,7 +22,7 @@ const persistedReducer = persistReducer(persistConfig, reducers)
 
 export const store = createStore(
   persistedReducer,
-  composeEnhancer(applyMiddleware(...middlewares))
+  compose(applyMiddleware(...middlewares))
 )
 
 export const persistore = persistStore(store)

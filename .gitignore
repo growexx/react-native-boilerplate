@@ -71,3 +71,6 @@ report.json
 
 # react-native-config codegen
 ios/tmp.xcconfig
+
+#test-report
+coverage/
