@@ -15,7 +15,7 @@ export const fetchNewsRequest = () => {
 export const fetchNewsSuccess = data => {
   return {
     type: FETCH_NEWS_SUCCESS,
-    data: data
+    data
   }
 }
 

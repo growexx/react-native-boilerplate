@@ -23,7 +23,7 @@ export const loginRequest = () => {
 export const loginSuccess = data => {
   return {
     type: LOGIN_SUCCESS,
-    data: data
+    data
   }
 }
 
@@ -56,19 +56,6 @@ export const logout = () => dispatch => {
   }
 }
 
-export const signInwithFacebook = (error, result) => {
-  if (error) {
-    alert('login has error: ' + result.error)
-  } else if (result.isCancelled) {
-    alert('User cancelled!')
-  } else {
-    AccessToken.getCurrentAccessToken().then(data => {
-      const accessToken = data.accessToken.toString()
-      getInfoFromToken(accessToken)
-    })
-  }
-}
-
 export const getInfoFromToken = token => {
   const PROFILE_REQUEST_PARAMS = {
     fields: {
@@ -87,6 +74,19 @@ export const getInfoFromToken = token => {
     }
   )
   new GraphRequestManager().addRequest(profileRequest).start()
+}
+
+export const signInwithFacebook = (error, result) => {
+  if (error) {
+    alert('login has error: ' + result.error)
+  } else if (result.isCancelled) {
+    alert('User cancelled!')
+  } else {
+    AccessToken.getCurrentAccessToken().then(data => {
+      const accessToken = data.accessToken.toString()
+      getInfoFromToken(accessToken)
+    })
+  }
 }
 
 export const signInWithGoogle = async () => {

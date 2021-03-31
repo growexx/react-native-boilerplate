@@ -7,7 +7,7 @@ import { updateNetStatus } from '@actions/deviceInfo.action'
 import SplashScreen from 'react-native-splash-screen'
 import { Home, Login } from '@screens'
 
-var unsubscribeNetListener
+let unsubscribeNetListener
 const Stack = createStackNavigator()
 
 const MainNavigation = props => {

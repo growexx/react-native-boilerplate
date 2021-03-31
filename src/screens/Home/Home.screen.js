@@ -64,6 +64,13 @@ const Home = props => {
     )
   }
 
+  const onFilterClick = (filter) => {
+    setPage(1)
+    setActiveFilter(filter)
+    dispatch(clearRedux())
+    dispatch(fetchNews(1, filter))
+  }
+
   const renderFilterItem = ({ item, index }) => {
     const isActiveFilter = item === activeFilter
     return (
@@ -79,13 +86,6 @@ const Home = props => {
         </Text>
       </TouchableOpacity>
     )
-  }
-
-  const onFilterClick = (filter) => {
-    setPage(1)
-    setActiveFilter(filter)
-    dispatch(clearRedux())
-    dispatch(fetchNews(1, filter))
   }
 
   return (

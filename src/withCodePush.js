@@ -24,6 +24,10 @@ const CODE_PUSH_OPTIONS = {
 
 const withCodePush = App => {
   const WrappedApp = () => {
+    const syncWithCodePush = status => {
+      console.log(status)
+    }
+
     useEffect(() => {
       CodePush.sync(
         {
@@ -32,10 +36,6 @@ const withCodePush = App => {
         syncWithCodePush
       )
     }, [])
-
-    const syncWithCodePush = status => {
-      console.log(status)
-    }
 
     return <App />
   }
