@@ -94,7 +94,7 @@ const Home = props => {
         style={styles.SafeAreaView}
         forceInset={{ bottom: 'never' }}>
         <View style={styles.header}>
-          <TouchableOpacity style={styles.headerItem} onPress={() => {}}>
+          <TouchableOpacity style={styles.headerItem}>
             <Icon name="user" size={30} color={colors.DARK_GREY} />
           </TouchableOpacity>
           <TouchableOpacity testID={'LogoutButton'} style={styles.headerItem} onPress={() => dispatch(logout())}>
