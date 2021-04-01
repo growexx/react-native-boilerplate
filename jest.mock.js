@@ -59,3 +59,64 @@ jest.mock('@invertase/react-native-apple-authentication', () => {
 
   return mockAppleAuth
 })
+
+jest.mock('react-native-gesture-handler')
+
+jest.mock('@react-native-community/netinfo', () => {
+  const defaultState = {
+    type: 'cellular',
+    isConnected: true,
+    isInternetReachable: true,
+    details: {
+      isConnectionExpensive: true,
+      cellularGeneration: '3g'
+    }
+  }
+
+  const RNCNetInfoMock = {
+    configure: jest.fn(),
+    fetch: jest.fn(),
+    addEventListener: jest.fn(callback => {
+      callback({ isConnected: true })
+      return jest.fn()
+    }),
+    useNetInfo: jest.fn()
+  }
+
+  RNCNetInfoMock.fetch.mockResolvedValue(defaultState)
+  RNCNetInfoMock.useNetInfo.mockResolvedValue(defaultState)
+
+  return RNCNetInfoMock
+})
+
+jest.mock('react-native-code-push', () => {
+  const cp = _ => app => app
+  Object.assign(cp, {
+    InstallMode: {},
+    CheckFrequency: {},
+    SyncStatus: {},
+    UpdateState: {},
+    DeploymentStatus: {},
+    DEFAULT_UPDATE_DIALOG: {},
+
+    checkForUpdate: jest.fn(),
+    codePushify: jest.fn(),
+    getConfiguration: jest.fn(),
+    getCurrentPackage: jest.fn(),
+    getUpdateMetadata: jest.fn(),
+    log: jest.fn(),
+    notifyAppReady: jest.fn(),
+    notifyApplicationReady: jest.fn(),
+    sync: jest.fn()
+  })
+  return cp
+})
+
+jest.mock('react-native-splash-screen', () => {
+  return {
+    hide: jest.fn(),
+    show: jest.fn()
+  }
+})
+
+
