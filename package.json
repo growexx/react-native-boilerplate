@@ -62,7 +62,7 @@
     "eslint": "^7.14.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.64.0",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^17.0.1"
   },
   "jest": {
     "preset": "react-native",
@@ -71,7 +71,7 @@
       "@testing-library/jest-native/extend-expect"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!@react-native-community/google-signin|react-native|reactxp-webview|react-pose-core|animated-pose|@react-native-community/async-storage|@invertase/react-native-apple-authentication)"
+      "node_modules/(?!@react-native-community/google-signin|@react-native|react-native|reactxp-webview|react-pose-core|animated-pose|@react-native-community/async-storage|@invertase/react-native-apple-authentication)"
     ],
     "testEnvironment": "jsdom",
     "setupFiles": [
