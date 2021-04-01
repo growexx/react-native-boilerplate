@@ -31,8 +31,8 @@
     "@react-navigation/stack": "^5.12.8",
     "axios": "^0.21.1",
     "moment": "^2.29.1",
-    "react": "16.13.1",
-    "react-native": "0.63.4",
+    "react": "17.0.1",
+    "react-native": "0.64.0",
     "react-native-code-push": "^7.0.0",
     "react-native-config": "^1.4.2",
     "react-native-device-info": "^8.0.2",
@@ -74,6 +74,8 @@
       "node_modules/(?!@react-native-community/google-signin|react-native|reactxp-webview|react-pose-core|animated-pose|@react-native-community/async-storage|@invertase/react-native-apple-authentication)"
     ],
     "testEnvironment": "jsdom",
-    "setupFiles": ["./jest.mock.js"]
+    "setupFiles": [
+      "./jest.mock.js"
+    ]
   }
 }
