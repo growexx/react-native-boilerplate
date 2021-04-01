@@ -23,7 +23,6 @@ describe('render home screen properly', () => {
   test('fetches general news on render', async () => {
     mockedGetRequest('success')
     await act(() => store.dispatch(fetchNews(1, 'general')))
-    const { getByTestId } = render(Wrapper)
     const { newsList } = store.getState().newsReducer
     expect(newsList.length).toBeGreaterThan(0)
   })
@@ -31,7 +30,6 @@ describe('render home screen properly', () => {
   test('fetch empty news data on render', async () => {
     mockedGetRequest()
     await act(() => store.dispatch(fetchNews(1, 'general')))
-    const { getByTestId } = render(Wrapper)
     const { newsList } = store.getState().newsReducer
     expect(newsList.length).toBe(0)
   })
@@ -39,7 +37,6 @@ describe('render home screen properly', () => {
   test('fetch general news fails on render', async () => {
     mockedGetRequest('failed')
     await act(() => store.dispatch(fetchNews(1, 'general')))
-    const { getByTestId } = render(Wrapper)
     const { error } = store.getState().newsReducer
     expect(error).toBeTruthy()
   })

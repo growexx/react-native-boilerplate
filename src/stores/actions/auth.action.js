@@ -1,4 +1,5 @@
 import { loginUser } from '@api/fakeApiLogin'
+import { Alert } from 'react-native'
 import {
   LOGIN_PENDING,
   LOGIN_SUCCESS,
@@ -23,7 +24,7 @@ export const loginRequest = () => {
 export const loginSuccess = data => {
   return {
     type: LOGIN_SUCCESS,
-    data: data
+    data
   }
 }
 
@@ -56,19 +57,6 @@ export const logout = () => dispatch => {
   }
 }
 
-export const signInwithFacebook = (error, result) => {
-  if (error) {
-    alert('login has error: ' + result.error)
-  } else if (result.isCancelled) {
-    alert('User cancelled!')
-  } else {
-    AccessToken.getCurrentAccessToken().then(data => {
-      const accessToken = data.accessToken.toString()
-      getInfoFromToken(accessToken)
-    })
-  }
-}
-
 export const getInfoFromToken = token => {
   const PROFILE_REQUEST_PARAMS = {
     fields: {
@@ -80,22 +68,35 @@ export const getInfoFromToken = token => {
     { token, parameters: PROFILE_REQUEST_PARAMS },
     (error, result) => {
       if (error) {
-        alert(error.code)
+        Alert.alert(error.code)
       } else {
-        alert('Signed In as: ' + result.name)
+        Alert.alert('Signed In as: ' + result.name)
       }
     }
   )
   new GraphRequestManager().addRequest(profileRequest).start()
 }
 
+export const signInwithFacebook = (error, result) => {
+  if (error) {
+    Alert.alert('login has error: ' + result.error)
+  } else if (result.isCancelled) {
+    Alert.alert('User cancelled!')
+  } else {
+    AccessToken.getCurrentAccessToken().then(data => {
+      const accessToken = data.accessToken.toString()
+      getInfoFromToken(accessToken)
+    })
+  }
+}
+
 export const signInWithGoogle = async () => {
   try {
     await GoogleSignin.hasPlayServices()
     const userInfo = await GoogleSignin.signIn()
-    alert('Signed In as: ' + userInfo.user.name)
+    Alert.alert('Signed In as: ' + userInfo.user.name)
   } catch (error) {
-    alert(error.message)
+    Alert.alert(error.message)
   }
 }
 
@@ -106,8 +107,8 @@ export const signInWithApple = async () => {
       requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME]
     })
     console.log(appleAuthRequestResponse)
-    alert('Signed In as: ' + appleAuthRequestResponse.fullName)
+    Alert.alert('Signed In as: ' + appleAuthRequestResponse.fullName)
   } catch (error) {
-    alert(error.message)
+    Alert.alert(error.message)
   }
 }

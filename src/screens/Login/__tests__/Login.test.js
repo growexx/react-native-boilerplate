@@ -1,4 +1,5 @@
 import React from 'react'
+import { Alert } from 'react-native'
 import { render, fireEvent, act, cleanup } from '@testing-library/react-native'
 import { Provider } from 'react-redux'
 import { AccessToken } from 'react-native-fbsdk'
@@ -21,7 +22,7 @@ describe('render login component properly', () => {
 
   beforeEach(() => {
     cleanup()
-    spyOn(window, 'alert')
+    spyOn(Alert, 'alert')
   })
 
   test('On Login Success', async () => {
@@ -42,7 +43,7 @@ describe('render login component properly', () => {
     await act(() => fireEvent.press(getByTestId('ManualLoginButton')))
     const { isLoading } = store.getState().authReducer
     expect(isLoading).not.toBeTruthy()
-    expect(window.alert).toHaveBeenCalledWith('Login failed!')
+    expect(Alert.alert).toHaveBeenCalledWith('Login failed!')
   })
 
   test('On login with facebook success', () => {
@@ -62,7 +63,7 @@ describe('render login component properly', () => {
       error: null
     }
     signInwithFacebook(null, result)
-    expect(window.alert).toHaveBeenCalledWith('User cancelled!')
+    expect(Alert.alert).toHaveBeenCalledWith('User cancelled!')
   })
 
   test('On login with facebook fail', () => {
@@ -71,7 +72,7 @@ describe('render login component properly', () => {
       error: 'something went wrong!'
     }
     signInwithFacebook(true, result)
-    expect(window.alert).toHaveBeenCalledWith('login has error: something went wrong!')
+    expect(Alert.alert).toHaveBeenCalledWith('login has error: something went wrong!')
   })
 
   test('On login with google success', async () => {
@@ -79,7 +80,7 @@ describe('render login component properly', () => {
       Promise.resolve(getLoginResponse('google'))
     )
     await act(() => signInWithGoogle())
-    expect(window.alert).toHaveBeenCalledWith('Signed In as: name')
+    expect(Alert.alert).toHaveBeenCalledWith('Signed In as: name')
   })
 
   test('On login with google fail', async () => {
@@ -87,7 +88,7 @@ describe('render login component properly', () => {
       Promise.reject(new Error('something went wrong!'))
     )
     await act(() => signInWithGoogle())
-    expect(window.alert).toHaveBeenCalledWith('something went wrong!')
+    expect(Alert.alert).toHaveBeenCalledWith('something went wrong!')
   })
 
   test('On login with apple success', async () => {
@@ -95,7 +96,7 @@ describe('render login component properly', () => {
       Promise.resolve(getLoginResponse('apple'))
     )
     await act(() => signInWithApple())
-    expect(window.alert).toHaveBeenCalledWith('Signed In as: name')
+    expect(Alert.alert).toHaveBeenCalledWith('Signed In as: name')
   })
 
   test('On login with apple fail', async () => {
@@ -103,6 +104,6 @@ describe('render login component properly', () => {
       Promise.reject(new Error('something went wrong!'))
     )
     await act(() => signInWithApple())
-    expect(window.alert).toHaveBeenCalledWith('something went wrong!')
+    expect(Alert.alert).toHaveBeenCalledWith('something went wrong!')
   })
 })

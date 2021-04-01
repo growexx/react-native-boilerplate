@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Alert,
   Platform
 } from 'react-native'
 import { LoginButton } from 'react-native-fbsdk'
@@ -30,7 +31,7 @@ const Login = props => {
 
   useEffect(() => {
     if (props.auth.type === LOGIN_FAILED) {
-      alert('Login failed!')
+      Alert.alert('Login failed!')
       dispatch(clearRedux())
     }
     if (props.auth.type === LOGIN_SUCCESS) {

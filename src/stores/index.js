@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import reducers from '@reducers'
 import { configs } from '@constants'
 
-var middlewares = [thunk]
+const middlewares = [thunk]
 
 if (configs.ENV !== 'Production') {
   const { logger } = require('redux-logger')
