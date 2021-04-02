@@ -89,6 +89,15 @@ describe('render home screen properly', () => {
     }
     await act(() => fireEvent.scroll(getByTestId('FlatList'), eventData))
     const { newsList } = store.getState().newsReducer
+    expect(newsList.length).toBe(45)
+  })
+
+  test('pull to refresh data', async () => {
+    mockedGetRequest('success')
+    const { getByTestId } = render(Wrapper)
+    const flatList = getByTestId('FlatList')
+    await act(() => fireEvent(flatList.props.refreshControl, 'refresh'))
+    const { newsList } = store.getState().newsReducer
     expect(newsList.length).toBe(30)
   })
 })
