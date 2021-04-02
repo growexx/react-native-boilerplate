@@ -7,15 +7,17 @@
     Components, containers, store, services, utils
 #### 2. Predictable state management
     Redux, Redux Thunk & Redux Persist
-#### 3. Next generation JavaScript
+#### 3. API integration
+    Axios integration to make api calls
+#### 4. Next generation JavaScript
     Template strings, Object destructuring, Arrow functions, JSX syntax and more
-#### 4. i18n internationalization
+#### 5. i18n internationalization
     Scalable apps need to support multiple languages with `react-native-i18n`
-#### 5. Configured environments
+#### 6. Configured environments
     Development, Staging, Production
-#### 6. Social Login
+#### 7. Social Login
     Login with Facebook, Google & Apple(iOS only)
-#### 7. Silent updates
+#### 8. Silent updates
     React-native silent(hot) updates with `react-native-code-push`
 
 ## Getting Started
