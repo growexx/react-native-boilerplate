@@ -1,6 +1,23 @@
 # react-native-boilerplate
  It is a template that you can clone and reuse for every project. It is starting point for React Native application.
 
+## Features
+
+#### 1. Basic architechture
+    Components, containers, store, services, utils
+#### 2. Predictable state management
+    Redux, Redux Thunk & Redux Persist
+#### 3. Next generation JavaScript
+    Template strings, Object destructuring, Arrow functions, JSX syntax and more
+#### 4. i18n internationalization
+    Scalable apps need to support multiple languages with `react-native-i18n`
+#### 5. Configured environments
+    Development, Staging, Production
+#### 6. Social Login
+    Login with Facebook, Google & Apple(iOS only)
+#### 7. Silent updates
+    React-native silent(hot) updates with `react-native-code-push`
+
 ## Getting Started
 
 1. Clone this repo
