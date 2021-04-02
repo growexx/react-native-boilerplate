@@ -123,6 +123,7 @@ const Home = props => {
               onEndReached={() => dispatch(fetchNews(page, activeFilter))}
               onEndReachedThreshold={0.7}
               refreshing={props.isLoading}
+              initialNumToRender={15}
               onRefresh={() => onRefreshList()}
             />
           )}
