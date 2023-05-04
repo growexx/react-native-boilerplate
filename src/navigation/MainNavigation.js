@@ -29,7 +29,7 @@ const MainNavigation = props => {
 
   return (
     <NavigationContainer theme={DefaultTheme}>
-      <Stack.Navigator headerMode="none">
+      <Stack.Navigator headerShown="false">
         {!isLoggedIn ? (
           <Stack.Screen name="Login" component={Login} />
         ) : (

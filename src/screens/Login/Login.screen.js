@@ -41,7 +41,9 @@ const Login = props => {
 
   return (
     <>
-      <KeyboardAwareScrollView keyboardShouldPersistTaps={'handled'} contentContainerStyle={styles.SafeAreaView}>
+      <KeyboardAwareScrollView
+        keyboardShouldPersistTaps={'handled'}
+        contentContainerStyle={styles.SafeAreaView}>
         <Text>Environment: {configs.ENV}</Text>
         <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text>
         <View style={styles.container}>
