@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native'
-import Icon from 'react-native-vector-icons/dist/FontAwesome'
+//import Icon from 'react-native-vector-icons/dist/FontAwesome' //NNeed to use alternnate library
 import { connect, useDispatch } from 'react-redux'
 import { fetchNews, clearRedux } from '@actions/news.action'
 import { FETCH_NEWS_SUCCESS } from '@types/news.types'
@@ -64,7 +64,7 @@ const Home = props => {
     )
   }
 
-  const onFilterClick = (filter) => {
+  const onFilterClick = filter => {
     setPage(1)
     setActiveFilter(filter)
     dispatch(clearRedux())
@@ -95,10 +95,13 @@ const Home = props => {
         forceInset={{ bottom: 'never' }}>
         <View style={styles.header}>
           <TouchableOpacity style={styles.headerItem}>
-            <Icon name="user" size={30} color={colors.DARK_GREY} />
+            {/* <Icon name="user" size={30} color={colors.DARK_GREY} /> */}
           </TouchableOpacity>
-          <TouchableOpacity testID={'LogoutButton'} style={styles.headerItem} onPress={() => dispatch(logout())}>
-            <Icon name="sign-out" size={30} color={colors.DARK_GREY} />
+          <TouchableOpacity
+            testID={'LogoutButton'}
+            style={styles.headerItem}
+            onPress={() => dispatch(logout())}>
+            {/* <Icon name="sign-out" size={30} color={colors.DARK_GREY} /> */}
           </TouchableOpacity>
         </View>
         <View>

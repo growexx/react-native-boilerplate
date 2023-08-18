@@ -60,7 +60,7 @@ jest.mock('@invertase/react-native-apple-authentication', () => {
   return mockAppleAuth
 })
 
-jest.mock('react-native-gesture-handler')
+//jest.mock('react-native-gesture-handler')
 
 jest.mock('@react-native-community/netinfo', () => {
   const defaultState = {
@@ -118,5 +118,3 @@ jest.mock('react-native-splash-screen', () => {
     show: jest.fn()
   }
 })
-
-

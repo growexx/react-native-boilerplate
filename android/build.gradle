@@ -4,8 +4,8 @@ buildscript {
     ext {
         buildToolsVersion = "29.0.3"
         minSdkVersion = 21
-        compileSdkVersion = 29
-        targetSdkVersion = 29
+        compileSdkVersion = 33
+        targetSdkVersion = 33
         ndkVersion = "20.1.5948944"
     }
     repositories {
@@ -13,13 +13,21 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.1.0")
+        classpath("com.android.tools.build:gradle:7.3.1")
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+def REACT_NATIVE_VERSION = new File(['node', '--print',"JSON.parse(require('fs').readFileSync(require.resolve('react-native/package.json'), 'utf-8')).version"].execute(null, rootDir).text.trim())
+
 allprojects {
+    // configurations.all {
+    //     // resolutionStrategy {
+    //     //     // Remove this override in 0.65+, as a proper fix is included in react-native itself.
+    //     //    // force "com.facebook.react:react-native:" + REACT_NATIVE_VERSION
+    //     // }
+    // }
     repositories {
         mavenLocal()
         maven {

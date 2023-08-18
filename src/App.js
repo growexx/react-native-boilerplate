@@ -1,4 +1,3 @@
-import 'react-native-gesture-handler'
 import React, { useEffect } from 'react'
 import MainNavigation from '@navigation/MainNavigation'
 import { Provider } from 'react-redux'
