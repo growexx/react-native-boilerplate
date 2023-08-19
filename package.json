@@ -29,7 +29,6 @@
     "npm-check-updates": "^16.12.2",
     "react": "18.2.0",
     "react-native": "0.71.8",
-    "react-native-code-push": "^8.0.2",
     "react-native-codegen": "^0.71.5",
     "react-native-config": "^1.5.1",
     "react-native-device-info": "^10.8.0",

@@ -100,7 +100,6 @@ jest.mock('react-native-code-push', () => {
     DEFAULT_UPDATE_DIALOG: {},
 
     checkForUpdate: jest.fn(),
-    codePushify: jest.fn(),
     getConfiguration: jest.fn(),
     getCurrentPackage: jest.fn(),
     getUpdateMetadata: jest.fn(),
