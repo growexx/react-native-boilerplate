@@ -146,4 +146,3 @@ https://github.com/growexx/react-native-boilerplate
 | Adding Splash screen | https://medium.com/@appstud/add-a-splash-screen-to-a-react-native-app-810492e773f9 |
 | Login with facebook | https://medium.com/@mehrankhandev/integrating-fbsdk-facebook-login-in-react-native-7b7600ce74a7 |
 | Login with Google | https://github.com/react-native-google-signin/google-signin |
-| React native code push (Hot update) | https://www.npmjs.com/package/react-native-code-push |
