@@ -5,15 +5,27 @@ The Boilerplate contains the minimal implementation required to create a new lib
 
 ## How to Use
 
-**Step 1:**
-
 Download or clone this repo by using the link below:
 
 ```
 https://github.com/growexx/react-native-boilerplate
 ```
 
-**Step 2:**
+Clone this repo
+Go to project's root directory, cd <your project name>
+Remove .git folder, rm -rf .git
+Use React Native Rename to update project name $ npx react-native-rename <newName>
+Go to ios folder and rename DevRNBoilerplate & StagRNBoilerplate to DevNewName & StagNewName
+Run npm install to install dependencies
+Run cd ios and pod install
+Follow all the instructions listed just after this section in Configuring iOS environment
+Follow renaming steps given below to rename displayname
+Start the packager with npm start
+Connect your device or use emulator that's installed in your pc
+Run the test application:
+Check package.json to run project
+Enjoy!!!
+
 
 ## Features
 
