@@ -6,7 +6,7 @@ import { GoogleSignin } from '@react-native-community/google-signin'
 import { store } from '@stores'
 import { configs } from '@constants'
 import { enableScreens } from 'react-native-screens'
-// import withCodePush from './withCodePush'
+
 enableScreens()
 
 const App = () => {
