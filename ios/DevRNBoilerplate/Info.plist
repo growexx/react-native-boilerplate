@@ -41,8 +41,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>CodePushDeploymentKey</key>
-	<string>DeploymentKey</string>
 	<key>FacebookAppID</key>
 	<string>269165128028315</string>
 	<key>FacebookDisplayName</key>

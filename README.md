@@ -17,8 +17,6 @@
     Development, Staging, Production
 #### 7. Social Login
     Login with Facebook, Google & Apple(iOS only)
-#### 8. Silent updates
-    React-native silent(hot) updates with `react-native-code-push`
 
 ## Getting Started
 
@@ -102,13 +100,6 @@
   Social logins are implemented for Development environment only.
   So, if you want to implement in Staging and Production env, then add required keys and urls to specific env.
   Reference article links are provided in bottom 'Resources' section
-
-  #### Handling console logs
-  In src/withcodePush.js line 8-11, logs are disabled for Production
-  
-  `if (ENV === 'Production') {
-    console.log = () => {}
-  }`
 
   #### Handling redux logs
   In src/stores/index.js line 12-15, logs are disabled for Production
