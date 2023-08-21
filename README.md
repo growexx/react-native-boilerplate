@@ -11,20 +11,21 @@ Download or clone this repo by using the link below:
 https://github.com/growexx/react-native-boilerplate
 ```
 
-Clone this repo
-Go to project's root directory, cd <your project name>
-Remove .git folder, rm -rf .git
-Use React Native Rename to update project name $ npx react-native-rename <newName>
-Go to ios folder and rename DevRNBoilerplate & StagRNBoilerplate to DevNewName & StagNewName
-Run npm install to install dependencies
-Run cd ios and pod install
-Follow all the instructions listed just after this section in Configuring iOS environment
-Follow renaming steps given below to rename displayname
-Start the packager with npm start
-Connect your device or use emulator that's installed in your pc
-Run the test application:
-Check package.json to run project
-Enjoy!!!
+1. Clone this repo
+2. Go to project's root directory, `cd <your project name>`
+3. Remove `.git` folder, `rm -rf .git`
+4. Use React Native Rename to update project name `$ npx react-native-rename <newName>`
+5. Go to ios folder and rename DevRNBoilerplate & StagRNBoilerplate to DevNewName & StagNewName
+6. Run `npm install` to install dependencies
+7. Run `cd ios` and `pod install`
+8. Follow all the instructions listed just after this section in Configuring iOS environment
+9. Follow renaming steps given below to rename displayname
+10. Start the packager with `npm start`
+11. Connect your device or use emulator that's installed in your pc
+12. Run the test application:
+
+- Check package.json to run project
+- Enjoy!!!
 
 
 ## Features
