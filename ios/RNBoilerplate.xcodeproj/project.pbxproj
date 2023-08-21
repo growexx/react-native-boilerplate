@@ -25,7 +25,7 @@
 		849C380D25F0B7CC0080EB40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		84B62CD225F5FFFF00EB1DA0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B62CD125F5FFFF00EB1DA0 /* File.swift */; };
 		92E3A2B68D3C825C874DF6AA /* libPods-App-DevRNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A1DEA40CB42D09D2BBDD2 /* libPods-App-DevRNBoilerplate.a */; };
-		D437E5E9BDE64CBB2CA3E1F9 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		D437E5E9BDE64CBB2CA3E1F9 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D437E5E9BDE64CBB2CA3E1F9 /* BuildFile in Frameworks */,
+				D437E5E9BDE64CBB2CA3E1F9 /* (null) in Frameworks */,
 				575A0C59A9993E894F5368EE /* libPods-App-RNBoilerplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

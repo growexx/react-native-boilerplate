@@ -1,6 +1,5 @@
 #import "RNSplashScreen.h"
 #import "AppDelegate.h"
-#import <CodePush/CodePush.h>
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -71,7 +70,6 @@ static void InitializeFlipper(UIApplication *application) {
 #if DEBUG
   return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index"];
 #else
-  return [CodePush bundleURL];
 #endif
 }
 
