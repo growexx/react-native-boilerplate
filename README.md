@@ -17,8 +17,6 @@
     Development, Staging, Production
 #### 7. Social Login
     Login with Facebook, Google & Apple(iOS only)
-#### 8. Silent updates
-    React-native silent(hot) updates with `react-native-code-push`
 
 ## Getting Started
 
