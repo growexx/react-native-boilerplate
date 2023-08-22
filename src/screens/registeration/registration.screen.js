@@ -40,10 +40,10 @@ const RegisterScreen = ({ navigation }) => {
           </View>
           <View style={styles.container}>
             <TouchableOpacity
+              testID="image-picker"
               onPress={() => {
                 ImagePicker.openPicker({
-                  width: 300,
-                  height: 400,
+                  freeStyleCropEnabled: true,
                   cropping: true
                 }).then(image => {
                   setImageUri(image.path)
@@ -115,6 +115,7 @@ const RegisterScreen = ({ navigation }) => {
           </View>
 
           <TouchableOpacity
+            testID="signup-button"
             onPress={() => {
               const checkValid = phoneInput.current?.isValidNumber(mobile)
               if (checkValid) {
@@ -127,6 +128,7 @@ const RegisterScreen = ({ navigation }) => {
             <Text style={styles.signup_text}>Sign up</Text>
           </TouchableOpacity>
           <TouchableOpacity
+            testID="go-to-login"
             onPress={() => navigation.navigate('Login')}
             style={{
               padding: Spacing

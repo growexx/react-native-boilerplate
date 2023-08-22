@@ -6,8 +6,11 @@ import {
 } from '../utils/validations'
 
 const handleRegistration = async (email, password, cpassword, navigation) => {
-  if (!isNonEmptyField(email) && !isNonEmptyField(password)) {
-    showToast('This is required field.')
+  if (
+    !isNonEmptyField(email) &&
+    !isNonEmptyField(password && !isNonEmptyField(cpassword))
+  ) {
+    showToast('All fields are required field.')
   } else if (!isEmailValid(email)) {
     showToast(
       'You have entered invalid email address, Please, enter a valid email address.'

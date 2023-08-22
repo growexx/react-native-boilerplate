@@ -14,5 +14,5 @@ export default {
   active: blue,
   borderWithOpacity: '#1f41bb',
   lightPrimary: lightBlue,
-  gray: gray
+  gray
 }

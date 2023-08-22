@@ -23,6 +23,7 @@
     "@react-navigation/material-top-tabs": "^6.6.3",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/stack": "^6.3.17",
+    "@testing-library/react-native": "^12.2.2",
     "axios": "^1.4.0",
     "deprecated-react-native-prop-types": "^4.2.1",
     "moment": "^2.29.4",
@@ -72,9 +73,6 @@
   "jest": {
     "preset": "react-native",
     "collectCoverage": true,
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-native/extend-expect"
-    ],
     "transformIgnorePatterns": [
       "node_modules/(?!@react-native-community/google-signin|@react-native|react-native|@react-navigation|reactxp-webview|react-pose-core|animated-pose|@react-native-community/async-storage|@invertase/react-native-apple-authentication)"
     ],
