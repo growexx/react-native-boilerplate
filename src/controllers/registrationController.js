@@ -7,8 +7,9 @@ import {
 
 const handleRegistration = async (email, password, cpassword, navigation) => {
   if (
-    !isNonEmptyField(email) &&
-    !isNonEmptyField(password && !isNonEmptyField(cpassword))
+    !isNonEmptyField(email) ||
+    !isNonEmptyField(password) ||
+    !isNonEmptyField(cpassword)
   ) {
     showToast('All fields are required field.')
   } else if (!isEmailValid(email)) {
