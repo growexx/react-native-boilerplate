@@ -8,7 +8,11 @@ import { appleAuth } from '@invertase/react-native-apple-authentication'
 import Login from '../Login.screen'
 import { store } from '@stores'
 import { loginUser } from '@api/fakeApiLogin'
-import { signInwithFacebook, signInWithGoogle, signInWithApple } from '@actions/auth.action'
+import {
+  signInwithFacebook,
+  signInWithGoogle,
+  signInWithApple
+} from '@actions/auth.action'
 import { getLoginResponse } from '../Login.util'
 
 jest.mock('@api/fakeApiLogin')
@@ -72,7 +76,9 @@ describe('render login component properly', () => {
       error: 'something went wrong!'
     }
     signInwithFacebook(true, result)
-    expect(Alert.alert).toHaveBeenCalledWith('login has error: something went wrong!')
+    expect(Alert.alert).toHaveBeenCalledWith(
+      'login has error: something went wrong!'
+    )
   })
 
   test('On login with google success', async () => {

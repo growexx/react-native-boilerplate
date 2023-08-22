@@ -12,7 +12,7 @@ import {
   GraphRequest,
   GraphRequestManager
 } from 'react-native-fbsdk'
-import { GoogleSignin } from '@react-native-community/google-signin'
+import { GoogleSignin } from '@react-native-google-signin/google-signin'
 import { appleAuth } from '@invertase/react-native-apple-authentication'
 
 export const loginRequest = () => {
@@ -53,8 +53,7 @@ export const login = () => async dispatch => {
 export const logout = () => dispatch => {
   try {
     dispatch({ type: LOGOUT_SUCCESS })
-  } catch (error) {
-  }
+  } catch (error) {}
 }
 
 export const getInfoFromToken = token => {

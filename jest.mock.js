@@ -28,9 +28,9 @@ jest.mock('react-native-fbsdk', () => ({
   GraphRequest: jest.fn(),
   GraphRequestManager: jest.fn()
 }))
-jest.mock('@react-native-community/google-signin', () => {
+jest.mock('@react-native-google-signin/google-signin', () => {
   const mockGoogleSignin = jest.requireActual(
-    '@react-native-community/google-signin'
+    '@react-native-google-signin/google-signin'
   )
 
   mockGoogleSignin.GoogleSignin.hasPlayServices = () => Promise.resolve(true)
