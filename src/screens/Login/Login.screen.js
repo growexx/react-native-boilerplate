@@ -25,6 +25,10 @@ import { strings } from '@i18n'
 import { configs } from '@constants'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
 import images from '@images'
+import Spacing from '../../constants/Spacing'
+import FontSize from '../../constants/FontSize'
+import Colors from '../../constants/colors'
+import Font from '../../constants/fonts'
 
 const Login = props => {
   const dispatch = useDispatch()
@@ -37,7 +41,7 @@ const Login = props => {
     if (props.auth.type === LOGIN_SUCCESS) {
       dispatch(clearRedux())
     }
-  }, [props.auth])
+  }, [dispatch, props.auth])
 
   return (
     <>
@@ -59,6 +63,24 @@ const Login = props => {
             secureTextEntry={true}
             style={styles.inputField}
           />
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate('registration')
+            }}
+            style={{
+              padding: Spacing
+            }}>
+            <Text
+              // eslint-disable-next-line react-native/no-inline-styles
+              style={{
+                fontFamily: Font.BOLD,
+                color: Colors.text,
+                textAlign: 'center',
+                fontSize: FontSize.small
+              }}>
+              Create new account
+            </Text>
+          </TouchableOpacity>
           <TouchableOpacity
             testID={'ManualLoginButton'}
             style={styles.buttonWrapper}
