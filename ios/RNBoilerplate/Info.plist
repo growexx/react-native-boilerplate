@@ -27,7 +27,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb269165128028315</string>
+				<string>fb1560713857792182</string>
 			</array>
 		</dict>
 		<dict>
@@ -42,7 +42,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>269165128028315</string>
+	<string>1560713857792182</string>
 	<key>FacebookDisplayName</key>
 	<string>DevRNBoilerplate</string>
 	<key>LSApplicationQueriesSchemes</key>

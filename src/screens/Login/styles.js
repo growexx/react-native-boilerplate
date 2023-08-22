@@ -4,7 +4,7 @@ import { colors } from '@constants'
 const styles = StyleSheet.create({
   SafeAreaView: {
     height: Dimensions.get('window').height,
-    backgroundColor: colors.WHITE,
+    backgroundColor: colors.gray,
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -47,9 +47,15 @@ const styles = StyleSheet.create({
   socialButton: {
     height: 40,
     width: '100%',
-    borderRadius: 10,
-    justifyContent: 'center',
+    borderRadius: 15,
+    justifyContent: 'center'
   },
+  socialButtonGoogle: {
+    height: 50,
+    width: '103%',
+    borderRadius: 15,
+    justifyContent: 'center'
+  }
 })
 
 export default styles

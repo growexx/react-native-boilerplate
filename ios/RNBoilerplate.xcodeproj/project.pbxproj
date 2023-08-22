@@ -306,6 +306,7 @@
 						LastSwiftMigration = 1200;
 					};
 					849C378025F0AF080080EB40 = {
+						DevelopmentTeam = S75K747LX2;
 						LastSwiftMigration = 1200;
 					};
 					849C380325F0B7CC0080EB40 = {
@@ -386,7 +387,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App-DevRNBoilerplate/Pods-App-DevRNBoilerplate-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleSignIn/GoogleSignIn.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -408,7 +409,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App-RNBoilerplate/Pods-App-RNBoilerplate-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleSignIn/GoogleSignIn.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -540,7 +541,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App-StagRNBoilerplate/Pods-App-StagRNBoilerplate-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleSignIn/GoogleSignIn.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -802,6 +803,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DevRNBoilerplate/DevRNBoilerplate.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S75K747LX2;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = DevRNBoilerplate/Info.plist;
@@ -828,6 +830,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DevRNBoilerplate/DevRNBoilerplate.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S75K747LX2;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = DevRNBoilerplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
