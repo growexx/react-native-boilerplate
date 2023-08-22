@@ -6,6 +6,7 @@ import NetInfo from '@react-native-community/netinfo'
 import { updateNetStatus } from '@actions/deviceInfo.action'
 import SplashScreen from 'react-native-splash-screen'
 import { Home, Login } from '@screens'
+import RegisterScreen from '../screens/registeration/registration.screen'
 
 let unsubscribeNetListener
 const Stack = createStackNavigator()
@@ -35,6 +36,11 @@ const MainNavigation = props => {
         ) : (
           <Stack.Screen name="Home" component={Home} />
         )}
+        <Stack.Screen
+          name="registration"
+          component={RegisterScreen}
+          options={{ title: 'Registration' }}
+        />
         {/* add your another screen here using -> Stack.Screen */}
       </Stack.Navigator>
     </NavigationContainer>
