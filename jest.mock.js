@@ -89,9 +89,46 @@ jest.mock('@react-native-community/netinfo', () => {
   return RNCNetInfoMock
 })
 
+// jest.mock('react-native-code-push', () => {
+//   const cp = _ => app => app
+//   Object.assign(cp, {
+//     InstallMode: {},
+//     CheckFrequency: {},
+//     SyncStatus: {},
+//     UpdateState: {},
+//     DeploymentStatus: {},
+//     DEFAULT_UPDATE_DIALOG: {},
+
+//     checkForUpdate: jest.fn(),
+//     getConfiguration: jest.fn(),
+//     getCurrentPackage: jest.fn(),
+//     getUpdateMetadata: jest.fn(),
+//     log: jest.fn(),
+//     notifyAppReady: jest.fn(),
+//     notifyApplicationReady: jest.fn(),
+//     sync: jest.fn()
+//   })
+//   return cp
+// })
+
 jest.mock('react-native-splash-screen', () => {
   return {
     hide: jest.fn(),
     show: jest.fn()
   }
 })
+
+jest.mock('react-native-image-crop-picker', () => ({
+  openPicker: jest.fn(() =>
+    Promise.resolve({
+      path: 'mockedImagePath.jpg', // Provide a mocked image path
+    })
+  ),
+}));
+
+
+jest.mock('react-native-root-toast', () => ({
+  durations: {
+    LONG: 'long',
+  },
+}));
