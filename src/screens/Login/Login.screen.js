@@ -71,10 +71,10 @@ const Login = props => {
             onLogoutFinished={() => {}}
           />
           <GoogleSigninButton
-            style={styles.socialButton}
+            style={styles.socialButtonGoogle}
             size={GoogleSigninButton.Size.Wide}
             color={GoogleSigninButton.Color.Dark}
-            onPress={signInWithGoogle}
+            onPress={() => dispatch(signInWithGoogle())}
           />
           {Platform.OS === 'ios' && (
             <AppleButton

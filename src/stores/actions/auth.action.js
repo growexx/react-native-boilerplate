@@ -88,12 +88,11 @@ export const signInwithFacebook = (error, result) => {
     })
   }
 }
-
-export const signInWithGoogle = async () => {
+export const signInWithGoogle = () => async dispatch => {
   try {
     await GoogleSignin.hasPlayServices()
     const userInfo = await GoogleSignin.signIn()
-    Alert.alert('Signed In as: ' + userInfo.user.name)
+    dispatch(loginSuccess(userInfo.user))
   } catch (error) {
     Alert.alert(error.message)
   }
