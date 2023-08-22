@@ -4,7 +4,7 @@ import { colors } from '@constants'
 const styles = StyleSheet.create({
   SafeAreaView: {
     height: Dimensions.get('window').height,
-    backgroundColor: colors.GREY,
+    backgroundColor: colors.gray,
     justifyContent: 'center',
     alignItems: 'center'
   },
