@@ -74,3 +74,4 @@ ios/tmp.xcconfig
 
 #test-report
 coverage/
+android/java_pid67336.hprof

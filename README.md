@@ -1,5 +1,32 @@
-# react-native-boilerplate
- It is a template that you can clone and reuse for every project. It is starting point for React Native application.
+## Getting Started
+
+The Boilerplate contains the minimal implementation required to create a new library or project. The repository code is preloaded with some basic components like basic app architecture, app theme, constants and required dependencies to create a new project. By using boiler plate code as standard initializer, we can have same patterns in all the projects that will inherit it. This will also help in reducing setup & development time by allowing you to use same code pattern and avoid re-writing from scratch.
+
+
+## How to Use
+
+Download or clone this repo by using the link below:
+
+```
+https://github.com/growexx/react-native-boilerplate
+```
+
+1. Clone this repo
+2. Go to project's root directory, `cd <your project name>`
+3. Remove `.git` folder, `rm -rf .git`
+4. Use React Native Rename to update project name `$ npx react-native-rename <newName>`
+5. Go to ios folder and rename DevRNBoilerplate & StagRNBoilerplate to DevNewName & StagNewName
+6. Run `npm install` to install dependencies
+7. Run `cd ios` and `pod install`
+8. Follow all the instructions listed just after this section in Configuring iOS environment
+9. Follow renaming steps given below to rename displayname
+10. Start the packager with `npm start`
+11. Connect your device or use emulator that's installed in your pc
+12. Run the test application:
+
+- Check package.json to run project
+- Enjoy!!!
+
 
 ## Features
 
@@ -17,26 +44,7 @@
     Development, Staging, Production
 #### 7. Social Login
     Login with Facebook, Google & Apple(iOS only)
-#### 8. Silent updates
-    React-native silent(hot) updates with `react-native-code-push`
 
-## Getting Started
-
-1. Clone this repo
-2. Go to project's root directory, `cd <your project name>`
-3. Remove `.git` folder, `rm -rf .git`
-4. Use React Native Rename to update project name `$ npx react-native-rename <newName>`
-5. Go to ios folder and rename DevRNBoilerplate & StagRNBoilerplate to DevNewName & StagNewName
-6. Run `npm install` to install dependencies
-7. Run `cd ios` and `pod install`
-8. Follow all the instructions listed just after this section in Configuring iOS environment
-9. Follow renaming steps given below to rename displayname
-10. Start the packager with `npm start`
-11. Connect your device or use emulator that's installed in your pc
-12. Run the test application:
-
-- Check package.json to run project
-- Enjoy!!!
 
 ## Packages
 | Package | Description |
@@ -103,13 +111,6 @@
   So, if you want to implement in Staging and Production env, then add required keys and urls to specific env.
   Reference article links are provided in bottom 'Resources' section
 
-  #### Handling console logs
-  In src/withcodePush.js line 8-11, logs are disabled for Production
-  
-  `if (ENV === 'Production') {
-    console.log = () => {}
-  }`
-
   #### Handling redux logs
   In src/stores/index.js line 12-15, logs are disabled for Production
   
@@ -145,4 +146,3 @@
 | Adding Splash screen | https://medium.com/@appstud/add-a-splash-screen-to-a-react-native-app-810492e773f9 |
 | Login with facebook | https://medium.com/@mehrankhandev/integrating-fbsdk-facebook-login-in-react-native-7b7600ce74a7 |
 | Login with Google | https://github.com/react-native-google-signin/google-signin |
-| React native code push (Hot update) | https://www.npmjs.com/package/react-native-code-push |

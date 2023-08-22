@@ -9,7 +9,7 @@ import {
   Platform
 } from 'react-native'
 import { LoginButton } from 'react-native-fbsdk'
-import { GoogleSigninButton } from '@react-native-community/google-signin'
+import { GoogleSigninButton } from '@react-native-google-signin/google-signin'
 import { AppleButton } from '@invertase/react-native-apple-authentication'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from './styles'
