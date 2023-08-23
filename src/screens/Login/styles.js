@@ -1,6 +1,8 @@
 import { Dimensions, StyleSheet } from 'react-native'
 import { colors } from '@constants'
-
+import FontSize from '../../constants/FontSize'
+import Colors from '../../constants/colors'
+import Font from '../../constants/fonts'
 const styles = StyleSheet.create({
   SafeAreaView: {
     height: Dimensions.get('window').height,
@@ -55,6 +57,12 @@ const styles = StyleSheet.create({
     width: '103%',
     borderRadius: 15,
     justifyContent: 'center'
+  },
+  createAccountButton: {
+    fontFamily: Font.BOLD,
+    color: Colors.text,
+    textAlign: 'center',
+    fontSize: FontSize.small
   }
 })
 

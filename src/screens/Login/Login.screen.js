@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Image,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  Alert,
   Platform
 } from 'react-native'
 import { LoginButton } from 'react-native-fbsdk'
@@ -26,16 +25,15 @@ import { configs } from '@constants'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
 import images from '@images'
 import Spacing from '../../constants/Spacing'
-import FontSize from '../../constants/FontSize'
-import Colors from '../../constants/colors'
-import Font from '../../constants/fonts'
 
 const Login = props => {
   const dispatch = useDispatch()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   useEffect(() => {
     if (props.auth.type === LOGIN_FAILED) {
-      Alert.alert('Login failed!')
+      // Alert.alert('Login failed!')
       dispatch(clearRedux())
     }
     if (props.auth.type === LOGIN_SUCCESS) {
@@ -55,11 +53,15 @@ const Login = props => {
           <Text style={styles.h1}>{strings('auth.login')}</Text>
           <TextInput
             placeholder={strings('auth.email-placeholder')}
+            value={email}
+            onChangeText={setEmail}
             keyboardType="email-address"
             style={styles.inputField}
           />
           <TextInput
             placeholder={strings('auth.password-placeholder')}
+            value={password}
+            onChangeText={setPassword}
             secureTextEntry={true}
             style={styles.inputField}
           />
@@ -70,21 +72,12 @@ const Login = props => {
             style={{
               padding: Spacing
             }}>
-            <Text
-              // eslint-disable-next-line react-native/no-inline-styles
-              style={{
-                fontFamily: Font.BOLD,
-                color: Colors.text,
-                textAlign: 'center',
-                fontSize: FontSize.small
-              }}>
-              Create new account
-            </Text>
+            <Text style={styles.createAccountButton}>Create new account</Text>
           </TouchableOpacity>
           <TouchableOpacity
             testID={'ManualLoginButton'}
             style={styles.buttonWrapper}
-            onPress={() => dispatch(login())}>
+            onPress={() => dispatch(login(email, password))}>
             <Text style={styles.buttonText}>{strings('auth.login')}</Text>
           </TouchableOpacity>
           <LoginButton
