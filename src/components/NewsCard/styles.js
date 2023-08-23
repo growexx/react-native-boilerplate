@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     width: 100,
     resizeMode: 'cover',
     borderRadius: 15,
-    backgroundColor: colors.LIGHT_GREY
+    backgroundColor: colors.gray
   },
   rightContainer: {
     flex: 1,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     fontWeight: '600',
-    color: colors.BLACK
+    color: colors.text
   },
   sourceTimeWrapper: {
     flexDirection: 'row',
@@ -35,12 +35,12 @@ const styles = StyleSheet.create({
   sourceText: {
     fontSize: 12,
     fontWeight: '400',
-    color: colors.LIGHT_GREY
+    color: colors.gray
   },
   timeText: {
     fontSize: 12,
     fontWeight: '400',
-    color: colors.LIGHT_GREY,
+    color: colors.gray,
     alignSelf: 'flex-end'
   }
 })

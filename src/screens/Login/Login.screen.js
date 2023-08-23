@@ -14,6 +14,7 @@ import { AppleButton } from '@invertase/react-native-apple-authentication'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from './styles'
 import { connect, useDispatch } from 'react-redux'
+import InstagramLogin from 'react-native-instagram-login'
 import {
   login,
   clearRedux,
