@@ -3,7 +3,7 @@ import { isEmailValid, isNonEmptyField } from '../utils/validations'
 
 const handleLogin = async (email, password) => {
   if (!isNonEmptyField(email) || !isNonEmptyField(password)) {
-    showToast('All fields are required field.')
+    showToast('All fields are required.')
     return false
   } else if (!isEmailValid(email)) {
     showToast(
