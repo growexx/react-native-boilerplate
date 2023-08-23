@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import {
   Image,
   Text,
@@ -14,11 +14,13 @@ import { AppleButton } from '@invertase/react-native-apple-authentication'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from './styles'
 import { connect, useDispatch } from 'react-redux'
+import InstagramLogin from 'react-native-instagram-login'
 import {
   login,
   clearRedux,
   signInwithFacebook,
   signInWithGoogle,
+  signInWithInstagram,
   signInWithApple
 } from '@actions/auth.action'
 import { strings } from '@i18n'
@@ -32,6 +34,7 @@ import Font from '../../constants/fonts'
 
 const Login = props => {
   const dispatch = useDispatch()
+  const insRef = useRef()
 
   useEffect(() => {
     if (props.auth.type === LOGIN_FAILED) {
@@ -87,6 +90,14 @@ const Login = props => {
             onPress={() => dispatch(login())}>
             <Text style={styles.buttonText}>{strings('auth.login')}</Text>
           </TouchableOpacity>
+          {Platform.OS === 'ios' && (
+            <AppleButton
+              buttonStyle={AppleButton.Style.BLACK}
+              buttonType={AppleButton.Type.SIGN_IN}
+              style={styles.socialButton}
+              onPress={signInWithApple}
+            />
+          )}
           <LoginButton
             style={styles.socialButton}
             onLoginFinished={signInwithFacebook}
@@ -98,14 +109,21 @@ const Login = props => {
             color={GoogleSigninButton.Color.Dark}
             onPress={() => dispatch(signInWithGoogle())}
           />
-          {Platform.OS === 'ios' && (
-            <AppleButton
-              buttonStyle={AppleButton.Style.BLACK}
-              buttonType={AppleButton.Type.SIGN_IN}
-              style={styles.socialButton}
-              onPress={signInWithApple}
-            />
-          )}
+          <TouchableOpacity
+            testID={'ManualLoginButton'}
+            style={styles.buttonWrapper}
+            onPress={() => insRef.current.show()}>
+            <Text style={styles.buttonText}>{strings('auth.insta-login')}</Text>
+          </TouchableOpacity>
+          <InstagramLogin
+            ref={insRef}
+            appId="142239872267996"
+            appSecret="36aed31f4c3704495a63cacd8b5838ae"
+            redirectUrl="https://www.growexx.com/"
+            scopes={['user_profile']}
+            onLoginSuccess={() => dispatch(signInWithInstagram())}
+            onLoginFailure={data => console.log(data)}
+          />
         </View>
       </KeyboardAwareScrollView>
     </>

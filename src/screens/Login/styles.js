@@ -28,19 +28,19 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: colors.LIGHT_GREY,
+    borderColor: colors.blue,
     borderRadius: 10
   },
   buttonWrapper: {
     height: 40,
     width: '100%',
-    backgroundColor: colors.DARK_GREY,
+    backgroundColor: colors.darkText,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center'
   },
   buttonText: {
-    color: colors.WHITE,
+    color: colors.background,
     fontSize: 18,
     fontWeight: 'bold'
   },

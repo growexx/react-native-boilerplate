@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     paddingVertical: 8,
     borderRadius: 10,
-    marginTop: 15,
+    marginTop: 15
   },
   retryTextDark: {
     fontSize: 16,
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     paddingVertical: 8,
     borderRadius: 10,
-    marginTop: 15,
+    marginTop: 15
   },
   activeView: {
     paddingHorizontal: 15,
