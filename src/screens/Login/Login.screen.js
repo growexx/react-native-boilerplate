@@ -35,6 +35,7 @@ import Font from '../../constants/fonts'
 const Login = props => {
   const dispatch = useDispatch()
   const insRef = useRef()
+
   useEffect(() => {
     if (props.auth.type === LOGIN_FAILED) {
       Alert.alert('Login failed!')
@@ -113,14 +114,6 @@ const Login = props => {
             style={styles.buttonWrapper}
             onPress={() => insRef.current.show()}>
             <Text style={styles.buttonText}>{strings('auth.insta-login')}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            testID={'ManualLoginButton'}
-            style={styles.buttonWrapper}
-            onPress={() => insRef.current.show()}>
-            <Text style={styles.buttonText}>
-              {strings('auth.twitter-login')}
-            </Text>
           </TouchableOpacity>
           <InstagramLogin
             ref={insRef}
