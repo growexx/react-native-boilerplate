@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import {
+  Appearance,
   FlatList,
   SafeAreaView,
   Text,
   TouchableOpacity,
-  View
+  View,
+  useColorScheme
 } from 'react-native'
 //import Icon from 'react-native-vector-icons/dist/FontAwesome' //NNeed to use alternnate library
 import { connect, useDispatch } from 'react-redux'
@@ -12,11 +14,14 @@ import { fetchNews, clearRedux } from '@actions/news.action'
 import { FETCH_NEWS_SUCCESS } from '@types/news.types'
 import { NewsCard } from '@components'
 import styles from './styles'
-import { colors } from '@constants'
 import { logout } from '@actions/auth.action'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons'
+import colors from '../../constants/colors'
 
 const Home = props => {
   const dispatch = useDispatch()
+  const colorScheme = useColorScheme()
   const [page, setPage] = useState(1)
   const filterList = [
     'general',
@@ -49,9 +54,26 @@ const Home = props => {
   const renderError = () => {
     return (
       <View style={styles.errorContainer}>
-        <Text style={styles.errorTitle}>Oops!</Text>
-        <Text style={styles.errorMessage}>Something went wrong</Text>
-        <Text style={styles.errorMessage}>
+        <Text
+          style={
+            colorScheme === 'dark' ? styles.errorTitleDark : styles.errorTitle
+          }>
+          Oops!
+        </Text>
+        <Text
+          style={
+            colorScheme === 'dark'
+              ? styles.errorMessageDark
+              : styles.errorMessage
+          }>
+          Something went wrong
+        </Text>
+        <Text
+          style={
+            colorScheme === 'dark'
+              ? styles.errorMessageDark
+              : styles.errorMessage
+          }>
           Please check your internet connection
         </Text>
         <TouchableOpacity
@@ -71,19 +93,46 @@ const Home = props => {
     dispatch(fetchNews(1, filter))
   }
 
+  const getFilterItemStyle = isActiveFilter => {
+    if (isActiveFilter) {
+      if (colorScheme === 'dark') {
+        return styles.activeViewDark
+      } else {
+        return styles.activeView
+      }
+    } else {
+      if (colorScheme === 'dark') {
+        return styles.inactiveViewDark
+      } else {
+        return styles.inactiveView
+      }
+    }
+  }
+
+  const getFilterItemTextStyle = isActiveFilter => {
+    if (isActiveFilter) {
+      if (colorScheme === 'dark') {
+        return styles.activeViewTextDark
+      } else {
+        return styles.activeViewText
+      }
+    } else {
+      if (colorScheme === 'dark') {
+        return styles.inactiveViewTextDark
+      } else {
+        return styles.inactiveViewText
+      }
+    }
+  }
+
   const renderFilterItem = ({ item, index }) => {
     const isActiveFilter = item === activeFilter
     return (
       <TouchableOpacity
         testID={`FilterButton-${index}`}
-        style={isActiveFilter ? styles.activeView : styles.inactiveView}
+        style={getFilterItemStyle(isActiveFilter)}
         onPress={() => onFilterClick(item)}>
-        <Text
-          style={
-            isActiveFilter ? styles.activeViewText : styles.inactiveViewText
-          }>
-          {item}
-        </Text>
+        <Text style={getFilterItemTextStyle(isActiveFilter)}>{item}</Text>
       </TouchableOpacity>
     )
   }
@@ -91,21 +140,62 @@ const Home = props => {
   return (
     <>
       <SafeAreaView
-        style={styles.SafeAreaView}
+        style={
+          colorScheme === 'dark' ? styles.SafeAreaViewDark : styles.SafeAreaView
+        }
         forceInset={{ bottom: 'never' }}>
-        <View style={styles.header}>
-          <TouchableOpacity style={styles.headerItem}>
-            {/* <Icon name="user" size={30} color={colors.DARK_GREY} /> */}
+        <View
+          style={colorScheme === 'dark' ? styles.headerDark : styles.header}>
+          <TouchableOpacity
+            style={
+              colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
+            }>
+            <Icon
+              name="user"
+              size={30}
+              color={
+                colorScheme === 'dark' ? colors.dark.gray : colors.light.gray
+              }
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            testID={'themeChange'}
+            style={
+              colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
+            }
+            onPress={() => { }}>
+            <MCIcon
+              name="theme-light-dark"
+              size={30}
+              color={
+                colorScheme === 'dark' ? colors.dark.gray : colors.light.gray
+              }
+            />
           </TouchableOpacity>
           <TouchableOpacity
             testID={'LogoutButton'}
-            style={styles.headerItem}
+            style={
+              colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
+            }
             onPress={() => dispatch(logout())}>
-            {/* <Icon name="sign-out" size={30} color={colors.DARK_GREY} /> */}
+            <Icon
+              name="sign-out"
+              size={30}
+              color={
+                colorScheme === 'dark' ? colors.dark.gray : colors.light.gray
+              }
+            />
           </TouchableOpacity>
         </View>
         <View>
           <FlatList
+            style={{
+              paddingVertical: 10,
+              backgroundColor:
+                colorScheme === 'dark'
+                  ? colors.dark.background
+                  : colors.light.background
+            }}
             horizontal={true}
             data={filterList}
             keyExtractor={index => index.toString()}
@@ -113,7 +203,10 @@ const Home = props => {
             showsHorizontalScrollIndicator={false}
           />
         </View>
-        <View style={styles.container}>
+        <View
+          style={
+            colorScheme === 'dark' ? styles.containerDark : styles.container
+          }>
           {props.error ? (
             renderError()
           ) : (
@@ -121,7 +214,9 @@ const Home = props => {
               testID={'FlatList'}
               data={props.newsList}
               keyExtractor={(item, index) => index.toString()}
-              renderItem={NewsCard}
+              renderItem={object => (
+                <NewsCard item={object.item} colorScheme={colorScheme} />
+              )}
               showsVerticalScrollIndicator={false}
               onEndReached={() => dispatch(fetchNews(page, activeFilter))}
               onEndReachedThreshold={0.7}

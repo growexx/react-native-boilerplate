@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '@constants'
+import colors from '../../constants/colors'
 
 const styles = StyleSheet.create({
   container: {
@@ -26,7 +26,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     fontWeight: '600',
-    color: colors.text
+    color: colors.light.text
+  },
+  titleTextDark: {
+    fontSize: 14,
+    lineHeight: 20,
+    fontWeight: '600',
+    color: colors.dark.text
   },
   sourceTimeWrapper: {
     flexDirection: 'row',
@@ -35,12 +41,23 @@ const styles = StyleSheet.create({
   sourceText: {
     fontSize: 12,
     fontWeight: '400',
-    color: colors.gray
+    color: colors.light.darkText
+  },
+  sourceTextDark: {
+    fontSize: 12,
+    fontWeight: '400',
+    color: colors.dark.gray
   },
   timeText: {
     fontSize: 12,
     fontWeight: '400',
-    color: colors.gray,
+    color: colors.light.darkText,
+    alignSelf: 'flex-end'
+  },
+  timeTextDark: {
+    fontSize: 12,
+    fontWeight: '400',
+    color: colors.dark.darkText,
     alignSelf: 'flex-end'
   }
 })
