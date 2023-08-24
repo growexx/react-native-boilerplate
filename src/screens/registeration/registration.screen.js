@@ -138,13 +138,13 @@ const styles = StyleSheet.create({
   },
   signup_text: {
     fontFamily: Font.BOLD,
-    color: Colors.onPrimary,
+    color: Colors.light.onPrimary,
     textAlign: 'center',
     fontSize: FontSize.large
   },
   signup: {
     padding: Spacing * 1.5,
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.light.primary,
     borderRadius: Spacing,
     shadowColor: Colors.primary,
     shadowOffset: {

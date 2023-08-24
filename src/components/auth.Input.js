@@ -1,4 +1,4 @@
-import { View, TextInput, StyleSheet } from 'react-native'
+import { View, TextInput, StyleSheet, useColorScheme } from 'react-native'
 import React, { useState } from 'react'
 import Spacing from '../constants/Spacing'
 import FontSize from '../constants/FontSize'
@@ -8,10 +8,14 @@ import Font from '../constants/fonts'
 const AuthInput = ({ email, setEmail, password, setPassword }) => {
   const [focused, setFocused] = useState(false)
   const [passWordFocus, setPassWordFocus] = useState(false)
+  const colorScheme = useColorScheme
   return (
     <View style={styles.view}>
       <TextInput
-        style={[styles.inputText, focused && styles.focused]}
+        style={[
+          colorScheme === 'dark' ? styles.inputTextDark : styles.inputText,
+          focused && styles.focused ,  
+        ]}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         onChangeText={setEmail}
@@ -43,9 +47,17 @@ const AuthInput = ({ email, setEmail, password, setPassword }) => {
 const styles = StyleSheet.create({
   focused: {
     borderWidth: 3,
-    borderColor: Colors.primary,
+    borderColor: Colors.light.primary,
     shadowOffset: { width: 4, height: Spacing },
-    shadowColor: Colors.primary,
+    shadowColor: Colors.light.primary,
+    shadowOpacity: 0.2,
+    shadowRadius: Spacing
+  },
+  focusedDark: {
+    borderWidth: 3,
+    borderColor: Colors.dark.primary,
+    shadowOffset: { width: 4, height: Spacing },
+    shadowColor: Colors.light.primary,
     shadowOpacity: 0.2,
     shadowRadius: Spacing
   },
@@ -58,6 +70,17 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.lightPrimary,
     borderRadius: Spacing,
     marginVertical: Spacing
+  },
+  inputTextDark: {
+    width: '100%',
+    borderWidth: 0.5,
+    fontFamily: Font.REGULAR,
+    fontSize: FontSize.small,
+    padding: Spacing * 1.5,
+    backgroundColor: Colors.dark.lightPrimary,
+    borderRadius: Spacing,
+    marginVertical: Spacing,
+    borderColor: Colors.dark.text
   },
   view: { width: '100%' }
 })

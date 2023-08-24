@@ -23,7 +23,7 @@ export default {
     darkText: light,
     text: white,
     background: black,
-    primary: lightBlue,
+    primary: blue,
     onPrimary: black,
     active: lightBlue,
     borderWithOpacity: '#828eb8',
