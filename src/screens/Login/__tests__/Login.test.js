@@ -3,7 +3,6 @@ import { Alert } from 'react-native'
 import { render, fireEvent, act, cleanup } from '@testing-library/react-native'
 import { Provider } from 'react-redux'
 import { AccessToken } from 'react-native-fbsdk'
-import { GoogleSignin } from '@react-native-community/google-signin'
 import { appleAuth } from '@invertase/react-native-apple-authentication'
 import Login from '../Login.screen'
 import { store } from '@stores'
@@ -14,6 +13,7 @@ import {
   signInWithApple
 } from '@actions/auth.action'
 import { getLoginResponse } from '../Login.util'
+import { GoogleSignin } from '@react-native-google-signin/google-signin'
 
 jest.mock('@api/fakeApiLogin')
 

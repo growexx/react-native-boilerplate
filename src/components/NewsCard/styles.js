@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     width: 100,
     resizeMode: 'cover',
     borderRadius: 15,
-    backgroundColor: colors.LIGHT_GREY
+    backgroundColor: colors.gray
   },
   rightContainer: {
     flex: 1,

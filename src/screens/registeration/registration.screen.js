@@ -17,10 +17,9 @@ import handleRegistration from '../../controllers/registrationController'
 import PhoneInput from 'react-native-phone-number-input'
 import showToast from '../../components/toast'
 import ImagePicker from 'react-native-image-crop-picker'
+import AuthInput from '../../components/auth.Input'
 
 const RegisterScreen = ({ navigation }) => {
-  const [focused, setFocused] = useState(false)
-  const [passWordFocus, setPassWordFocus] = useState(false)
   const [confirmPasswordFocus, setConfirmPasswordFocus] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -61,32 +60,11 @@ const RegisterScreen = ({ navigation }) => {
             style={{
               marginVertical: Spacing * 3
             }}>
-            <TextInput
-              style={[styles.inputText, focused && styles.focused]}
-              onFocus={() => setFocused(true)}
-              onBlur={() => setFocused(false)}
-              onChangeText={setEmail}
-              value={email}
-              placeholder="Enter e-mail address"
-              autoComplete="email"
-              autoCorrect={false}
-              inputMode="email"
-              keyboardType="email-address"
-              testID="email-input"
-              placeholderTextColor={Colors.darkText}
-            />
-            <TextInput
-              style={[styles.inputText, passWordFocus && styles.focused]}
-              onFocus={() => setPassWordFocus(true)}
-              onBlur={() => setPassWordFocus(false)}
-              onChangeText={setPassword}
-              value={password}
-              placeholder="Enter your password"
-              autoComplete="off"
-              autoCorrect={false}
-              secureTextEntry={true}
-              testID="password-input"
-              placeholderTextColor={Colors.darkText}
+            <AuthInput
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
             />
             <TextInput
               style={[styles.inputText, confirmPasswordFocus && styles.focused]}
@@ -103,7 +81,6 @@ const RegisterScreen = ({ navigation }) => {
             />
             <PhoneInput
               ref={phoneInput}
-              style={[styles.inputText, styles.focused]}
               placeholder="Enter phone number"
               value={mobile}
               onChangeText={text => {
@@ -111,6 +88,7 @@ const RegisterScreen = ({ navigation }) => {
               }}
               defaultCode="IN"
               withDarkTheme
+              containerStyle={styles.phoneInput}
             />
           </View>
 
@@ -120,6 +98,8 @@ const RegisterScreen = ({ navigation }) => {
               const checkValid = phoneInput.current?.isValidNumber(mobile)
               if (checkValid) {
                 handleRegistration(email, password, confirmPassword, navigation)
+              } else if (mobile === '') {
+                showToast('All fields are required.')
               } else {
                 showToast('Please Enter Valid Phone Number.')
               }
@@ -158,14 +138,13 @@ const styles = StyleSheet.create({
   },
   signup_text: {
     fontFamily: Font.BOLD,
-    color: Colors.onPrimary,
+    color: Colors.light.onPrimary,
     textAlign: 'center',
     fontSize: FontSize.large
   },
   signup: {
     padding: Spacing * 1.5,
-    backgroundColor: Colors.primary,
-    marginVertical: Spacing * 0.5,
+    backgroundColor: Colors.light.primary,
     borderRadius: Spacing,
     shadowColor: Colors.primary,
     shadowOffset: {
@@ -184,6 +163,7 @@ const styles = StyleSheet.create({
     shadowRadius: Spacing
   },
   inputText: {
+    borderWidth: 0.5,
     fontFamily: Font.REGULAR,
     fontSize: FontSize.small,
     padding: Spacing * 1.5,
@@ -216,6 +196,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#333'
+  },
+  phoneInput: {
+    width: '100%',
+    fontFamily: Font.REGULAR,
+    fontSize: FontSize.small,
+    padding: Spacing * 1.5,
+    backgroundColor: Colors.lightPrimary,
+    borderRadius: Spacing
   }
 })
 export default RegisterScreen

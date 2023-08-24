@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
   Image,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
-  Alert,
-  Platform
+  Platform,
+  useColorScheme
 } from 'react-native'
 import { LoginButton } from 'react-native-fbsdk'
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin'
@@ -14,30 +13,33 @@ import { AppleButton } from '@invertase/react-native-apple-authentication'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from './styles'
 import { connect, useDispatch } from 'react-redux'
+import InstagramLogin from 'react-native-instagram-login'
 import {
   login,
   clearRedux,
   signInwithFacebook,
   signInWithGoogle,
+  signInWithInstagram,
   signInWithApple
 } from '@actions/auth.action'
 import { strings } from '@i18n'
-import { configs } from '@constants'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
 import images from '@images'
 import Spacing from '../../constants/Spacing'
-import FontSize from '../../constants/FontSize'
-import Colors from '../../constants/colors'
-import Font from '../../constants/fonts'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
+import AuthInput from '../../components/auth.Input'
 
 const Login = props => {
   const dispatch = useDispatch()
+  const insRef = useRef()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const colorScheme = useColorScheme()
 
   useEffect(() => {
     if (props.auth.type === LOGIN_FAILED) {
-      Alert.alert('Login failed!')
+      // Alert.alert('Login failed!')
       dispatch(clearRedux())
     }
     if (props.auth.type === LOGIN_SUCCESS) {
@@ -50,59 +52,58 @@ const Login = props => {
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps={'handled'}
         contentContainerStyle={styles.SafeAreaView}>
-        <Text>Environment: {configs.ENV}</Text>
-        <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text>
+        {/* <Text>Environment: {configs.ENV}</Text>
+        <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text> */}
         <View style={styles.container}>
           <Image source={images.appLogo} style={styles.logoImage} />
           <Text style={styles.h1}>{LanguageUtils.getLangText(languagekeys.login)}</Text>
-          <TextInput
-            placeholder={LanguageUtils.getLangText(languagekeys.emailAddress)}
-            keyboardType="email-address"
-            style={styles.inputField}
+          <AuthInput
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
           />
-          <TextInput
-            placeholder={LanguageUtils.getLangText(languagekeys.password)}
-            secureTextEntry={true}
-            style={styles.inputField}
-          />
+          <View style={styles.register_view}>
+            <Text
+              style={
+                colorScheme === 'dark'
+                  ? styles.dont_have_account_dark
+                  : styles.dont_have_account
+              }>
+              Don't have an account?
+            </Text>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('registration')
+              }}
+              style={{
+                padding: Spacing
+              }}>
+              <Text style={styles.createAccountButton}>Register Here.</Text>
+            </TouchableOpacity>
+          </View>
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate('registration')
+              props.navigation.navigate('forgotPassword')
             }}
             style={{
               padding: Spacing
             }}>
-            <Text
-              // eslint-disable-next-line react-native/no-inline-styles
-              style={{
-                fontFamily: Font.BOLD,
-                color: Colors.text,
-                textAlign: 'center',
-                fontSize: FontSize.small
-              }}>
-              Create new account
-            </Text>
+            <Text style={styles.createAccountButton}>Forgot Password?</Text>
           </TouchableOpacity>
           <TouchableOpacity
             testID={'ManualLoginButton'}
-            style={styles.buttonWrapper}
-            onPress={() => dispatch(login())}>
-            <Text style={styles.buttonText}>
-              {/* Login */}
-              {LanguageUtils.getLangText(languagekeys.login)}
+            style={colorScheme === 'dark' ? styles.login_dark : styles.login}
+            onPress={() => dispatch(login(email, password))}>
+            <Text
+              style={
+                colorScheme === 'dark'
+                  ? styles.login_text_dark
+                  : styles.login_text
+              }>
+              {strings('auth.login')}
             </Text>
           </TouchableOpacity>
-          <LoginButton
-            style={styles.socialButton}
-            onLoginFinished={signInwithFacebook}
-            onLogoutFinished={() => { }}
-          />
-          <GoogleSigninButton
-            style={styles.socialButtonGoogle}
-            size={GoogleSigninButton.Size.Wide}
-            color={GoogleSigninButton.Color.Dark}
-            onPress={() => dispatch(signInWithGoogle())}
-          />
           {Platform.OS === 'ios' && (
             <AppleButton
               buttonStyle={AppleButton.Style.BLACK}
@@ -111,6 +112,32 @@ const Login = props => {
               onPress={signInWithApple}
             />
           )}
+          <LoginButton
+            style={styles.socialButton}
+            onLoginFinished={signInwithFacebook}
+            onLogoutFinished={() => {}}
+          />
+          <GoogleSigninButton
+            style={styles.socialButtonGoogle}
+            size={GoogleSigninButton.Size.Standard}
+            color={GoogleSigninButton.Color.Dark}
+            onPress={() => dispatch(signInWithGoogle())}
+          />
+          <TouchableOpacity
+            testID={'ManualLoginButton'}
+            style={styles.buttonWrapper}
+            onPress={() => insRef.current.show()}>
+            <Text style={styles.buttonText}>{strings('auth.insta-login')}</Text>
+          </TouchableOpacity>
+          <InstagramLogin
+            ref={insRef}
+            appId="142239872267996"
+            appSecret="36aed31f4c3704495a63cacd8b5838ae"
+            redirectUrl="https://www.growexx.com/"
+            scopes={['user_profile']}
+            onLoginSuccess={() => dispatch(signInWithInstagram())}
+            onLoginFailure={data => console.log(data)}
+          />
         </View>
       </KeyboardAwareScrollView>
     </>

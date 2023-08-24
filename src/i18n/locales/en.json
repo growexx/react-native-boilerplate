@@ -2,10 +2,15 @@
   "auth": {
     "email-placeholder": "Enter email address",
     "password-placeholder": "Enter password",
-    "login": "Login"
+    "login": "Login",
+    "insta-login": "Login with instagram",
+    "twitter-login": "Login with twitter",
+    "forgot-password": "Forgot password",
+    "submit":"Submit"
   },
   "validation": {
     "invalid-email": "Invalid email address",
     "invalid-password": "Invalid password"
   }
+
 }

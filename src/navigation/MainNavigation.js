@@ -8,6 +8,7 @@ import SplashScreen from 'react-native-splash-screen'
 import { Home, Login } from '@screens'
 import RegisterScreen from '../screens/registeration/registration.screen'
 import { useColorScheme } from 'react-native'
+import ForgotPasswordScreen from '../screens/Forgotpassword/forgotPassword.screen'
 
 let unsubscribeNetListener
 const Stack = createStackNavigator()
@@ -34,14 +35,23 @@ const MainNavigation = props => {
     <NavigationContainer theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack.Navigator headerShown="false">
         {!isLoggedIn ? (
-          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
         ) : (
           <Stack.Screen name="Home" component={Home} />
         )}
         <Stack.Screen
           name="registration"
           component={RegisterScreen}
-          options={{ title: 'Registration' }}
+          options={{ title: '' }}
+        />
+        <Stack.Screen
+          name="forgotPassword"
+          component={ForgotPasswordScreen}
+          options={{ title: 'Forgot Password' }}
         />
         {/* add your another screen here using -> Stack.Screen */}
       </Stack.Navigator>

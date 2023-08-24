@@ -40,10 +40,10 @@ export const clearRedux = () => {
   }
 }
 
-export const login = () => async dispatch => {
+export const login = (email, password) => async dispatch => {
   try {
     dispatch(loginRequest())
-    const { data } = await loginUser()
+    const { data } = await loginUser(email, password)
     dispatch(loginSuccess(data))
   } catch (error) {
     dispatch(loginFail())
@@ -96,6 +96,10 @@ export const signInWithGoogle = () => async dispatch => {
   } catch (error) {
     Alert.alert(error.message)
   }
+}
+
+export const signInWithInstagram = token => async dispatch => {
+  dispatch(loginSuccess(token))
 }
 
 export const signInWithApple = async () => {

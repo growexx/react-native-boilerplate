@@ -11,7 +11,7 @@ const handleRegistration = async (email, password, cpassword, navigation) => {
     !isNonEmptyField(password) ||
     !isNonEmptyField(cpassword)
   ) {
-    showToast('All fields are required field.')
+    showToast('All fields are required.')
   } else if (!isEmailValid(email)) {
     showToast(
       'You have entered invalid email address, Please, enter a valid email address.'
