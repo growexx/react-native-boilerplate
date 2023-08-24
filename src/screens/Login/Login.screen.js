@@ -1,13 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import {
-  Image,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-  Alert,
-  Platform
-} from 'react-native'
+import React, { useEffect, useRef, useState } from 'react'
+import { Image, Text, TouchableOpacity, View, Platform } from 'react-native'
 import { LoginButton } from 'react-native-fbsdk'
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin'
 import { AppleButton } from '@invertase/react-native-apple-authentication'
@@ -24,21 +16,20 @@ import {
   signInWithApple
 } from '@actions/auth.action'
 import { strings } from '@i18n'
-import { configs } from '@constants'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
 import images from '@images'
 import Spacing from '../../constants/Spacing'
-import FontSize from '../../constants/FontSize'
-import Colors from '../../constants/colors'
-import Font from '../../constants/fonts'
+import AuthInput from '../../components/auth.Input'
 
 const Login = props => {
   const dispatch = useDispatch()
   const insRef = useRef()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   useEffect(() => {
     if (props.auth.type === LOGIN_FAILED) {
-      Alert.alert('Login failed!')
+      // Alert.alert('Login failed!')
       dispatch(clearRedux())
     }
     if (props.auth.type === LOGIN_SUCCESS) {
@@ -51,21 +42,19 @@ const Login = props => {
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps={'handled'}
         contentContainerStyle={styles.SafeAreaView}>
-        <Text>Environment: {configs.ENV}</Text>
-        <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text>
+        {/* <Text>Environment: {configs.ENV}</Text>
+        <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text> */}
         <View style={styles.container}>
           <Image source={images.appLogo} style={styles.logoImage} />
           <Text style={styles.h1}>{strings('auth.login')}</Text>
-          <TextInput
-            placeholder={strings('auth.email-placeholder')}
-            keyboardType="email-address"
-            style={styles.inputField}
+
+          <AuthInput
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
           />
-          <TextInput
-            placeholder={strings('auth.password-placeholder')}
-            secureTextEntry={true}
-            style={styles.inputField}
-          />
+
           <TouchableOpacity
             onPress={() => {
               props.navigation.navigate('registration')
@@ -73,22 +62,13 @@ const Login = props => {
             style={{
               padding: Spacing
             }}>
-            <Text
-              // eslint-disable-next-line react-native/no-inline-styles
-              style={{
-                fontFamily: Font.BOLD,
-                color: Colors.text,
-                textAlign: 'center',
-                fontSize: FontSize.small
-              }}>
-              Create new account
-            </Text>
+            <Text style={styles.createAccountButton}>Create new account</Text>
           </TouchableOpacity>
           <TouchableOpacity
             testID={'ManualLoginButton'}
-            style={styles.buttonWrapper}
-            onPress={() => dispatch(login())}>
-            <Text style={styles.buttonText}>{strings('auth.login')}</Text>
+            style={styles.login}
+            onPress={() => dispatch(login(email, password))}>
+            <Text style={styles.login_text}>{strings('auth.login')}</Text>
           </TouchableOpacity>
           {Platform.OS === 'ios' && (
             <AppleButton
@@ -105,7 +85,7 @@ const Login = props => {
           />
           <GoogleSigninButton
             style={styles.socialButtonGoogle}
-            size={GoogleSigninButton.Size.Wide}
+            size={GoogleSigninButton.Size.Standard}
             color={GoogleSigninButton.Color.Dark}
             onPress={() => dispatch(signInWithGoogle())}
           />

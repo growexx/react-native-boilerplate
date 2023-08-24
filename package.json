@@ -10,7 +10,7 @@
     "ios:dev": "react-native run-ios --scheme 'DevRNBoilerplate'",
     "ios:stg": "react-native run-ios --scheme 'StagRNBoilerplate'",
     "ios:prod": "react-native run-ios --scheme 'RNBoilerplate'",
-    "test": "jest",
+    "test": "jest --coverage",
     "lint": "eslint ."
   },
   "dependencies": {

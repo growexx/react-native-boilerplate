@@ -34,14 +34,18 @@ const MainNavigation = props => {
     <NavigationContainer theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack.Navigator headerShown="false">
         {!isLoggedIn ? (
-          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
         ) : (
           <Stack.Screen name="Home" component={Home} />
         )}
         <Stack.Screen
           name="registration"
           component={RegisterScreen}
-          options={{ title: 'Registration' }}
+          options={{ title: '' }}
         />
         {/* add your another screen here using -> Stack.Screen */}
       </Stack.Navigator>
