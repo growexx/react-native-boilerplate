@@ -98,6 +98,10 @@ export const signInWithGoogle = () => async dispatch => {
   }
 }
 
+export const signInWithInstagram = token => async dispatch => {
+  dispatch(loginSuccess(token))
+}
+
 export const signInWithApple = async () => {
   try {
     const appleAuthRequestResponse = await appleAuth.performRequest({
