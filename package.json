@@ -41,6 +41,7 @@
     "react-native-instagram-login": "^2.0.6",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-localize": "^3.0.2",
+    "react-native-pager-view": "^6.2.0",
     "react-native-phone-number-input": "^2.1.0",
     "react-native-root-toast": "^3.4.1",
     "react-native-safe-area-context": "^4.7.1",

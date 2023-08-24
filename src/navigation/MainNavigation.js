@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react'
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native'
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme
+} from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { connect, useDispatch } from 'react-redux'
 import NetInfo from '@react-native-community/netinfo'
@@ -9,9 +13,16 @@ import { Home, Login } from '@screens'
 import RegisterScreen from '../screens/registeration/registration.screen'
 import { useColorScheme } from 'react-native'
 import ForgotPasswordScreen from '../screens/Forgotpassword/forgotPassword.screen'
+import ChatScreen from '../screens/Chat/Chat.screen'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 let unsubscribeNetListener
 const Stack = createStackNavigator()
+const BottomTab = createBottomTabNavigator()
+const Tab = createMaterialTopTabNavigator()
 
 const MainNavigation = props => {
   const dispatch = useDispatch()
@@ -33,28 +44,63 @@ const MainNavigation = props => {
 
   return (
     <NavigationContainer theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack.Navigator headerShown="false">
-        {!isLoggedIn ? (
+      {!isLoggedIn ? (
+        <Stack.Navigator headerShown={false}>
           <Stack.Screen
             name="Login"
             component={Login}
             options={{ headerShown: false }}
           />
-        ) : (
-          <Stack.Screen name="Home" component={Home} />
-        )}
-        <Stack.Screen
-          name="registration"
-          component={RegisterScreen}
-          options={{ title: '' }}
-        />
-        <Stack.Screen
-          name="forgotPassword"
-          component={ForgotPasswordScreen}
-          options={{ title: 'Forgot Password' }}
-        />
-        {/* add your another screen here using -> Stack.Screen */}
-      </Stack.Navigator>
+          <Stack.Screen
+            name="registration"
+            component={RegisterScreen}
+            options={{ title: '' }}
+          />
+          <Stack.Screen
+            name="forgotPassword"
+            component={ForgotPasswordScreen}
+            options={{ title: 'Forgot Password' }}
+          />
+        </Stack.Navigator>
+      ) : (
+        <BottomTab.Navigator>
+          <BottomTab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              title: 'Home',
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="home" color={color} size={size} />
+              )
+            }}
+          />
+          <BottomTab.Screen
+            name="ChatScreen"
+            component={ChatScreen}
+            options={{
+              title: 'Chat',
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="comments" color={color} size={size} />
+              )
+            }}
+          />
+          <BottomTab.Screen
+            name="MoreOptions"
+            component={() => (
+              <Tab.Navigator>
+                <Tab.Screen name="Home" component={Home} />
+                <Tab.Screen name="ChatScreen" component={ChatScreen} />
+              </Tab.Navigator>
+            )}
+            options={{
+              title: 'More Options',
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="ellipsis-h" color={color} size={size} />
+              )
+            }}
+          />
+        </BottomTab.Navigator>
+      )}
     </NavigationContainer>
   )
 }
