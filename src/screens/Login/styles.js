@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     height: 40,
     width: '100%',
-    backgroundColor: colors.darkText,
+    backgroundColor: colors.light.darkText,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center'
