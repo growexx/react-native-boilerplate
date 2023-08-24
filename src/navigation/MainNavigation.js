@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { connect, useDispatch } from 'react-redux'
 import NetInfo from '@react-native-community/netinfo'
@@ -7,6 +7,7 @@ import { updateNetStatus } from '@actions/deviceInfo.action'
 import SplashScreen from 'react-native-splash-screen'
 import { Home, Login } from '@screens'
 import RegisterScreen from '../screens/registeration/registration.screen'
+import { useColorScheme } from 'react-native'
 
 let unsubscribeNetListener
 const Stack = createStackNavigator()
@@ -14,6 +15,7 @@ const Stack = createStackNavigator()
 const MainNavigation = props => {
   const dispatch = useDispatch()
   const { isLoggedIn } = props.auth
+  const theme = useColorScheme()
 
   const setupNetListener = () => {
     unsubscribeNetListener = NetInfo.addEventListener(state => {
@@ -29,7 +31,7 @@ const MainNavigation = props => {
   }, [])
 
   return (
-    <NavigationContainer theme={DefaultTheme}>
+    <NavigationContainer theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack.Navigator headerShown="false">
         {!isLoggedIn ? (
           <Stack.Screen
