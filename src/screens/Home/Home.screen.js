@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import {
-  Appearance,
   FlatList,
   SafeAreaView,
   Text,
@@ -189,6 +188,7 @@ const Home = props => {
         </View>
         <View>
           <FlatList
+            // eslint-disable-next-line react-native/no-inline-styles
             style={{
               paddingVertical: 10,
               backgroundColor:
