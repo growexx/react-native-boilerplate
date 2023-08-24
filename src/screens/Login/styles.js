@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native'
-import { colors } from '@constants'
+import colors from '../../constants/colors'
 
 const styles = StyleSheet.create({
   SafeAreaView: {
@@ -35,12 +35,13 @@ const styles = StyleSheet.create({
     height: 40,
     width: '100%',
     backgroundColor: colors.DARK_GREY,
+    borderColor: colors.light.text,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center'
   },
   buttonText: {
-    color: colors.WHITE,
+    color: colors.light.text,
     fontSize: 18,
     fontWeight: 'bold'
   },

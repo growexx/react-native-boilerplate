@@ -29,6 +29,8 @@ import Spacing from '../../constants/Spacing'
 import FontSize from '../../constants/FontSize'
 import Colors from '../../constants/colors'
 import Font from '../../constants/fonts'
+import LanguageUtils from '../../localization/languageUtils'
+import languagekeys from '../../localization/languagekeys'
 
 const Login = props => {
   const dispatch = useDispatch()
@@ -52,14 +54,14 @@ const Login = props => {
         <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text>
         <View style={styles.container}>
           <Image source={images.appLogo} style={styles.logoImage} />
-          <Text style={styles.h1}>{strings('auth.login')}</Text>
+          <Text style={styles.h1}>{LanguageUtils.getLangText(languagekeys.login)}</Text>
           <TextInput
-            placeholder={strings('auth.email-placeholder')}
+            placeholder={LanguageUtils.getLangText(languagekeys.emailAddress)}
             keyboardType="email-address"
             style={styles.inputField}
           />
           <TextInput
-            placeholder={strings('auth.password-placeholder')}
+            placeholder={LanguageUtils.getLangText(languagekeys.password)}
             secureTextEntry={true}
             style={styles.inputField}
           />
@@ -85,12 +87,15 @@ const Login = props => {
             testID={'ManualLoginButton'}
             style={styles.buttonWrapper}
             onPress={() => dispatch(login())}>
-            <Text style={styles.buttonText}>{strings('auth.login')}</Text>
+            <Text style={styles.buttonText}>
+              {/* Login */}
+              {LanguageUtils.getLangText(languagekeys.login)}
+            </Text>
           </TouchableOpacity>
           <LoginButton
             style={styles.socialButton}
             onLoginFinished={signInwithFacebook}
-            onLogoutFinished={() => {}}
+            onLogoutFinished={() => { }}
           />
           <GoogleSigninButton
             style={styles.socialButtonGoogle}

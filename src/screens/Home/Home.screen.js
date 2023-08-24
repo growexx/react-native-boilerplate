@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import {
-  Appearance,
   FlatList,
   SafeAreaView,
   Text,
@@ -8,7 +7,6 @@ import {
   View,
   useColorScheme
 } from 'react-native'
-//import Icon from 'react-native-vector-icons/dist/FontAwesome' //NNeed to use alternnate library
 import { connect, useDispatch } from 'react-redux'
 import { fetchNews, clearRedux } from '@actions/news.action'
 import { FETCH_NEWS_SUCCESS } from '@types/news.types'
@@ -18,6 +16,9 @@ import { logout } from '@actions/auth.action'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import colors from '../../constants/colors'
+import LanguageUtils from '../../localization/languageUtils'
+import languagekeys from '../../localization/languagekeys'
+import EventEmitter from 'events';
 
 const Home = props => {
   const dispatch = useDispatch()
@@ -33,11 +34,39 @@ const Home = props => {
     'technology'
   ]
   const [activeFilter, setActiveFilter] = useState('general')
+  const [texts, setTexts] = useState({
+    general: LanguageUtils.getLangText(languagekeys.general),
+    business: LanguageUtils.getLangText(languagekeys.business),
+    entertainment: LanguageUtils.getLangText(languagekeys.entertainment),
+    health: LanguageUtils.getLangText(languagekeys.health),
+    science: LanguageUtils.getLangText(languagekeys.science),
+    sports: LanguageUtils.getLangText(languagekeys.sports),
+    technology: LanguageUtils.getLangText(languagekeys.technology),
+    errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
+    errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
+    retry: LanguageUtils.getLangText(languagekeys.retry)
+  })
+  var emitter = new EventEmitter()
 
   useEffect(() => {
     clearRedux()
     dispatch(fetchNews(page, activeFilter))
   }, [])
+
+  const updateText = () => {
+    setTexts({
+      general: LanguageUtils.getLangText(languagekeys.general),
+      business: LanguageUtils.getLangText(languagekeys.business),
+      entertainment: LanguageUtils.getLangText(languagekeys.entertainment),
+      health: LanguageUtils.getLangText(languagekeys.health),
+      science: LanguageUtils.getLangText(languagekeys.science),
+      sports: LanguageUtils.getLangText(languagekeys.sports),
+      technology: LanguageUtils.getLangText(languagekeys.technology),
+      errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
+      errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
+      retry: LanguageUtils.getLangText(languagekeys.retry)
+    })
+  }
 
   useEffect(() => {
     if (props.newsState.type === FETCH_NEWS_SUCCESS) {
@@ -66,7 +95,7 @@ const Home = props => {
               ? styles.errorMessageDark
               : styles.errorMessage
           }>
-          Something went wrong
+          {texts.errorHeader}
         </Text>
         <Text
           style={
@@ -74,13 +103,15 @@ const Home = props => {
               ? styles.errorMessageDark
               : styles.errorMessage
           }>
-          Please check your internet connection
+          {texts.errorMessage}
         </Text>
         <TouchableOpacity
           testID={'RetryButton'}
           style={styles.retryButton}
           onPress={() => dispatch(fetchNews(page, activeFilter))}>
-          <Text style={styles.retryText}>Retry</Text>
+          <Text style={styles.retryText}>
+            {texts.retry}
+          </Text>
         </TouchableOpacity>
       </View>
     )
@@ -132,7 +163,9 @@ const Home = props => {
         testID={`FilterButton-${index}`}
         style={getFilterItemStyle(isActiveFilter)}
         onPress={() => onFilterClick(item)}>
-        <Text style={getFilterItemTextStyle(isActiveFilter)}>{item}</Text>
+        <Text style={getFilterItemTextStyle(isActiveFilter)}>
+          {texts[item]}
+        </Text>
       </TouchableOpacity>
     )
   }
@@ -159,13 +192,16 @@ const Home = props => {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            testID={'themeChange'}
+            testID={'languageChange'}
             style={
               colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
             }
-            onPress={() => { }}>
-            <MCIcon
-              name="theme-light-dark"
+            onPress={async () => {
+              await LanguageUtils.switchAppLanguage();
+              updateText();
+            }}>
+            <Icon
+              name="language"
               size={30}
               color={
                 colorScheme === 'dark' ? colors.dark.gray : colors.light.gray
