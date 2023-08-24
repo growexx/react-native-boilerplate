@@ -8,17 +8,18 @@ import {
 } from 'react-native'
 import { isEmailValid } from '../../utils/validations'
 import showToast from '../../components/toast'
+import { strings } from '@i18n'
 
 const ForgotPasswordScreen = ({ navigation }) => {
   const [email, setEmail] = useState('')
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Forgot Password</Text>
+      <Text style={styles.title}>{strings('auth.forgot-password')}</Text>
       <TextInput
         testID="email-input"
         style={styles.input}
-        placeholder="Enter your email"
+        placeholder={strings('auth.email-placeholder')}
         value={email}
         onChangeText={setEmail}
       />
@@ -41,7 +42,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
             )
           }
         }}>
-        <Text style={styles.buttonText}>Submit</Text>
+        <Text style={styles.buttonText}>{strings('auth.submit')}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         testID="go-back"
