@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Image, Text, TouchableOpacity, View, Platform } from 'react-native'
+import {
+  Image,
+  Text,
+  TouchableOpacity,
+  View,
+  Platform,
+  useColorScheme
+} from 'react-native'
 import { LoginButton } from 'react-native-fbsdk'
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin'
 import { AppleButton } from '@invertase/react-native-apple-authentication'
@@ -26,6 +33,7 @@ const Login = props => {
   const insRef = useRef()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const colorScheme = useColorScheme()
 
   useEffect(() => {
     if (props.auth.type === LOGIN_FAILED) {
@@ -55,7 +63,14 @@ const Login = props => {
             setPassword={setPassword}
           />
           <View style={styles.register_view}>
-            <Text style={styles.dont_have_account}>Don't have an account?</Text>
+            <Text
+              style={
+                colorScheme === 'dark'
+                  ? styles.dont_have_account_dark
+                  : styles.dont_have_account
+              }>
+              Don't have an account?
+            </Text>
             <TouchableOpacity
               onPress={() => {
                 props.navigation.navigate('registration')
@@ -77,9 +92,16 @@ const Login = props => {
           </TouchableOpacity>
           <TouchableOpacity
             testID={'ManualLoginButton'}
-            style={styles.login}
+            style={colorScheme === 'dark' ? styles.login_dark : styles.login}
             onPress={() => dispatch(login(email, password))}>
-            <Text style={styles.login_text}>{strings('auth.login')}</Text>
+            <Text
+              style={
+                colorScheme === 'dark'
+                  ? styles.login_text_dark
+                  : styles.login_text
+              }>
+              {strings('auth.login')}
+            </Text>
           </TouchableOpacity>
           {Platform.OS === 'ios' && (
             <AppleButton

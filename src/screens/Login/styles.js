@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     fontFamily: Font.REGULAR,
     fontSize: FontSize.small,
     padding: Spacing * 1.5,
-    backgroundColor: Colors.lightPrimary,
+    backgroundColor: Colors.dark.lightPrimary,
     borderRadius: Spacing,
     marginVertical: Spacing,
     alignItems: 'center'
@@ -89,10 +89,22 @@ const styles = StyleSheet.create({
   login: {
     width: '100%',
     padding: Spacing * 1.5,
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.light.primary,
     marginVertical: Spacing * 0.5,
     borderRadius: Spacing,
-    shadowColor: Colors.primary,
+    shadowColor: Colors.light.primary,
+    shadowOffset: {
+      width: 0,
+      height: Spacing
+    }
+  },
+  login_dark: {
+    width: '100%',
+    padding: Spacing * 1.5,
+    backgroundColor: Colors.dark.primary,
+    marginVertical: Spacing * 0.5,
+    borderRadius: Spacing,
+    shadowColor: Colors.dark.primary,
     shadowOffset: {
       width: 0,
       height: Spacing
@@ -100,7 +112,13 @@ const styles = StyleSheet.create({
   },
   login_text: {
     fontFamily: Font.BOLD,
-    color: Colors.onPrimary,
+    color: Colors.light.onPrimary,
+    textAlign: 'center',
+    fontSize: FontSize.large
+  },
+  login_text_dark: {
+    fontFamily: Font.BOLD,
+    color: Colors.dark.text,
     textAlign: 'center',
     fontSize: FontSize.large
   },
@@ -111,6 +129,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: FontSize.small,
     paddingTop: Spacing
+  },
+  dont_have_account_dark: {
+    textAlign: 'center',
+    fontSize: FontSize.small,
+    paddingTop: Spacing,
+    color: Colors.dark.text
   }
 })
 
