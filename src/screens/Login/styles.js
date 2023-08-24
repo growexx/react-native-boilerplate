@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   createAccountButton: {
     fontFamily: Font.BOLD,
-    color: Colors.text,
+    color: 'blue',
     textAlign: 'center',
     fontSize: FontSize.small
   },
@@ -103,6 +103,14 @@ const styles = StyleSheet.create({
     color: Colors.onPrimary,
     textAlign: 'center',
     fontSize: FontSize.large
+  },
+  register_view: {
+    flexDirection: 'row'
+  },
+  dont_have_account: {
+    textAlign: 'center',
+    fontSize: FontSize.small,
+    paddingTop: Spacing
   }
 })
 

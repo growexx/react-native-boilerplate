@@ -51,15 +51,26 @@ const Login = props => {
             password={password}
             setPassword={setPassword}
           />
-
+          <View style={styles.register_view}>
+            <Text style={styles.dont_have_account}>Don't have an account?</Text>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('registration')
+              }}
+              style={{
+                padding: Spacing
+              }}>
+              <Text style={styles.createAccountButton}>Register Here.</Text>
+            </TouchableOpacity>
+          </View>
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate('registration')
+              props.navigation.navigate('forgotPassword')
             }}
             style={{
               padding: Spacing
             }}>
-            <Text style={styles.createAccountButton}>Create new account</Text>
+            <Text style={styles.createAccountButton}>Forgot Password?</Text>
           </TouchableOpacity>
           <TouchableOpacity
             testID={'ManualLoginButton'}
