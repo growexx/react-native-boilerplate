@@ -26,6 +26,8 @@ import { strings } from '@i18n'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
 import images from '@images'
 import Spacing from '../../constants/Spacing'
+import LanguageUtils from '../../localization/languageUtils'
+import languagekeys from '../../localization/languagekeys'
 import AuthInput from '../../components/auth.Input'
 
 const Login = props => {
@@ -54,8 +56,7 @@ const Login = props => {
         <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text> */}
         <View style={styles.container}>
           <Image source={images.appLogo} style={styles.logoImage} />
-          <Text style={styles.h1}>{strings('auth.login')}</Text>
-
+          <Text style={styles.h1}>{LanguageUtils.getLangText(languagekeys.login)}</Text>
           <AuthInput
             email={email}
             setEmail={setEmail}
