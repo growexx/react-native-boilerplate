@@ -47,9 +47,5 @@ describe('should available otp screen', () => {
     expect(showToast).toHaveBeenCalledWith('Please enter valid code.')
   })
 
-  // test('should resend otp', () => {
-  //   const { getByTestId } = render(Wrapper)
-  //   fireEvent.press(getByTestId('resend-otp'))
-  //   expect(showToast).toHaveBeenCalledWith('Please enter valid code.')
-  // })
+  
 })
