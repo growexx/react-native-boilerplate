@@ -127,18 +127,10 @@ const OtpScreen = ({ navigation, route }) => {
               <Text style={styles.resendCode}>
                 {LanguageUtils.getLangText(languagekeys.resendCode)}
               </Text>
-              {/* <Text style={{ marginTop: 40 }}>
-              {' '}
-              in {resendButtonDisabledTime} sec
-            </Text> */}
             </View>
           </TouchableOpacity>
         )}
         <View style={styles.button}>
-          {/* <Button buttonTitle="Submit"
-                onClick={() =>
-                    console.log("otp is ", value)
-                } /> */}
           <TouchableOpacity
             testID="verify-otp-btn"
             style={styles.login}
