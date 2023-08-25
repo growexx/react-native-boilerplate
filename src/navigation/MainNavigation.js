@@ -18,6 +18,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
+import OtpScreen, { VerifyCode } from '../screens/otpscreen/otp.screen'
+import PhoneInputScreen from '../screens/otpscreen/mobile.screen'
 
 let unsubscribeNetListener
 const Stack = createStackNavigator()
@@ -60,6 +62,16 @@ const MainNavigation = props => {
             name="forgotPassword"
             component={ForgotPasswordScreen}
             options={{ title: 'Forgot Password' }}
+          />
+          <Stack.Screen
+            name="signwithotp"
+            component={OtpScreen}
+            options={{ title: 'Sign with OTP' }}
+          />
+          <Stack.Screen
+            name="phoneNumberScreen"
+            component={PhoneInputScreen}
+            options={{ title: 'Sign with OTP' }}
           />
         </Stack.Navigator>
       ) : (

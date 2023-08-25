@@ -13,7 +13,20 @@ const languagekeys = {
     technology: 'technology',
     errorHeader: 'errorHeader',
     errorMessage: 'errorMessage',
-    retry: 'retry'
+    retry: 'retry',
+    forgotPassword:'forgotPassword',
+    goBackToLogin: 'goBackToLogin',
+    signup: "signup",
+    alreadyHaveAccount:'alreadyHaveAccount',
+    pickImage: 'pickImage',
+    createAccount: 'createAccount',
+    resendCode: 'resendCode',
+    verificationCode: 'verificationCode',
+    registerHere:'registerHere',
+    dontHaveAccount: 'dontHaveAccount',
+    loginWithOtp:'loginWithOtp',
+    
+    
 
 }
 

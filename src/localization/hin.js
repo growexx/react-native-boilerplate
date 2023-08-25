@@ -16,7 +16,19 @@ const hin = {
     [languagekeys.technology]: 'प्रौद्योगिकी',
     [languagekeys.errorHeader]: 'कुछ गलत हो गया',
     [languagekeys.errorMessage]: 'कृपया अपना इंटरनेट कनेक्शन जांचें',
-    [languagekeys.retry]: 'पुन: प्रयास करें'
+    [languagekeys.retry]: 'पुन: प्रयास करें',
+    [languagekeys.forgotPassword]: 'पासवर्ड भूल गए',
+    [languagekeys.goBackLogin]:'लॉगिन करने के लिए वापस जाएँ',
+    [languagekeys.alreadyHaveAccount]:'पहले से ही खाता है?',
+    [languagekeys.signup]:'साइन अप करें',
+    [languagekeys.pickImage] :'छवि चुनें',
+    [languagekeys.createAccount] :'खाता बनाएं',
+    [languagekeys.resendCode] :'प्राधिकरण कोड पुनः भेजें',
+    [languagekeys.verificationCode] :'प्राधिकरण कोड सत्यापित करें',
+    [languagekeys.registerHere]:'यहां रजिस्टर करें',
+    [languagekeys.dontHaveAccount]:'खाता नहीं है?',
+    [languagekeys.loginWithOtp]:'ओटीपी से लॉगिन करें'
+
 }
 
 export default hin;

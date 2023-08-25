@@ -25,6 +25,11 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold'
   },
+  h1Dark: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color:Colors.dark.text
+  },
   inputField: {
     paddingVertical: 0,
     paddingLeft: 10,

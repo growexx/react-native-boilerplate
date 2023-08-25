@@ -8,7 +8,7 @@ import Font from '../constants/fonts'
 const AuthInput = ({ email, setEmail, password, setPassword }) => {
   const [focused, setFocused] = useState(false)
   const [passWordFocus, setPassWordFocus] = useState(false)
-  const colorScheme = useColorScheme
+  const colorScheme = useColorScheme()
   return (
     <View style={styles.view}>
       <TextInput
@@ -29,7 +29,7 @@ const AuthInput = ({ email, setEmail, password, setPassword }) => {
         placeholderTextColor={Colors.darkText}
       />
       <TextInput
-        style={[styles.inputText, passWordFocus && styles.focused]}
+        style={[colorScheme === 'dark' ? styles.inputTextDark : styles.inputText, passWordFocus && styles.focused]}
         onFocus={() => setPassWordFocus(true)}
         onBlur={() => setPassWordFocus(false)}
         onChangeText={setPassword}
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     fontFamily: Font.REGULAR,
     fontSize: FontSize.small,
     padding: Spacing * 1.5,
-    backgroundColor: Colors.lightPrimary,
+    // backgroundColor: Colors.lightPrimary,
     borderRadius: Spacing,
     marginVertical: Spacing
   },
@@ -77,10 +77,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.REGULAR,
     fontSize: FontSize.small,
     padding: Spacing * 1.5,
-    backgroundColor: Colors.dark.lightPrimary,
+    // backgroundColor: Colors.dark.lightPrimary,
     borderRadius: Spacing,
     marginVertical: Spacing,
-    borderColor: Colors.dark.text
+    borderColor: "white"
   },
   view: { width: '100%' }
 })
