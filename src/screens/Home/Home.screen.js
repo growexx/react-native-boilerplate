@@ -44,7 +44,8 @@ const Home = props => {
     technology: LanguageUtils.getLangText(languagekeys.technology),
     errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
     errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
-    retry: LanguageUtils.getLangText(languagekeys.retry)
+    retry: LanguageUtils.getLangText(languagekeys.retry),
+    changePassword: LanguageUtils.getLangText(languagekeys.changePassword)
   })
   var emitter = new EventEmitter()
 
@@ -64,7 +65,8 @@ const Home = props => {
       technology: LanguageUtils.getLangText(languagekeys.technology),
       errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
       errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
-      retry: LanguageUtils.getLangText(languagekeys.retry)
+      retry: LanguageUtils.getLangText(languagekeys.retry),
+      changePassword: LanguageUtils.getLangText(languagekeys.changePassword)
     })
   }
 
@@ -197,8 +199,8 @@ const Home = props => {
               colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
             }
             onPress={async () => {
-              await LanguageUtils.switchAppLanguage();
-              updateText();
+              await LanguageUtils.switchAppLanguage()
+              updateText()
             }}>
             <Icon
               name="language"
@@ -239,6 +241,23 @@ const Home = props => {
             renderItem={renderFilterItem}
             showsHorizontalScrollIndicator={false}
           />
+        </View>
+        <View
+          style={{
+            paddingVertical: 10,
+            backgroundColor:
+              colorScheme === 'dark'
+                ? colors.dark.background
+                : colors.light.background
+          }}>
+          <TouchableOpacity
+            testID={'change-password-btn'}
+            onPress={() => props.navigation.navigate('changePassword')}
+            style={styles.changePasswordBtn}>
+            <Text style={styles.activeViewTextDark}>
+              {texts.changePassword}
+            </Text>
+          </TouchableOpacity>
         </View>
         <View
           style={

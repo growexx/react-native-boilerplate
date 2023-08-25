@@ -10,10 +10,7 @@ import {
   useColorScheme
 } from 'react-native'
 import React, { useRef, useState } from 'react'
-import Spacing from '../../constants/Spacing'
-import FontSize from '../../constants/FontSize'
-import Colors from '../../constants/colors'
-import Font from '../../constants/fonts'
+import { colors, fonts, fontSize, spacing } from '@constants'
 import handleRegistration from '../../controllers/registrationController'
 import PhoneInput from 'react-native-phone-number-input'
 import showToast from '../../components/toast'
@@ -36,7 +33,7 @@ const RegisterScreen = ({ navigation }) => {
       <ScrollView>
         <View
           style={{
-            padding: Spacing * 2
+            padding: spacing * 2
           }}>
           <View style={styles.view}>
             <Text
@@ -67,7 +64,7 @@ const RegisterScreen = ({ navigation }) => {
           </View>
           <View
             style={{
-              marginVertical: Spacing * 3
+              marginVertical: spacing * 3
             }}>
             <AuthInput
               email={email}
@@ -91,7 +88,7 @@ const RegisterScreen = ({ navigation }) => {
               autoCorrect={false}
               secureTextEntry={true}
               testID="confirm-password-input"
-              placeholderTextColor={Colors.darkText}
+              placeholderTextColor={colors.darkText}
             />
             <PhoneInput
               ref={phoneInput}
@@ -127,7 +124,7 @@ const RegisterScreen = ({ navigation }) => {
             testID="go-to-login"
             onPress={() => navigation.navigate('Login')}
             style={{
-              padding: Spacing
+              padding: spacing
             }}>
             <Text
               style={colorScheme === 'dark' ? styles.loginDark : styles.login}>
@@ -144,73 +141,80 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   title: {
-    fontSize: FontSize.xLarge,
+    fontSize: fontSize.xLarge,
     color: 'black',
-    fontFamily: Font.BOLD,
-    marginVertical: Spacing * 2
+    fontFamily: fonts.BOLD,
+    marginVertical: spacing * 2
   },
   titleDark: {
-    fontSize: FontSize.xLarge,
-    color: Colors.dark.text,
-    fontFamily: Font.BOLD,
-    marginVertical: Spacing * 2
+    fontSize: fontSize.xLarge,
+    color: colors.dark.text,
+    fontFamily: fonts.BOLD,
+    marginVertical: spacing * 2
   },
   login: {
-    fontFamily: Font.BOLD,
-    color: Colors.text,
+    fontFamily: fonts.BOLD,
+    color: colors.text,
     textAlign: 'center',
-    fontSize: FontSize.small
+    fontSize: fontSize.small
   },
   loginDark: {
-    fontFamily: Font.BOLD,
-    color: Colors.text,
+    fontFamily: fonts.BOLD,
+    color: colors.text,
     textAlign: 'center',
-    fontSize: FontSize.small,
-    color: Colors.dark.text
+    fontSize: fontSize.small,
+    color: colors.dark.text
+  },
+  loginDark: {
+    fontFamily: fonts.BOLD,
+    color: colors.text,
+    textAlign: 'center',
+    fontSize: fontSize.small,
+    color: colors.dark.text
   },
   signup_text: {
-    fontFamily: Font.BOLD,
-    color: Colors.light.onPrimary,
+    fontFamily: fonts.BOLD,
+    color: colors.light.onPrimary,
     textAlign: 'center',
-    fontSize: FontSize.large
+    fontSize: fontSize.large
   },
   signup: {
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.light.primary,
-    borderRadius: Spacing,
-    shadowColor: Colors.primary,
+    padding: spacing * 1.5,
+    backgroundColor: colors.light.primary,
+    borderRadius: spacing,
+    shadowColor: colors.primary,
     shadowOffset: {
       width: 0,
-      height: Spacing
+      height: spacing
     },
     shadowOpacity: 0.3,
-    shadowRadius: Spacing
+    shadowRadius: spacing
   },
   focused: {
     borderWidth: 3,
-    borderColor: Colors.primary,
-    shadowOffset: { width: 4, height: Spacing },
-    shadowColor: Colors.primary,
+    borderColor: colors.primary,
+    shadowOffset: { width: 4, height: spacing },
+    shadowColor: colors.primary,
     shadowOpacity: 0.2,
-    shadowRadius: Spacing
+    shadowRadius: spacing
   },
   inputText: {
     borderWidth: 0.5,
-    fontFamily: Font.REGULAR,
-    fontSize: FontSize.small,
-    padding: Spacing * 1.5,
-    // backgroundColor: Colors.lightPrimary,
-    borderRadius: Spacing,
-    marginVertical: Spacing
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    backgroundColor: colors.lightPrimary,
+    borderRadius: spacing,
+    marginVertical: spacing
   },
   inputTextDark: {
     borderWidth: 0.5,
-    fontFamily: Font.REGULAR,
-    fontSize: FontSize.small,
-    padding: Spacing * 1.5,
-    borderRadius: Spacing,
-    marginVertical: Spacing,
-    borderColor: Colors.dark.text
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    borderRadius: spacing,
+    marginVertical: spacing,
+    borderColor: colors.dark.text
   },
   container: {
     flex: 1,
@@ -240,11 +244,11 @@ const styles = StyleSheet.create({
   },
   phoneInput: {
     width: '100%',
-    fontFamily: Font.REGULAR,
-    fontSize: FontSize.small,
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.lightPrimary,
-    borderRadius: Spacing
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    backgroundColor: colors.lightPrimary,
+    borderRadius: spacing
   }
 })
 export default RegisterScreen

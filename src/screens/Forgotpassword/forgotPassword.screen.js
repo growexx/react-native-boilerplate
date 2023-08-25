@@ -10,7 +10,7 @@ import {
 import { isEmailValid } from '../../utils/validations'
 import showToast from '../../components/toast'
 import { strings } from '@i18n'
-import Colors from '../../constants/colors'
+import colors from '../../constants/colors'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
 
@@ -62,13 +62,17 @@ const ForgotPasswordScreen = ({ navigation }) => {
             )
           }
         }}>
-        <Text style={styles.buttonText}>{LanguageUtils.getLangText(languagekeys.submit)}</Text>
+        <Text style={styles.buttonText}>
+          {LanguageUtils.getLangText(languagekeys.submit)}
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         testID="go-back"
         style={styles.link}
         onPress={() => navigation.goBack()}>
-        <Text style={styles.linkText}>{LanguageUtils.getLangText(languagekeys.goBackToLogin)}</Text>
+        <Text style={styles.linkText}>
+          {LanguageUtils.getLangText(languagekeys.goBackToLogin)}
+        </Text>
       </TouchableOpacity>
     </View>
   )
@@ -91,7 +95,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
     fontWeight: 'bold',
-    color: Colors.dark.text
+    color: colors.dark.text
   },
   input: {
     width: '100%',

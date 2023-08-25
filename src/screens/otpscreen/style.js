@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
-import Color from '../../constants/colors'
-import Spacing from '../../constants/Spacing'
-import FontSize from '../../constants/FontSize'
-import Font from '../../constants/fonts'
+import colors from '../../constants/colors'
+import spacing from '../../constants/spacing'
+import fontSize from '../../constants/fontSize'
+import fonts from '../../constants/fonts'
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     marginStart: 20,
     fontWeight: 'bold',
-    color:Colors.dark.text
+    color: colors.dark.text
   },
   subTitle: {
     textAlign: 'left',
@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     marginStart: 20,
     marginTop: 10,
-    color: Colors.dark.text
+    color: colors.dark.text
   },
   codeFieldRoot: {
     marginTop: 40,
@@ -64,7 +64,7 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1
   },
   cellTextDark: {
-    color: Color.dark.text,
+    color: colors.dark.text,
     fontSize: 28,
     textAlign: 'center'
   },
@@ -77,11 +77,11 @@ export const styles = StyleSheet.create({
     marginTop: 20
   },
   resendCode: {
-    backgroundColor: Colors.light.primary,
+    backgroundColor: colors.light.primary,
     color: 'white',
     marginStart: 20,
     marginTop: 40,
-    padding: Spacing * 2
+    padding: spacing * 2
   },
   resendCodeText: {
     marginStart: 20,
@@ -90,7 +90,7 @@ export const styles = StyleSheet.create({
   resendCodeTextDark: {
     marginStart: 20,
     marginTop: 40,
-    color:Color.dark.text
+    color: colors.dark.text
   },
   resendCodeContainer: {
     flexDirection: 'row',
@@ -98,38 +98,38 @@ export const styles = StyleSheet.create({
   },
   login: {
     width: '100%',
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.light.primary,
-    marginVertical: Spacing * 0.5,
-    borderRadius: Spacing,
-    shadowColor: Colors.light.primary,
+    padding: spacing * 1.5,
+    backgroundColor: colors.light.primary,
+    marginVertical: spacing * 0.5,
+    borderRadius: spacing,
+    shadowColor: colors.light.primary,
     shadowOffset: {
       width: 0,
-      height: Spacing
+      height: spacing
     }
   },
   login_dark: {
     width: '100%',
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.dark.primary,
-    marginVertical: Spacing * 0.5,
-    borderRadius: Spacing,
-    shadowColor: Colors.dark.primary,
+    padding: spacing * 1.5,
+    backgroundColor: colors.dark.primary,
+    marginVertical: spacing * 0.5,
+    borderRadius: spacing,
+    shadowColor: colors.dark.primary,
     shadowOffset: {
       width: 0,
-      height: Spacing
+      height: spacing
     }
   },
   login_text: {
-    fontFamily: Font.BOLD,
-    color: Colors.light.onPrimary,
+    fontFamily: fonts.BOLD,
+    color: colors.light.onPrimary,
     textAlign: 'center',
-    fontSize: FontSize.large
+    fontSize: fontSize.large
   },
   login_text_dark: {
-    fontFamily: Font.BOLD,
-    color: Colors.dark.text,
+    fontFamily: fonts.BOLD,
+    color: colors.dark.text,
     textAlign: 'center',
-    fontSize: FontSize.large
-  },
+    fontSize: fontSize.large
+  }
 })

@@ -1,9 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native'
-import { colors } from '@constants'
-import FontSize from '../../constants/FontSize'
-import Colors from '../../constants/colors'
-import Font from '../../constants/fonts'
-import Spacing from '../../constants/Spacing'
+import { colors, fontSize, fonts, spacing } from '@constants'
 
 const styles = StyleSheet.create({
   SafeAreaView: {
@@ -28,7 +24,7 @@ const styles = StyleSheet.create({
   h1Dark: {
     fontSize: 30,
     fontWeight: 'bold',
-    color:Colors.dark.text
+    color: colors.dark.text
   },
   inputField: {
     paddingVertical: 0,
@@ -58,7 +54,7 @@ const styles = StyleSheet.create({
     width: '100%',
     borderRadius: 15,
     justifyContent: 'center',
-    backgroundColor: Colors.primary
+    backgroundColor: colors.primary
   },
   socialButtonGoogle: {
     height: 50,
@@ -67,79 +63,78 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   createAccountButton: {
-    fontFamily: Font.BOLD,
+    fontFamily: fonts.BOLD,
     color: 'blue',
     textAlign: 'center',
-    fontSize: FontSize.small
+    fontSize: fontSize.small
   },
   focused: {
     borderWidth: 3,
-    borderColor: Colors.primary,
-    shadowOffset: { width: 4, height: Spacing },
-    shadowColor: Colors.primary,
+    borderColor: colors.primary,
+    shadowOffset: { width: 4, height: spacing },
+    shadowColor: colors.primary,
     shadowOpacity: 0.2,
-    shadowRadius: Spacing
+    shadowRadius: spacing
   },
   inputText: {
     width: '100%',
     borderWidth: 0.5,
-    fontFamily: Font.REGULAR,
-    fontSize: FontSize.small,
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.dark.lightPrimary,
-    borderRadius: Spacing,
-    marginVertical: Spacing,
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    borderRadius: spacing,
+    marginVertical: spacing,
     alignItems: 'center'
   },
   login: {
     width: '100%',
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.light.primary,
-    marginVertical: Spacing * 0.5,
-    borderRadius: Spacing,
-    shadowColor: Colors.light.primary,
+    padding: spacing * 1.5,
+    backgroundColor: colors.light.primary,
+    marginVertical: spacing * 0.5,
+    borderRadius: spacing,
+    shadowColor: colors.light.primary,
     shadowOffset: {
       width: 0,
-      height: Spacing
+      height: spacing
     }
   },
   login_dark: {
     width: '100%',
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.dark.primary,
-    marginVertical: Spacing * 0.5,
-    borderRadius: Spacing,
-    shadowColor: Colors.dark.primary,
+    padding: spacing * 1.5,
+    backgroundColor: colors.dark.primary,
+    marginVertical: spacing * 0.5,
+    borderRadius: spacing,
+    shadowColor: colors.dark.primary,
     shadowOffset: {
       width: 0,
-      height: Spacing
+      height: spacing
     }
   },
   login_text: {
-    fontFamily: Font.BOLD,
-    color: Colors.light.onPrimary,
+    fontFamily: fonts.BOLD,
+    color: colors.light.onPrimary,
     textAlign: 'center',
-    fontSize: FontSize.large
+    fontSize: fontSize.large
   },
   login_text_dark: {
-    fontFamily: Font.BOLD,
-    color: Colors.dark.text,
+    fontFamily: fonts.BOLD,
+    color: colors.dark.text,
     textAlign: 'center',
-    fontSize: FontSize.large
+    fontSize: fontSize.large
   },
   register_view: {
     flexDirection: 'row'
   },
   dont_have_account: {
     textAlign: 'center',
-    fontSize: FontSize.small,
-    paddingTop: Spacing
+    fontSize: fontSize.small,
+    paddingTop: spacing
   },
   dont_have_account_dark: {
     textAlign: 'center',
-    fontSize: FontSize.small,
-    paddingTop: Spacing,
-    color: Colors.dark.text
+    fontSize: fontSize.small,
+    paddingTop: spacing,
+    color: colors.dark.text
   }
 })
 
