@@ -9,7 +9,6 @@ const handleChangePassword = async (
   setConfirmPassword,
   setMenuVisiblilty
 ) => {
-  console.log(oldPassword, newPassword, confirmPassword)
   if (
     !isNonEmptyField(oldPassword) ||
     !isNonEmptyField(newPassword) ||
@@ -22,7 +21,6 @@ const handleChangePassword = async (
     showToast('Password validation failed')
     setMenuVisiblilty(true)
   } else {
-    console.log('7crore')
     setMenuVisiblilty(false)
     showToast('Password changed successfully!')
     setOldPassword('')
