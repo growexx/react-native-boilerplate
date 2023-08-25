@@ -17,20 +17,6 @@ import languagekeys from '../../localization/languagekeys'
 const ForgotPasswordScreen = ({ navigation }) => {
   const colorScheme = useColorScheme()
   const [email, setEmail] = useState('')
-
-  // const [texts, setTexts] = useState({
-  //   forgotPassword: LanguageUtils.getLangText(languagekeys.forgotPassword),
-  //   submit: LanguageUtils.getLangText(languagekeys.submit),
-  //   goBackToLogin: LanguageUtils.getLangText(languagekeys.goBackToLogin)
-  // })
-  // const updateText = () => {
-  //   setTexts({
-  //     forgotPassword: LanguageUtils.getLangText(languagekeys.forgotPassword),
-  //     submit: LanguageUtils.getLangText(languagekeys.submit),
-  //     goBackToLogin: LanguageUtils.getLangText(languagekeys.goBackToLogin)
-  //   })
-  // }
-
   return (
     <View style={styles.container}>
       <Text style={colorScheme === 'dark' ? styles.titleDark : styles.title}>
