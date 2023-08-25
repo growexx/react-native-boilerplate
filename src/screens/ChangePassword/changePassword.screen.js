@@ -13,6 +13,8 @@ import { colors, fontSize } from '@constants'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from './styles'
 import handleChangePassword from '../../controllers/changePasswordController'
+import LanguageUtils from '../../localization/languageUtils'
+import languagekeys from '../../localization/languagekeys'
 
 const ChangePasswordScreen = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false)
@@ -45,13 +47,13 @@ const ChangePasswordScreen = () => {
               ? [styles.changePasswordText, styles.changePasswordTextDark]
               : styles.changePasswordText
           }>
-          Change Password
+          {LanguageUtils.getLangText(languagekeys.changePassword)}
         </Text>
         <TextInput
           style={styleForInput}
           onChangeText={setOldPassword}
           value={oldPassword}
-          placeholder="Current password"
+          placeholder={LanguageUtils.getLangText(languagekeys.currentPassword)}
           autoComplete="off"
           placeholderTextColor={placeholderTextColor}
           fontSize={fontSize.medium}
@@ -63,7 +65,7 @@ const ChangePasswordScreen = () => {
             style={[styleForInput, { flex: 1 }]}
             onChangeText={setNewPassword}
             value={newPassword}
-            placeholder="New password"
+            placeholder={LanguageUtils.getLangText(languagekeys.newPassword)}
             autoComplete="off"
             placeholderTextColor={placeholderTextColor}
             fontSize={fontSize.medium}
@@ -83,15 +85,16 @@ const ChangePasswordScreen = () => {
         </View>
         {isMenuVisible && (
           <Text style={styles.passwordValidationStyle}>
-            Password must contain atleast 1 upper case, 1 lower case letter, 1
-            special chracter and 1 number
+            {LanguageUtils.getLangText(languagekeys.passwordValidation)}
           </Text>
         )}
         <TextInput
           style={styleForInput}
           onChangeText={setConfirmPassword}
           value={confirmPassword}
-          placeholder="Confirm New Password"
+          placeholder={LanguageUtils.getLangText(
+            languagekeys.confirmNewPassword
+          )}
           placeholderTextColor={placeholderTextColor}
           fontSize={fontSize.medium}
           autoComplete="off"

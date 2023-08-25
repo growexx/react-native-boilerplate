@@ -1,10 +1,27 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
+  plugins: ['unused-imports'],
   rules: {
-    semi: 0,
-    eqeqeq: 0,
-    'no-console': 'error',
-    'comma-dangle': ['error', 'never']
-  }
-}
+    'no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
+    eqeqeq: ['error', 'smart'],
+    'no-var': 'error',
+    'prefer-const': [
+      'error',
+      {
+        destructuring: 'any',
+        ignoreReadBeforeAssign: false,
+      },
+    ],
+  },
+  extends: '@react-native-community',
+};
