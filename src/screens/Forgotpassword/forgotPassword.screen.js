@@ -4,18 +4,24 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  useColorScheme
 } from 'react-native'
 import { isEmailValid } from '../../utils/validations'
 import showToast from '../../components/toast'
 import { strings } from '@i18n'
+import colors from '../../constants/colors'
+import LanguageUtils from '../../localization/languageUtils'
+import languagekeys from '../../localization/languagekeys'
 
 const ForgotPasswordScreen = ({ navigation }) => {
+  const colorScheme = useColorScheme()
   const [email, setEmail] = useState('')
-
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{strings('auth.forgot-password')}</Text>
+      <Text style={colorScheme === 'dark' ? styles.titleDark : styles.title}>
+        {LanguageUtils.getLangText(languagekeys.forgotPassword)}
+      </Text>
       <TextInput
         testID="email-input"
         style={styles.input}
@@ -42,13 +48,17 @@ const ForgotPasswordScreen = ({ navigation }) => {
             )
           }
         }}>
-        <Text style={styles.buttonText}>{strings('auth.submit')}</Text>
+        <Text style={styles.buttonText}>
+          {LanguageUtils.getLangText(languagekeys.submit)}
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         testID="go-back"
         style={styles.link}
         onPress={() => navigation.goBack()}>
-        <Text style={styles.linkText}>Go back to login</Text>
+        <Text style={styles.linkText}>
+          {LanguageUtils.getLangText(languagekeys.goBackToLogin)}
+        </Text>
       </TouchableOpacity>
     </View>
   )
@@ -59,13 +69,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#f8f8f8'
+    padding: 20
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
     fontWeight: 'bold'
+  },
+  titleDark: {
+    fontSize: 24,
+    marginBottom: 20,
+    fontWeight: 'bold',
+    color: colors.dark.text
   },
   input: {
     width: '100%',

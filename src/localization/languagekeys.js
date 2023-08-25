@@ -18,7 +18,20 @@ const languagekeys = {
     currentPassword: 'currentPassword',
     newPassword: 'newPassword',
     confirmNewPassword: 'confirmNewPassword',
-    passwordValidation: 'passwordValidation'
+    passwordValidation: 'passwordValidation',
+    forgotPassword:'forgotPassword',
+    goBackToLogin: 'goBackToLogin',
+    signup: "signup",
+    alreadyHaveAccount:'alreadyHaveAccount',
+    pickImage: 'pickImage',
+    createAccount: 'createAccount',
+    resendCode: 'resendCode',
+    verificationCode: 'verificationCode',
+    registerHere:'registerHere',
+    dontHaveAccount: 'dontHaveAccount',
+    loginWithOtp:'loginWithOtp',
+    
+    
 
 }
 

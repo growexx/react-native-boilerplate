@@ -21,6 +21,11 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold'
   },
+  h1Dark: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: colors.dark.text
+  },
   inputField: {
     paddingVertical: 0,
     paddingLeft: 10,
@@ -77,7 +82,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.REGULAR,
     fontSize: fontSize.small,
     padding: spacing * 1.5,
-    backgroundColor: colors.dark.lightPrimary,
     borderRadius: spacing,
     marginVertical: spacing,
     alignItems: 'center'

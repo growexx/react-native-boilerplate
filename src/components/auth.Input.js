@@ -5,7 +5,7 @@ import { spacing, fontSize, colors, fonts } from '@constants';
 const AuthInput = ({ email, setEmail, password, setPassword }) => {
   const [focused, setFocused] = useState(false)
   const [passWordFocus, setPassWordFocus] = useState(false)
-  const colorScheme = useColorScheme
+  const colorScheme = useColorScheme()
   return (
     <View style={styles.view}>
       <TextInput
@@ -26,7 +26,7 @@ const AuthInput = ({ email, setEmail, password, setPassword }) => {
         placeholderTextColor={colors.darkText}
       />
       <TextInput
-        style={[styles.inputText, passWordFocus && styles.focused]}
+        style={[colorScheme === 'dark' ? styles.inputTextDark : styles.inputText, passWordFocus && styles.focused]}
         onFocus={() => setPassWordFocus(true)}
         onBlur={() => setPassWordFocus(false)}
         onChangeText={setPassword}
@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.REGULAR,
     fontSize: fontSize.small,
     padding: spacing * 1.5,
-    backgroundColor: colors.lightPrimary,
     borderRadius: spacing,
     marginVertical: spacing
   },
@@ -74,7 +73,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.REGULAR,
     fontSize: fontSize.small,
     padding: spacing * 1.5,
-    backgroundColor: colors.dark.lightPrimary,
     borderRadius: spacing,
     marginVertical: spacing,
     borderColor: colors.dark.text

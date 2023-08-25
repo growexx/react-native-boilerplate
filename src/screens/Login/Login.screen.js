@@ -28,7 +28,7 @@ import images from '@images'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
 import AuthInput from '../../components/auth.Input'
-import { spacing } from '@constants';
+import { spacing } from '@constants'
 
 const Login = props => {
   const dispatch = useDispatch()
@@ -55,14 +55,32 @@ const Login = props => {
         {/* <Text>Environment: {configs.ENV}</Text>
         <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text> */}
         <View style={styles.container}>
-          <Image source={images.appLogo} style={styles.logoImage} />
-          <Text style={styles.h1}>{LanguageUtils.getLangText(languagekeys.login)}</Text>
+          <Image
+            source={
+              colorScheme === 'dark' ? images.darkappLogo : images.appLogo
+            }
+            style={styles.logoImage}
+          />
+          <Text style={colorScheme === 'dark' ? styles.h1Dark : styles.h1}>
+            {LanguageUtils.getLangText(languagekeys.login)}
+          </Text>
           <AuthInput
             email={email}
             setEmail={setEmail}
             password={password}
             setPassword={setPassword}
           />
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate('forgotPassword')
+            }}
+            style={{
+              padding: spacing
+            }}>
+            <Text style={styles.createAccountButton}>
+              {LanguageUtils.getLangText(languagekeys.forgotPassword)}
+            </Text>
+          </TouchableOpacity>
           <View style={styles.register_view}>
             <Text
               style={
@@ -70,7 +88,7 @@ const Login = props => {
                   ? styles.dont_have_account_dark
                   : styles.dont_have_account
               }>
-              Don't have an account?
+              {LanguageUtils.getLangText(languagekeys.dontHaveAccount)}
             </Text>
             <TouchableOpacity
               onPress={() => {
@@ -79,17 +97,24 @@ const Login = props => {
               style={{
                 padding: spacing
               }}>
-              <Text style={styles.createAccountButton}>Register Here.</Text>
+              <Text style={styles.createAccountButton}>
+                {LanguageUtils.getLangText(languagekeys.registerHere)}
+              </Text>
             </TouchableOpacity>
           </View>
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate('forgotPassword')
+              props.navigation.navigate('phoneNumberScreen')
             }}
-            style={{
-              padding: spacing
-            }}>
-            <Text style={styles.createAccountButton}>Forgot Password?</Text>
+            style={colorScheme === 'dark' ? styles.login_dark : styles.login}>
+            <Text
+              style={
+                colorScheme === 'dark'
+                  ? styles.login_text_dark
+                  : styles.login_text
+              }>
+              {LanguageUtils.getLangText(languagekeys.loginWithOtp)}
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             testID={'ManualLoginButton'}
@@ -101,7 +126,7 @@ const Login = props => {
                   ? styles.login_text_dark
                   : styles.login_text
               }>
-              {strings('auth.login')}
+              {LanguageUtils.getLangText(languagekeys.login)}
             </Text>
           </TouchableOpacity>
           {Platform.OS === 'ios' && (
