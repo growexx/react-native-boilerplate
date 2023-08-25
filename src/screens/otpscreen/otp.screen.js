@@ -85,6 +85,7 @@ const OtpScreen = ({ navigation, route }) => {
           Sent to {mobile}
         </Text>
         <CodeField
+          testID="otp-input"
           ref={ref}
           {...props}
           value={value}
@@ -119,7 +120,9 @@ const OtpScreen = ({ navigation, route }) => {
             {resendButtonDisabledTime} sec
           </Text>
         ) : (
-          <TouchableOpacity onPress={onResendOtpButtonPress}>
+          <TouchableOpacity
+            testID="resend-otp"
+            onPress={onResendOtpButtonPress}>
             <View style={styles.resendCodeContainer}>
               <Text style={styles.resendCode}>
                 {LanguageUtils.getLangText(languagekeys.resendCode)}
@@ -137,6 +140,7 @@ const OtpScreen = ({ navigation, route }) => {
                     console.log("otp is ", value)
                 } /> */}
           <TouchableOpacity
+            testID="verify-otp-btn"
             style={styles.login}
             onPress={() => {
               console.log('otp is ', value)

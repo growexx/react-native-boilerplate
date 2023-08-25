@@ -12,22 +12,44 @@ const mockNavigation = {
     dispatch: jest.fn(),
     replace: jest.fn()
   }
-  
-  jest.mock('../../../components/toast', () => jest.fn())
-  const mockedColorScheme = jest.fn()
+const mockRoute = {
+  params: {
+    mobile: '1234567980'
+  }
+}
+
+jest.mock('../../../components/toast', () => jest.fn())
+const mockedColorScheme = jest.fn()
 
 jest.mock('react-native/Libraries/Utilities/useColorScheme', () => {
   return {
     default: mockedColorScheme
   }
 })
-describe('should available otp screen', () => { 
-    const Wrapper = (<Provider store={store}>
-        <OtpScreen navigation={mockNavigation}/>
-    </Provider>)
-    test('should render', () => {
-        const { getByTestId , getByPlaceholderText } = render(Wrapper);
+describe('should available otp screen', () => {
+  const Wrapper = (
+    <Provider store={store}>
+      <OtpScreen navigation={mockNavigation} route={mockRoute} />
+    </Provider>
+  )
+  test('should render', () => {
+    mockedColorScheme.mockImplementationOnce(() => 'light')
+    const { getByTestId } = render(Wrapper)
+    fireEvent.press(getByTestId('verify-otp-btn'))
+    expect(showToast).toHaveBeenCalledWith('Please enter valid code.')
+  })
 
-    })
-    
- })
+  test('should render with correct otp', () => {
+    mockedColorScheme.mockImplementationOnce(() => 'dark')
+    const { getByTestId } = render(Wrapper)
+    fireEvent.changeText(getByTestId('otp-input'), '123456')
+    fireEvent.press(getByTestId('verify-otp-btn'))
+    expect(showToast).toHaveBeenCalledWith('Please enter valid code.')
+  })
+
+  // test('should resend otp', () => {
+  //   const { getByTestId } = render(Wrapper)
+  //   fireEvent.press(getByTestId('resend-otp'))
+  //   expect(showToast).toHaveBeenCalledWith('Please enter valid code.')
+  // })
+})
