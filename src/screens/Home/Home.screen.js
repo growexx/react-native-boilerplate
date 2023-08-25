@@ -163,7 +163,7 @@ const Home = props => {
             style={
               colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
             }
-            onPress={() => { }}>
+            onPress={() => {}}>
             <MCIcon
               name="theme-light-dark"
               size={30}
@@ -202,6 +202,21 @@ const Home = props => {
             renderItem={renderFilterItem}
             showsHorizontalScrollIndicator={false}
           />
+        </View>
+        <View
+          style={{
+            paddingVertical: 10,
+            backgroundColor:
+              colorScheme === 'dark'
+                ? colors.dark.background
+                : colors.light.background
+          }}>
+          <TouchableOpacity
+            testID={'change-password-btn'}
+            onPress={() => props.navigation.navigate('changePassword')}
+            style={styles.changePasswordBtn}>
+            <Text style={styles.activeViewTextDark}>Change Password</Text>
+          </TouchableOpacity>
         </View>
         <View
           style={

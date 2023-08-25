@@ -6,6 +6,7 @@ const blue = '#1F41BB'
 const gray = '#ECECEC'
 const darkGray = '#4d4d4d'
 const lightBlue = '#f1f4ff'
+const errorColor = '#E57373'
 
 export default {
   light: {
@@ -17,7 +18,8 @@ export default {
     active: blue,
     borderWithOpacity: '#1f41bb',
     lightPrimary: lightBlue,
-    gray
+    gray,
+    errorColor
   },
   dark: {
     darkText: light,
@@ -28,6 +30,7 @@ export default {
     active: lightBlue,
     borderWithOpacity: '#828eb8',
     lightPrimary: lightBlue,
-    gray: darkGray
+    gray: darkGray,
+    errorColor
   }
 }

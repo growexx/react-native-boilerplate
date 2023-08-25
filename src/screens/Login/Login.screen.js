@@ -25,8 +25,8 @@ import {
 import { strings } from '@i18n'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
 import images from '@images'
-import Spacing from '../../constants/Spacing'
 import AuthInput from '../../components/auth.Input'
+import { spacing } from '@constants';
 
 const Login = props => {
   const dispatch = useDispatch()
@@ -76,7 +76,7 @@ const Login = props => {
                 props.navigation.navigate('registration')
               }}
               style={{
-                padding: Spacing
+                padding: spacing
               }}>
               <Text style={styles.createAccountButton}>Register Here.</Text>
             </TouchableOpacity>
@@ -86,7 +86,7 @@ const Login = props => {
               props.navigation.navigate('forgotPassword')
             }}
             style={{
-              padding: Spacing
+              padding: spacing
             }}>
             <Text style={styles.createAccountButton}>Forgot Password?</Text>
           </TouchableOpacity>
