@@ -13,7 +13,12 @@ const languagekeys = {
     technology: 'technology',
     errorHeader: 'errorHeader',
     errorMessage: 'errorMessage',
-    retry: 'retry'
+    retry: 'retry',
+    changePassword: 'changePassword',
+    currentPassword: 'currentPassword',
+    newPassword: 'newPassword',
+    confirmNewPassword: 'confirmNewPassword',
+    passwordValidation: 'passwordValidation'
 
 }
 

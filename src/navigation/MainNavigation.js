@@ -9,7 +9,7 @@ import { connect, useDispatch } from 'react-redux'
 import NetInfo from '@react-native-community/netinfo'
 import { updateNetStatus } from '@actions/deviceInfo.action'
 import SplashScreen from 'react-native-splash-screen'
-import { Home, Login } from '@screens'
+import { Home, Login, ChangePasswordScreen } from '@screens'
 import RegisterScreen from '../screens/registeration/registration.screen'
 import { useColorScheme } from 'react-native'
 import ForgotPasswordScreen from '../screens/Forgotpassword/forgotPassword.screen'
@@ -66,7 +66,16 @@ const MainNavigation = props => {
         <BottomTab.Navigator>
           <BottomTab.Screen
             name="Home"
-            component={Home}
+            component={() => (
+              <Stack.Navigator>
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen
+                  name="changePassword"
+                  component={ChangePasswordScreen}
+                  options={{ title: 'Change Password' }}
+                />
+              </Stack.Navigator>
+            )}
             options={{
               title: 'Home',
               tabBarIcon: ({ color, size }) => (

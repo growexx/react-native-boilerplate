@@ -133,3 +133,7 @@ jest.mock('react-native-root-toast', () => ({
   },
 }));
 
+jest.mock('react-native-localize', () => ({
+  findBestLanguageTag: jest.fn()
+}))
+
