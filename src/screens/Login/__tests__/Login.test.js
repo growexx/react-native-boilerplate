@@ -26,7 +26,7 @@ describe('render login component properly', () => {
 
   beforeEach(() => {
     cleanup()
-    spyOn(Alert, 'alert')
+    jest.spyOn(Alert, 'alert')
   })
 
   test('On Login Success', async () => {
@@ -34,7 +34,7 @@ describe('render login component properly', () => {
       Promise.resolve(getLoginResponse('default'))
     )
     const { getByTestId } = render(Wrapper)
-    await act(() => fireEvent.press(getByTestId('ManualLoginButton')))
+    fireEvent.press(getByTestId('ManualLoginButton'))
     const { isLoggedIn } = store.getState().authReducer
     expect(isLoggedIn).toBeTruthy()
   })
@@ -91,10 +91,12 @@ describe('render login component properly', () => {
 
   test('On login with google fail', async () => {
     GoogleSignin.signIn.mockImplementation(() =>
-      Promise.reject(new Error('something went wrong!'))
+      Promise.reject(new Error('login has error: something went wrong!'))
     )
     await act(() => signInWithGoogle())
-    expect(Alert.alert).toHaveBeenCalledWith('something went wrong!')
+    expect(Alert.alert).toHaveBeenCalledWith(
+      'login has error: something went wrong!'
+    )
   })
 
   test('On login with apple success', async () => {

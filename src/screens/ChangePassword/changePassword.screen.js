@@ -4,7 +4,6 @@ import {
   TextInput,
   TouchableOpacity,
   Text,
-  Image,
   SafeAreaView,
   useColorScheme,
   Keyboard
