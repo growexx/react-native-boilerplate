@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.REGULAR,
     fontSize: fontSize.small,
     padding: spacing * 1.5,
-    // backgroundColor: colors.lightPrimary,
     borderRadius: spacing,
     marginVertical: spacing
   },
@@ -74,7 +73,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.REGULAR,
     fontSize: fontSize.small,
     padding: spacing * 1.5,
-    // backgroundColor: colors.dark.lightPrimary,
     borderRadius: spacing,
     marginVertical: spacing,
     borderColor: colors.dark.text
