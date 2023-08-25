@@ -5,7 +5,6 @@ import { render, fireEvent } from '@testing-library/react-native'
 import React from 'react'
 import showToast from '../../../components/toast'
 
-showToast
 jest.mock('../../../components/toast', () => jest.fn())
 const mockNavigation = {
   navigate: jest.fn(),

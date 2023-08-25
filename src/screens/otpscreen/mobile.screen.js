@@ -34,6 +34,7 @@ const PhoneInputScreen = ({ navigation }) => {
         }
       />
       <TouchableOpacity
+        testID='submit'
         style={styles.login}
         onPress={() => {
           const val = phoneInput.current?.isValidNumber(mobile)
