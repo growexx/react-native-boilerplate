@@ -30,7 +30,6 @@ export default class LanguageUtils {
 
   static async setAppLanguageFromDeviceStorage() {
     const language = await StorageService.getItem(constants.APP_LANGUAGE)
-    console.log('language', language)
     if (language) {
       this.setAppLanguage(language)
     } else {

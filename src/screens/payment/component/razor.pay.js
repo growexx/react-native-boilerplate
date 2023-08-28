@@ -6,6 +6,8 @@ import spacing from '../../../constants/spacing'
 import configs from '../../../constants/configs'
 import fonts from '../../../constants/fonts'
 import fontSize from '../../../constants/fontSize'
+import LanguageUtils from '../../../localization/languageUtils'
+import languagekeys from '../../../localization/languagekeys'
 
 const RazorPayComponent = () => {
   return (
@@ -38,7 +40,7 @@ const RazorPayComponent = () => {
              Alert.alert(`Error: ${error.code} | ${error.description}`)
             })
         }}>
-        <Text style={styles.pay_text}>Razor Pay</Text>
+        <Text style={styles.pay_text}>{LanguageUtils.getLangText(languagekeys.paywithRazorPay)}</Text>
       </TouchableOpacity>
     </View>
   )

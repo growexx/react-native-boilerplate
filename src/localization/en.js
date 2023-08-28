@@ -37,7 +37,8 @@ const en = {
   [languagekeys.loginWithOtp]: 'Login With Otp',
   [languagekeys.editProfile]: 'Edit Profile',
   [languagekeys.googlePay]: 'Google Pay',
-  [languagekeys.payWithGooglePay]: 'Pay with Google Pay'
+  [languagekeys.payWithGooglePay]: 'Pay with Google Pay',
+  [languagekeys.paywithRazorPay]:'Pay with Razor Pay',
 }
 
 export default en
