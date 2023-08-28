@@ -137,3 +137,9 @@ jest.mock('react-native-localize', () => ({
   findBestLanguageTag: jest.fn()
 }))
 
+jest.mock('react-native-razorpay', ()=>({
+  open: jest.fn(()=>{
+   return Promise.resolve()
+  }),
+}))
+

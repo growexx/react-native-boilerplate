@@ -21,6 +21,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import OtpScreen from '../screens/otpscreen/otp.screen'
 import PhoneInputScreen from '../screens/otpscreen/mobile.number.screen'
 import EditProfileScreen from '../screens/editprofile/edit.profile.sceen'
+import PaymentScreen from '../screens/payment/payment.screen'
 
 let unsubscribeNetListener
 const Stack = createStackNavigator()
@@ -91,6 +92,11 @@ const MainNavigation = props => {
                   name="editProfileScreen"
                   component={EditProfileScreen}
                   options={{ title: 'Edit Profile' }}
+                />
+                <Stack.Screen
+                  name="paymentScreen"
+                  component={PaymentScreen}
+                  options={{ title: 'Payment' }}
                 />
               </Stack.Navigator>
             )}
