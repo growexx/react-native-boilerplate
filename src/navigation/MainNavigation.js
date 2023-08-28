@@ -18,8 +18,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
-import OtpScreen, { VerifyCode } from '../screens/otpscreen/otp.screen'
-import PhoneInputScreen from '../screens/otpscreen/mobile.screen'
+import OtpScreen from '../screens/otpscreen/otp.screen'
+import PhoneInputScreen from '../screens/otpscreen/mobile.number.screen'
+import EditProfileScreen from '../screens/editprofile/edit.profile.sceen'
 
 let unsubscribeNetListener
 const Stack = createStackNavigator()
@@ -85,6 +86,11 @@ const MainNavigation = props => {
                   name="changePassword"
                   component={ChangePasswordScreen}
                   options={{ title: 'Change Password' }}
+                />
+                <Stack.Screen
+                  name="editProfileScreen"
+                  component={EditProfileScreen}
+                  options={{ title: 'Edit Profile' }}
                 />
               </Stack.Navigator>
             )}

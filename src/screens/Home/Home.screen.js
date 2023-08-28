@@ -18,7 +18,7 @@ import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import colors from '../../constants/colors'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
-import EventEmitter from 'events';
+import EventEmitter from 'events'
 
 const Home = props => {
   const dispatch = useDispatch()
@@ -111,9 +111,7 @@ const Home = props => {
           testID={'RetryButton'}
           style={styles.retryButton}
           onPress={() => dispatch(fetchNews(page, activeFilter))}>
-          <Text style={styles.retryText}>
-            {texts.retry}
-          </Text>
+          <Text style={styles.retryText}>{texts.retry}</Text>
         </TouchableOpacity>
       </View>
     )
@@ -257,6 +255,21 @@ const Home = props => {
             <Text style={styles.activeViewTextDark}>
               {texts.changePassword}
             </Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            paddingVertical: 10,
+            backgroundColor:
+              colorScheme === 'dark'
+                ? colors.dark.background
+                : colors.light.background
+          }}>
+          <TouchableOpacity
+            testID={'change-password-btn'}
+            onPress={() => props.navigation.navigate('editProfileScreen')}
+            style={styles.changePasswordBtn}>
+            <Text style={styles.activeViewTextDark}>Edit Profile</Text>
           </TouchableOpacity>
         </View>
         <View
