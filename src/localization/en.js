@@ -34,6 +34,8 @@ const en = {
     [languagekeys.dontHaveAccount]:`Don't have an Account?`,
     [languagekeys.registerHere]:'Register here',
     [languagekeys.loginWithOtp]:'Login With Otp',
+    [languagekeys.editProfile]:'Edit Profile',
+    
 }
 
 export default en;

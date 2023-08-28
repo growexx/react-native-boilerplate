@@ -33,7 +33,8 @@ const hin = {
     [languagekeys.verificationCode] :'प्राधिकरण कोड सत्यापित करें',
     [languagekeys.registerHere]:'यहां रजिस्टर करें',
     [languagekeys.dontHaveAccount]:'खाता नहीं है?',
-    [languagekeys.loginWithOtp]:'ओटीपी से लॉगिन करें'
+    [languagekeys.loginWithOtp]:'ओटीपी से लॉगिन करें',
+    [languagekeys.editProfile]:'प्रोफ़ाइल संपादित करें'
 
 }
 

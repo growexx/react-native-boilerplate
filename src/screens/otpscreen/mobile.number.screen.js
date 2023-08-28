@@ -35,7 +35,7 @@ const PhoneInputScreen = ({ navigation }) => {
       />
       <TouchableOpacity
         testID='submit'
-        style={styles.login}
+        style={styles.number}
         onPress={() => {
           const val = phoneInput.current?.isValidNumber(mobile)
           if (val) {
@@ -46,7 +46,7 @@ const PhoneInputScreen = ({ navigation }) => {
             showToast('Please Enter Valid Phone Number.')
           }
         }}>
-        <Text style={styles.login_text}>
+        <Text style={styles.number_text}>
           {LanguageUtils.getLangText(languagekeys.submit)}
         </Text>
       </TouchableOpacity>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center'
   },
-  login: {
+  number: {
     width: '100%',
     padding: spacing * 1.5,
     backgroundColor: colors.light.primary,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
       height: spacing
     }
   },
-  login_dark: {
+  number_dark: {
     width: '100%',
     padding: spacing * 1.5,
     backgroundColor: colors.dark.primary,
@@ -87,13 +87,13 @@ const styles = StyleSheet.create({
       height: spacing
     }
   },
-  login_text: {
+  number_text: {
     fontFamily: fonts.BOLD,
     color: colors.light.onPrimary,
     textAlign: 'center',
     fontSize: fontSize.large
   },
-  login_text_dark: {
+  number_text_dark: {
     fontFamily: fonts.BOLD,
     color: colors.dark.text,
     textAlign: 'center',

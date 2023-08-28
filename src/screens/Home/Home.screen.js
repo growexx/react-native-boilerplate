@@ -18,7 +18,7 @@ import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import colors from '../../constants/colors'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
-import EventEmitter from 'events';
+import EventEmitter from 'events'
 
 const Home = props => {
   const dispatch = useDispatch()
@@ -45,7 +45,8 @@ const Home = props => {
     errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
     errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
     retry: LanguageUtils.getLangText(languagekeys.retry),
-    changePassword: LanguageUtils.getLangText(languagekeys.changePassword)
+    changePassword: LanguageUtils.getLangText(languagekeys.changePassword),
+    editProfile: LanguageUtils.getLangText(languagekeys.editProfile),
   })
   var emitter = new EventEmitter()
 
@@ -66,7 +67,8 @@ const Home = props => {
       errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
       errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
       retry: LanguageUtils.getLangText(languagekeys.retry),
-      changePassword: LanguageUtils.getLangText(languagekeys.changePassword)
+      changePassword: LanguageUtils.getLangText(languagekeys.changePassword),
+      editProfile: LanguageUtils.getLangText(languagekeys.editProfile)
     })
   }
 
@@ -111,9 +113,7 @@ const Home = props => {
           testID={'RetryButton'}
           style={styles.retryButton}
           onPress={() => dispatch(fetchNews(page, activeFilter))}>
-          <Text style={styles.retryText}>
-            {texts.retry}
-          </Text>
+          <Text style={styles.retryText}>{texts.retry}</Text>
         </TouchableOpacity>
       </View>
     )
@@ -257,6 +257,36 @@ const Home = props => {
             <Text style={styles.activeViewTextDark}>
               {texts.changePassword}
             </Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            paddingVertical: 10,
+            backgroundColor:
+              colorScheme === 'dark'
+                ? colors.dark.background
+                : colors.light.background
+          }}>
+          <TouchableOpacity
+            testID={'edit-profile-btn'}
+            onPress={() => props.navigation.navigate('editProfileScreen')}
+            style={styles.changePasswordBtn}>
+            <Text style={styles.activeViewTextDark}>{texts.editProfile}</Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            paddingVertical: 10,
+            backgroundColor:
+              colorScheme === 'dark'
+                ? colors.dark.background
+                : colors.light.background
+          }}>
+          <TouchableOpacity
+            testID={'edit-profile-btn'}
+            onPress={() => props.navigation.navigate('paymentScreen')}
+            style={styles.changePasswordBtn}>
+            <Text style={styles.activeViewTextDark}>Payment</Text>
           </TouchableOpacity>
         </View>
         <View

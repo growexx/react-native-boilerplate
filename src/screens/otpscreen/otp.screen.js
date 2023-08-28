@@ -133,7 +133,7 @@ const OtpScreen = ({ navigation, route }) => {
         <View style={styles.button}>
           <TouchableOpacity
             testID="verify-otp-btn"
-            style={styles.login}
+            style={styles.otp}
             onPress={() => {
               console.log('otp is ', value)
               if (value === '123456') {
@@ -142,7 +142,7 @@ const OtpScreen = ({ navigation, route }) => {
                 showToast('Please enter valid code.')
               }
             }}>
-            <Text style={styles.login_text}>
+            <Text style={styles.otp_text}>
               {LanguageUtils.getLangText(languagekeys.submit)}
             </Text>
           </TouchableOpacity>

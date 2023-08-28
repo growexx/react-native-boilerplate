@@ -30,6 +30,7 @@ const languagekeys = {
     registerHere:'registerHere',
     dontHaveAccount: 'dontHaveAccount',
     loginWithOtp:'loginWithOtp',
+    editProfile: 'editProfile',
     
     
 
