@@ -107,7 +107,7 @@ const MainNavigation = props => {
       ) : (
         <BottomTab.Navigator>
           <BottomTab.Screen
-            name="Home"
+            name="HomeScreenNavigation"
             component={HomeScreenNavigation}
             options={{
               title: 'Home',

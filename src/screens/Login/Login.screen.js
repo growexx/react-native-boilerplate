@@ -161,7 +161,7 @@ const Login = props => {
             redirectUrl="https://www.growexx.com/"
             scopes={['user_profile']}
             onLoginSuccess={() => dispatch(signInWithInstagram())}
-            onLoginFailure={data => console.log(data)}
+            onLoginFailure={data => {}}
           />
         </View>
       </KeyboardAwareScrollView>

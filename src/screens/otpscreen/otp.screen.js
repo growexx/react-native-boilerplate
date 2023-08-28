@@ -52,7 +52,6 @@ const OtpScreen = ({ navigation, route }) => {
     setValue('')
     setResendButtonDisabledTime(RESEND_OTP_TIME_LIMIT)
     startResendOtpTimer()
-    console.log('todo: Resend OTP')
   }
 
   //declarations for input field
@@ -133,7 +132,6 @@ const OtpScreen = ({ navigation, route }) => {
             testID="verify-otp-btn"
             style={styles.otp}
             onPress={() => {
-              console.log('otp is ', value)
               if (value === '123456') {
                 dispatch(loginSuccess({ number: mobile }))
               } else {

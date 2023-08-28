@@ -42,7 +42,6 @@ export const fetchNews = (page, category) => async dispatch => {
       dispatch(fetchNewsSuccess([]))
     }
   } catch (error) {
-    console.log('error is ', error)
     dispatch(fetchNewsFail())
   }
 }
