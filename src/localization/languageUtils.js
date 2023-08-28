@@ -52,7 +52,6 @@ export default class LanguageUtils {
   }
 
   static getLangText(key) {
-    console.log('currentAppLanguage is ', this.currentAppLanguage)
     if (this.currentAppLanguage === this.languages.hindi) {
       return hin[key]
     }
