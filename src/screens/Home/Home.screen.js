@@ -45,7 +45,8 @@ const Home = props => {
     errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
     errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
     retry: LanguageUtils.getLangText(languagekeys.retry),
-    changePassword: LanguageUtils.getLangText(languagekeys.changePassword)
+    changePassword: LanguageUtils.getLangText(languagekeys.changePassword),
+    editProfile: LanguageUtils.getLangText(languagekeys.editProfile),
   })
   var emitter = new EventEmitter()
 
@@ -66,7 +67,8 @@ const Home = props => {
       errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
       errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
       retry: LanguageUtils.getLangText(languagekeys.retry),
-      changePassword: LanguageUtils.getLangText(languagekeys.changePassword)
+      changePassword: LanguageUtils.getLangText(languagekeys.changePassword),
+      editProfile: LanguageUtils.getLangText(languagekeys.editProfile)
     })
   }
 
@@ -266,10 +268,10 @@ const Home = props => {
                 : colors.light.background
           }}>
           <TouchableOpacity
-            testID={'change-password-btn'}
+            testID={'edit-profile-btn'}
             onPress={() => props.navigation.navigate('editProfileScreen')}
             style={styles.changePasswordBtn}>
-            <Text style={styles.activeViewTextDark}>Edit Profile</Text>
+            <Text style={styles.activeViewTextDark}>{texts.editProfile}</Text>
           </TouchableOpacity>
         </View>
         <View
