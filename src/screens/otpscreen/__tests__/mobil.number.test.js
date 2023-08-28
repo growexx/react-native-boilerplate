@@ -2,7 +2,7 @@ import { render , fireEvent } from "@testing-library/react-native"
 import React from 'react'
 import { Provider } from "react-redux"
 import { store} from "@stores"
-import PhoneInputScreen from "../mobile.screen"
+import PhoneInputScreen from "../mobile.number.screen"
 import showToast from "../../../components/toast"
 import { useColorScheme } from "react-native"
 

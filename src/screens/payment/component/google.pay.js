@@ -16,10 +16,10 @@ import {
 
 import React, { useEffect } from 'react'
 import { colors, fontSize, fonts, spacing } from '@constants'
-import LanguageUtils from '../../localization/languageUtils'
-import languagekeys from '../../localization/languagekeys'
+import LanguageUtils from '../../../localization/languageUtils'
+import languagekeys from '../../../localization/languagekeys'
 
-const GooglePayScreen = () => {
+const GooglePayComponent = () => {
   const allowedCardNetworks: AllowedCardNetworkType[] = ['VISA', 'MASTERCARD']
   const allowedCardAuthMethods: AllowedCardAuthMethodsType[] = [
     'PAN_ONLY',
@@ -70,7 +70,7 @@ const GooglePayScreen = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View>
       {Platform.OS === 'android' && (
         <TouchableOpacity
           testID="gpay-btn"
@@ -86,12 +86,6 @@ const GooglePayScreen = () => {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: spacing * 2
-  },
   payButton: {
     width: '100%',
     padding: spacing * 1.5,
@@ -117,4 +111,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default GooglePayScreen
+export default GooglePayComponent

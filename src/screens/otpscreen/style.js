@@ -96,7 +96,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  login: {
+  otp: {
     width: '100%',
     padding: spacing * 1.5,
     backgroundColor: colors.light.primary,
@@ -108,7 +108,7 @@ export const styles = StyleSheet.create({
       height: spacing
     }
   },
-  login_dark: {
+  otp_dark: {
     width: '100%',
     padding: spacing * 1.5,
     backgroundColor: colors.dark.primary,
@@ -120,13 +120,13 @@ export const styles = StyleSheet.create({
       height: spacing
     }
   },
-  login_text: {
+  otp_text: {
     fontFamily: fonts.BOLD,
     color: colors.light.onPrimary,
     textAlign: 'center',
     fontSize: fontSize.large
   },
-  login_text_dark: {
+  otp_text_dark: {
     fontFamily: fonts.BOLD,
     color: colors.dark.text,
     textAlign: 'center',

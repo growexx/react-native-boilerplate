@@ -1,13 +1,13 @@
 import { Provider } from 'react-redux'
 import { store } from '@stores'
-import GooglePayScreen from '../GooglePay.screen'
 import { render, fireEvent } from '@testing-library/react-native'
 import { GooglePay } from 'react-native-google-pay'
+import GooglePayComponent from '../../component/google.pay'
 
 describe('Google Pay Screen Test', () => {
   const Wrapper = (
     <Provider store={store}>
-      <GooglePayScreen />
+      <GooglePayComponent />
     </Provider>
   )
 

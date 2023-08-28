@@ -44,6 +44,7 @@ const Home = props => {
     errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
     retry: LanguageUtils.getLangText(languagekeys.retry),
     changePassword: LanguageUtils.getLangText(languagekeys.changePassword),
+    editProfile: LanguageUtils.getLangText(languagekeys.editProfile),
     googlePay: LanguageUtils.getLangText(languagekeys.googlePay)
   })
 
@@ -65,6 +66,7 @@ const Home = props => {
       errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
       retry: LanguageUtils.getLangText(languagekeys.retry),
       changePassword: LanguageUtils.getLangText(languagekeys.changePassword),
+      editProfile: LanguageUtils.getLangText(languagekeys.editProfile),
       googlePay: LanguageUtils.getLangText(languagekeys.googlePay)
     })
   }
@@ -255,11 +257,35 @@ const Home = props => {
               {texts.changePassword}
             </Text>
           </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            paddingVertical: 10,
+            backgroundColor:
+              colorScheme === 'dark'
+                ? colors.dark.background
+                : colors.light.background
+          }}>
           <TouchableOpacity
-            testID={'google-pay-btn'}
-            onPress={() => props.navigation.navigate('googlePay')}
+            testID={'edit-profile-btn'}
+            onPress={() => props.navigation.navigate('editProfileScreen')}
             style={styles.commonBtn}>
-            <Text style={styles.activeViewTextDark}>{texts.googlePay}</Text>
+            <Text style={styles.activeViewTextDark}>{texts.editProfile}</Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            paddingVertical: 10,
+            backgroundColor:
+              colorScheme === 'dark'
+                ? colors.dark.background
+                : colors.light.background
+          }}>
+          <TouchableOpacity
+            testID={'edit-profile-btn'}
+            onPress={() => props.navigation.navigate('paymentScreen')}
+            style={styles.commonBtn}>
+            <Text style={styles.activeViewTextDark}>Payment</Text>
           </TouchableOpacity>
         </View>
         <View

@@ -35,8 +35,10 @@ const en = {
   [languagekeys.dontHaveAccount]: `Don't have an Account?`,
   [languagekeys.registerHere]: 'Register here',
   [languagekeys.loginWithOtp]: 'Login With Otp',
+  [languagekeys.editProfile]: 'Edit Profile',
   [languagekeys.googlePay]: 'Google Pay',
   [languagekeys.payWithGooglePay]: 'Pay with Google Pay'
 }
 
 export default en
+

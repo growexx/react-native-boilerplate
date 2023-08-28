@@ -8,6 +8,7 @@ const configs = {
   GOOGLE_CLIENT_ID_ANDROID: Config.GOOGLE_CLIENT_ID_ANDROID,
   GOOGLE_CLIENT_ID_IOS: Config.GOOGLE_CLIENT_ID_IOS,
   NEWSAPI_KEY: 'b7fe8e8a4f004beaa5fe0cbc563e30e1',
+  RAZOR_PAY_API_KEY:'rzp_test_VX8h1EJO29zWMm',
 }
 
 export default configs

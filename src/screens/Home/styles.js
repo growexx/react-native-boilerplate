@@ -206,8 +206,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10,
     width: '50%',
-    alignSelf: 'center',
-    marginTop: 15
+    alignSelf: 'center'
   }
 })
 

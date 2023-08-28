@@ -34,6 +34,7 @@ const hin = {
   [languagekeys.registerHere]: 'यहां रजिस्टर करें',
   [languagekeys.dontHaveAccount]: 'खाता नहीं है?',
   [languagekeys.loginWithOtp]: 'ओटीपी से लॉगिन करें',
+    [languagekeys.editProfile]:'प्रोफ़ाइल संपादित करें',
   [languagekeys.googlePay]: 'गूगल पे',
   [languagekeys.payWithGooglePay]: 'गूगल पे से भुगतान करें'
 }
