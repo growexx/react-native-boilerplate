@@ -18,8 +18,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
-import OtpScreen, { VerifyCode } from '../screens/otpscreen/otp.screen'
+import OtpScreen from '../screens/otpscreen/otp.screen'
 import PhoneInputScreen from '../screens/otpscreen/mobile.screen'
+import GooglePayScreen from '../screens/payment/GooglePay.screen'
 
 let unsubscribeNetListener
 const Stack = createStackNavigator()
@@ -43,6 +44,29 @@ const MainNavigation = props => {
 
     return () => unsubscribeNetListener()
   }, [])
+
+  const HomeScreenNavigation = () => (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        name="changePassword"
+        component={ChangePasswordScreen}
+        options={{ title: 'Change Password' }}
+      />
+      <Stack.Screen
+        name="googlePay"
+        component={GooglePayScreen}
+        options={{ title: 'Google Pay' }}
+      />
+    </Stack.Navigator>
+  )
+
+  const ChatScreenNavigation = () => (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="ChatScreen" component={ChatScreen} />
+    </Tab.Navigator>
+  )
 
   return (
     <NavigationContainer theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
@@ -78,16 +102,7 @@ const MainNavigation = props => {
         <BottomTab.Navigator>
           <BottomTab.Screen
             name="Home"
-            component={() => (
-              <Stack.Navigator>
-                <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen
-                  name="changePassword"
-                  component={ChangePasswordScreen}
-                  options={{ title: 'Change Password' }}
-                />
-              </Stack.Navigator>
-            )}
+            component={HomeScreenNavigation}
             options={{
               title: 'Home',
               tabBarIcon: ({ color, size }) => (
@@ -107,12 +122,7 @@ const MainNavigation = props => {
           />
           <BottomTab.Screen
             name="MoreOptions"
-            component={() => (
-              <Tab.Navigator>
-                <Tab.Screen name="Home" component={Home} />
-                <Tab.Screen name="ChatScreen" component={ChatScreen} />
-              </Tab.Navigator>
-            )}
+            component={ChatScreenNavigation}
             options={{
               title: 'More Options',
               tabBarIcon: ({ color, size }) => (

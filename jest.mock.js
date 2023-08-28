@@ -137,3 +137,12 @@ jest.mock('react-native-localize', () => ({
   findBestLanguageTag: jest.fn()
 }))
 
+jest.mock('react-native-google-pay', () => ({
+  ...jest.requireActual('react-native-google-pay'),
+  GooglePay: {
+    setEnvironment: jest.fn(),
+    isReadyToPay: jest.fn(() => Promise.resolve(true)),
+    requestPayment: jest.fn(() => Promise.resolve())
+  }
+}))
+

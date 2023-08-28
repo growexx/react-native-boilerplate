@@ -14,11 +14,9 @@ import { NewsCard } from '@components'
 import styles from './styles'
 import { logout } from '@actions/auth.action'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import colors from '../../constants/colors'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
-import EventEmitter from 'events';
 
 const Home = props => {
   const dispatch = useDispatch()
@@ -45,9 +43,9 @@ const Home = props => {
     errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
     errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
     retry: LanguageUtils.getLangText(languagekeys.retry),
-    changePassword: LanguageUtils.getLangText(languagekeys.changePassword)
+    changePassword: LanguageUtils.getLangText(languagekeys.changePassword),
+    googlePay: LanguageUtils.getLangText(languagekeys.googlePay)
   })
-  var emitter = new EventEmitter()
 
   useEffect(() => {
     clearRedux()
@@ -66,7 +64,8 @@ const Home = props => {
       errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
       errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
       retry: LanguageUtils.getLangText(languagekeys.retry),
-      changePassword: LanguageUtils.getLangText(languagekeys.changePassword)
+      changePassword: LanguageUtils.getLangText(languagekeys.changePassword),
+      googlePay: LanguageUtils.getLangText(languagekeys.googlePay)
     })
   }
 
@@ -111,9 +110,7 @@ const Home = props => {
           testID={'RetryButton'}
           style={styles.retryButton}
           onPress={() => dispatch(fetchNews(page, activeFilter))}>
-          <Text style={styles.retryText}>
-            {texts.retry}
-          </Text>
+          <Text style={styles.retryText}>{texts.retry}</Text>
         </TouchableOpacity>
       </View>
     )
@@ -253,10 +250,16 @@ const Home = props => {
           <TouchableOpacity
             testID={'change-password-btn'}
             onPress={() => props.navigation.navigate('changePassword')}
-            style={styles.changePasswordBtn}>
+            style={styles.commonBtn}>
             <Text style={styles.activeViewTextDark}>
               {texts.changePassword}
             </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            testID={'google-pay-btn'}
+            onPress={() => props.navigation.navigate('googlePay')}
+            style={styles.commonBtn}>
+            <Text style={styles.activeViewTextDark}>{texts.googlePay}</Text>
           </TouchableOpacity>
         </View>
         <View
