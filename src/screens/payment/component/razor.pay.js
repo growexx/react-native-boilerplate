@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import RazorpayCheckout from 'react-native-razorpay'
 import colors from '../../../constants/colors'
@@ -14,7 +14,7 @@ const RazorPayComponent = () => {
         testID="razor-pay"
         style={styles.payButton}
         onPress={() => {
-          var options = {
+          let options = {
             description: 'React Native Boilerplate',
             image: 'https://i.imgur.com/3g7nmJC.png',
             currency: 'INR',
@@ -31,11 +31,11 @@ const RazorPayComponent = () => {
           RazorpayCheckout.open(options)
             .then(data => {
               // handle success
-              alert(`Success: ${data.razorpay_payment_id}`)
+             Alert.alert(`Success: ${data.razorpay_payment_id}`)
             })
             .catch(error => {
               // handle failure
-              alert(`Error: ${error.code} | ${error.description}`)
+             Alert.alert(`Error: ${error.code} | ${error.description}`)
             })
         }}>
         <Text style={styles.pay_text}>Razor Pay</Text>
