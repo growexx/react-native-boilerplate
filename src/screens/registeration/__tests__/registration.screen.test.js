@@ -17,6 +17,14 @@ jest.mock('react', () => ({
   ...jest.requireActual('react'),
   useState: jest.fn()
 }))
+
+const mockedColorScheme = jest.fn()
+jest.mock('react-native/Libraries/Utilities/useColorScheme', () => {
+  return {
+    default: mockedColorScheme
+  }
+})
+
 describe('registration screen tests', () => {
   beforeEach(() => {
     useState.mockImplementation(jest.requireActual('react').useState)
@@ -31,11 +39,13 @@ describe('registration screen tests', () => {
     </Provider>
   )
   test('should first', () => {
+    mockedColorScheme.mockImplementationOnce(() => 'dark')
     const screen = render(Wrapper)
     expect(screen).toBeDefined()
   })
 
   test('handles email input', () => {
+    mockedColorScheme.mockImplementationOnce(() => 'light')
     const { getByTestId } = render(<RegisterScreen />)
     const emailInput = getByTestId('email-input')
     fireEvent.changeText(emailInput, 'test@example')

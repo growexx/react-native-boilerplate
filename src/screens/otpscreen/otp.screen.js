@@ -72,6 +72,9 @@ const OtpScreen = ({ navigation, route }) => {
     }
   }, [resendButtonDisabledTime])
 
+  const styleForResendText =
+    colorScheme === 'dark' ? styles.resendCodeTextDark : styles.resendCodeText
+
   return (
     <SafeAreaView style={styles.root}>
       <View>
@@ -110,12 +113,7 @@ const OtpScreen = ({ navigation, route }) => {
         />
         {/* View for resend otp  */}
         {resendButtonDisabledTime > 0 ? (
-          <Text
-            style={
-              colorScheme === 'dark'
-                ? styles.resendCodeTextDark
-                : styles.resendCodeText
-            }>
+          <Text style={styleForResendText}>
             {LanguageUtils.getLangText(languagekeys.resendCode)}{' '}
             {resendButtonDisabledTime} sec
           </Text>

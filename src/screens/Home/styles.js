@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: colors.dark.text
   },
-  changePasswordBtn: {
+  commonBtn: {
     backgroundColor: colors.light.active,
     alignItems: 'center',
     justifyContent: 'center',

@@ -143,3 +143,12 @@ jest.mock('react-native-razorpay', ()=>({
   }),
 }))
 
+jest.mock('react-native-google-pay', () => ({
+  ...jest.requireActual('react-native-google-pay'),
+  GooglePay: {
+    setEnvironment: jest.fn(),
+    isReadyToPay: jest.fn(() => Promise.resolve(true)),
+    requestPayment: jest.fn(() => Promise.resolve())
+  }
+}))
+

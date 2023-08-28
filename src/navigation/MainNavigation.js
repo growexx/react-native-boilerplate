@@ -46,6 +46,34 @@ const MainNavigation = props => {
     return () => unsubscribeNetListener()
   }, [])
 
+  const HomeScreenNavigation = () => (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        name="changePassword"
+        component={ChangePasswordScreen}
+        options={{ title: 'Change Password' }}
+      />
+      <Stack.Screen
+        name="editProfileScreen"
+        component={EditProfileScreen}
+        options={{ title: 'Edit Profile' }}
+      />
+      <Stack.Screen
+        name="paymentScreen"
+        component={PaymentScreen}
+        options={{ title: 'Payment' }}
+      />
+    </Stack.Navigator>
+  )
+
+  const ChatScreenNavigation = () => (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="ChatScreen" component={ChatScreen} />
+    </Tab.Navigator>
+  )
+
   return (
     <NavigationContainer theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
       {!isLoggedIn ? (
@@ -80,26 +108,7 @@ const MainNavigation = props => {
         <BottomTab.Navigator>
           <BottomTab.Screen
             name="Home"
-            component={() => (
-              <Stack.Navigator>
-                <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen
-                  name="changePassword"
-                  component={ChangePasswordScreen}
-                  options={{ title: 'Change Password' }}
-                />
-                <Stack.Screen
-                  name="editProfileScreen"
-                  component={EditProfileScreen}
-                  options={{ title: 'Edit Profile' }}
-                />
-                <Stack.Screen
-                  name="paymentScreen"
-                  component={PaymentScreen}
-                  options={{ title: 'Payment' }}
-                />
-              </Stack.Navigator>
-            )}
+            component={HomeScreenNavigation}
             options={{
               title: 'Home',
               tabBarIcon: ({ color, size }) => (
@@ -119,12 +128,7 @@ const MainNavigation = props => {
           />
           <BottomTab.Screen
             name="MoreOptions"
-            component={() => (
-              <Tab.Navigator>
-                <Tab.Screen name="Home" component={Home} />
-                <Tab.Screen name="ChatScreen" component={ChatScreen} />
-              </Tab.Navigator>
-            )}
+            component={ChatScreenNavigation}
             options={{
               title: 'More Options',
               tabBarIcon: ({ color, size }) => (

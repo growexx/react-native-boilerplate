@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Image, Text, useColorScheme } from 'react-native'
+import { View, Image, Text } from 'react-native'
 import moment from 'moment'
 import styles from './styles'
 
