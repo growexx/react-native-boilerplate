@@ -3,8 +3,7 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
-  Platform,
-  Alert
+  Platform
 } from 'react-native'
 
 import {
@@ -61,11 +60,11 @@ const GooglePayComponent = () => {
     )
   }
 
-  handleSuccess = (token: string) => {
+  const handleSuccess = (token: string) => {
     // Send a token to your payment gateway
   }
 
-  handleError = (error: any) => {
+  const handleError = (error: any) => {
     // Handle the error, and show message accordingly if user cancelled the request
   }
 
