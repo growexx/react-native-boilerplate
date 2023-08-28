@@ -103,6 +103,19 @@ const Login = props => {
             </TouchableOpacity>
           </View>
           <TouchableOpacity
+            testID={'ManualLoginButton'}
+            style={colorScheme === 'dark' ? styles.login_dark : styles.login}
+            onPress={() => dispatch(login(email, password))}>
+            <Text
+              style={
+                colorScheme === 'dark'
+                  ? styles.login_text_dark
+                  : styles.login_text
+              }>
+              {LanguageUtils.getLangText(languagekeys.login)}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             onPress={() => {
               props.navigation.navigate('phoneNumberScreen')
             }}
@@ -114,19 +127,6 @@ const Login = props => {
                   : styles.login_text
               }>
               {LanguageUtils.getLangText(languagekeys.loginWithOtp)}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            testID={'ManualLoginButton'}
-            style={colorScheme === 'dark' ? styles.login_dark : styles.login}
-            onPress={() => dispatch(login(email, password))}>
-            <Text
-              style={
-                colorScheme === 'dark'
-                  ? styles.login_text_dark
-                  : styles.login_text
-              }>
-              {LanguageUtils.getLangText(languagekeys.login)}
             </Text>
           </TouchableOpacity>
           {Platform.OS === 'ios' && (
