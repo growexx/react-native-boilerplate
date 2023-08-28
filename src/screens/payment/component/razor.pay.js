@@ -14,7 +14,7 @@ const RazorPayComponent = () => {
         testID="razor-pay"
         style={styles.payButton}
         onPress={() => {
-          let options = {
+          const options = {
             description: 'React Native Boilerplate',
             image: 'https://i.imgur.com/3g7nmJC.png',
             currency: 'INR',

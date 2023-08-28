@@ -53,8 +53,8 @@ const GooglePayComponent = () => {
       ready => {
         if (ready) {
           GooglePay.requestPayment(requestData)
-            .then(this.handleSuccess)
-            .catch(this.handleError)
+            .then(handleSuccess)
+            .catch(handleError)
         }
       }
     )
