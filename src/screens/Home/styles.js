@@ -197,6 +197,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: colors.dark.text
+  },
+  commonBtn: {
+    backgroundColor: colors.light.active,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    width: '50%',
+    alignSelf: 'center'
   }
 })
 

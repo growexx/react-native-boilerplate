@@ -1,14 +1,11 @@
 import { View, TextInput, StyleSheet, useColorScheme } from 'react-native'
 import React, { useState } from 'react'
-import Spacing from '../constants/Spacing'
-import FontSize from '../constants/FontSize'
-import Colors from '../constants/colors'
-import Font from '../constants/fonts'
+import { spacing, fontSize, colors, fonts } from '@constants';
 
 const AuthInput = ({ email, setEmail, password, setPassword }) => {
   const [focused, setFocused] = useState(false)
   const [passWordFocus, setPassWordFocus] = useState(false)
-  const colorScheme = useColorScheme
+  const colorScheme = useColorScheme()
   return (
     <View style={styles.view}>
       <TextInput
@@ -26,10 +23,10 @@ const AuthInput = ({ email, setEmail, password, setPassword }) => {
         inputMode="email"
         keyboardType="email-address"
         testID="email-input"
-        placeholderTextColor={Colors.darkText}
+        placeholderTextColor={colors.darkText}
       />
       <TextInput
-        style={[styles.inputText, passWordFocus && styles.focused]}
+        style={[colorScheme === 'dark' ? styles.inputTextDark : styles.inputText, passWordFocus && styles.focused]}
         onFocus={() => setPassWordFocus(true)}
         onBlur={() => setPassWordFocus(false)}
         onChangeText={setPassword}
@@ -39,7 +36,7 @@ const AuthInput = ({ email, setEmail, password, setPassword }) => {
         autoCorrect={false}
         secureTextEntry={true}
         testID="password-input"
-        placeholderTextColor={Colors.darkText}
+        placeholderTextColor={colors.darkText}
       />
     </View>
   )
@@ -47,40 +44,38 @@ const AuthInput = ({ email, setEmail, password, setPassword }) => {
 const styles = StyleSheet.create({
   focused: {
     borderWidth: 3,
-    borderColor: Colors.light.primary,
-    shadowOffset: { width: 4, height: Spacing },
-    shadowColor: Colors.light.primary,
+    borderColor: colors.light.primary,
+    shadowOffset: { width: 4, height: spacing },
+    shadowColor: colors.light.primary,
     shadowOpacity: 0.2,
-    shadowRadius: Spacing
+    shadowRadius: spacing
   },
   focusedDark: {
     borderWidth: 3,
-    borderColor: Colors.dark.primary,
-    shadowOffset: { width: 4, height: Spacing },
-    shadowColor: Colors.light.primary,
+    borderColor: colors.dark.primary,
+    shadowOffset: { width: 4, height: spacing },
+    shadowColor: colors.light.primary,
     shadowOpacity: 0.2,
-    shadowRadius: Spacing
+    shadowRadius: spacing
   },
   inputText: {
     width: '100%',
     borderWidth: 0.5,
-    fontFamily: Font.REGULAR,
-    fontSize: FontSize.small,
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.lightPrimary,
-    borderRadius: Spacing,
-    marginVertical: Spacing
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    borderRadius: spacing,
+    marginVertical: spacing
   },
   inputTextDark: {
     width: '100%',
     borderWidth: 0.5,
-    fontFamily: Font.REGULAR,
-    fontSize: FontSize.small,
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.dark.lightPrimary,
-    borderRadius: Spacing,
-    marginVertical: Spacing,
-    borderColor: Colors.dark.text
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    borderRadius: spacing,
+    marginVertical: spacing,
+    borderColor: colors.dark.text
   },
   view: { width: '100%' }
 })

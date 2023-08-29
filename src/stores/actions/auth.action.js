@@ -108,7 +108,6 @@ export const signInWithApple = async () => {
       requestedOperation: appleAuth.Operation.LOGIN,
       requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME]
     })
-    console.log(appleAuthRequestResponse)
     Alert.alert('Signed In as: ' + appleAuthRequestResponse.fullName)
   } catch (error) {
     Alert.alert(error.message)

@@ -6,18 +6,18 @@ import {
   TextInput,
   View,
   ScrollView,
-  Image
+  Image,
+  useColorScheme
 } from 'react-native'
 import React, { useRef, useState } from 'react'
-import Spacing from '../../constants/Spacing'
-import FontSize from '../../constants/FontSize'
-import Colors from '../../constants/colors'
-import Font from '../../constants/fonts'
+import { colors, fonts, fontSize, spacing } from '@constants'
 import handleRegistration from '../../controllers/registrationController'
 import PhoneInput from 'react-native-phone-number-input'
 import showToast from '../../components/toast'
 import ImagePicker from 'react-native-image-crop-picker'
 import AuthInput from '../../components/auth.Input'
+import languagekeys from '../../localization/languagekeys'
+import LanguageUtils from '../../localization/languageUtils'
 
 const RegisterScreen = ({ navigation }) => {
   const [confirmPasswordFocus, setConfirmPasswordFocus] = useState(false)
@@ -27,15 +27,19 @@ const RegisterScreen = ({ navigation }) => {
   const [mobile, setMobile] = useState('')
   const phoneInput = useRef()
   const [imageUri, setImageUri] = useState()
+  const colorScheme = useColorScheme()
   return (
     <SafeAreaView>
       <ScrollView>
         <View
           style={{
-            padding: Spacing * 2
+            padding: spacing * 2
           }}>
           <View style={styles.view}>
-            <Text style={styles.title}>Create account</Text>
+            <Text
+              style={colorScheme === 'dark' ? styles.titleDark : styles.title}>
+              {LanguageUtils.getLangText(languagekeys.createAccount)}
+            </Text>
           </View>
           <View style={styles.container}>
             <TouchableOpacity
@@ -50,7 +54,9 @@ const RegisterScreen = ({ navigation }) => {
               }}
               style={styles.imageContainer}>
               {imageUri == null ? (
-                <Text style={styles.pickImageText}>Pick Image</Text>
+                <Text style={styles.pickImageText}>
+                  {LanguageUtils.getLangText(languagekeys.pickImage)}
+                </Text>
               ) : (
                 <Image source={{ uri: imageUri }} style={styles.image} />
               )}
@@ -58,7 +64,7 @@ const RegisterScreen = ({ navigation }) => {
           </View>
           <View
             style={{
-              marginVertical: Spacing * 3
+              marginVertical: spacing * 3
             }}>
             <AuthInput
               email={email}
@@ -67,7 +73,12 @@ const RegisterScreen = ({ navigation }) => {
               setPassword={setPassword}
             />
             <TextInput
-              style={[styles.inputText, confirmPasswordFocus && styles.focused]}
+              style={[
+                colorScheme === 'dark'
+                  ? styles.inputTextDark
+                  : styles.inputText,
+                confirmPasswordFocus && styles.focused
+              ]}
               onFocus={() => setConfirmPasswordFocus(true)}
               onBlur={() => setConfirmPasswordFocus(false)}
               onChangeText={setconfirmPassword}
@@ -77,7 +88,7 @@ const RegisterScreen = ({ navigation }) => {
               autoCorrect={false}
               secureTextEntry={true}
               testID="confirm-password-input"
-              placeholderTextColor={Colors.darkText}
+              placeholderTextColor={colors.darkText}
             />
             <PhoneInput
               ref={phoneInput}
@@ -105,15 +116,20 @@ const RegisterScreen = ({ navigation }) => {
               }
             }}
             style={styles.signup}>
-            <Text style={styles.signup_text}>Sign up</Text>
+            <Text style={styles.signup_text}>
+              {LanguageUtils.getLangText(languagekeys.signup)}
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             testID="go-to-login"
             onPress={() => navigation.navigate('Login')}
             style={{
-              padding: Spacing
+              padding: spacing
             }}>
-            <Text style={styles.login}>Already have an account?</Text>
+            <Text
+              style={colorScheme === 'dark' ? styles.loginDark : styles.login}>
+              {LanguageUtils.getLangText(languagekeys.alreadyHaveAccount)}
+            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -125,51 +141,80 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   title: {
-    fontSize: FontSize.xLarge,
-    color: Colors.primary,
-    fontFamily: Font.BOLD,
-    marginVertical: Spacing * 2
+    fontSize: fontSize.xLarge,
+    color: 'black',
+    fontFamily: fonts.BOLD,
+    marginVertical: spacing * 2
+  },
+  titleDark: {
+    fontSize: fontSize.xLarge,
+    color: colors.dark.text,
+    fontFamily: fonts.BOLD,
+    marginVertical: spacing * 2
   },
   login: {
-    fontFamily: Font.BOLD,
-    color: Colors.text,
+    fontFamily: fonts.BOLD,
+    color: colors.text,
     textAlign: 'center',
-    fontSize: FontSize.small
+    fontSize: fontSize.small
+  },
+  loginDark: {
+    fontFamily: fonts.BOLD,
+    color: colors.text,
+    textAlign: 'center',
+    fontSize: fontSize.small,
+    color: colors.dark.text
+  },
+  loginDark: {
+    fontFamily: fonts.BOLD,
+    color: colors.text,
+    textAlign: 'center',
+    fontSize: fontSize.small,
+    color: colors.dark.text
   },
   signup_text: {
-    fontFamily: Font.BOLD,
-    color: Colors.light.onPrimary,
+    fontFamily: fonts.BOLD,
+    color: colors.light.onPrimary,
     textAlign: 'center',
-    fontSize: FontSize.large
+    fontSize: fontSize.large
   },
   signup: {
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.light.primary,
-    borderRadius: Spacing,
-    shadowColor: Colors.primary,
+    padding: spacing * 1.5,
+    backgroundColor: colors.light.primary,
+    borderRadius: spacing,
+    shadowColor: colors.primary,
     shadowOffset: {
       width: 0,
-      height: Spacing
+      height: spacing
     },
     shadowOpacity: 0.3,
-    shadowRadius: Spacing
+    shadowRadius: spacing
   },
   focused: {
     borderWidth: 3,
-    borderColor: Colors.primary,
-    shadowOffset: { width: 4, height: Spacing },
-    shadowColor: Colors.primary,
+    borderColor: colors.primary,
+    shadowOffset: { width: 4, height: spacing },
+    shadowColor: colors.primary,
     shadowOpacity: 0.2,
-    shadowRadius: Spacing
+    shadowRadius: spacing
   },
   inputText: {
     borderWidth: 0.5,
-    fontFamily: Font.REGULAR,
-    fontSize: FontSize.small,
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.lightPrimary,
-    borderRadius: Spacing,
-    marginVertical: Spacing
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    backgroundColor: colors.lightPrimary,
+    borderRadius: spacing,
+    marginVertical: spacing
+  },
+  inputTextDark: {
+    borderWidth: 0.5,
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    borderRadius: spacing,
+    marginVertical: spacing,
+    borderColor: colors.dark.text
   },
   container: {
     flex: 1,
@@ -199,11 +244,11 @@ const styles = StyleSheet.create({
   },
   phoneInput: {
     width: '100%',
-    fontFamily: Font.REGULAR,
-    fontSize: FontSize.small,
-    padding: Spacing * 1.5,
-    backgroundColor: Colors.lightPrimary,
-    borderRadius: Spacing
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    backgroundColor: colors.lightPrimary,
+    borderRadius: spacing
   }
 })
 export default RegisterScreen

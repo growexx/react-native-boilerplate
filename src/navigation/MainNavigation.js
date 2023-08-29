@@ -10,7 +10,7 @@ import DrawerContent from './DrawerContent.js'
 import NetInfo from '@react-native-community/netinfo'
 import { updateNetStatus } from '@actions/deviceInfo.action'
 import SplashScreen from 'react-native-splash-screen'
-import { Home, Login } from '@screens'
+import { Home, Login, ChangePasswordScreen } from '@screens'
 import RegisterScreen from '../screens/registeration/registration.screen'
 import { useColorScheme } from 'react-native'
 import ForgotPasswordScreen from '../screens/Forgotpassword/forgotPassword.screen'
@@ -19,6 +19,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import OtpScreen from '../screens/otpscreen/otp.screen'
+import PhoneInputScreen from '../screens/otpscreen/mobile.number.screen'
+import EditProfileScreen from '../screens/editprofile/edit.profile.sceen'
+import PaymentScreen from '../screens/payment/payment.screen'
 
 const Drawer = createDrawerNavigator()
 let unsubscribeNetListener
@@ -112,6 +116,34 @@ const MainNavigation = props => {
     return () => unsubscribeNetListener()
   }, [])
 
+  const HomeScreenNavigation = () => (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        name="changePassword"
+        component={ChangePasswordScreen}
+        options={{ title: 'Change Password' }}
+      />
+      <Stack.Screen
+        name="editProfileScreen"
+        component={EditProfileScreen}
+        options={{ title: 'Edit Profile' }}
+      />
+      <Stack.Screen
+        name="paymentScreen"
+        component={PaymentScreen}
+        options={{ title: 'Payment' }}
+      />
+    </Stack.Navigator>
+  )
+
+  const ChatScreenNavigation = () => (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="ChatScreen" component={ChatScreen} />
+    </Tab.Navigator>
+  )
+
   return (
     <NavigationContainer theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
       {!isLoggedIn ? (
@@ -130,6 +162,16 @@ const MainNavigation = props => {
             name="forgotPassword"
             component={ForgotPasswordScreen}
             options={{ title: 'Forgot Password' }}
+          />
+          <Stack.Screen
+            name="signwithotp"
+            component={OtpScreen}
+            options={{ title: 'Sign with OTP' }}
+          />
+          <Stack.Screen
+            name="phoneNumberScreen"
+            component={PhoneInputScreen}
+            options={{ title: 'Sign with OTP' }}
           />
         </Stack.Navigator>
       ) : (
