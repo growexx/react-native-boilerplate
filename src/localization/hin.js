@@ -1,4 +1,4 @@
-import languagekeys from "./languagekeys";
+import languagekeys from './languagekeys'
 
 const hin = {
   [languagekeys.login]: 'लॉगइन',
@@ -9,6 +9,7 @@ const hin = {
   [languagekeys.youcanchange]: 'आप यहां से अपनी भाषा बदल सकते हैं।',
   [languagekeys.general]: 'सामान्य',
   [languagekeys.business]: 'व्यापार',
+  [languagekeys.dashboard]: 'डैशबोर्ड',
   [languagekeys.entertainment]: 'मनोरंजन',
   [languagekeys.health]: 'स्वास्थ्य',
   [languagekeys.science]: 'विज्ञान',
@@ -34,10 +35,10 @@ const hin = {
   [languagekeys.registerHere]: 'यहां रजिस्टर करें',
   [languagekeys.dontHaveAccount]: 'खाता नहीं है?',
   [languagekeys.loginWithOtp]: 'ओटीपी से लॉगिन करें',
-    [languagekeys.editProfile]:'प्रोफ़ाइल संपादित करें',
+  [languagekeys.editProfile]: 'प्रोफ़ाइल संपादित करें',
   [languagekeys.googlePay]: 'गूगल पे',
   [languagekeys.payWithGooglePay]: 'गूगल पे से भुगतान करें',
-  [languagekeys.paywithRazorPay]:'रेजर पे से भुगतान करें'
+  [languagekeys.paywithRazorPay]: 'रेजर पे से भुगतान करें'
 }
 
-export default hin;
+export default hin

@@ -1,4 +1,4 @@
-import languagekeys from "./languagekeys";
+import languagekeys from './languagekeys'
 
 const en = {
   [languagekeys.login]: 'Login',
@@ -18,6 +18,7 @@ const en = {
   [languagekeys.submit]: 'Submit',
   [languagekeys.youcanchange]: 'You can change your language from here.',
   [languagekeys.changePassword]: 'Change Password',
+  [languagekeys.dashboard]: 'Dashboard',
   [languagekeys.currentPassword]: 'Current Password',
   [languagekeys.newPassword]: 'New Password',
   [languagekeys.confirmNewPassword]: 'Confirm New Password',
@@ -38,8 +39,7 @@ const en = {
   [languagekeys.editProfile]: 'Edit Profile',
   [languagekeys.googlePay]: 'Google Pay',
   [languagekeys.payWithGooglePay]: 'Pay with Google Pay',
-  [languagekeys.paywithRazorPay]:'Pay with Razor Pay',
+  [languagekeys.paywithRazorPay]: 'Pay with Razor Pay'
 }
 
 export default en
-
