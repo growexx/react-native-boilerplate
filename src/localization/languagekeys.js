@@ -15,6 +15,7 @@ const languagekeys = {
   errorMessage: 'errorMessage',
   retry: 'retry',
   changePassword: 'changePassword',
+  dashboard: 'dashboard',
   currentPassword: 'currentPassword',
   newPassword: 'newPassword',
   confirmNewPassword: 'confirmNewPassword',
@@ -33,7 +34,7 @@ const languagekeys = {
   editProfile: 'editProfile',
   googlePay: 'googlePay',
   payWithGooglePay: 'payWithGooglePay',
-  paywithRazorPay:'payWithRazorPay'
+  paywithRazorPay: 'payWithRazorPay'
 }
 
 export default languagekeys

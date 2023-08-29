@@ -1,5 +1,8 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import LanguageUtils from '../localization/languageUtils'
+import languagekeys from '../localization/languagekeys'
 
 const DrawerContent = ({ navigation }) => {
   return (
@@ -7,12 +10,27 @@ const DrawerContent = ({ navigation }) => {
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('Home')}>
-        <Text>Home</Text>
+        <Icon name="home" size={24} color="black" />
+        <Text style={styles.drawerItemText}>
+          {LanguageUtils.getLangText(languagekeys.dashboard)}
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.drawerItem}
-        onPress={() => navigation.navigate('ChatScreen')}>
-        <Text>Chat</Text>
+        onPress={() => navigation.navigate('editProfileScreen')}>
+        <Icon name="user" size={24} color="black" />
+        <Text style={styles.drawerItemText}>
+          {' '}
+          {LanguageUtils.getLangText(languagekeys.editProfile)}
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.drawerItem}
+        onPress={() => navigation.navigate('changePassword')}>
+        <Icon name="lock" size={24} color="black" />
+        <Text style={styles.drawerItemText}>
+          {LanguageUtils.getLangText(languagekeys.changePassword)}
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.drawerItem}
@@ -30,8 +48,13 @@ const styles = StyleSheet.create({
     paddingTop: 200
   },
   drawerItem: {
-    paddingVertical: 10,
-    paddingHorizontal: 20
+    flexDirection: 'row', // Align icon and text horizontally
+    alignItems: 'center', // Center align icon and text vertically
+    paddingVertical: 20,
+    paddingHorizontal: 30
+  },
+  drawerItemText: {
+    marginLeft: 10 // Add some space between icon and text
   }
 })
 
