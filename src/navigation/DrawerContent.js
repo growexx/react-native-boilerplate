@@ -14,6 +14,11 @@ const DrawerContent = ({ navigation }) => {
         onPress={() => navigation.navigate('ChatScreen')}>
         <Text>Chat</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.drawerItem}
+        onPress={() => navigation.navigate('googleMapScreen')}>
+        <Text>Google Map</Text>
+      </TouchableOpacity>
       {/* ...other drawer items */}
     </View>
   )

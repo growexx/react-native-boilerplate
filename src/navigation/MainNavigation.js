@@ -23,6 +23,7 @@ import OtpScreen from '../screens/otpscreen/otp.screen'
 import PhoneInputScreen from '../screens/otpscreen/mobile.number.screen'
 import EditProfileScreen from '../screens/editprofile/edit.profile.sceen'
 import PaymentScreen from '../screens/payment/payment.screen'
+import GoogleMapScreen from '../screens/googlemap/google.map.screen.js'
 
 const Drawer = createDrawerNavigator()
 let unsubscribeNetListener
@@ -90,6 +91,16 @@ const AppDrawerNavigator = () => (
       component={ChatScreen}
       options={{
         title: 'Chat',
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="comments" color={color} size={size} />
+        )
+      }}
+    />
+    <Drawer.Screen
+      name="googleMapScreen"
+      component={GoogleMapScreen}
+      options={{
+        title: 'Google Map',
         tabBarIcon: ({ color, size }) => (
           <Icon name="comments" color={color} size={size} />
         )

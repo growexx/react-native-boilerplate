@@ -78,5 +78,7 @@
 	<string>$(PRODUCT_NAME) requires to access camera for uploading photos to your profile or posts</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>$(PRODUCT_NAME) requires to access Audio recording to record and uplod videos</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+    <string>$(PRODUCT_NAME) requires to access location services.</string>
 </dict>
 </plist>

@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.ACTION_OPEN_DOCUMENT"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.GALLERY"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
       android:name=".MainApplication"
@@ -20,6 +22,8 @@
       <meta-data
         android:name="com.google.android.gms.wallet.api.enabled"
         android:value="true" />
+       <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCsXkNTVzgC5NrSyaBU3njhhPePL8ufgyc"/>  
       <activity
         android:name=".SplashActivity"
         android:exported="true"
