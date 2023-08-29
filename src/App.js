@@ -6,6 +6,7 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin'
 import { store } from '@stores'
 import { configs } from '@constants'
 import { enableScreens } from 'react-native-screens'
+import 'react-native-gesture-handler'
 import LanguageUtils from './localization/languageUtils'
 
 enableScreens()
@@ -21,7 +22,7 @@ const App = () => {
 
   useEffect(async () => {
     configureGoogleSignIn()
-    await LanguageUtils.setAppLanguageFromDeviceStorage();
+    await LanguageUtils.setAppLanguageFromDeviceStorage()
   }, [])
 
   return (
