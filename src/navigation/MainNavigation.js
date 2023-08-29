@@ -53,12 +53,22 @@ const MainBottomTabNavigator = () => (
         )
       }}
     />
-
+    <BottomTab.Screen
+      name="paymentScreen"
+      component={PaymentScreen}
+      options={{
+        title: 'Payment',
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="credit-card" color={color} size={size} />
+        )
+      }}
+    />
+    {/* TODO: Top bar navigationn */}
     {/* <BottomTab.Screen
       name="MoreOptions"
       component={() => (
         <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Payments" component={PaymentScreen} />
           <Tab.Screen name="ChatScreen" component={ChatScreen} />
         </Tab.Navigator>
       )}
@@ -78,23 +88,14 @@ const AppDrawerNavigator = () => (
       name="Home"
       component={MainBottomTabNavigator}
       options={{
-        title: '',
-        drawerLabel: '',
         drawerIcon: ({ color, size }) => (
-          <Icon name="home" color={color} size={size} />
+          <Icon name="home" color={color} size={size} /> // Replace 'home' with the actual icon name
         )
       }}
     />
-    <Drawer.Screen
-      name="ChatScreen"
-      component={ChatScreen}
-      options={{
-        title: 'Chat',
-        tabBarIcon: ({ color, size }) => (
-          <Icon name="comments" color={color} size={size} />
-        )
-      }}
-    />
+    <Drawer.Screen name="ChatScreen" component={ChatScreen} />
+    <Drawer.Screen name="editProfileScreen" component={EditProfileScreen} />
+    <Drawer.Screen name="changePassword" component={ChangePasswordScreen} />
   </Drawer.Navigator>
 )
 
@@ -115,27 +116,6 @@ const MainNavigation = props => {
 
     return () => unsubscribeNetListener()
   }, [])
-
-  const HomeScreenNavigation = () => (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen
-        name="changePassword"
-        component={ChangePasswordScreen}
-        options={{ title: 'Change Password' }}
-      />
-      <Stack.Screen
-        name="editProfileScreen"
-        component={EditProfileScreen}
-        options={{ title: 'Edit Profile' }}
-      />
-      <Stack.Screen
-        name="paymentScreen"
-        component={PaymentScreen}
-        options={{ title: 'Payment' }}
-      />
-    </Stack.Navigator>
-  )
 
   const ChatScreenNavigation = () => (
     <Tab.Navigator>
