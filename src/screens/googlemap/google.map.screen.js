@@ -35,7 +35,6 @@ const GoogleMapScreen = () => {
         region={region}
         showsUserLocation={true}
         showsMyLocationButton={true}>
-            console.log("in view")
         <Marker
           coordinate={{
             latitude: region.latitude,
