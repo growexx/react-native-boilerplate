@@ -85,7 +85,7 @@ const MainBottomTabNavigator = () => (
 const AppDrawerNavigator = () => (
   <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
     <Drawer.Screen
-      name="Home"
+      name="MainBottomTabNavigator"
       component={MainBottomTabNavigator}
       options={{
         drawerIcon: ({ color, size }) => (

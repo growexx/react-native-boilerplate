@@ -20,9 +20,13 @@ const App = () => {
     })
   }
 
-  useEffect(async () => {
-    configureGoogleSignIn()
+  const configureLanguageForApp = async () => {
     await LanguageUtils.setAppLanguageFromDeviceStorage()
+  }
+
+  useEffect(() => {
+    configureGoogleSignIn()
+    configureLanguageForApp()
   }, [])
 
   return (
