@@ -6,6 +6,7 @@ import {
 } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { connect, useDispatch } from 'react-redux'
+import DrawerContent from './DrawerContent.js'
 import NetInfo from '@react-native-community/netinfo'
 import { updateNetStatus } from '@actions/deviceInfo.action'
 import SplashScreen from 'react-native-splash-screen'
@@ -16,13 +17,82 @@ import ForgotPasswordScreen from '../screens/Forgotpassword/forgotPassword.scree
 import ChatScreen from '../screens/Chat/Chat.screen'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
-
+import { createDrawerNavigator } from '@react-navigation/drawer'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
+const Drawer = createDrawerNavigator()
 let unsubscribeNetListener
 const Stack = createStackNavigator()
 const BottomTab = createBottomTabNavigator()
 const Tab = createMaterialTopTabNavigator()
+
+const MainBottomTabNavigator = () => (
+  <BottomTab.Navigator>
+    <BottomTab.Screen
+      name="Home"
+      component={Home}
+      options={{
+        title: 'Home',
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="home" color={color} size={size} />
+        )
+      }}
+    />
+    <BottomTab.Screen
+      name="ChatScreen"
+      component={ChatScreen}
+      options={{
+        title: 'Chat',
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="comments" color={color} size={size} />
+        )
+      }}
+    />
+
+    {/* <BottomTab.Screen
+      name="MoreOptions"
+      component={() => (
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="ChatScreen" component={ChatScreen} />
+        </Tab.Navigator>
+      )}
+      options={{
+        title: 'More Options',
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="ellipsis-h" color={color} size={size} />
+        )
+      }}
+    /> */}
+  </BottomTab.Navigator>
+)
+
+const AppDrawerNavigator = () => (
+  <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+    <Drawer.Screen
+      name="Home"
+      component={MainBottomTabNavigator}
+      options={{
+        title: '',
+        drawerLabel: '',
+        drawerIcon: ({ color, size }) => (
+          <Icon name="home" color={color} size={size} />
+        )
+      }}
+    />
+    <Drawer.Screen
+      name="ChatScreen"
+      component={ChatScreen}
+      options={{
+        title: 'Chat',
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="comments" color={color} size={size} />
+        )
+      }}
+    />
+  </Drawer.Navigator>
+)
 
 const MainNavigation = props => {
   const dispatch = useDispatch()
@@ -63,43 +133,15 @@ const MainNavigation = props => {
           />
         </Stack.Navigator>
       ) : (
-        <BottomTab.Navigator>
-          <BottomTab.Screen
-            name="Home"
-            component={Home}
+        <Stack.Navigator headerShown={false}>
+          <Stack.Screen
+            name="MAIN"
+            component={AppDrawerNavigator}
             options={{
-              title: 'Home',
-              tabBarIcon: ({ color, size }) => (
-                <Icon name="home" color={color} size={size} />
-              )
+              headerShown: false
             }}
           />
-          <BottomTab.Screen
-            name="ChatScreen"
-            component={ChatScreen}
-            options={{
-              title: 'Chat',
-              tabBarIcon: ({ color, size }) => (
-                <Icon name="comments" color={color} size={size} />
-              )
-            }}
-          />
-          <BottomTab.Screen
-            name="MoreOptions"
-            component={() => (
-              <Tab.Navigator>
-                <Tab.Screen name="Home" component={Home} />
-                <Tab.Screen name="ChatScreen" component={ChatScreen} />
-              </Tab.Navigator>
-            )}
-            options={{
-              title: 'More Options',
-              tabBarIcon: ({ color, size }) => (
-                <Icon name="ellipsis-h" color={color} size={size} />
-              )
-            }}
-          />
-        </BottomTab.Navigator>
+        </Stack.Navigator>
       )}
     </NavigationContainer>
   )

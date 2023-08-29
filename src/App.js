@@ -6,6 +6,7 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin'
 import { store } from '@stores'
 import { configs } from '@constants'
 import { enableScreens } from 'react-native-screens'
+import 'react-native-gesture-handler'
 
 enableScreens()
 
