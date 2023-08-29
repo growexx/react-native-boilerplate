@@ -152,3 +152,14 @@ jest.mock('react-native-google-pay', () => ({
   }
 }))
 
+jest.mock('@react-native-community/geolocation',()=>({
+  getCurrentPosition: jest.fn(),
+  watchPosition: jest.fn(),
+  clearWatch: jest.fn(),
+}))
+jest.mock('react-native-maps', () => ({
+  __esModule: true,
+  default: ({ children }) => <div>{children}</div>,
+  Marker: ({ children }) => <div>{children}</div>,
+}));
+

@@ -38,7 +38,8 @@ const hin = {
   [languagekeys.editProfile]: 'प्रोफ़ाइल संपादित करें',
   [languagekeys.googlePay]: 'गूगल पे',
   [languagekeys.payWithGooglePay]: 'गूगल पे से भुगतान करें',
-  [languagekeys.paywithRazorPay]: 'रेजर पे से भुगतान करें'
+  [languagekeys.paywithRazorPay]: 'रेजर पे से भुगतान करें',
+  [languagekeys.googleMap]:'गूगल नक़्शे'
 }
 
 export default hin

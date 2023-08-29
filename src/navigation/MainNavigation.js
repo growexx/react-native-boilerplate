@@ -25,6 +25,7 @@ import EditProfileScreen from '../screens/editprofile/edit.profile.sceen'
 import PaymentScreen from '../screens/payment/payment.screen'
 import LanguageUtils from '../localization/languageUtils'
 import languagekeys from '../localization/languagekeys'
+import GoogleMapScreen from '../screens/googlemap/google.map.screen.js'
 
 const Drawer = createDrawerNavigator()
 let unsubscribeNetListener
@@ -98,6 +99,16 @@ const AppDrawerNavigator = () => (
     <Drawer.Screen name="ChatScreen" component={ChatScreen} />
     <Drawer.Screen name="editProfileScreen" component={EditProfileScreen} />
     <Drawer.Screen name="changePassword" component={ChangePasswordScreen} />
+    <Drawer.Screen
+      name="googleMapScreen"
+      component={GoogleMapScreen}
+      options={{
+        title: 'Google Map',
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="comments" color={color} size={size} />
+        )
+      }}
+    />
   </Drawer.Navigator>
 )
 

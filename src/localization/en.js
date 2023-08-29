@@ -39,7 +39,8 @@ const en = {
   [languagekeys.editProfile]: 'Edit Profile',
   [languagekeys.googlePay]: 'Google Pay',
   [languagekeys.payWithGooglePay]: 'Pay with Google Pay',
-  [languagekeys.paywithRazorPay]: 'Pay with Razor Pay'
+  [languagekeys.paywithRazorPay]: 'Pay with Razor Pay',
+  [languagekeys.googleMap]:'Google Map'
 }
 
 export default en
