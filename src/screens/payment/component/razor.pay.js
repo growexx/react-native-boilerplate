@@ -1,4 +1,4 @@
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import RazorpayCheckout from 'react-native-razorpay'
 import LanguageUtils from '../../../localization/languageUtils'

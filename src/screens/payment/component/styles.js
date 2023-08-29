@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, fontSize, fonts, spacing } from '@constants'
+import { colors } from '@constants'
 
 const styles = StyleSheet.create({
   payButton: {
