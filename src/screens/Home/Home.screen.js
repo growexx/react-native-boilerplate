@@ -242,53 +242,6 @@ const Home = props => {
           />
         </View>
         <View
-          style={{
-            paddingVertical: 10,
-            backgroundColor:
-              colorScheme === 'dark'
-                ? colors.dark.background
-                : colors.light.background
-          }}>
-          <TouchableOpacity
-            testID={'change-password-btn'}
-            onPress={() => props.navigation.navigate('changePassword')}
-            style={styles.commonBtn}>
-            <Text style={styles.activeViewTextDark}>
-              {texts.changePassword}
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            paddingVertical: 10,
-            backgroundColor:
-              colorScheme === 'dark'
-                ? colors.dark.background
-                : colors.light.background
-          }}>
-          <TouchableOpacity
-            testID={'edit-profile-btn'}
-            onPress={() => props.navigation.navigate('editProfileScreen')}
-            style={styles.commonBtn}>
-            <Text style={styles.activeViewTextDark}>{texts.editProfile}</Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            paddingVertical: 10,
-            backgroundColor:
-              colorScheme === 'dark'
-                ? colors.dark.background
-                : colors.light.background
-          }}>
-          <TouchableOpacity
-            testID={'edit-profile-btn'}
-            onPress={() => props.navigation.navigate('paymentScreen')}
-            style={styles.commonBtn}>
-            <Text style={styles.activeViewTextDark}>Payment</Text>
-          </TouchableOpacity>
-        </View>
-        <View
           style={
             colorScheme === 'dark' ? styles.containerDark : styles.container
           }>
