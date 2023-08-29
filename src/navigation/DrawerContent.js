@@ -35,7 +35,10 @@ const DrawerContent = ({ navigation }) => {
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('googleMapScreen')}>
-        <Text>Google Map</Text>
+        <Icon name="map-marker" size={24} color="black" />
+        <Text style={styles.drawerItemText}>
+          {LanguageUtils.getLangText(languagekeys.googleMap)}
+        </Text>
       </TouchableOpacity>
       {/* ...other drawer items */}
     </View>

@@ -34,7 +34,8 @@ const languagekeys = {
   editProfile: 'editProfile',
   googlePay: 'googlePay',
   payWithGooglePay: 'payWithGooglePay',
-  paywithRazorPay: 'payWithRazorPay'
+  paywithRazorPay: 'payWithRazorPay',
+  googleMap: 'googleMap',
 }
 
 export default languagekeys
