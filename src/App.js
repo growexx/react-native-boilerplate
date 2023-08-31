@@ -7,6 +7,16 @@ import { store } from '@stores'
 import { configs } from '@constants'
 import { enableScreens } from 'react-native-screens'
 import LanguageUtils from './localization/languageUtils'
+import SQLite from 'react-native-sqlite-storage';
+
+const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' });
+
+// Create the 'todos' table if it doesn't exist
+db.transaction((tx) => {
+  tx.executeSql(
+    'CREATE TABLE IF NOT EXISTS todos (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, description TEXT, completed INT)'
+  );
+});
 
 enableScreens()
 

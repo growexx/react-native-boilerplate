@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import EntypoIcon from 'react-native-vector-icons/Entypo'
 import LanguageUtils from '../localization/languageUtils'
 import languagekeys from '../localization/languagekeys'
 
@@ -38,6 +39,14 @@ const DrawerContent = ({ navigation }) => {
         <Icon name="map-marker" size={24} color="black" />
         <Text style={styles.drawerItemText}>
           {LanguageUtils.getLangText(languagekeys.googleMap)}
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.drawerItem}
+        onPress={() => navigation.navigate('Todo')}>
+        <EntypoIcon name="add-to-list" size={24} color="black" />
+        <Text style={styles.drawerItemText}>
+          {LanguageUtils.getLangText(languagekeys.todo)}
         </Text>
       </TouchableOpacity>
       {/* ...other drawer items */}

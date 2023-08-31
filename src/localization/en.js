@@ -40,7 +40,10 @@ const en = {
   [languagekeys.googlePay]: 'Google Pay',
   [languagekeys.payWithGooglePay]: 'Pay with Google Pay',
   [languagekeys.paywithRazorPay]: 'Pay with Razor Pay',
-  [languagekeys.googleMap]:'Google Map'
+  [languagekeys.googleMap]: 'Google Map',
+  [languagekeys.todo]: 'Todo List',
+  [languagekeys.addTodo]: 'Add Todo',
+  [languagekeys.updateTodo]: 'Update Todo'
 }
 
 export default en
