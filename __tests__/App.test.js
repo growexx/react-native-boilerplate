@@ -1,5 +1,5 @@
 import React from 'react'
-// import App from '../src/App'
+import App from '../src/App'
 import { render, cleanup } from '@testing-library/react-native'
 
 describe('App renders successfully', () => {
