@@ -52,10 +52,11 @@ const styles = StyleSheet.create({
   },
   socialButtonGoogle: {
     height: 50,
-    width: '100%',
+    width: '103%',
     borderRadius: 15,
     justifyContent: 'center',
-    marginTop: 10
+    marginTop: 10,
+    borderRadius: 10
   },
   createAccountButton: {
     fontFamily: fonts.BOLD,
