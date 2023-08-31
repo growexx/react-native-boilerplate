@@ -23,10 +23,14 @@ jest.mock('redux-persist', () => {
 jest.mock('react-native-fbsdk', () => ({
   LoginButton: () => <></>,
   AccessToken: {
-    getCurrentAccessToken: jest.fn()
+    getCurrentAccessToken: jest.fn(() =>
+      Promise.resolve({ accessToken: 'test-token' })
+    )
   },
-  GraphRequest: jest.fn(),
-  GraphRequestManager: jest.fn()
+  GraphRequest: jest.fn(() => ({ userId: 1 })),
+  GraphRequestManager: jest.fn(() => ({
+    addRequest: jest.fn(() => ({ start: jest.fn() }))
+  }))
 }))
 jest.mock('@react-native-google-signin/google-signin', () => {
   const mockGoogleSignin = jest.requireActual(

@@ -23,8 +23,6 @@ import OtpScreen from '../screens/otpscreen/otp.screen'
 import PhoneInputScreen from '../screens/otpscreen/mobile.number.screen'
 import EditProfileScreen from '../screens/editprofile/edit.profile.sceen'
 import PaymentScreen from '../screens/payment/payment.screen'
-import LanguageUtils from '../localization/languageUtils'
-import languagekeys from '../localization/languagekeys'
 import GoogleMapScreen from '../screens/googlemap/google.map.screen.js'
 import TodoList from '../screens/todo/todoList/TodoList.js'
 import AddTodo from '../screens/todo/addTodo/AddTodo.js'
@@ -69,7 +67,7 @@ const MainBottomTabNavigator = () => (
         )
       }}
     />
-    {/* TODO: Top bar navigationn */}
+    {/* Top bar navigationn */}
     {/* <BottomTab.Screen
       name="MoreOptions"
       component={() => (
@@ -135,13 +133,6 @@ const MainNavigation = props => {
 
     return () => unsubscribeNetListener()
   }, [])
-
-  const ChatScreenNavigation = () => (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="ChatScreen" component={ChatScreen} />
-    </Tab.Navigator>
-  )
 
   return (
     <NavigationContainer theme={theme === 'dark' ? DarkTheme : DefaultTheme}>

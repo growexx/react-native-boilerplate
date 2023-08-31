@@ -24,4 +24,11 @@ describe('Storage Service test', () => {
     const res = await saveItem('test', 'test')
     expect(res).toBe(undefined)
   })
+  
+
+  test('should return null if the key doesnt exists in async storage', async () => {
+    AsyncStorage.getItem.mockRejectedValue(jest.fn())
+    const res = await getItem('test')
+    expect(res).toBe(null)
+  })
 })

@@ -1,4 +1,4 @@
-import { GET } from './AxiosClient'
+import { GET, GET_BACKGROUND } from './AxiosClient'
 import { configs } from '@constants'
 
 const getNews = (page, category) => {
@@ -7,4 +7,8 @@ const getNews = (page, category) => {
   )
 }
 
-export { getNews }
+const getUsers = () => {
+  return GET_BACKGROUND()
+}
+
+export { getNews, getUsers }

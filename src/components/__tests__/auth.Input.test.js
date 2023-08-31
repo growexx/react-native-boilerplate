@@ -7,6 +7,15 @@ jest.mock('react', () => ({
   ...jest.requireActual('react'),
   useState: jest.fn()
 }))
+
+const mockedColorScheme = jest.fn()
+
+jest.mock('react-native/Libraries/Utilities/useColorScheme', () => {
+  return {
+    default: mockedColorScheme
+  }
+})
+
 const Wrapper = (
   <AuthInput
     email={'test@example.com'}
@@ -16,11 +25,13 @@ const Wrapper = (
   />
 )
 describe('auth input test', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
   test('should focused', () => {
+    mockedColorScheme.mockImplementationOnce(() => 'dark')
     const setFocus = jest.fn()
-    const setPasswordFocus = jest.fn()
-    useState.mockImplementationOnce(() => [false, setFocus])
-    useState.mockImplementationOnce(() => [false, setPasswordFocus])
+    useState.mockImplementation(() => [false, setFocus])
     const { getByTestId } = render(Wrapper)
     const email = getByTestId('email-input')
     const password = getByTestId('password-input')
@@ -29,10 +40,11 @@ describe('auth input test', () => {
     fireEvent(email, 'onBlur')
     expect(setFocus).toHaveBeenLastCalledWith(false)
     fireEvent(password, 'onFocus')
-    expect(setPasswordFocus).toHaveBeenLastCalledWith(true)
+    expect(setFocus).toHaveBeenLastCalledWith(true)
     fireEvent(password, 'onBlur')
   })
   test('should focused style', () => {
+    mockedColorScheme.mockImplementationOnce(() => 'light')
     const setFocus = jest.fn()
     const setPasswordFocus = jest.fn()
     useState.mockImplementationOnce(() => [true, setFocus])
