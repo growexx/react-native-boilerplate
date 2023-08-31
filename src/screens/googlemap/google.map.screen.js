@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Alert, PermissionsAndroid } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
 import Geolocation from '@react-native-community/geolocation'
 
@@ -12,21 +12,49 @@ const GoogleMapScreen = () => {
   })
 
   useEffect(() => {
-    // Get current location
-    Geolocation.getCurrentPosition(
-      position => {
-        const { latitude, longitude } = position.coords
-        setRegion(prevRegion => ({
-          ...prevRegion,
-          latitude,
-          longitude
-        }))
-      },
-      error => {
-        console.error(error)
+    async function requestLocationPermission() {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+          {
+            title: 'Location Permission',
+            message: 'This app requires access to your location.',
+            buttonNeutral: 'Ask Me Later',
+            buttonNegative: 'Cancel',
+            buttonPositive: 'OK'
+          }
+        )
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          console.log('Location permission granted')
+          // Now that permission is granted, retrieve the location
+          Geolocation.getCurrentPosition(
+            position => {
+              const { latitude, longitude } = position.coords
+              setRegion(prevRegion => ({
+                ...prevRegion,
+                latitude,
+                longitude
+              }))
+            },
+            error => {
+              console.error(error)
+              Alert.alert(
+                'Location permission denied. Please turn on location permission.'
+              )
+            }
+          )
+        } else {
+          console.log('Location permission denied')
+        }
+      } catch (err) {
+        console.warn(err)
       }
-    )
-  }, [])
+    }
+
+    // Call the function to request permission
+    requestLocationPermission()
+  }, [region.latitude, region.longitude])
+
   return (
     <View style={styles.container}>
       <MapView
