@@ -3,6 +3,7 @@ import { GET, POST, PATCH, DELETE } from '../AxiosClient'
 
 import handleLogin from '../../controllers/loginController'
 import { loginUser } from '../fakeApiLogin'
+import { getUsers } from '@api'
 
 jest.mock('axios')
 jest.mock('../../controllers/loginController')
@@ -131,5 +132,14 @@ describe('Axios Client test', () => {
     } catch (error) {
       expect(res).toBe(undefined)
     }
+  })
+
+  it('should call GET_BACKGROUND when getUsers is called', async () => {
+    const responseData = {
+      data: [{ id: 0, first_name: 'Test', last_name: 'user' }]
+    }
+    axios.get.mockResolvedValue({ status: 200, data: responseData })
+    const users = await getUsers()
+    expect(users.data[0].id).toBe(0)
   })
 })

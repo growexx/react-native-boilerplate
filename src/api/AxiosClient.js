@@ -11,6 +11,29 @@ export const GET = async (url, params) => {
   return handleRequest(axios.get(configs.API_URL + url, { params }))
 }
 
+export const GET_BACKGROUND = async params => {
+  // You can pass params if you want as described above.
+  // This API gives response after 5 seconds of delay, so for example if you want to load the users list in a listview, without showing loader, you can use the api reducer and api action which will store the value so you dont have to call the api every time you navigate to some screen, also the using redux if the userList changes the UI where you have used that list will automatically re render so you dont have to show loading indicator while data is loaded and redux will handle that state management.
+  // For example you can get the list of users from the reducer using the useSelector as below:
+
+  /* const data = useSelector(state => state.apiReducer.userList)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    clearRedux()
+    dispatch(fetchApi())
+  }, []) */
+
+  // Now you can use this value to update the UI whenever the API call completes, for example you want to display if of first user in the list you can use below example:
+
+  // {data.length > 0 && <Text>{data[0].id}</Text>}
+
+  // So when the list will be empty you will not have a TEXT in the screen but when the API call completes and you have data the text will be displayed automatically, as the state is managed by redux.
+
+  return handleRequest(
+    axios.get('https://reqres.in/api/users?delay=5', { params })
+  )
+}
+
 export const POST = async (url, data, params) => {
   // data to be passed to the post request and also pass the params if you want as described above.
   return handleRequest(axios.post(configs.API_URL + url, data, { params }))
