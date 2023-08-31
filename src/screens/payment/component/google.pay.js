@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Platform
-} from 'react-native'
+import { View, Text, TouchableOpacity, Platform } from 'react-native'
 
 import {
   GooglePay,
@@ -14,9 +8,9 @@ import {
 } from 'react-native-google-pay'
 
 import React, { useEffect } from 'react'
-import { colors, fontSize, fonts, spacing } from '@constants'
 import LanguageUtils from '../../../localization/languageUtils'
 import languagekeys from '../../../localization/languagekeys'
+import styles from './styles'
 
 const GooglePayComponent = () => {
   const allowedCardNetworks: AllowedCardNetworkType[] = ['VISA', 'MASTERCARD']
@@ -83,31 +77,5 @@ const GooglePayComponent = () => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  payButton: {
-    width: '100%',
-    padding: spacing * 1.5,
-    backgroundColor: colors.light.primary,
-    marginVertical: spacing * 0.5,
-    borderRadius: spacing,
-    shadowColor: colors.light.primary,
-    shadowOffset: {
-      width: 0,
-      height: spacing
-    }
-  },
-  pay_text: {
-    fontFamily: fonts.BOLD,
-    color: colors.light.onPrimary,
-    textAlign: 'center',
-    fontSize: fontSize.large
-  },
-  welcome: {
-    fontSize: 18,
-    color: '#222',
-    marginBottom: 16
-  }
-})
 
 export default GooglePayComponent

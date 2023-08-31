@@ -104,14 +104,9 @@ const Login = props => {
           </View>
           <TouchableOpacity
             testID={'ManualLoginButton'}
-            style={colorScheme === 'dark' ? styles.login_dark : styles.login}
+            style={styles.buttonWrapper}
             onPress={() => dispatch(login(email, password))}>
-            <Text
-              style={
-                colorScheme === 'dark'
-                  ? styles.login_text_dark
-                  : styles.login_text
-              }>
+            <Text style={styles.buttonText}>
               {LanguageUtils.getLangText(languagekeys.login)}
             </Text>
           </TouchableOpacity>
@@ -119,13 +114,8 @@ const Login = props => {
             onPress={() => {
               props.navigation.navigate('phoneNumberScreen')
             }}
-            style={colorScheme === 'dark' ? styles.login_dark : styles.login}>
-            <Text
-              style={
-                colorScheme === 'dark'
-                  ? styles.login_text_dark
-                  : styles.login_text
-              }>
+            style={styles.buttonWrapper}>
+            <Text style={styles.buttonText}>
               {LanguageUtils.getLangText(languagekeys.loginWithOtp)}
             </Text>
           </TouchableOpacity>
@@ -138,7 +128,7 @@ const Login = props => {
             />
           )}
           <LoginButton
-            style={styles.socialButton}
+            style={styles.buttonWrapper}
             onLoginFinished={signInwithFacebook}
             onLogoutFinished={() => {}}
           />

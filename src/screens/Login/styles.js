@@ -39,28 +39,23 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     height: 40,
     width: '100%',
-    backgroundColor: colors.light.darkText,
+    backgroundColor: colors.light.primary,
     borderRadius: 10,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 10
   },
   buttonText: {
-    color: colors.background,
+    color: colors.light.background,
     fontSize: 18,
     fontWeight: 'bold'
-  },
-  socialButton: {
-    height: 40,
-    width: '100%',
-    borderRadius: 15,
-    justifyContent: 'center',
-    backgroundColor: colors.primary
   },
   socialButtonGoogle: {
     height: 50,
     width: '100%',
     borderRadius: 15,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: 10
   },
   createAccountButton: {
     fontFamily: fonts.BOLD,
@@ -85,42 +80,6 @@ const styles = StyleSheet.create({
     borderRadius: spacing,
     marginVertical: spacing,
     alignItems: 'center'
-  },
-  login: {
-    width: '100%',
-    padding: spacing * 1.5,
-    backgroundColor: colors.light.primary,
-    marginVertical: spacing * 0.5,
-    borderRadius: spacing,
-    shadowColor: colors.light.primary,
-    shadowOffset: {
-      width: 0,
-      height: spacing
-    }
-  },
-  login_dark: {
-    width: '100%',
-    padding: spacing * 1.5,
-    backgroundColor: colors.dark.primary,
-    marginVertical: spacing * 0.5,
-    borderRadius: spacing,
-    shadowColor: colors.dark.primary,
-    shadowOffset: {
-      width: 0,
-      height: spacing
-    }
-  },
-  login_text: {
-    fontFamily: fonts.BOLD,
-    color: colors.light.onPrimary,
-    textAlign: 'center',
-    fontSize: fontSize.large
-  },
-  login_text_dark: {
-    fontFamily: fonts.BOLD,
-    color: colors.dark.text,
-    textAlign: 'center',
-    fontSize: fontSize.large
   },
   register_view: {
     flexDirection: 'row'
