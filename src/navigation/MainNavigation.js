@@ -26,6 +26,9 @@ import PaymentScreen from '../screens/payment/payment.screen'
 import LanguageUtils from '../localization/languageUtils'
 import languagekeys from '../localization/languagekeys'
 import GoogleMapScreen from '../screens/googlemap/google.map.screen.js'
+import TodoList from '../screens/todo/todoList/TodoList.js'
+import AddTodo from '../screens/todo/addTodo/AddTodo.js'
+import EditTodo from '../screens/todo/editTodo/EditTodo.js'
 
 const Drawer = createDrawerNavigator()
 let unsubscribeNetListener
@@ -109,6 +112,9 @@ const AppDrawerNavigator = () => (
         )
       }}
     />
+    <Drawer.Screen name="Todo" component={TodoList} />
+    <Drawer.Screen name="AddTodo" component={AddTodo} />
+    <Drawer.Screen name="EditTodo" component={EditTodo} />
   </Drawer.Navigator>
 )
 

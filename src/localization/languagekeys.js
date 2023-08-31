@@ -36,6 +36,9 @@ const languagekeys = {
   payWithGooglePay: 'payWithGooglePay',
   paywithRazorPay: 'payWithRazorPay',
   googleMap: 'googleMap',
+  todo: 'todo',
+  addTodo: 'addTodo',
+  updateTodo: 'updateTodo'
 }
 
 export default languagekeys
