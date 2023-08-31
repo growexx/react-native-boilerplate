@@ -13,23 +13,25 @@ function TodoList({ navigation }) {
   const [todos, setTodos] = useState([]);
 
   const fetchTodos = () => {
+    let rows = [];
     db.transaction((tx) => {
       tx.executeSql(
         'SELECT * FROM todos',
         [],
         (tx, results) => {
-          const rows = results.rows;
-          const todosArray = [];
-          for (let i = 0; i < rows.length; i++) {
-            todosArray.push(rows.item(i));
-          }
-          setTodos(todosArray);
+          rows = results.rows;
         },
         (error) => {
           console.error('Error fetching todos:', error);
         }
       );
     });
+    const todosArray = [];
+    for (let i = 0; i < rows.length; i++) {
+      todosArray.push(rows.item(i));
+    }
+    console.log("array ", results)
+    setTodos(todosArray);
   };
 
   const deleteTodo = (id) => {
@@ -66,11 +68,13 @@ function TodoList({ navigation }) {
         <Text style={styles.todoDescription}>{item.description}</Text>
       </View>
       <TouchableOpacity
+        testID='edit-button'
         style={styles.editButton}
         onPress={() => navigation.navigate('EditTodo', { id: item.id })}>
         <Icon name="playlist-edit" size={24} color="black" />
       </TouchableOpacity>
       <TouchableOpacity
+        testID='delete-button'
         style={styles.deleteButton}
         onPress={() => deleteTodo(item.id)}>
         <Icon name="delete" size={24} color="black" />

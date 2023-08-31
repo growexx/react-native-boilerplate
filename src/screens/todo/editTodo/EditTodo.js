@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import SQLite from 'react-native-sqlite-storage';
 import styles from './styles';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import LanguageUtils from '../../../localization/languageUtils';
 import languagekeys from '../../../localization/languagekeys';
 
