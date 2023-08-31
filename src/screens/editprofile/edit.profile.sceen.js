@@ -21,6 +21,7 @@ import { isEmailValid } from '../../utils/validations'
 const EditProfileScreen = ({ navigation }) => {
   const colorScheme = useColorScheme()
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
   const [mobile, setMobile] = useState('')
   const [imageUri, setImageUri] = useState()
   const phoneInput = useRef()
@@ -55,6 +56,17 @@ const EditProfileScreen = ({ navigation }) => {
           style={{
             marginVertical: spacing * 3
           }}>
+          <TextInput
+            style={[
+              colorScheme === 'dark' ? styles.inputTextDark : styles.inputText
+            ]}
+            onChangeText={setName}
+            value={name}
+            placeholder="Enter your name"
+            autoComplete="off"
+            autoCorrect={false}
+            testID="name-input"
+          />
           <TextInput
             style={[
               colorScheme === 'dark' ? styles.inputTextDark : styles.inputText
@@ -165,7 +177,7 @@ const styles = StyleSheet.create({
     fontSize: fontSize.large
   },
   signup: {
-    padding: spacing * 1.5,
+    padding: spacing ,
     backgroundColor: colors.light.primary,
     borderRadius: spacing,
     shadowColor: colors.primary,

@@ -25,6 +25,7 @@ describe('registration controller test', () => {
       'test@gmail.com',
       'test@gmaiL123',
       'test@gmai1',
+      'name',
       mockNavigation
     )
     expect(showToast).toHaveBeenCalled()
@@ -47,6 +48,7 @@ describe('registration controller test', () => {
       'test@gmail.com',
       'testM@1234',
       'testM@1234',
+      'name',
       mockNavigation
     )
     expect(mockNavigation.navigate).toHaveBeenCalledWith('Login')

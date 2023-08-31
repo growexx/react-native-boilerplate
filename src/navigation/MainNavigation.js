@@ -87,7 +87,14 @@ const MainBottomTabNavigator = () => (
 )
 
 const AppDrawerNavigator = () => (
-  <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+  <Drawer.Navigator
+  screenOptions={{
+    headerTintColor: useColorScheme()==='dark'?'white':'black', // Set your desired color here
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+  }} 
+  drawerContent={props => <DrawerContent {...props} />}>
     <Drawer.Screen
       name="MainBottomTabNavigator"
       component={MainBottomTabNavigator}
@@ -97,9 +104,17 @@ const AppDrawerNavigator = () => (
         )
       }}
     />
-    <Drawer.Screen name="ChatScreen" component={ChatScreen} />
-    <Drawer.Screen name="editProfileScreen" component={EditProfileScreen} />
-    <Drawer.Screen name="changePassword" component={ChangePasswordScreen} />
+    <Drawer.Screen name="ChatScreen" component={ChatScreen} 
+    options={{
+      title:'Chat Screen'
+    }}/>
+    <Drawer.Screen name="editProfileScreen" component={EditProfileScreen} 
+    options={{
+      title:'Edit Profile'
+    }}/>
+    <Drawer.Screen name="changePassword" component={ChangePasswordScreen} options={{
+      title:'Change Password',
+    }} />
     <Drawer.Screen
       name="googleMapScreen"
       component={GoogleMapScreen}

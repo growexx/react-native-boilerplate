@@ -5,11 +5,12 @@ import {
   isPasswordValid
 } from '../utils/validations'
 
-const handleRegistration = async (email, password, cpassword, navigation) => {
+const handleRegistration = async (email, password, cpassword,name, navigation) => {
   if (
     !isNonEmptyField(email) ||
     !isNonEmptyField(password) ||
-    !isNonEmptyField(cpassword)
+    !isNonEmptyField(cpassword) ||
+    !isNonEmptyField(name)
   ) {
     showToast('All fields are required.')
   } else if (!isEmailValid(email)) {

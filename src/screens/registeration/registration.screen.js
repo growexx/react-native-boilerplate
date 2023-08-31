@@ -21,8 +21,10 @@ import LanguageUtils from '../../localization/languageUtils'
 
 const RegisterScreen = ({ navigation }) => {
   const [confirmPasswordFocus, setConfirmPasswordFocus] = useState(false)
+  const [nameFocus, setNameFocus] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
   const [confirmPassword, setconfirmPassword] = useState('')
   const [mobile, setMobile] = useState('')
   const phoneInput = useRef()
@@ -66,6 +68,21 @@ const RegisterScreen = ({ navigation }) => {
             style={{
               marginVertical: spacing * 3
             }}>
+            <TextInput
+            onFocus={() => setNameFocus(true)}
+            onBlur={() => setNameFocus(false)}
+              style={[
+                colorScheme === 'dark'
+                ? styles.inputTextDark
+                : styles.inputText,
+              nameFocus && styles.focused              ]}
+              onChangeText={setName}
+              value={name}
+              placeholder="Enter your name"
+              autoComplete="off"
+              autoCorrect={false}
+              testID="name-input"
+            />
             <AuthInput
               email={email}
               setEmail={setEmail}
@@ -108,7 +125,7 @@ const RegisterScreen = ({ navigation }) => {
             onPress={() => {
               const checkValid = phoneInput.current?.isValidNumber(mobile)
               if (checkValid) {
-                handleRegistration(email, password, confirmPassword, navigation)
+                handleRegistration(email, password, confirmPassword, name ,navigation)
               } else if (mobile === '') {
                 showToast('All fields are required.')
               } else {
@@ -192,7 +209,7 @@ const styles = StyleSheet.create({
   },
   focused: {
     borderWidth: 3,
-    borderColor: colors.primary,
+    borderColor: colors.light.primary,
     shadowOffset: { width: 4, height: spacing },
     shadowColor: colors.primary,
     shadowOpacity: 0.2,
