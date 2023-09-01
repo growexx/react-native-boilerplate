@@ -1,5 +1,11 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, useColorScheme } from 'react-native'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  useColorScheme
+} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 import LanguageUtils from '../localization/languageUtils'
@@ -12,16 +18,34 @@ const DrawerContent = ({ navigation }) => {
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('Home')}>
-        <Icon name="home" size={24} color={colorScheme==='dark'?"white": "black"} />
-        <Text style={colorScheme ==='dark'? styles.drawerItemTextDark: styles.drawerItemText}>
+        <Icon
+          name="home"
+          size={24}
+          color={colorScheme === 'dark' ? 'white' : 'black'}
+        />
+        <Text
+          style={
+            colorScheme === 'dark'
+              ? styles.drawerItemTextDark
+              : styles.drawerItemText
+          }>
           {LanguageUtils.getLangText(languagekeys.dashboard)}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.drawerItem}
-        onPress={() => navigation.navigate('editProfileScreen')}>
-        <Icon name="user" size={24} color={colorScheme==='dark'?"white": "black"} />
-        <Text style={colorScheme ==='dark'? styles.drawerItemTextDark: styles.drawerItemText}>
+        onPress={() => navigation.navigate('editprofilescreen')}>
+        <Icon
+          name="user"
+          size={24}
+          color={colorScheme === 'dark' ? 'white' : 'black'}
+        />
+        <Text
+          style={
+            colorScheme === 'dark'
+              ? styles.drawerItemTextDark
+              : styles.drawerItemText
+          }>
           {' '}
           {LanguageUtils.getLangText(languagekeys.editProfile)}
         </Text>
@@ -29,16 +53,34 @@ const DrawerContent = ({ navigation }) => {
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('changePassword')}>
-        <Icon name="lock" size={24} color={colorScheme==='dark'?"white": "black"} />
-        <Text style={colorScheme ==='dark'? styles.drawerItemTextDark: styles.drawerItemText}>
+        <Icon
+          name="lock"
+          size={24}
+          color={colorScheme === 'dark' ? 'white' : 'black'}
+        />
+        <Text
+          style={
+            colorScheme === 'dark'
+              ? styles.drawerItemTextDark
+              : styles.drawerItemText
+          }>
           {LanguageUtils.getLangText(languagekeys.changePassword)}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('googleMapScreen')}>
-        <Icon name="map-marker" size={24} color={colorScheme==='dark'?"white": "black"} />
-        <Text style={colorScheme ==='dark'? styles.drawerItemTextDark: styles.drawerItemText}>
+        <Icon
+          name="map-marker"
+          size={24}
+          color={colorScheme === 'dark' ? 'white' : 'black'}
+        />
+        <Text
+          style={
+            colorScheme === 'dark'
+              ? styles.drawerItemTextDark
+              : styles.drawerItemText
+          }>
           {LanguageUtils.getLangText(languagekeys.googleMap)}
         </Text>
       </TouchableOpacity>
@@ -72,7 +114,6 @@ const styles = StyleSheet.create({
   drawerItemTextDark: {
     marginLeft: 10,
     color: 'white'
-
   }
 })
 

@@ -3,8 +3,6 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '13.0'
 
-pod 'Google-Maps-iOS-SDK', '~> 1.9.2'
-
 abstract_target 'App' do
   # React Native Maps dependencies
 rn_maps_path = '../node_modules/react-native-maps'
