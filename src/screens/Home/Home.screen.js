@@ -181,18 +181,6 @@ const Home = props => {
         <View
           style={colorScheme === 'dark' ? styles.headerDark : styles.header}>
           <TouchableOpacity
-            style={
-              colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
-            }>
-            <Icon
-              name="user"
-              size={30}
-              color={
-                colorScheme === 'dark' ? colors.dark.gray : colors.light.gray
-              }
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
             testID={'languageChange'}
             style={
               colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
