@@ -43,7 +43,9 @@ const en = {
   [languagekeys.googleMap]: 'Google Map',
   [languagekeys.todo]: 'Todo List',
   [languagekeys.addTodo]: 'Add Todo',
-  [languagekeys.updateTodo]: 'Update Todo'
+  [languagekeys.updateTodo]: 'Update Todo',
+  [languagekeys.chat]: 'Chat',
+  [languagekeys.payment]: 'Payment'
 }
 
 export default en
