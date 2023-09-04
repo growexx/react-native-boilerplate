@@ -38,7 +38,9 @@ const languagekeys = {
   googleMap: 'googleMap',
   todo: 'todo',
   addTodo: 'addTodo',
-  updateTodo: 'updateTodo'
+  updateTodo: 'updateTodo',
+  chat: 'chat',
+  payment: 'payment'
 }
 
 export default languagekeys

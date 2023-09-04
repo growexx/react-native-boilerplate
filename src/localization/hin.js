@@ -39,11 +39,12 @@ const hin = {
   [languagekeys.googlePay]: 'गूगल पे',
   [languagekeys.payWithGooglePay]: 'गूगल पे से भुगतान करें',
   [languagekeys.paywithRazorPay]: 'रेजर पे से भुगतान करें',
-  [languagekeys.googleMap]:'गूगल नक़्शे',
-  [languagekeys.todo]:'टू-डू सूची',
-  [languagekeys.addTodo]:'कार्य जोड़ें',
-  [languagekeys.updateTodo]:'कार्य अद्यतन करें'
-  
+  [languagekeys.googleMap]: 'गूगल नक़्शे',
+  [languagekeys.todo]: 'टू-डू सूची',
+  [languagekeys.addTodo]: 'कार्य जोड़ें',
+  [languagekeys.updateTodo]: 'कार्य अद्यतन करें',
+  [languagekeys.chat]: 'बातचीत',
+  [languagekeys.payment]: 'भुगतान'
 }
 
 export default hin

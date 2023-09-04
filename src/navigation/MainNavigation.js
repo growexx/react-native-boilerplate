@@ -27,6 +27,8 @@ import GoogleMapScreen from '../screens/googlemap/google.map.screen.js'
 import TodoList from '../screens/todo/todoList/TodoList.js'
 import AddTodo from '../screens/todo/addTodo/AddTodo.js'
 import EditTodo from '../screens/todo/editTodo/EditTodo.js'
+import LanguageUtils from '../localization/languageUtils'
+import languagekeys from '../localization/languagekeys'
 
 const Drawer = createDrawerNavigator()
 let unsubscribeNetListener
@@ -40,7 +42,7 @@ const MainBottomTabNavigator = () => (
       name="Home"
       component={Home}
       options={{
-        title: 'Home',
+        title: LanguageUtils.getLangText(languagekeys.dashboard),
         headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <Icon name="home" color={color} size={size} />
@@ -51,7 +53,7 @@ const MainBottomTabNavigator = () => (
       name="ChatScreen"
       component={ChatScreen}
       options={{
-        title: 'Chat',
+        title: LanguageUtils.getLangText(languagekeys.chat),
         tabBarIcon: ({ color, size }) => (
           <Icon name="comments" color={color} size={size} />
         )
@@ -61,7 +63,7 @@ const MainBottomTabNavigator = () => (
       name="paymentScreen"
       component={PaymentScreen}
       options={{
-        title: 'Payment',
+        title: LanguageUtils.getLangText(languagekeys.payment),
         tabBarIcon: ({ color, size }) => (
           <Icon name="credit-card" color={color} size={size} />
         )
@@ -115,14 +117,14 @@ const AppDrawerNavigator = () => (
       name="editprofilescreen"
       component={EditProfileScreen}
       options={{
-        title: 'Edit Profile'
+        title: LanguageUtils.getLangText(languagekeys.editProfile)
       }}
     />
     <Drawer.Screen
       name="changePassword"
       component={ChangePasswordScreen}
       options={{
-        title: 'Change Password'
+        title: LanguageUtils.getLangText(languagekeys.changePassword)
       }}
     />
     <Drawer.Screen
