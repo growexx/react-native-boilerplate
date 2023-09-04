@@ -30,8 +30,7 @@ import EditTodo from '../screens/todo/editTodo/EditTodo.js'
 import LanguageUtils from '../localization/languageUtils'
 import languagekeys from '../localization/languagekeys'
 import UserProfileScreen from '../screens/UserProfile/user.profile.screen.js'
-import LanguageUtils from '../localization/languageUtils.js'
-import languagekeys from '../localization/languagekeys.js'
+
 
 const Drawer = createDrawerNavigator()
 let unsubscribeNetListener
