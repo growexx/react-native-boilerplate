@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Alert } from 'react-native';
 import SQLite from 'react-native-sqlite-storage';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -30,7 +30,7 @@ function TodoList({ navigation }) {
     for (let i = 0; i < rows.length; i++) {
       todosArray.push(rows.item(i));
     }
-    console.log("array ", results)
+    // console.log("array ", results)
     setTodos(todosArray);
   };
 
@@ -41,10 +41,10 @@ function TodoList({ navigation }) {
         [id],
         (tx, results) => {
           if (results.rowsAffected > 0) {
-            alert('Todo deleted successfully!');
+           Alert.alert('Todo deleted successfully!');
             fetchTodos();
           } else {
-            alert('Failed to delete todo. Please try again.');
+           Alert.alert('Failed to delete todo. Please try again.');
           }
         },
         (error) => {

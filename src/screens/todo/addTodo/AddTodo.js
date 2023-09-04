@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import SQLite from 'react-native-sqlite-storage';
 import styles from './styles';
 import LanguageUtils from '../../../localization/languageUtils';
@@ -13,7 +13,7 @@ const AddTodo = ({ navigation }) => {
 
   const addTodo = () => {
     if (todoTitle.trim() === '' || todoDesription.trim() === '') {
-      alert('Please enter a valid todo.');
+      Alert.alert('Please enter a valid todo.');
       return;
     }
 
@@ -23,16 +23,16 @@ const AddTodo = ({ navigation }) => {
         [todoTitle, todoDesription],
         (tx, results) => {
           if (results.rowsAffected > 0) {
-            alert('Todo added successfully!');
+            Alert.alert('Todo added successfully!');
             setTodoTitle('');
             setTodoDescription('');
             navigation.navigate('Todo');
           } else {
-            alert('Error adding todo. Please try again.');
+           Alert.alert('Error adding todo. Please try again.');
           }
         },
         (error) => {
-          alert('Error adding todo:' + error.toString())
+          Alert.alert('Error adding todo:' + error.toString())
           console.error('Error adding todo:', error);
         }
       );

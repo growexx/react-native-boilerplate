@@ -27,6 +27,9 @@ import GoogleMapScreen from '../screens/googlemap/google.map.screen.js'
 import TodoList from '../screens/todo/todoList/TodoList.js'
 import AddTodo from '../screens/todo/addTodo/AddTodo.js'
 import EditTodo from '../screens/todo/editTodo/EditTodo.js'
+import UserProfileScreen from '../screens/UserProfile/user.profile.screen.js'
+import LanguageUtils from '../localization/languageUtils.js'
+import languagekeys from '../localization/languagekeys.js'
 
 const Drawer = createDrawerNavigator()
 let unsubscribeNetListener
@@ -110,16 +113,16 @@ const AppDrawerNavigator = () => (
     }}/>
     <Drawer.Screen name="editProfileScreen" component={EditProfileScreen} 
     options={{
-      title:'Edit Profile'
+      title:LanguageUtils.getLangText(languagekeys.editProfile)
     }}/>
     <Drawer.Screen name="changePassword" component={ChangePasswordScreen} options={{
-      title:'Change Password',
+      title:LanguageUtils.getLangText(languagekeys.changePassword),
     }} />
     <Drawer.Screen
       name="googleMapScreen"
       component={GoogleMapScreen}
       options={{
-        title: 'Google Map',
+        title: LanguageUtils.getLangText(languagekeys.googleMap),
         tabBarIcon: ({ color, size }) => (
           <Icon name="comments" color={color} size={size} />
         )
@@ -128,6 +131,7 @@ const AppDrawerNavigator = () => (
     <Drawer.Screen name="Todo" component={TodoList} />
     <Drawer.Screen name="AddTodo" component={AddTodo} />
     <Drawer.Screen name="EditTodo" component={EditTodo} />
+    <Drawer.Screen name="userProfile" component={UserProfileScreen} options={{title: LanguageUtils.getLangText(languagekeys.userProfile)}}/>
   </Drawer.Navigator>
 )
 

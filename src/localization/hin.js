@@ -42,7 +42,22 @@ const hin = {
   [languagekeys.googleMap]:'गूगल नक़्शे',
   [languagekeys.todo]:'टू-डू सूची',
   [languagekeys.addTodo]:'कार्य जोड़ें',
-  [languagekeys.updateTodo]:'कार्य अद्यतन करें'
+  [languagekeys.updateTodo]:'कार्य अद्यतन करें',
+  [languagekeys.userProfile]:'उपयोगकर्ता रूपरेखा',
+  [languagekeys.security]:'सुरक्षा',
+  [languagekeys.notification]:'अधिसूचना',
+  [languagekeys.privacy]:'गोपनीयता',
+  [languagekeys.subscription]:'अंशदान',
+  [languagekeys.termsConditions]:'नियम व शर्तें',
+  [languagekeys.freeUpSpaces]:'जगह खाली करो',
+  [languagekeys.dataSaver]:'डेटा सेवर',
+  [languagekeys.reportProblem]:'समस्या की सूचना दें',
+  [languagekeys.addAccount]:'खाता जोड़ें',
+  [languagekeys.helpSupports]:'सहायता और समर्थन',
+  [languagekeys.account]:'खाता',
+  [languagekeys.support]:'समर्थन और इसके बारे में',
+  [languagekeys.caches]:'कैश और सेल्युलर',
+  [languagekeys.action]:'कार्रवाई'
   
 }
 
