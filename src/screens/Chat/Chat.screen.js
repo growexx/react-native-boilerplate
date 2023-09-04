@@ -29,9 +29,9 @@ class ChatScreen extends Component {
     return (
       <View style={styles.bubbleContainer}>
         <Bubble {...props} />
-        <View style={styles.iconContainer}>
+        {/* <View style={styles.iconContainer}>
           <FontAwesomeIcon name="user-circle" size={36} color="gray" />
-        </View>
+        </View> */}
       </View>
     )
   }
@@ -60,8 +60,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   bubbleContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-start'
+    flexDirection: 'row'
   },
   iconContainer: {
     marginLeft: 10
