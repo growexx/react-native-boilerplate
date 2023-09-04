@@ -40,7 +40,23 @@ const languagekeys = {
   addTodo: 'addTodo',
   updateTodo: 'updateTodo',
   chat: 'chat',
-  payment: 'payment'
+  payment: 'payment',
+  userProfile: 'userProfile',
+  security:'security',
+  notification:'notification',
+  privacy:'privacy',
+  subscription:'subscription',
+  helpSupports: 'helpSupports',
+  termsConditions:'termsConditions',
+  freeUpSpaces: 'freeUpSpaces',
+  dataSaver: 'dataSaver',
+  reportProblem:'reportProblem',
+  addAccount: 'addAccount',
+  account:'account',
+  support:'support',
+  caches: 'caches',
+  action: 'action',
+
 }
 
 export default languagekeys
