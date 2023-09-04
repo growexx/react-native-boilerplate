@@ -27,6 +27,8 @@ import GoogleMapScreen from '../screens/googlemap/google.map.screen.js'
 import TodoList from '../screens/todo/todoList/TodoList.js'
 import AddTodo from '../screens/todo/addTodo/AddTodo.js'
 import EditTodo from '../screens/todo/editTodo/EditTodo.js'
+import LanguageUtils from '../localization/languageUtils'
+import languagekeys from '../localization/languagekeys'
 import UserProfileScreen from '../screens/UserProfile/user.profile.screen.js'
 import LanguageUtils from '../localization/languageUtils.js'
 import languagekeys from '../localization/languagekeys.js'
@@ -43,7 +45,7 @@ const MainBottomTabNavigator = () => (
       name="Home"
       component={Home}
       options={{
-        title: 'Home',
+        title: LanguageUtils.getLangText(languagekeys.dashboard),
         headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <Icon name="home" color={color} size={size} />
@@ -54,7 +56,7 @@ const MainBottomTabNavigator = () => (
       name="ChatScreen"
       component={ChatScreen}
       options={{
-        title: 'Chat',
+        title: LanguageUtils.getLangText(languagekeys.chat),
         tabBarIcon: ({ color, size }) => (
           <Icon name="comments" color={color} size={size} />
         )
@@ -64,7 +66,7 @@ const MainBottomTabNavigator = () => (
       name="paymentScreen"
       component={PaymentScreen}
       options={{
-        title: 'Payment',
+        title: LanguageUtils.getLangText(languagekeys.payment),
         tabBarIcon: ({ color, size }) => (
           <Icon name="credit-card" color={color} size={size} />
         )
@@ -91,15 +93,15 @@ const MainBottomTabNavigator = () => (
 
 const AppDrawerNavigator = () => (
   <Drawer.Navigator
-  screenOptions={{
-    headerTintColor: useColorScheme()==='dark'?'white':'black', // Set your desired color here
+    screenOptions={{
+      headerTintColor: useColorScheme() === 'dark' ? 'white' : 'black', // Set your desired color here
       headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-  }} 
-  drawerContent={props => <DrawerContent {...props} />}>
+        fontWeight: 'bold'
+      }
+    }}
+    drawerContent={props => <DrawerContent {...props} />}>
     <Drawer.Screen
-      name="MainBottomTabNavigator"
+      name=" "
       component={MainBottomTabNavigator}
       options={{
         drawerIcon: ({ color, size }) => (
@@ -107,17 +109,27 @@ const AppDrawerNavigator = () => (
         )
       }}
     />
-    <Drawer.Screen name="ChatScreen" component={ChatScreen} 
-    options={{
-      title:'Chat Screen'
-    }}/>
-    <Drawer.Screen name="editProfileScreen" component={EditProfileScreen} 
-    options={{
-      title:LanguageUtils.getLangText(languagekeys.editProfile)
-    }}/>
-    <Drawer.Screen name="changePassword" component={ChangePasswordScreen} options={{
-      title:LanguageUtils.getLangText(languagekeys.changePassword),
-    }} />
+    <Drawer.Screen
+      name="ChatScreen"
+      component={ChatScreen}
+      options={{
+        title: 'Chat Screen'
+      }}
+    />
+    <Drawer.Screen
+      name="editprofilescreen"
+      component={EditProfileScreen}
+      options={{
+        title: LanguageUtils.getLangText(languagekeys.editProfile)
+      }}
+    />
+    <Drawer.Screen
+      name="changePassword"
+      component={ChangePasswordScreen}
+      options={{
+        title: LanguageUtils.getLangText(languagekeys.changePassword)
+      }}
+    />
     <Drawer.Screen
       name="googleMapScreen"
       component={GoogleMapScreen}

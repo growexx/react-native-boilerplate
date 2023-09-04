@@ -39,6 +39,8 @@ const languagekeys = {
   todo: 'todo',
   addTodo: 'addTodo',
   updateTodo: 'updateTodo',
+  chat: 'chat',
+  payment: 'payment',
   userProfile: 'userProfile',
   security:'security',
   notification:'notification',

@@ -44,6 +44,8 @@ const en = {
   [languagekeys.todo]: 'Todo List',
   [languagekeys.addTodo]: 'Add Todo',
   [languagekeys.updateTodo]: 'Update Todo',
+  [languagekeys.chat]: 'Chat',
+  [languagekeys.payment]: 'Payment',
   [languagekeys.userProfile]: 'User Profile',
   [languagekeys.security]:'Security',
   [languagekeys.notification]:'Notification',

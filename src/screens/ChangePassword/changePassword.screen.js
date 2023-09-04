@@ -35,7 +35,7 @@ const ChangePasswordScreen = () => {
   const styleForInput =
     colorScheme === 'dark' ? [styles.input, styles.inputDark] : styles.input
   const placeholderTextColor =
-    colorScheme === 'dark' ? colors.dark.text : colors.light.text
+    colorScheme === 'dark' ? colors.dark.text : colors.light.darkText
 
   return (
     <SafeAreaView style={styles.container}>

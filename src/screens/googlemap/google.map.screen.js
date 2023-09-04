@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { View, StyleSheet, Alert, PermissionsAndroid } from 'react-native'
+import {
+  View,
+  StyleSheet,
+  Alert,
+  PermissionsAndroid,
+  Platform
+} from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
 import Geolocation from '@react-native-community/geolocation'
 
@@ -52,7 +58,9 @@ const GoogleMapScreen = () => {
     }
 
     // Call the function to request permission
-    requestLocationPermission()
+    if (Platform.OS === 'android') {
+      requestLocationPermission()
+    }
   }, [region.latitude, region.longitude])
 
   return (

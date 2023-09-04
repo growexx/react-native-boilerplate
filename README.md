@@ -43,7 +43,7 @@ https://github.com/growexx/react-native-boilerplate
 #### 6. Configured environments
     Development, Staging, Production
 #### 7. Social Login
-    Login with Facebook, Google & Apple(iOS only)
+    Login with Facebook, Instagram, Google & Apple(iOS only)
 
 
 ## Packages

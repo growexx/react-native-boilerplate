@@ -13,13 +13,17 @@ function TodoList({ navigation }) {
   const [todos, setTodos] = useState([]);
 
   const fetchTodos = () => {
-    let rows = [];
     db.transaction((tx) => {
       tx.executeSql(
         'SELECT * FROM todos',
         [],
         (tx, results) => {
-          rows = results.rows;
+          const rows = results.rows;
+          const todosArray = [];
+          for (let i = 0; i < rows.length; i++) {
+            todosArray.push(rows.item(i));
+          }
+          setTodos(todosArray);
         },
         (error) => {
           console.error('Error fetching todos:', error);
