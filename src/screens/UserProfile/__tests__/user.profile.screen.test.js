@@ -12,9 +12,28 @@ const navigation = {
 jest.mock('react-redux', () => ({
   useSelector: jest.fn()
 }))
+const mockedColorScheme = jest.fn()
+
+jest.mock('react-native/Libraries/Utilities/useColorScheme', () => {
+  return {
+    default: mockedColorScheme
+  }
+})
 
 describe('UserProfileScreen', () => {
   it('renders user name and email when data is provided', () => {
+    mockedColorScheme.mockImplementationOnce(() => 'light')
+    const userData = {
+      name: 'John Doe',
+      email: 'johndoe@example.com'
+    }
+    require('react-redux').useSelector.mockReturnValue(userData)
+    const { getByText } = render(<UserProfileScreen navigation={navigation} />)
+    expect(getByText(`Name : ${userData.name}`)).toBeTruthy()
+    expect(getByText(userData.email)).toBeTruthy()
+  })
+  it('renders user name and email when data is provided with dark', () => {
+    mockedColorScheme.mockImplementationOnce(() => 'dark')
     const userData = {
       name: 'John Doe',
       email: 'johndoe@example.com'
@@ -31,14 +50,6 @@ describe('UserProfileScreen', () => {
     expect(getByText(`Name : `)).toBeTruthy()
   })
 
-  it('renders a go-back button', () => {
-    const { getByTestId } = render(
-      <UserProfileScreen navigation={navigation} />
-    )
-    expect(getByTestId('go-back-button')).toBeTruthy()
-    fireEvent.press(getByTestId('go-back-button'))
-    expect(navigation.goBack).toHaveBeenCalled()
-  })
 
   it('renders a edit profile screen', () => {
     const { getByText } = render(

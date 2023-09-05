@@ -19,7 +19,7 @@ const UserProfileScreen = ({ navigation }) => {
   const data = useSelector(state => state.authReducer.loginData)
   const colorScheme = useColorScheme()
   const navigateToEditProfile = () => {
-    navigation.navigate('editProfileScreen')
+    navigation.navigate('editprofilescreen')
   }
 
   const accountItems = [
@@ -28,7 +28,7 @@ const UserProfileScreen = ({ navigation }) => {
       text: LanguageUtils.getLangText(languagekeys.editProfile),
       action: navigateToEditProfile
     },
-    { icon: 'lock', text: LanguageUtils.getLangText(languagekeys.security) },
+    { icon: 'key', text: LanguageUtils.getLangText(languagekeys.security) },
     {
       icon: 'bell',
       text: LanguageUtils.getLangText(languagekeys.notification)
@@ -46,7 +46,7 @@ const UserProfileScreen = ({ navigation }) => {
       text: LanguageUtils.getLangText(languagekeys.helpSupports)
     },
     {
-      icon: 'info',
+      icon: 'legal',
       text: LanguageUtils.getLangText(languagekeys.termsConditions)
     }
   ]
@@ -76,6 +76,7 @@ const UserProfileScreen = ({ navigation }) => {
         name={icon}
         size={24}
         color={colorScheme === 'dark' ? 'white' : 'black'}
+        paddingLeft={10}
       />
       <Text
         style={colorScheme === 'dark' ? styles.itemTextDark : styles.itemText}>
@@ -90,26 +91,7 @@ const UserProfileScreen = ({ navigation }) => {
         flex: 1
         // backgroundColor: colors.light.lightPrimary
       }}>
-      <View
-        style={{
-          marginHorizontal: 12,
-          flexDirection: 'row',
-          justifyContent: 'center'
-        }}>
-        <TouchableOpacity
-          testID="go-back-button"
-          onPress={() => navigation.goBack()}
-          style={{
-            position: 'absolute',
-            left: 0
-          }}>
-          <Icon name="long-arrow-left" size={24} color={colors.light.text} />
-        </TouchableOpacity>
-
-        <Text style={{ fontWeight: 'bold', fontSize: 24 }}></Text>
-      </View>
-
-      <ScrollView style={{ marginHorizontal: 12 }}>
+      <ScrollView style={{ marginHorizontal: 12, marginVertical: 12 }}>
         <View style={styles.container}>
           <Image
             source={{ uri: 'https://picsum.photos/200/300' }}
