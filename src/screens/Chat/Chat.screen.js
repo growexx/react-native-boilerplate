@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { GiftedChat, Bubble } from 'react-native-gifted-chat'
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'
 
 class ChatScreen extends Component {
   state = {

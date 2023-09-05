@@ -10,7 +10,7 @@ const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' });
 function EditTodo({ route, navigation }) {
     const { id } = route.params;
     const { description } = route.params;
-    const [todo, setTodo] = useState({ id: id, description: description, title: '' });
+    const [todo, setTodo] = useState({ id, description, title: '' });
 
     useEffect(() => {
         db.transaction((tx) => {
