@@ -18,16 +18,8 @@ import LanguageUtils from '../../localization/languageUtils'
 const UserProfileScreen = ({ navigation }) => {
   const data = useSelector(state => state.authReducer.loginData)
   const colorScheme = useColorScheme()
-  const navigateToEditProfile = () => {
-    navigation.navigate('editprofilescreen')
-  }
 
   const accountItems = [
-    {
-      icon: 'edit',
-      text: LanguageUtils.getLangText(languagekeys.editProfile),
-      action: navigateToEditProfile
-    },
     { icon: 'key', text: LanguageUtils.getLangText(languagekeys.security) },
     {
       icon: 'bell',
@@ -64,11 +56,7 @@ const UserProfileScreen = ({ navigation }) => {
       icon: 'flag',
       text: LanguageUtils.getLangText(languagekeys.reportProblem)
     },
-    { icon: 'user', text: LanguageUtils.getLangText(languagekeys.addAccount) },
-    {
-      icon: 'long-arrow-right',
-      text: LanguageUtils.getLangText(languagekeys.login)
-    }
+    { icon: 'user', text: LanguageUtils.getLangText(languagekeys.addAccount) }
   ]
   const renderSettingsItem = ({ icon, text, action }) => (
     <TouchableOpacity onPress={action} style={styles.itemPress}>
@@ -204,12 +192,12 @@ const styles = StyleSheet.create({
   },
   text: {
     alignSelf: 'center',
-    fontWeight: 800,
+    fontWeight: '800',
     marginBottom: 5
   },
   textDark: {
     alignSelf: 'center',
-    fontWeight: 800,
+    fontWeight: '800',
     marginBottom: 5,
     color: colors.dark.text
   },
@@ -225,13 +213,13 @@ const styles = StyleSheet.create({
   },
   itemText: {
     marginLeft: 36,
-    fontWeight: 600,
+    fontWeight: '600',
     fontSize: 16,
     color: colors.light.text
   },
   itemTextDark: {
     marginLeft: 36,
-    fontWeight: 600,
+    fontWeight: '600',
     fontSize: 16,
     color: colors.dark.text
   },
