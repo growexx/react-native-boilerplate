@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
     fontFamily: fonts.REGULAR,
     fontSize: fontSize.small,
     padding: spacing * 1.5,
+    marginLeft: -10,
     backgroundColor: colors.lightPrimary,
     borderRadius: spacing
   },
@@ -159,7 +160,8 @@ const styles = StyleSheet.create({
     padding: spacing * 1.5,
     backgroundColor: colors.lightPrimary,
     borderRadius: spacing,
-    marginVertical: spacing
+    marginVertical: spacing,
+    marginHorizontal: 20
   },
   inputTextDark: {
     borderWidth: 0.5,
@@ -168,7 +170,8 @@ const styles = StyleSheet.create({
     padding: spacing * 1.5,
     borderRadius: spacing,
     marginVertical: spacing,
-    borderColor: colors.dark.text
+    borderColor: colors.dark.text,
+    marginHorizontal: 20
   },
   signup_text: {
     fontFamily: fonts.BOLD,
@@ -177,7 +180,8 @@ const styles = StyleSheet.create({
     fontSize: fontSize.large
   },
   signup: {
-    padding: spacing ,
+    padding: spacing * 1.5,
+    marginHorizontal: 20,
     backgroundColor: colors.light.primary,
     borderRadius: spacing,
     shadowColor: colors.primary,
