@@ -50,6 +50,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold'
   },
+  socialButtonApple: {
+    height: 40,
+    width: '100%',
+    borderRadius: 15,
+    justifyContent: 'center',
+    marginTop: 10,
+    borderRadius: 10
+  },
   socialButtonGoogle: {
     height: 50,
     width: '103%',

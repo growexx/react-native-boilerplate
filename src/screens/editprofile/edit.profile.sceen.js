@@ -96,7 +96,7 @@ const EditProfileScreen = ({ navigation }) => {
             const checkValid = phoneInput.current?.isValidNumber(mobile)
             if (checkValid) {
               if (isEmailValid(email)) {
-                navigation.pop()
+                navigation.goBack()
               } else {
                 showToast('Please enter a valid email')
               }
