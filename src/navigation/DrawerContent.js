@@ -7,6 +7,7 @@ import {
   useColorScheme
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 import LanguageUtils from '../localization/languageUtils'
 import languagekeys from '../localization/languagekeys'
@@ -65,6 +66,14 @@ const DrawerContent = ({ navigation }) => {
               : styles.drawerItemText
           }>
           {LanguageUtils.getLangText(languagekeys.changePassword)}
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.drawerItem}
+        onPress={() => navigation.navigate('PinCodeScreen')}>
+        <MaterialIcons name="security" size={24} color="black" />
+        <Text style={styles.drawerItemText}>
+          {LanguageUtils.getLangText(languagekeys.pin)}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity

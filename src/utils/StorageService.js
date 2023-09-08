@@ -5,8 +5,20 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const saveItem = async (key, value) => {
   try {
     await AsyncStorage.setItem(key, JSON.stringify(value))
-  } catch (error) {}
+  } catch (error) {
+    console.error('error2 is ', error.toString())
+  }
 };
+
+const removeItemValue = async (key) => {
+  try {
+    await AsyncStorage.removeItem(key);
+    return true;
+  }
+  catch (exception) {
+    return false;
+  }
+}
 
 // Get an item from AsyncStorage
 const getItem = async (key) => {
@@ -24,4 +36,4 @@ const getItem = async (key) => {
   }
 };
 
-export { saveItem, getItem };
+export { saveItem, getItem, removeItemValue };
