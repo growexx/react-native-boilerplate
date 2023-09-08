@@ -16,7 +16,7 @@ const DrawerContent = ({ navigation }) => {
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.drawerItem}
-        onPress={() => navigation.navigate('Home')}>
+        onPress={() => navigation.navigate('Dashboard')}>
         <Icon
           name="home"
           size={24}
@@ -69,13 +69,17 @@ const DrawerContent = ({ navigation }) => {
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('PinCodeScreen')}>
-        <Icon name="shield" size={24}
-          color={colorScheme === 'dark' ? 'white' : 'black'} />
-        <Text style={
-          colorScheme === 'dark'
-            ? styles.drawerItemTextDark
-            : styles.drawerItemText
-        }>
+        <Icon
+          name="shield"
+          size={24}
+          color={colorScheme === 'dark' ? 'white' : 'black'}
+        />
+        <Text
+          style={
+            colorScheme === 'dark'
+              ? styles.drawerItemTextDark
+              : styles.drawerItemText
+          }>
           {LanguageUtils.getLangText(languagekeys.pin)}
         </Text>
       </TouchableOpacity>
@@ -99,20 +103,38 @@ const DrawerContent = ({ navigation }) => {
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('Todo')}>
-        <Icon name="list-ul" size={24} color={colorScheme === 'dark' ? "white" : "black"} />
-        <Text style={colorScheme === 'dark' ? styles.drawerItemTextDark : styles.drawerItemText}>
+        <Icon
+          name="list-ul"
+          size={24}
+          color={colorScheme === 'dark' ? 'white' : 'black'}
+        />
+        <Text
+          style={
+            colorScheme === 'dark'
+              ? styles.drawerItemTextDark
+              : styles.drawerItemText
+          }>
           {LanguageUtils.getLangText(languagekeys.todo)}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('userProfile')}>
-        <Icon name="user" size={24} color={colorScheme === 'dark' ? "white" : "black"} />
-        <Text style={colorScheme === 'dark' ? styles.drawerItemTextDark : styles.drawerItemText}>
+        <Icon
+          name="user"
+          size={24}
+          color={colorScheme === 'dark' ? 'white' : 'black'}
+        />
+        <Text
+          style={
+            colorScheme === 'dark'
+              ? styles.drawerItemTextDark
+              : styles.drawerItemText
+          }>
           {LanguageUtils.getLangText(languagekeys.userProfile)}
         </Text>
       </TouchableOpacity>
-    </View >
+    </View>
   )
 }
 
