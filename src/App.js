@@ -22,7 +22,7 @@ db.transaction((tx) => {
 enableScreens()
 
 const App = () => {
-  LogBox.ignoreAllLogs(true);
+  // LogBox.ignoreAllLogs(true);
   const configureGoogleSignIn = () => {
     GoogleSignin.configure({
       scopes: ['email', 'profile'],
