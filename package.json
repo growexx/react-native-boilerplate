@@ -41,6 +41,7 @@
     "react-native-device-info": "^10.8.0",
     "react-native-fbsdk": "^3.0.0",
     "react-native-gesture-handler": "^2.12.1",
+    "react-native-gifted-chat": "^2.4.0",
     "react-native-google-pay": "^2.1.0",
     "react-native-gradle-plugin": "^0.71.18",
     "react-native-i18n": "^2.0.15",

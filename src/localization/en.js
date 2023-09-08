@@ -45,8 +45,24 @@ const en = {
   [languagekeys.todo]: 'Todo List',
   [languagekeys.pin]: 'Security Pin',
   [languagekeys.addTodo]: 'Add Todo',
-  [languagekeys.updateTodo]: 'Update Todo'
-
+  [languagekeys.updateTodo]: 'Update Todo',
+  [languagekeys.chat]: 'Chat',
+  [languagekeys.payment]: 'Payment',
+  [languagekeys.userProfile]: 'User Profile',
+  [languagekeys.security]:'Security',
+  [languagekeys.notification]:'Notification',
+  [languagekeys.privacy]:'Privacy',
+  [languagekeys.subscription]:'My Subscription',
+  [languagekeys.helpSupports]:'Help & Support',
+  [languagekeys.termsConditions]:'Terms & Policies',
+  [languagekeys.freeUpSpaces]:'Free Up Space',
+  [languagekeys.dataSaver]:'Data Saver',
+  [languagekeys.reportProblem]:'Report a problem',
+  [languagekeys.addAccount]:'Add Account',
+  [languagekeys.account]:'Account',
+  [languagekeys.support]:'Support & About',
+  [languagekeys.caches]:'Caches',
+  [languagekeys.action]:'Actions',
 }
 
 export default en

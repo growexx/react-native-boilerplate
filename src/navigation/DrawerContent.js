@@ -96,9 +96,17 @@ const DrawerContent = ({ navigation }) => {
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('Todo')}>
-        <EntypoIcon name="add-to-list" size={24} color="black" />
-        <Text style={styles.drawerItemText}>
+        <EntypoIcon name="add-to-list" size={24} color={colorScheme==='dark'?"white": "black"} />
+        <Text style={colorScheme ==='dark'? styles.drawerItemTextDark: styles.drawerItemText}>
           {LanguageUtils.getLangText(languagekeys.todo)}
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.drawerItem}
+        onPress={() => navigation.navigate('userProfile')}>
+        <EntypoIcon name="user" size={24} color={colorScheme==='dark'?"white": "black"} />
+        <Text style={colorScheme ==='dark'? styles.drawerItemTextDark: styles.drawerItemText}>
+          {LanguageUtils.getLangText(languagekeys.userProfile)}
         </Text>
       </TouchableOpacity>
       {/* ...other drawer items */}

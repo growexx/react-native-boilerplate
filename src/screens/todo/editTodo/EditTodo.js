@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import SQLite from 'react-native-sqlite-storage';
 import styles from './styles';
 import LanguageUtils from '../../../localization/languageUtils';
@@ -10,7 +10,7 @@ const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' });
 function EditTodo({ route, navigation }) {
     const { id } = route.params;
     const { description } = route.params;
-    const [todo, setTodo] = useState({ id: id, description: description, title: '' });
+    const [todo, setTodo] = useState({ id, description, title: '' });
 
     useEffect(() => {
         db.transaction((tx) => {
@@ -35,10 +35,10 @@ function EditTodo({ route, navigation }) {
                 [todo.title, todo.description, todo.id],
                 (tx, results) => {
                     if (results.rowsAffected > 0) {
-                        alert('Todo updated successfully!');
+                        Alert.alert('Todo updated successfully!');
                         navigation.navigate('Todo');
                     } else {
-                        alert('Error updating todo. Please try again.');
+                       Alert.alert('Error updating todo. Please try again.');
                     }
                 },
                 (error) => {
