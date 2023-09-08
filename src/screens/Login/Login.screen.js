@@ -29,6 +29,7 @@ import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
 import AuthInput from '../../components/auth.Input'
 import { spacing } from '@constants'
+import loginControl from '../../constants/loginControl'
 
 const Login = props => {
   const dispatch = useDispatch()
@@ -102,24 +103,28 @@ const Login = props => {
               </Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            testID={'ManualLoginButton'}
-            style={styles.buttonWrapper}
-            onPress={() => dispatch(login(email, password))}>
-            <Text style={styles.buttonText}>
-              {LanguageUtils.getLangText(languagekeys.login)}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              props.navigation.navigate('phoneNumberScreen')
-            }}
-            style={styles.buttonWrapper}>
-            <Text style={styles.buttonText}>
-              {LanguageUtils.getLangText(languagekeys.loginWithOtp)}
-            </Text>
-          </TouchableOpacity>
-          {Platform.OS === 'ios' && (
+          {loginControl.LoginStandard && (
+            <TouchableOpacity
+              testID={'ManualLoginButton'}
+              style={styles.buttonWrapper}
+              onPress={() => dispatch(login(email, password))}>
+              <Text style={styles.buttonText}>
+                {LanguageUtils.getLangText(languagekeys.login)}
+              </Text>
+            </TouchableOpacity>
+          )}
+          {loginControl.LoginWithOtp && (
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('phoneNumberScreen')
+              }}
+              style={styles.buttonWrapper}>
+              <Text style={styles.buttonText}>
+                {LanguageUtils.getLangText(languagekeys.loginWithOtp)}
+              </Text>
+            </TouchableOpacity>
+          )}
+          {Platform.OS === 'ios' && loginControl.Apple && (
             <AppleButton
               buttonStyle={AppleButton.Style.BLACK}
               buttonType={AppleButton.Type.SIGN_IN}
@@ -127,23 +132,31 @@ const Login = props => {
               onPress={signInWithApple}
             />
           )}
-          <LoginButton
-            style={styles.buttonWrapper}
-            onLoginFinished={signInwithFacebook}
-            onLogoutFinished={() => {}}
-          />
-          <GoogleSigninButton
-            style={styles.socialButtonGoogle}
-            size={GoogleSigninButton.Size.Standard}
-            color={GoogleSigninButton.Color.Dark}
-            onPress={() => dispatch(signInWithGoogle())}
-          />
-          <TouchableOpacity
-            testID={'ManualLoginButton'}
-            style={styles.buttonWrapper}
-            onPress={() => insRef.current.show()}>
-            <Text style={styles.buttonText}>{strings('auth.insta-login')}</Text>
-          </TouchableOpacity>
+          {loginControl.FB && (
+            <LoginButton
+              style={styles.buttonWrapper}
+              onLoginFinished={signInwithFacebook}
+              onLogoutFinished={() => {}}
+            />
+          )}
+          {loginControl.Google && (
+            <GoogleSigninButton
+              style={styles.socialButtonGoogle}
+              size={GoogleSigninButton.Size.Standard}
+              color={GoogleSigninButton.Color.Dark}
+              onPress={() => dispatch(signInWithGoogle())}
+            />
+          )}
+          {loginControl.Instagram && (
+            <TouchableOpacity
+              testID={'ManualLoginButton'}
+              style={styles.buttonWrapper}
+              onPress={() => insRef.current.show()}>
+              <Text style={styles.buttonText}>
+                {strings('auth.insta-login')}
+              </Text>
+            </TouchableOpacity>
+          )}
           <InstagramLogin
             ref={insRef}
             appId="142239872267996"
