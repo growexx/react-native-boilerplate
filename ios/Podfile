@@ -6,6 +6,7 @@ platform :ios, '13.0'
 abstract_target 'App' do
   # React Native Maps dependencies
 rn_maps_path = '../node_modules/react-native-maps'
+pod 'RNKeychain', :path => '../node_modules/react-native-keychain'
 pod 'react-native-google-maps', :path => rn_maps_path
   config = use_native_modules!
 
