@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 18,
     marginBottom: 8,
+    marginTop: 10,
   },
   input: {
     borderWidth: 1,
@@ -16,6 +17,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     fontSize: 16,
+    marginBottom: 10,
   },
   addButton: {
     backgroundColor: 'blue',

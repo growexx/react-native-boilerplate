@@ -31,11 +31,11 @@ const StripeButton = (props) => {
             const { error: confirmApplePayError } = await confirmApplePayPayment(
                 configs.STRIPE_CLIENT_SECRET
             );
-            confirmApplePayPayment(clientSecret);
+            confirmApplePayPayment(configs.STRIPE_CLIENT_SECRET);
             if (confirmApplePayError) {
                 Alert.alert(confirmApplePayError.code, confirmApplePayError.message);
             } else {
-                Alert.alert("Success", "The payment was confirmed      successfully!");
+                Alert.alert("Success", "The payment was confirmed successfully!");
             }
         }
     };
@@ -58,6 +58,7 @@ const StripeButton = (props) => {
             // customerId: params.customer,
             // customerEphemeralKeySecret: params.ephemeralKey,
             // paymentIntentClientSecret: params.paymentIntent,
+            
             customerId: "customer",
             customerEphemeralKeySecret: "ephemeralKey",
             paymentIntentClientSecret: "paymentIntent",
@@ -103,10 +104,8 @@ const StripeButton = (props) => {
                     <ApplePayButton
                         onPress={handlePayPress}
                         type='plain'
-                        // type={ButtonType}
-                        // appearance={PlatformPay.ButtonStyle.Black}
                         borderRadius={4}
-                        style={styles.payButton}
+                        style={styles.applePayButton}
                     />
                 ) : null}
             </View>

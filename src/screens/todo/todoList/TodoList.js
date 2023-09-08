@@ -73,7 +73,20 @@ function TodoList({ navigation }) {
       <TouchableOpacity
         testID="delete-button"
         style={styles.deleteButton}
-        onPress={() => deleteTodo(item.id)}>
+        onPress={() => Alert.alert("Delete todo", "Are you sure ?", [
+          {
+            text: LanguageUtils.getLangText(languagekeys.ok),
+            onPress: async () => {
+              deleteTodo(item.id)
+            },
+          },
+          {
+            text: LanguageUtils.getLangText(languagekeys.cancel),
+            onPress: async () => {
+              //do nothing
+            },
+          },
+        ])}>
         <Icon name="delete" size={24} color="black" />
       </TouchableOpacity>
     </View>

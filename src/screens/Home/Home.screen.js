@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {
+  Alert,
   FlatList,
   SafeAreaView,
   Text,
@@ -202,7 +203,20 @@ const Home = props => {
             style={
               colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
             }
-            onPress={() => dispatch(logout())}>
+            onPress={() => Alert.alert(LanguageUtils.getLangText(languagekeys.logout), LanguageUtils.getLangText(languagekeys.areYouSure), [
+              {
+                text: LanguageUtils.getLangText(languagekeys.ok),
+                onPress: async () => {
+                  dispatch(logout())
+                },
+              },
+              {
+                text: LanguageUtils.getLangText(languagekeys.cancel),
+                onPress: async () => {
+                  //do nothing
+                },
+              },
+            ])}>
             <Icon
               name="sign-out"
               size={30}

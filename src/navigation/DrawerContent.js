@@ -7,8 +7,6 @@ import {
   useColorScheme
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import EntypoIcon from 'react-native-vector-icons/Entypo'
 import LanguageUtils from '../localization/languageUtils'
 import languagekeys from '../localization/languagekeys'
 
@@ -71,8 +69,13 @@ const DrawerContent = ({ navigation }) => {
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('PinCodeScreen')}>
-        <MaterialIcons name="security" size={24} color="black" />
-        <Text style={styles.drawerItemText}>
+        <Icon name="shield" size={24}
+          color={colorScheme === 'dark' ? 'white' : 'black'} />
+        <Text style={
+          colorScheme === 'dark'
+            ? styles.drawerItemTextDark
+            : styles.drawerItemText
+        }>
           {LanguageUtils.getLangText(languagekeys.pin)}
         </Text>
       </TouchableOpacity>
@@ -96,21 +99,20 @@ const DrawerContent = ({ navigation }) => {
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('Todo')}>
-        <EntypoIcon name="add-to-list" size={24} color={colorScheme==='dark'?"white": "black"} />
-        <Text style={colorScheme ==='dark'? styles.drawerItemTextDark: styles.drawerItemText}>
+        <Icon name="list-ul" size={24} color={colorScheme === 'dark' ? "white" : "black"} />
+        <Text style={colorScheme === 'dark' ? styles.drawerItemTextDark : styles.drawerItemText}>
           {LanguageUtils.getLangText(languagekeys.todo)}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.drawerItem}
         onPress={() => navigation.navigate('userProfile')}>
-        <EntypoIcon name="user" size={24} color={colorScheme==='dark'?"white": "black"} />
-        <Text style={colorScheme ==='dark'? styles.drawerItemTextDark: styles.drawerItemText}>
+        <Icon name="user" size={24} color={colorScheme === 'dark' ? "white" : "black"} />
+        <Text style={colorScheme === 'dark' ? styles.drawerItemTextDark : styles.drawerItemText}>
           {LanguageUtils.getLangText(languagekeys.userProfile)}
         </Text>
       </TouchableOpacity>
-      {/* ...other drawer items */}
-    </View>
+    </View >
   )
 }
 
@@ -123,7 +125,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row', // Align icon and text horizontally
     alignItems: 'center', // Center align icon and text vertically
     paddingVertical: 20,
-    paddingHorizontal: 30
+    paddingHorizontal: 20
   },
   drawerItemText: {
     marginLeft: 10 // Add some space between icon and text

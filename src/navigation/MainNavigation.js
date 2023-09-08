@@ -43,10 +43,10 @@ const Tab = createMaterialTopTabNavigator()
 const MainBottomTabNavigator = () => (
   <BottomTab.Navigator>
     <BottomTab.Screen
-      name="Home"
+      name=' '
       component={Home}
       options={{
-        title: LanguageUtils.getLangText(languagekeys.dashboard),
+        // title: LanguageUtils.getLangText(languagekeys.dashboard),
         headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <Icon name="home" color={color} size={size} />
@@ -54,20 +54,20 @@ const MainBottomTabNavigator = () => (
       }}
     />
     <BottomTab.Screen
-      name="ChatScreen"
+      name='  '
       component={ChatScreen}
       options={{
-        title: LanguageUtils.getLangText(languagekeys.chat),
+        // title: LanguageUtils.getLangText(languagekeys.chat),
         tabBarIcon: ({ color, size }) => (
           <Icon name="comments" color={color} size={size} />
         )
       }}
     />
     <BottomTab.Screen
-      name="paymentScreen"
+      name='   '
       component={PaymentScreen}
       options={{
-        title: LanguageUtils.getLangText(languagekeys.payment),
+        // title: LanguageUtils.getLangText(languagekeys.payment),
         tabBarIcon: ({ color, size }) => (
           <Icon name="credit-card" color={color} size={size} />
         )
@@ -146,7 +146,7 @@ const AppDrawerNavigator = () => (
     <Drawer.Screen name="EditTodo" component={EditTodo} />
     <Drawer.Screen name="PinCodeScreen" component={PinCodeScreen} />
     <Drawer.Screen name="SetPinCode" component={SetPinCode} />
-    <Drawer.Screen name="userProfile" component={UserProfileScreen} options={{title: LanguageUtils.getLangText(languagekeys.userProfile)}}/>
+    <Drawer.Screen name="userProfile" component={UserProfileScreen} options={{ title: LanguageUtils.getLangText(languagekeys.userProfile) }} />
   </Drawer.Navigator>
 )
 

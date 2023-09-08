@@ -56,4 +56,12 @@ export default class LanguageUtils {
     }
     return en[key]
   }
+
+  static getSpecificLangText(lang, key) {
+    console.log('text is ', lang[key], 'lang is ', lang, 'key is ', key);
+    if (lang === this.languages.hindi) {
+      return hin[key]
+    }
+    return en[key]
+  }
 }
