@@ -8,6 +8,7 @@ import { configs } from '@constants'
 import { enableScreens } from 'react-native-screens'
 import LanguageUtils from './localization/languageUtils'
 import SQLite from 'react-native-sqlite-storage';
+import { LogBox } from 'react-native'
 
 const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' });
 
@@ -21,6 +22,7 @@ db.transaction((tx) => {
 enableScreens()
 
 const App = () => {
+  LogBox.ignoreAllLogs(true);
   const configureGoogleSignIn = () => {
     GoogleSignin.configure({
       scopes: ['email', 'profile'],
