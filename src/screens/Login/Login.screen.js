@@ -123,7 +123,7 @@ const Login = props => {
             <AppleButton
               buttonStyle={AppleButton.Style.BLACK}
               buttonType={AppleButton.Type.SIGN_IN}
-              style={styles.socialButton}
+              style={styles.socialButtonApple}
               onPress={signInWithApple}
             />
           )}
