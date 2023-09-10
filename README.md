@@ -104,7 +104,8 @@ https://github.com/growexx/react-native-boilerplate
 ### iOS
 - Click on each target and rename the displayname and bundle-id
 - Change version & build inputs based on updates in Xcode.
-Version Numbering:
+  
+- Version Numbering:
 
 Version Number (CFBundleShortVersionString): This is the user-visible version number that appears on the App Store and to your users. It should follow SemVer and be incremented when you release significant updates with new features or major changes.
 
