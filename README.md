@@ -24,7 +24,7 @@ https://github.com/growexx/react-native-boilerplate
 6. Run `npm install` to install dependencies
 7. Run `cd ios` and `pod install`
 8. Follow all the instructions listed just after this section in Configuring iOS environment
-9. Follow renaming steps given below to rename displayname
+9. Follow renaming steps given below to rename displayname & version
 10. Start the packager with `npm start`
 11. Connect your device or use emulator that's installed in your pc
 12. Run the test application:
@@ -99,10 +99,16 @@ https://github.com/growexx/react-native-boilerplate
 ![image](https://user-images.githubusercontent.com/80036991/110121631-a50c6300-7de4-11eb-95d3-2c483c58242f.png)
 9. Repeat step 4 to 8 for StagAppName
 
-## Rename Displayname
+## Rename Displayname & Version
 
 ### iOS
 - Click on each target and rename the displayname and bundle-id
+- Change version & build inputs based on updates in Xcode.
+Version Numbering:
+
+Version Number (CFBundleShortVersionString): This is the user-visible version number that appears on the App Store and to your users. It should follow SemVer and be incremented when you release significant updates with new features or major changes.
+
+Build Number (CFBundleVersion): This number is used internally and doesn't necessarily follow SemVer. Increment the build number for each new build you create, regardless of whether it's a minor bug fix or a major feature release. Use a scheme that suits your development workflow, such as using a timestamp or a sequential number.
 ![image](https://user-images.githubusercontent.com/80036991/110122374-8d81aa00-7de5-11eb-846b-e54613bedef2.png)
 
 ### Android
