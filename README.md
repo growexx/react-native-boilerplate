@@ -116,8 +116,9 @@ Build Number (CFBundleVersion): This number is used internally and doesn't neces
 - In `android/app/build.gradle`, change the app_name value in product flavors
 ![image](https://user-images.githubusercontent.com/80036991/110122735-fff28a00-7de5-11eb-9c78-90759bb22c9a.png)
 
-# Versioning:
- - Update build.gradle (Module: app): In your app module's build.gradle file, you'll find version information that you can update. Here's an example:
+- Versioning:
+  
+  Update build.gradle (Module: app): In your app module's build.gradle file, you'll find version information that you can update. Here's an example:
 
    <img width="680" alt="Screenshot 2023-09-10 at 10 42 15 PM" src="https://github.com/growexx/react-native-boilerplate/assets/96043711/51365aba-c9d0-4ea8-bd35-b7b37c39a51d">
 
