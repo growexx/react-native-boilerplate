@@ -1,15 +1,15 @@
-
 import { StyleSheet } from 'react-native'
+import { colors, fonts, fontSize, spacing } from '@constants'
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: 16
   },
   label: {
     fontSize: 18,
     marginBottom: 8,
-    marginTop: 10,
+    marginTop: 10
   },
   input: {
     borderWidth: 1,
@@ -17,20 +17,20 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     fontSize: 16,
-    marginBottom: 10,
+    marginBottom: 10
   },
   addButton: {
-    backgroundColor: 'blue',
+    backgroundColor: colors.light.primary,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 12,
     borderRadius: 8,
-    marginVertical: 16,
+    marginVertical: 16
   },
   addButtonText: {
     color: 'white',
-    fontSize: 16,
-  },
-});
+    fontSize: 16
+  }
+})
 
 export default styles

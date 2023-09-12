@@ -72,7 +72,10 @@ const ChangePasswordScreen = () => {
             secureTextEntry={true}
             testID="new-password-input"
           />
-          <TouchableOpacity testID="toggle-button" onPress={toggleMenu}>
+          <TouchableOpacity
+            style={styles.infoIcon}
+            testID="toggle-button"
+            onPress={toggleMenu}>
             <Icon
               name="info-circle"
               size={30}

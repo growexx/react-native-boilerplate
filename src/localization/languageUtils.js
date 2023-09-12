@@ -1,13 +1,15 @@
-import * as RNLocalize from "react-native-localize";
-import * as StorageService from "../utils/StorageService";
-import en from "./en";
-import hin from "./hin";
-import constants from "../constants/constants";
+import * as RNLocalize from 'react-native-localize'
+import * as StorageService from '../utils/StorageService'
+import en from './en'
+import hin from './hin'
+import ar from './ar'
+import constants from '../constants/constants'
 
 export default class LanguageUtils {
   static languages = {
     english: 'english',
-    hindi: 'hindi'
+    hindi: 'hindi',
+    arabic: 'arabic'
   }
   static changeLanguageGlobal = 'CHANGE_LANGUAGE_GLOBAL'
   static indianLocales = ['en', 'hi-IN']
@@ -44,8 +46,12 @@ export default class LanguageUtils {
 
   static async switchAppLanguage() {
     if (this.currentAppLanguage === this.languages.english) {
-      this.setAppLanguage(this.languages.hindi)
-    } else {
+      this.setAppLanguage(this.languages.arabic)
+    }
+    // else if (this.currentAppLanguage === this.languages.hindi) {
+    //   this.setAppLanguage(this.languages.arabic)
+    // }
+    else {
       this.setAppLanguage(this.languages.english)
     }
   }
@@ -53,12 +59,14 @@ export default class LanguageUtils {
   static getLangText(key) {
     if (this.currentAppLanguage === this.languages.hindi) {
       return hin[key]
+    } else if (this.currentAppLanguage === this.languages.arabic) {
+      return ar[key]
     }
     return en[key]
   }
 
   static getSpecificLangText(lang, key) {
-    console.log('text is ', lang[key], 'lang is ', lang, 'key is ', key);
+    console.log('text is ', lang[key], 'lang is ', lang, 'key is ', key)
     if (lang === this.languages.hindi) {
       return hin[key]
     }

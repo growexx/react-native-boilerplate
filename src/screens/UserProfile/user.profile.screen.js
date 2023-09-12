@@ -8,8 +8,8 @@ import {
   useColorScheme
 } from 'react-native'
 import React from 'react'
+import { colors, fonts, fontSize, spacing } from '@constants'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import colors from '../../constants/colors'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { useSelector } from 'react-redux'
 import languagekeys from '../../localization/languagekeys'
@@ -52,10 +52,10 @@ const UserProfileScreen = ({ navigation }) => {
   ]
 
   const actionsItems = [
-    {
-      icon: 'flag',
-      text: LanguageUtils.getLangText(languagekeys.reportProblem)
-    },
+    // {
+    //   icon: 'flag',
+    //   text: LanguageUtils.getLangText(languagekeys.reportProblem)
+    // },
     { icon: 'user', text: LanguageUtils.getLangText(languagekeys.addAccount) }
   ]
   const renderSettingsItem = ({ icon, text, action }) => (
@@ -192,12 +192,14 @@ const styles = StyleSheet.create({
   },
   text: {
     alignSelf: 'center',
-    fontWeight: '800',
-    marginBottom: 5
+    fontWeight: '300',
+    marginBottom: 5,
+    fontFamily: fonts.BOLD
   },
   textDark: {
     alignSelf: 'center',
-    fontWeight: '800',
+    fontWeight: '300',
+    fontFamily: fonts.BOLD,
     marginBottom: 5,
     color: colors.dark.text
   },
@@ -213,23 +215,31 @@ const styles = StyleSheet.create({
   },
   itemText: {
     marginLeft: 36,
-    fontWeight: '600',
+    fontWeight: '300',
     fontSize: 16,
-    color: colors.light.text
+    color: colors.light.text,
+    fontFamily: fonts.BOLD
   },
   itemTextDark: {
     marginLeft: 36,
-    fontWeight: '600',
+    fontWeight: '300',
     fontSize: 16,
+    fontFamily: fonts.BOLD,
     color: colors.dark.text
   },
   headingText: {
     marginVertical: 10,
-    color: colors.light.text
+    color: colors.light.text,
+    fontWeight: '300',
+    fontSize: 16,
+    fontFamily: fonts.BOLD
   },
   headingTextDark: {
     marginVertical: 10,
-    color: colors.dark.text
+    color: colors.dark.text,
+    fontWeight: '300',
+    fontSize: 16,
+    fontFamily: fonts.BOLD
   }
 })
 export default UserProfileScreen

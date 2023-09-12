@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native'
-import { colors, fontSize } from '@constants'
+import { colors, fonts, fontSize, spacing } from '@constants'
 
 const { width } = Dimensions.get('window')
 
@@ -23,38 +23,41 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   innerContainer: {
-    borderRadius: width * 0.03,
-    borderColor: colors.dark.darkText,
-    paddingHorizontal: width * 0.1,
+    width: width * 0.8,
     paddingVertical: width * 0.05,
-    borderWidth: 2,
-    alignSelf: 'center',
-    width: width * 0.9
+    alignSelf: 'center'
   },
   input: {
-    margin: width * 0.025,
-    color: colors.light.darkText,
-    fontSize: fontSize.medium,
-    borderBottomWidth: 2.5,
-    borderColor: colors.light.gray
+    borderWidth: 0.5,
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    backgroundColor: colors.lightPrimary,
+    borderRadius: spacing,
+    marginVertical: spacing,
+    marginHorizontal: 0
   },
   inputDark: {
     color: colors.dark.darkText,
     borderColor: colors.dark.gray
   },
+  infoIcon: {
+    flexDirection: 'row',
+    marginLeft: 10
+  },
   menuTextInput: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: '110%'
   },
   button: {
-    alignSelf: 'flex-end',
-    paddingVertical: width * 0.025,
-    paddingHorizontal: width * 0.1,
-    backgroundColor: colors.light.active,
-    alignItems: 'center',
+    height: 40,
+    width: '100%',
+    backgroundColor: colors.light.primary,
+    borderRadius: 10,
     justifyContent: 'center',
-    borderRadius: 30,
-    marginTop: width * 0.1
+    alignItems: 'center',
+    marginTop: 30
   },
   buttonText: {
     color: colors.light.lightPrimary,

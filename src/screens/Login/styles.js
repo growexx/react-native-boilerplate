@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   createAccountButton: {
     fontFamily: fonts.BOLD,
-    color: 'blue',
+    color: colors.light.primary,
     textAlign: 'center',
     fontSize: fontSize.small
   },

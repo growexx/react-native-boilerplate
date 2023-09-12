@@ -34,7 +34,7 @@ const PhoneInputScreen = ({ navigation }) => {
         }
       />
       <TouchableOpacity
-        testID='submit'
+        testID="submit"
         style={styles.number}
         onPress={() => {
           const val = phoneInput.current?.isValidNumber(mobile)
@@ -64,16 +64,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   number: {
+    height: 40,
     width: '100%',
-    padding: spacing * 1.5,
     backgroundColor: colors.light.primary,
-    marginVertical: spacing * 0.5,
-    borderRadius: spacing,
-    shadowColor: colors.light.primary,
-    shadowOffset: {
-      width: 0,
-      height: spacing
-    }
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 0
   },
   number_dark: {
     width: '100%',
@@ -91,13 +88,13 @@ const styles = StyleSheet.create({
     fontFamily: fonts.BOLD,
     color: colors.light.onPrimary,
     textAlign: 'center',
-    fontSize: fontSize.large
+    fontSize: 16
   },
   number_text_dark: {
     fontFamily: fonts.BOLD,
     color: colors.dark.text,
     textAlign: 'center',
-    fontSize: fontSize.large
+    fontSize: 16
   },
   phoneInput: {
     width: '100%',

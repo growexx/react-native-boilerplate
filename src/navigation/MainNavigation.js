@@ -33,7 +33,6 @@ import LanguageUtils from '../localization/languageUtils'
 import languagekeys from '../localization/languagekeys'
 import UserProfileScreen from '../screens/UserProfile/user.profile.screen.js'
 
-
 const Drawer = createDrawerNavigator()
 let unsubscribeNetListener
 const Stack = createStackNavigator()
@@ -46,7 +45,7 @@ const MainBottomTabNavigator = () => (
       name={LanguageUtils.getLangText(languagekeys.dashboard)}
       component={Home}
       options={{
-        title: LanguageUtils.getLangText(languagekeys.dashboard),
+        title: '',
         headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <Icon name="home" color={color} size={size} />
@@ -57,7 +56,7 @@ const MainBottomTabNavigator = () => (
       name={LanguageUtils.getLangText(languagekeys.chat)}
       component={ChatScreen}
       options={{
-        title: LanguageUtils.getLangText(languagekeys.chat),
+        title: '',
         tabBarIcon: ({ color, size }) => (
           <Icon name="comments" color={color} size={size} />
         )
@@ -67,7 +66,7 @@ const MainBottomTabNavigator = () => (
       name={LanguageUtils.getLangText(languagekeys.payment)}
       component={PaymentScreen}
       options={{
-        title: LanguageUtils.getLangText(languagekeys.payment),
+        title: '',
         tabBarIcon: ({ color, size }) => (
           <Icon name="credit-card" color={color} size={size} />
         )
@@ -146,7 +145,11 @@ const AppDrawerNavigator = () => (
     <Drawer.Screen name="EditTodo" component={EditTodo} />
     <Drawer.Screen name="PinCodeScreen" component={PinCodeScreen} />
     <Drawer.Screen name="SetPinCode" component={SetPinCode} />
-    <Drawer.Screen name="userProfile" component={UserProfileScreen} options={{ title: LanguageUtils.getLangText(languagekeys.userProfile) }} />
+    <Drawer.Screen
+      name="userProfile"
+      component={UserProfileScreen}
+      options={{ title: LanguageUtils.getLangText(languagekeys.userProfile) }}
+    />
   </Drawer.Navigator>
 )
 

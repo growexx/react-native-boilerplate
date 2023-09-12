@@ -177,19 +177,15 @@ const styles = StyleSheet.create({
     fontFamily: fonts.BOLD,
     color: colors.light.onPrimary,
     textAlign: 'center',
-    fontSize: fontSize.large
+    fontSize: 16
   },
   signup: {
-    padding: spacing * 1.5,
-    marginHorizontal: 20,
+    height: 40,
+    width: '90%',
     backgroundColor: colors.light.primary,
-    borderRadius: spacing,
-    shadowColor: colors.primary,
-    shadowOffset: {
-      width: 0,
-      height: spacing
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: spacing
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: '5%'
   }
 })

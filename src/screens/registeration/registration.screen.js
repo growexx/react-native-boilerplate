@@ -69,13 +69,14 @@ const RegisterScreen = ({ navigation }) => {
               marginVertical: spacing * 3
             }}>
             <TextInput
-            onFocus={() => setNameFocus(true)}
-            onBlur={() => setNameFocus(false)}
+              onFocus={() => setNameFocus(true)}
+              onBlur={() => setNameFocus(false)}
               style={[
                 colorScheme === 'dark'
-                ? styles.inputTextDark
-                : styles.inputText,
-              nameFocus && styles.focused              ]}
+                  ? styles.inputTextDark
+                  : styles.inputText,
+                nameFocus && styles.focused
+              ]}
               onChangeText={setName}
               value={name}
               placeholder="Enter your name"
@@ -125,7 +126,13 @@ const RegisterScreen = ({ navigation }) => {
             onPress={() => {
               const checkValid = phoneInput.current?.isValidNumber(mobile)
               if (checkValid) {
-                handleRegistration(email, password, confirmPassword, name ,navigation)
+                handleRegistration(
+                  email,
+                  password,
+                  confirmPassword,
+                  name,
+                  navigation
+                )
               } else if (mobile === '') {
                 showToast('All fields are required.')
               } else {
@@ -193,19 +200,15 @@ const styles = StyleSheet.create({
     fontFamily: fonts.BOLD,
     color: colors.light.onPrimary,
     textAlign: 'center',
-    fontSize: fontSize.large
+    fontSize: 16
   },
   signup: {
-    padding: spacing * 1.5,
+    height: 40,
+    width: '70%',
     backgroundColor: colors.light.primary,
-    borderRadius: spacing,
-    shadowColor: colors.primary,
-    shadowOffset: {
-      width: 0,
-      height: spacing
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: spacing
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   focused: {
     borderWidth: 3,

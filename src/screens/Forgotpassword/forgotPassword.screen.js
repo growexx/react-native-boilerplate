@@ -66,7 +66,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.8,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20
@@ -83,19 +83,23 @@ const styles = StyleSheet.create({
     color: colors.dark.text
   },
   input: {
-    width: '100%',
+    paddingVertical: 0,
+    paddingLeft: 10,
     height: 40,
-    paddingHorizontal: 10,
+    width: '100%',
+    alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#ccc',
-    marginBottom: 15,
-    borderRadius: 5
+    borderColor: colors.blue,
+    borderRadius: 10
   },
   button: {
-    backgroundColor: '#007bff',
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 5
+    height: 40,
+    width: '100%',
+    backgroundColor: colors.light.primary,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50
   },
   buttonText: {
     color: '#fff',
