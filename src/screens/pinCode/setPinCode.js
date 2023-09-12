@@ -1,42 +1,46 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Alert } from 'react-native';
-import PINCode, { deleteUserPinCode, resetPinCodeInternalStates, hasUserSetPinCode } from '@haskkor/react-native-pincode';
+import React, { useState } from 'react'
+import { View, Text, TouchableOpacity, Alert } from 'react-native'
+import PINCode, {
+  deleteUserPinCode,
+  resetPinCodeInternalStates,
+  hasUserSetPinCode
+} from '@haskkor/react-native-pincode'
 
-import styles from './styles'; // You can define your styles in a separate file
-import colors from '../../constants/colors';
-import { saveItem } from '../../utils/StorageService';
-import constants from '../../constants/constants';
+import styles from './styles' // You can define your styles in a separate file
+import colors from '../../constants/colors'
+import { saveItem } from '../../utils/StorageService'
+import constants from '../../constants/constants'
 
 const SetPinCode = ({ navigation }) => {
-    const [pin, setPin] = useState()
+  const [pin, setPin] = useState()
 
-    const _finishProcess = async (pinCode) => {
-        // const hasPin = await hasUserSetPinCode();
-        if (pinCode != null && pin === pinCode) {
-            await saveItem(constants.PIN, pinCode)
-            Alert.alert(null, "You have successfully set your pin.", [
-                {
-                    title: "Ok",
-                    onPress: () => {
-                        // do nothing
-                        navigation.navigate('Home')
-                    },
-                },
-            ]);
+  const _finishProcess = async pinCode => {
+    // const hasPin = await hasUserSetPinCode();
+    if (pinCode != null && pin === pinCode) {
+      await saveItem(constants.PIN, pinCode)
+      Alert.alert(null, 'You have successfully set your pin.', [
+        {
+          title: 'Ok',
+          onPress: () => {
+            // do nothing
+            navigation.navigate('Dashboard')
+          }
         }
-    };
+      ])
+    }
+  }
 
-    return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Create a PIN code</Text>
-            <PINCode
-                status='choose'
-                finishProcess={_finishProcess}
-                storePin={setPin}
-                vibrationEnabled={false}
-                />
-        </View>
-    );
-};
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Create a PIN code</Text>
+      <PINCode
+        status="choose"
+        finishProcess={_finishProcess}
+        storePin={setPin}
+        vibrationEnabled={false}
+      />
+    </View>
+  )
+}
 
-export default SetPinCode;
+export default SetPinCode
