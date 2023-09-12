@@ -56,7 +56,7 @@ export const logout = () => dispatch => {
   } catch (error) {}
 }
 
-export const getInfoFromToken = token => {
+export const getInfoFromToken = (token, dispatch) => {
   const PROFILE_REQUEST_PARAMS = {
     fields: {
       string: 'id, name,  first_name, last_name'
@@ -69,25 +69,20 @@ export const getInfoFromToken = token => {
       if (error) {
         Alert.alert(error.code)
       } else {
-        Alert.alert('Signed In as: ' + result.name)
+        dispatch(loginSuccess(result))
       }
     }
   )
   new GraphRequestManager().addRequest(profileRequest).start()
 }
 
-export const signInwithFacebook = (error, result) => {
-  if (error) {
-    Alert.alert('login has error: ' + result.error)
-  } else if (result.isCancelled) {
-    Alert.alert('User cancelled!')
-  } else {
-    AccessToken.getCurrentAccessToken().then(data => {
-      const accessToken = data.accessToken.toString()
-      getInfoFromToken(accessToken)
-    })
-  }
+export const signInwithFacebook = () => async dispatch => {
+  AccessToken.getCurrentAccessToken().then(data => {
+    const accessToken = data.accessToken.toString()
+    getInfoFromToken(accessToken, dispatch)
+  })
 }
+
 export const signInWithGoogle = () => async dispatch => {
   try {
     await GoogleSignin.hasPlayServices()

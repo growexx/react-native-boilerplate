@@ -7,7 +7,7 @@ import {
   Platform,
   useColorScheme
 } from 'react-native'
-import { LoginButton } from 'react-native-fbsdk'
+import { LoginButton, LoginManager } from 'react-native-fbsdk'
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin'
 import { AppleButton } from '@invertase/react-native-apple-authentication'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -40,13 +40,26 @@ const Login = props => {
 
   useEffect(() => {
     if (props.auth.type === LOGIN_FAILED) {
-      // Alert.alert('Login failed!')
       dispatch(clearRedux())
     }
     if (props.auth.type === LOGIN_SUCCESS) {
       dispatch(clearRedux())
     }
   }, [dispatch, props.auth])
+
+  const handleFacebookLogin = async () => {
+    try {
+      const result = await LoginManager.logInWithPermissions([
+        'public_profile',
+        'email'
+      ])
+      if (!result.isCancelled) {
+        dispatch(signInwithFacebook())
+      }
+    } catch (error) {
+      console.error('Facebook login error:', error)
+    }
+  }
 
   return (
     <>
@@ -124,39 +137,6 @@ const Login = props => {
               </Text>
             </TouchableOpacity>
           )}
-          {Platform.OS === 'ios' && loginControl.Apple && (
-            <AppleButton
-              buttonStyle={AppleButton.Style.BLACK}
-              buttonType={AppleButton.Type.SIGN_IN}
-              style={styles.socialButtonApple}
-              onPress={signInWithApple}
-            />
-          )}
-          {loginControl.FB && (
-            <LoginButton
-              style={styles.buttonWrapper}
-              onLoginFinished={signInwithFacebook}
-              onLogoutFinished={() => {}}
-            />
-          )}
-          {loginControl.Google && (
-            <GoogleSigninButton
-              style={styles.socialButtonGoogle}
-              size={GoogleSigninButton.Size.Standard}
-              color={GoogleSigninButton.Color.Dark}
-              onPress={() => dispatch(signInWithGoogle())}
-            />
-          )}
-          {loginControl.Instagram && (
-            <TouchableOpacity
-              testID={'ManualLoginButton'}
-              style={styles.buttonWrapper}
-              onPress={() => insRef.current.show()}>
-              <Text style={styles.buttonText}>
-                {strings('auth.insta-login')}
-              </Text>
-            </TouchableOpacity>
-          )}
           <InstagramLogin
             ref={insRef}
             appId="142239872267996"
@@ -166,6 +146,33 @@ const Login = props => {
             onLoginSuccess={() => dispatch(signInWithInstagram())}
             onLoginFailure={data => {}}
           />
+          {Platform.OS === 'ios' && loginControl.Apple && (
+            <AppleButton
+              buttonStyle={AppleButton.Style.BLACK}
+              buttonType={AppleButton.Type.SIGN_IN}
+              style={styles.socialButtonApple}
+              onPress={signInWithApple}
+            />
+          )}
+          <View style={styles.row}>
+            {loginControl.FB && (
+              <TouchableOpacity onPress={handleFacebookLogin}>
+                <Image source={images.facebook} style={styles.image} />
+              </TouchableOpacity>
+            )}
+            {loginControl.Google && (
+              <TouchableOpacity onPress={() => dispatch(signInWithGoogle())}>
+                <Image source={images.google} style={styles.image} />
+              </TouchableOpacity>
+            )}
+            {loginControl.Instagram && (
+              <TouchableOpacity
+                testID={'ManualLoginButton'}
+                onPress={() => insRef.current.show()}>
+                <Image source={images.instagram} style={styles.image} />
+              </TouchableOpacity>
+            )}
+          </View>
         </View>
       </KeyboardAwareScrollView>
     </>

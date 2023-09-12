@@ -17,6 +17,16 @@ const styles = StyleSheet.create({
     height: '20%',
     resizeMode: 'contain'
   },
+  row: {
+    marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 150
+  },
+  image: {
+    width: 35,
+    height: 35
+  },
   h1: {
     fontSize: 30,
     fontWeight: 'bold'
