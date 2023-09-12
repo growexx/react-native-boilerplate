@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   passwordValidationStyle: {
     marginHorizontal: width * 0.025,
-    color: colors.light.errorColor,
+    color: colors.light.primary,
     fontSize: fontSize.medium
   },
   container: {
@@ -35,11 +35,21 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightPrimary,
     borderRadius: spacing,
     marginVertical: spacing,
-    marginHorizontal: 0
+    marginHorizontal: 0,
+    textAlign: 'left'
   },
   inputDark: {
     color: colors.dark.darkText,
-    borderColor: colors.dark.gray
+    borderColor: colors.dark.gray,
+    borderWidth: 0.5,
+    fontFamily: fonts.REGULAR,
+    fontSize: fontSize.small,
+    padding: spacing * 1.5,
+    backgroundColor: colors.lightPrimary,
+    borderRadius: spacing,
+    marginVertical: spacing,
+    marginHorizontal: 0,
+    textAlign: 'left'
   },
   infoIcon: {
     flexDirection: 'row',

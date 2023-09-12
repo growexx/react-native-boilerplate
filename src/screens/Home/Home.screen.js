@@ -203,20 +203,26 @@ const Home = props => {
             style={
               colorScheme === 'dark' ? styles.headerItemDark : styles.headerItem
             }
-            onPress={() => Alert.alert(LanguageUtils.getLangText(languagekeys.logout), LanguageUtils.getLangText(languagekeys.areYouSure), [
-              {
-                text: LanguageUtils.getLangText(languagekeys.ok),
-                onPress: async () => {
-                  dispatch(logout())
-                },
-              },
-              {
-                text: LanguageUtils.getLangText(languagekeys.cancel),
-                onPress: async () => {
-                  //do nothing
-                },
-              },
-            ])}>
+            onPress={() =>
+              Alert.alert(
+                LanguageUtils.getLangText(languagekeys.logout),
+                LanguageUtils.getLangText(languagekeys.areYouSure),
+                [
+                  {
+                    text: LanguageUtils.getLangText(languagekeys.ok),
+                    onPress: async () => {
+                      dispatch(logout())
+                    }
+                  },
+                  {
+                    text: LanguageUtils.getLangText(languagekeys.cancel),
+                    onPress: async () => {
+                      //do nothing
+                    }
+                  }
+                ]
+              )
+            }>
             <Icon
               name="sign-out"
               size={30}

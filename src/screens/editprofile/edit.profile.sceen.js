@@ -9,7 +9,7 @@ import {
   Image,
   useColorScheme
 } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { colors, fonts, fontSize, spacing } from '@constants'
 import ImagePicker from 'react-native-image-crop-picker'
 import PhoneInput from 'react-native-phone-number-input'
@@ -17,8 +17,18 @@ import showToast from '../../components/toast'
 import languagekeys from '../../localization/languagekeys'
 import LanguageUtils from '../../localization/languageUtils'
 import { isEmailValid } from '../../utils/validations'
+import { useIsFocused } from '@react-navigation/native'
 
 const EditProfileScreen = ({ navigation }) => {
+  const isFocused = useIsFocused()
+
+  const getAppLanguage = async () => {
+    const lang = await getItem(constants.APP_LANGUAGE)
+  }
+
+  useEffect(() => {
+    getAppLanguage()
+  }, [isFocused])
   const colorScheme = useColorScheme()
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')

@@ -23,7 +23,7 @@ const SetPinCode = ({ navigation }) => {
           title: 'Ok',
           onPress: () => {
             // do nothing
-            navigation.navigate('Dashboard')
+            navigation.navigate('ReactNative Boilerplate')
           }
         }
       ])

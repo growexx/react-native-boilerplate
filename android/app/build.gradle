@@ -6,7 +6,7 @@ project.ext.envConfigFiles = [
     stagingdebug: ".env.staging",
     stagingrelease: ".env.staging",
 ]
-
+project.ext.defaultEnvFile = ".env.development"
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 import com.android.build.OutputFile

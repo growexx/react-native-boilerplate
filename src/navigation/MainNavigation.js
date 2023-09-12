@@ -101,7 +101,7 @@ const AppDrawerNavigator = () => (
     }}
     drawerContent={props => <DrawerContent {...props} />}>
     <Drawer.Screen
-      name=" "
+      name="ReactNative Boilerplate"
       component={MainBottomTabNavigator}
       options={{
         drawerIcon: ({ color, size }) => (
@@ -109,6 +109,13 @@ const AppDrawerNavigator = () => (
         )
       }}
     />
+    {/* <Drawer.Screen
+      name="Dashboard"
+      component={Home}
+      options={{
+        title: ''
+      }}
+    /> */}
     <Drawer.Screen
       name="ChatScreen"
       component={ChatScreen}

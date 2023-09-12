@@ -8,7 +8,7 @@ export const GET = async (url, params) => {
   //     Authorization: `Bearer ${token}`,
   //   },
   // }
-  return handleRequest(axios.get(configs.API_URL + url, { params }))
+  return handleRequest(axios.get('https://newsapi.org' + url, { params }))
 }
 
 export const GET_BACKGROUND = async params => {

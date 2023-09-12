@@ -7,15 +7,25 @@ import {
   Image,
   useColorScheme
 } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { colors, fonts, fontSize, spacing } from '@constants'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { useSelector } from 'react-redux'
 import languagekeys from '../../localization/languagekeys'
 import LanguageUtils from '../../localization/languageUtils'
+import { useIsFocused } from '@react-navigation/native'
 
 const UserProfileScreen = ({ navigation }) => {
+  const isFocused = useIsFocused()
+
+  const getAppLanguage = async () => {
+    const lang = await getItem(constants.APP_LANGUAGE)
+  }
+
+  useEffect(() => {
+    getAppLanguage()
+  }, [isFocused])
   const data = useSelector(state => state.authReducer.loginData)
   const colorScheme = useColorScheme()
 
@@ -232,7 +242,8 @@ const styles = StyleSheet.create({
     color: colors.light.text,
     fontWeight: '300',
     fontSize: 16,
-    fontFamily: fonts.BOLD
+    fontFamily: fonts.BOLD,
+    textAlign: 'left'
   },
   headingTextDark: {
     marginVertical: 10,

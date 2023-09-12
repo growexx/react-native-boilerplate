@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   View,
   TextInput,
@@ -14,8 +14,19 @@ import styles from './styles'
 import handleChangePassword from '../../controllers/changePasswordController'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
+import { useIsFocused } from '@react-navigation/native'
 
 const ChangePasswordScreen = () => {
+  const isFocused = useIsFocused()
+
+  const getAppLanguage = async () => {
+    const lang = await getItem(constants.APP_LANGUAGE)
+  }
+
+  useEffect(() => {
+    getAppLanguage()
+  }, [isFocused])
+
   const [isMenuVisible, setIsMenuVisible] = useState(false)
 
   const toggleMenu = () => {
