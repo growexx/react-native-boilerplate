@@ -25,15 +25,22 @@ jest.mock('@stripe/stripe-react-native', () => ({
 }));
 
 
-describe('payment screen test', () => { 
+jest.mock('@react-navigation/native', () => {
+    return {
+        ...jest.requireActual('@react-navigation/native'),
+        useIsFocused: jest.fn(() => ({}))
+    };
+});
+
+describe('payment screen test', () => {
     const Wrapper = (
         <Provider store={store}>
-            <PaymentScreen/>
+            <PaymentScreen />
         </Provider>
     )
-    test('should render payment button', () => { 
+    test('should render payment button', () => {
         const screen = render(Wrapper)
         expect(screen).toBeDefined()
-     })
-   
- })
+    })
+
+})
