@@ -8,7 +8,7 @@ import {
   useColorScheme
 } from 'react-native'
 import React, { useEffect } from 'react'
-import { colors, fonts, fontSize, spacing } from '@constants'
+import { colors, fonts } from '@constants'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { useSelector } from 'react-redux'
@@ -22,7 +22,7 @@ const UserProfileScreen = ({ navigation }) => {
   const isFocused = useIsFocused()
 
   const getAppLanguage = async () => {
-    const lang = await getItem(constants.APP_LANGUAGE)
+    await getItem(constants.APP_LANGUAGE)
   }
 
   useEffect(() => {

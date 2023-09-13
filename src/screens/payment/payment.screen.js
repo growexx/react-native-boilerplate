@@ -11,16 +11,15 @@ import constants from '../../constants/constants'
 import { useIsFocused } from '@react-navigation/native'
 
 const PaymentScreen = () => {
-  const isFocused = useIsFocused();
+  const isFocused = useIsFocused()
 
   const getAppLanguage = async () => {
-    const lang = await getItem(constants.APP_LANGUAGE);
+    await getItem(constants.APP_LANGUAGE)
   }
 
   useEffect(() => {
     getAppLanguage()
   }, [isFocused])
-
 
   return (
     <View style={styles.container}>

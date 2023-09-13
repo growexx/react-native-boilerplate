@@ -9,7 +9,7 @@ export default class LanguageUtils {
   static languages = {
     english: 'english',
     hindi: 'hindi',
-    arabic: 'arabic',
+    arabic: 'arabic'
   }
   static changeLanguageGlobal = 'CHANGE_LANGUAGE_GLOBAL'
   static indianLocales = ['en', 'hi-IN']
@@ -66,7 +66,6 @@ export default class LanguageUtils {
   }
 
   static getSpecificLangText(lang, key) {
-    console.log('text is ', lang[key], 'lang is ', lang, 'key is ', key)
     if (lang === this.languages.hindi) {
       return hin[key]
     }

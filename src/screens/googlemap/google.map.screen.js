@@ -31,7 +31,6 @@ const GoogleMapScreen = () => {
           }
         )
         if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-          console.log('Location permission granted')
           // Now that permission is granted, retrieve the location
           Geolocation.getCurrentPosition(
             position => {
@@ -49,8 +48,6 @@ const GoogleMapScreen = () => {
               )
             }
           )
-        } else {
-          console.log('Location permission denied')
         }
       } catch (err) {
         console.warn(err)

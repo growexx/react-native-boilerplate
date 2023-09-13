@@ -22,7 +22,7 @@ const ChangePasswordScreen = () => {
   const isFocused = useIsFocused()
 
   const getAppLanguage = async () => {
-    const lang = await getItem(constants.APP_LANGUAGE)
+    await getItem(constants.APP_LANGUAGE)
   }
 
   useEffect(() => {

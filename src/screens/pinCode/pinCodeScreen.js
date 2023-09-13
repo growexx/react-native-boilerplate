@@ -25,7 +25,6 @@ const PinCodeScreen = ({ navigation }) => {
 
   const _getPinDetails = async () => {
     const pinCode = await getItem(constants.PIN)
-    console.log('pinCode is ', pinCode)
     setPin(pinCode)
   }
 
@@ -50,9 +49,7 @@ const PinCodeScreen = ({ navigation }) => {
           }
         ])
       }
-    } catch (error) {
-      console.log('error is ', error.toString())
-    }
+    } catch (error) {}
   }
 
   const onPinEntered = pin => {
@@ -69,7 +66,7 @@ const PinCodeScreen = ({ navigation }) => {
         }
       ])
     } else {
-      alert('Incorrect pin')
+      Alert.alert('Incorrect pin')
     }
   }
 

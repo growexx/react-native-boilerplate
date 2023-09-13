@@ -77,9 +77,7 @@ export const styles = StyleSheet.create({
     marginTop: 20
   },
   resendCode: {
-    backgroundColor: colors.light.primary,
-    color: 'white',
-    marginStart: 20,
+    color: colors.light.primary,
     marginTop: 40,
     padding: spacing * 2
   },
@@ -97,16 +95,13 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   otp: {
-    width: '100%',
-    padding: spacing * 1.5,
+    height: 40,
+    width: '90%',
     backgroundColor: colors.light.primary,
-    marginVertical: spacing * 0.5,
-    borderRadius: spacing,
-    shadowColor: colors.light.primary,
-    shadowOffset: {
-      width: 0,
-      height: spacing
-    }
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: '5%'
   },
   otp_dark: {
     width: '100%',
