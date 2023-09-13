@@ -31,16 +31,18 @@ const SetPinCode = ({ navigation }) => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Create a PIN code</Text>
-      <PINCode
-        status="choose"
-        finishProcess={_finishProcess}
-        storePin={setPin}
-        vibrationEnabled={false}
-      />
-    </View>
-  )
-}
+    <>
+      <View style={styles.container}>
+        <Text style={styles.title}>Create a PIN code</Text>
+        <PINCode
+          status='choose'
+          finishProcess={_finishProcess}
+          storePin={setPin}
+          vibrationEnabled={false}
+        />
+      </View>
+    </>
+  );
+};
 
 export default SetPinCode

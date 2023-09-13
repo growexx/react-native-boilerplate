@@ -65,4 +65,29 @@ describe('UserProfileScreen', () => {
     const screen = render(<UserProfileScreen navigation={navigation} />)
     expect(screen).toBeDefined()
   })
+
+  it('renders correctly', () => {
+    const { getByText } = render(<UserProfileScreen />);
+    
+    // You can add more specific assertions here based on your UI
+    expect(getByText('Name :')).toBeTruthy();
+    expect(getByText('Account')).toBeTruthy();
+  });
+
+  it('displays user name and email', () => {
+    const userData = { name: 'John Doe', email: 'johndoe@example.com' };
+    const { getByText } = render(<UserProfileScreen data={userData} />);
+    
+    expect(getByText(`Name : ${userData.name}`)).toBeTruthy();
+    expect(getByText(userData.email)).toBeTruthy();
+  });
+
+  it('navigates to security screen when security item is pressed', () => {
+    const navigationMock = { navigate: jest.fn() };
+    const { getByText } = render(<UserProfileScreen navigation={navigationMock} />);
+
+    fireEvent.press(getByText('Security'));
+
+    expect(navigationMock.navigate).toHaveBeenCalledWith('SecurityScreen');
+  });
 })

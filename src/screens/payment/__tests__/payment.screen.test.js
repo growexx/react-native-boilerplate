@@ -4,6 +4,27 @@ import { render, fireEvent } from '@testing-library/react-native'
 import React from 'react'
 import PaymentScreen from "../payment.screen"
 
+jest.mock('@stripe/stripe-react-native', () => ({
+    getConstants: jest.fn(() => null),
+    StripeProvider: jest.fn(({ children }) => children),
+    useApplePay: jest.fn(() => ({
+        presentApplePay: jest.fn(() => Promise.resolve()),
+        confirmApplePayPayment: jest.fn(() => Promise.resolve())
+    }),),
+    CardField: jest.fn(() => null),
+    useStripe: jest.fn(() => {
+        return {
+            initPaymentSheet: jest.fn(),
+            presentPaymentSheet: jest.fn(() => {
+                return {
+                    error: false
+                }
+            }),
+        }
+    }),
+}));
+
+
 describe('payment screen test', () => { 
     const Wrapper = (
         <Provider store={store}>

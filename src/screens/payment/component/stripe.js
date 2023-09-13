@@ -58,7 +58,7 @@ const StripeButton = (props) => {
             // customerId: params.customer,
             // customerEphemeralKeySecret: params.ephemeralKey,
             // paymentIntentClientSecret: params.paymentIntent,
-            
+
             customerId: "customer",
             customerEphemeralKeySecret: "ephemeralKey",
             paymentIntentClientSecret: "paymentIntent",
@@ -102,6 +102,7 @@ const StripeButton = (props) => {
             <View>
                 {Platform.OS == 'ios' ? (
                     <ApplePayButton
+                        testID='apple-pay'
                         onPress={handlePayPress}
                         type='plain'
                         borderRadius={4}

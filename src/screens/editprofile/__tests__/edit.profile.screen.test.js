@@ -9,6 +9,7 @@ import EditProfileScreen from '../edit.profile.sceen'
 jest.mock('../../../components/toast.js', () => jest.fn())
 const mockNavigation = {
   navigate: jest.fn(),
+  goBack: jest.fn(),
   pop: jest.fn(),
   dispatch: jest.fn(),
   replace: jest.fn()
