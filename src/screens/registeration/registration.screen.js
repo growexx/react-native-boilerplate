@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   },
   signup: {
     height: 40,
-    width: '70%',
+    width: '100%',
     backgroundColor: colors.light.primary,
     borderRadius: 10,
     justifyContent: 'center',
