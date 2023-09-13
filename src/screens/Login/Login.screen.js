@@ -7,8 +7,7 @@ import {
   Platform,
   useColorScheme
 } from 'react-native'
-import { LoginButton, LoginManager } from 'react-native-fbsdk'
-import { GoogleSigninButton } from '@react-native-google-signin/google-signin'
+import { LoginManager } from 'react-native-fbsdk'
 import { AppleButton } from '@invertase/react-native-apple-authentication'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from './styles'
@@ -21,15 +20,14 @@ import {
   signInWithGoogle,
   signInWithInstagram,
   signInWithApple
-} from '@actions/auth.action'
-import { strings } from '@i18n'
-import { LOGIN_FAILED, LOGIN_SUCCESS } from '@types/auth.types'
-import images from '@images'
+} from '../../stores/actions/auth.action'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
 import AuthInput from '../../components/auth.Input'
-import { spacing } from '@constants'
 import loginControl from '../../constants/loginControl'
+import { spacing } from '../../constants'
+import images from '../../assets/images'
+import { LOGIN_FAILED, LOGIN_SUCCESS } from '../../stores/types/auth.types'
 
 const Login = props => {
   const dispatch = useDispatch()
@@ -66,8 +64,6 @@ const Login = props => {
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps={'handled'}
         contentContainerStyle={styles.SafeAreaView}>
-        {/* <Text>Environment: {configs.ENV}</Text>
-        <Text>Is Connected: {props.deviceInfo.isConnected.toString()}</Text> */}
         <View style={styles.container}>
           <Image
             source={
@@ -144,7 +140,7 @@ const Login = props => {
             redirectUrl="https://www.growexx.com/"
             scopes={['user_profile']}
             onLoginSuccess={() => dispatch(signInWithInstagram())}
-            onLoginFailure={data => {}}
+            onLoginFailure={data => { }}
           />
           {Platform.OS === 'ios' && loginControl.Apple && (
             <AppleButton

@@ -9,6 +9,7 @@ import EditProfileScreen from '../edit.profile.sceen'
 jest.mock('../../../components/toast.js', () => jest.fn())
 const mockNavigation = {
   navigate: jest.fn(),
+  goBack: jest.fn(),
   pop: jest.fn(),
   dispatch: jest.fn(),
   replace: jest.fn()
@@ -20,6 +21,14 @@ jest.mock('react-native/Libraries/Utilities/useColorScheme', () => {
     default: mockedColorScheme
   }
 })
+
+jest.mock('@react-navigation/native', () => {
+  return {
+    ...jest.requireActual('@react-navigation/native'),
+    useIsFocused: jest.fn(() => ({}))
+  };
+});
+
 describe('edit profile screen tested', () => {
   const Wrapper = (
     <Provider store={store}>

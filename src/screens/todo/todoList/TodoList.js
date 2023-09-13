@@ -9,7 +9,13 @@ import languagekeys from '../../../localization/languagekeys'
 const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' })
 
 function TodoList({ navigation }) {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([
+    {
+      id: 'id',
+      title: 'title',
+      description: 'description'
+    }
+  ])
 
   const fetchTodos = () => {
     db.transaction(tx => {

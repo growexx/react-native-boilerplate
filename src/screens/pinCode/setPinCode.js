@@ -1,13 +1,8 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableOpacity, Alert } from 'react-native'
-import PINCode, {
-  deleteUserPinCode,
-  resetPinCodeInternalStates,
-  hasUserSetPinCode
-} from '@haskkor/react-native-pincode'
+import { View, Text, Alert } from 'react-native'
+import PINCode from '@haskkor/react-native-pincode'
 
 import styles from './styles' // You can define your styles in a separate file
-import colors from '../../constants/colors'
 import { saveItem } from '../../utils/StorageService'
 import constants from '../../constants/constants'
 
@@ -31,16 +26,18 @@ const SetPinCode = ({ navigation }) => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Create a PIN code</Text>
-      <PINCode
-        status="choose"
-        finishProcess={_finishProcess}
-        storePin={setPin}
-        vibrationEnabled={false}
-      />
-    </View>
-  )
-}
+    <>
+      <View style={styles.container}>
+        <Text style={styles.title}>Create a PIN code</Text>
+        <PINCode
+          status='choose'
+          finishProcess={_finishProcess}
+          storePin={setPin}
+          vibrationEnabled={false}
+        />
+      </View>
+    </>
+  );
+};
 
 export default SetPinCode

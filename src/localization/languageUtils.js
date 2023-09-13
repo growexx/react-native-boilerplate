@@ -9,7 +9,7 @@ export default class LanguageUtils {
   static languages = {
     english: 'english',
     hindi: 'hindi',
-    arabic: 'arabic'
+    arabic: 'arabic',
   }
   static changeLanguageGlobal = 'CHANGE_LANGUAGE_GLOBAL'
   static indianLocales = ['en', 'hi-IN']

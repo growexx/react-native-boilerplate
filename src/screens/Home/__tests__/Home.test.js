@@ -5,10 +5,40 @@ import Home from '../Home.screen'
 import { store } from '@stores'
 import { fetchNews, clearRedux } from '@actions/news.action'
 import { mockedGetRequest } from '../Home.util'
+import LanguageUtils from '../../../localization/languageUtils'
+import languagekeys from '../../../localization/languagekeys'
 
 jest.mock('@api/AxiosClient')
+global.setImmediate = global.setImmediate || ((fn, ...args) => global.setTimeout(fn, 0, ...args));
+
+// Cache original functionality
+const realUseState = React.useState
+
+// Stub the initial state
+const text = {
+  general: LanguageUtils.getLangText(languagekeys.general),
+  business: LanguageUtils.getLangText(languagekeys.business),
+  entertainment: LanguageUtils.getLangText(languagekeys.entertainment),
+  health: LanguageUtils.getLangText(languagekeys.health),
+  science: LanguageUtils.getLangText(languagekeys.science),
+  sports: LanguageUtils.getLangText(languagekeys.sports),
+  technology: LanguageUtils.getLangText(languagekeys.technology),
+  errorMessage: LanguageUtils.getLangText(languagekeys.errorMessage),
+  errorHeader: LanguageUtils.getLangText(languagekeys.errorHeader),
+  retry: LanguageUtils.getLangText(languagekeys.retry),
+  changePassword: LanguageUtils.getLangText(languagekeys.changePassword),
+  editProfile: LanguageUtils.getLangText(languagekeys.editProfile),
+  googlePay: LanguageUtils.getLangText(languagekeys.googlePay)
+}
+const stubInitialState = [text]
+// Mock useState before rendering your component
+jest
+  .spyOn(React, 'useState')
+  .mockImplementationOnce(() => realUseState(stubInitialState))
 
 describe('render home screen properly', () => {
+ 
+  require('react').useState.mockReturnValue(text)
   const Wrapper = (
     <Provider store={store}>
       <Home />

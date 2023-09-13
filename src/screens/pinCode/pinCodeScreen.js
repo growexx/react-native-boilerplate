@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, Alert } from 'react-native'
-import PINCode, { deleteUserPinCode } from '@haskkor/react-native-pincode'
+import PINCode from '@haskkor/react-native-pincode'
 import styles from './styles'
-import { getItem, removeItemValue, saveItem } from '../../utils/StorageService'
+import { getItem, removeItemValue } from '../../utils/StorageService'
 import constants from '../../constants/constants'
 
 const PinCodeScreen = ({ navigation }) => {
   const [pin, setPin] = useState()
   const [pinDetails, setPinDetails] = useState({
     pin: '',
-    PINCodeStatus: 'enter',
+    PINCodeStatus: 'choose',
     showPinLock: false
   })
 

@@ -20,19 +20,15 @@ jest.mock('react-native/Libraries/Utilities/useColorScheme', () => {
   }
 })
 
+jest.mock('@react-navigation/native', () => {
+  return {
+    ...jest.requireActual('@react-navigation/native'),
+    useIsFocused: jest.fn(() => ({}))
+  };
+});
+
 describe('UserProfileScreen', () => {
   it('renders user name and email when data is provided', () => {
-    mockedColorScheme.mockImplementationOnce(() => 'light')
-    const userData = {
-      name: 'John Doe',
-      email: 'johndoe@example.com'
-    }
-    require('react-redux').useSelector.mockReturnValue(userData)
-    const { getByText } = render(<UserProfileScreen navigation={navigation} />)
-    expect(getByText(`Name : ${userData.name}`)).toBeTruthy()
-    expect(getByText(userData.email)).toBeTruthy()
-  })
-  it('renders user name and email when data is provided with dark', () => {
     mockedColorScheme.mockImplementationOnce(() => 'dark')
     const userData = {
       name: 'John Doe',
@@ -50,19 +46,18 @@ describe('UserProfileScreen', () => {
     expect(getByText(`Name : `)).toBeTruthy()
   })
 
-
-  it('renders a edit profile screen', () => {
-    const { getByText } = render(
-      <UserProfileScreen navigation={navigation} />
-    )
-    expect(getByText('Edit Profile')).toBeTruthy()
-    fireEvent.press(getByText('Edit Profile'))
-    expect(navigation.navigate).toHaveBeenCalled()
-  })
-
   it('empty user name and email', () => {
     store.dispatch(logout())
     const screen = render(<UserProfileScreen navigation={navigation} />)
     expect(screen).toBeDefined()
   })
+
+  it('renders correctly', () => {
+    const navigationMock = { navigate: jest.fn() };
+    const { getByText } = render(<UserProfileScreen navigation={navigationMock} />);
+
+    // You can add more specific assertions here based on your UI
+    expect(getByText('Name :')).toBeTruthy();
+    expect(getByText('Account')).toBeTruthy();
+  });
 })

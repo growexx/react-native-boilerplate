@@ -25,6 +25,12 @@ jest.mock('react-native/Libraries/Utilities/useColorScheme', () => {
     default: mockedColorScheme
   }
 })
+jest.mock('@react-navigation/native', () => {
+  return {
+    ...jest.requireActual('@react-navigation/native'),
+    useIsFocused: jest.fn(() => ({}))
+  };
+});
 
 describe('Change Password Screen test', () => {
   beforeEach(() => {
