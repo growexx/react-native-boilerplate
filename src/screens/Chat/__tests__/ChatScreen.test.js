@@ -1,15 +1,21 @@
-import { render } from '@testing-library/react-native'
-import { Provider } from 'react-redux'
-import { store } from '@stores'
-import ChatScreen from '../Chat.screen'
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react-native';
+import ChatScreen from './../Chat.screen';
 
-describe('Chat Screen Test', () => {
-  test('should render Chat screen correctly', () => {
-    const screen = render(
-      <Provider store={store}>
-        <ChatScreen />
-      </Provider>
-    )
-    expect(screen).toBeDefined()
-  })
-})
+describe('ChatScreen', () => {
+  it('renders the initial message', () => {
+    const { getByText } = render(<ChatScreen />);
+    expect(getByText('Hello!')).toBeTruthy();
+  });
+
+  it('adds a new message when sending', () => {
+    const { getByPlaceholderText, getByText } = render(<ChatScreen />);
+    const input = getByPlaceholderText('Type a message...');
+    fireEvent.changeText(input, 'New message');
+    fireEvent.press(getByText('Send'));
+    expect(getByText('New message')).toBeTruthy();
+  });
+
+  // Add more test cases as needed
+});
+

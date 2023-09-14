@@ -84,40 +84,30 @@ const StripeButton = props => {
     <StripeProvider
       merchantIdentifier="com.growexx.rnboilerplate"
       publishableKey={configs.STRIPE_PUBLISHABLE_KEY}>
-      <View>
-        <TouchableOpacity
-          testID="stripe-btn"
-          style={styles.payButton}
-          onPress={async () => {
-            // const response = await getPaymentDetails(props.token);
-            // await initializePaymentSheet(response.data);
-            await initializePaymentSheet()
-            await openPaymentSheet()
-          }}>
-          <Text style={styles.pay_text}>
-            {LanguageUtils.getLangText(languagekeys.payWithStripe)}
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View>
-        {Platform.OS === 'ios' ? (
-          <ApplePayButton
-            testID="apple-pay"
-            onPress={handlePayPress}
-            type="plain"
-            borderRadius={4}
-            style={styles.applePayButton}
-          />
-        ) : null}
-      </View>
+      <TouchableOpacity
+        testID="stripe-btn"
+        style={styles.payButton}
+        onPress={async () => {
+          // const response = await getPaymentDetails(props.token);
+          // await initializePaymentSheet(response.data);
+          await initializePaymentSheet()
+          await openPaymentSheet()
+        }}>
+        <Text style={styles.pay_text}>
+          {LanguageUtils.getLangText(languagekeys.payWithStripe)}
+        </Text>
+      </TouchableOpacity>
+      {Platform.OS === 'ios' ? (
+        <ApplePayButton
+          testID="apple-pay"
+          onPress={handlePayPress}
+          type="plain"
+          borderRadius={4}
+          style={styles.applePayButton}
+        />
+      ) : null}
     </StripeProvider>
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    token: state.userReducer.token
-  }
-}
-
-export default StripeButton
+export default StripeButton;

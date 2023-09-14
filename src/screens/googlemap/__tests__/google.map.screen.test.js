@@ -15,6 +15,9 @@ jest.mock('react-native//Libraries/PermissionsAndroid/PermissionsAndroid', () =>
   );
   return {
     ...PermissionsAndroid,
+    RESULTS: {
+      GRANTED: 'granted'
+    },
     check: jest.fn(() => new Promise(resolve => resolve(true))),
     request: jest.fn(() => new Promise(resolve => resolve('granted'))),
   };

@@ -107,6 +107,7 @@ function TodoList({ navigation }) {
       />
       <TouchableOpacity
         style={styles.addButton}
+        testID='add-todo'
         onPress={() => navigation.navigate('AddTodo')}>
         <Text style={styles.addButtonText}>
           {LanguageUtils.getLangText(languagekeys.addTodo)}
