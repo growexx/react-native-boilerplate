@@ -5,7 +5,7 @@ import EditTodo from '../editTodo/EditTodo'; // Import the EditTodo component
 jest.mock('react-native-sqlite-storage', () => ({
     openDatabase: () => ({
         transaction: () => ({
-            executeSql: (callback) => callback(),
+            executeSql: () => jest.fn(),
         }),
     }),
 }));

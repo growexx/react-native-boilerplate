@@ -12,6 +12,7 @@ describe('App renders successfully', () => {
       OS: 'android',
       select: () => null
     }))
+    jest.mock('react-native-gesture-handler')
     jest.mock('react-native-config', () => {
       return {
         ENV: 'Production',

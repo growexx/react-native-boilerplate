@@ -9,7 +9,6 @@ import {
 } from 'react-native'
 import { isEmailValid } from '../../utils/validations'
 import showToast from '../../components/toast'
-import { strings } from '@i18n'
 import colors from '../../constants/colors'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
@@ -25,7 +24,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
       <TextInput
         testID="email-input"
         style={styles.input}
-        placeholder={strings('auth.email-placeholder')}
+        placeholder={'Email'}
         value={email}
         onChangeText={setEmail}
       />

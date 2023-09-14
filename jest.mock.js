@@ -2,7 +2,6 @@ import React from 'react'
 import { NativeModules } from 'react-native'
 
 jest.mock('react-native-i18n')
-jest.mock('@i18n')
 jest.mock('@react-native-async-storage/async-storage', () => {
   const AsyncStorage = () => {}
   AsyncStorage.setItem = jest.fn((key, value) => {

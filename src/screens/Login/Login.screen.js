@@ -30,8 +30,8 @@ import images from '../../assets/images'
 import { LOGIN_FAILED, LOGIN_SUCCESS } from '../../stores/types/auth.types'
 
 const Login = props => {
-  const dispatch = useDispatch()
   const insRef = useRef()
+  const dispatch = useDispatch()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const colorScheme = useColorScheme()

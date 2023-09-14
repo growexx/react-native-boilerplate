@@ -43,8 +43,8 @@ https://github.com/growexx/react-native-boilerplate
     Axios integration to make api calls
 #### 4. Next generation JavaScript
     Template strings, Object destructuring, Arrow functions, JSX syntax and more
-#### 5. i18n internationalization
-    Scalable apps need to support multiple languages with `react-native-i18n`
+#### 5. react-native-localize internationalization
+    Scalable apps need to support multiple languages with `react-native-localize`
 #### 6. Configured environments
     Development, Staging, Production
 #### 7. Social Login
@@ -98,6 +98,21 @@ https://github.com/growexx/react-native-boilerplate
 8. Add `echo ".env.development" > /tmp/envfile` in textbox
 ![image](https://user-images.githubusercontent.com/80036991/110121631-a50c6300-7de4-11eb-95d3-2c483c58242f.png)
 9. Repeat step 4 to 8 for StagAppName
+
+## Configuring react-native-localize
+
+1. At first we have to make some files for localization in the project->src->localization folder.
+2. The First file we have to create is languagekeys.js because, in that, we will add all keys in the string to maintain a multi-language feature.
+3. Now we will create en.js because, in that, we will add all text containing the English language translation. So paste the content below into it.
+4. Now, we will create arabic.js because we will add all text containing the translation for the Arabic language. So paste the content below into it.
+5. Now we will create hin.js because, in that, we will add all text which contains the translation for the Hindi language. So paste the content below into it.
+6. Now, we must create a simple class for managing functionality for multi-language support. So we will make a LanguageUtils.js file. 
+7. We will define the class as a file name and have to define obj, which contains how many languages we need to add to the application.
+8. Next, we need to add an array of locales that we need in the app.
+9.  Now we will add one constant, which gives us the current language, and if not set, then by using one method, we have to set it. So we will use the react-native-localize lib’s one method and pass all locales, giving the best suitable language localization value from a mobile device; then, we can set language to local async storage.
+10. Now we have added one method, which we call once when our app is mounted. So basically, it does one thing, if the user already chooses the language, it will set it for the whole app; otherwise, it will store language from device suitable locales.
+11.  Now we have added one method which returns the localization value for a particular selected language and will display it on screens. By default, it returns the English language localization value.
+12. Now whenever we want to display text, we need to use LanguageUtils.getLangText() method in that we need to pass languagekeys’s key value.
 
 ## Rename Displayname & Version
 
