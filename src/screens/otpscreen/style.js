@@ -79,7 +79,8 @@ export const styles = StyleSheet.create({
   resendCode: {
     color: colors.light.primary,
     marginTop: 40,
-    padding: spacing * 2
+    padding: spacing * 2,
+    textDecorationLine: 'underline'
   },
   resendCodeText: {
     marginStart: 20,

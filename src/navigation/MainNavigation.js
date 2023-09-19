@@ -101,7 +101,7 @@ const AppDrawerNavigator = () => (
     }}
     drawerContent={props => <DrawerContent {...props} />}>
     <Drawer.Screen
-      name="ReactNative Boilerplate"
+      name=" "
       component={MainBottomTabNavigator}
       options={{
         drawerIcon: ({ color, size }) => (
@@ -147,10 +147,26 @@ const AppDrawerNavigator = () => (
         )
       }}
     />
-    <Drawer.Screen name="Todo" component={TodoList} />
-    <Drawer.Screen name="AddTodo" component={AddTodo} />
-    <Drawer.Screen name="EditTodo" component={EditTodo} />
-    <Drawer.Screen name="PinCodeScreen" component={PinCodeScreen} />
+    <Drawer.Screen
+      name="Todo"
+      component={TodoList}
+      options={{ title: LanguageUtils.getLangText(languagekeys.todo) }}
+    />
+    <Drawer.Screen
+      name="AddTodo"
+      component={AddTodo}
+      options={{ title: LanguageUtils.getLangText(languagekeys.addTodo) }}
+    />
+    <Drawer.Screen
+      name="EditTodo"
+      component={EditTodo}
+      options={{ title: LanguageUtils.getLangText(languagekeys.updateTodo) }}
+    />
+    <Drawer.Screen
+      name="PinCodeScreen"
+      component={PinCodeScreen}
+      options={{ title: LanguageUtils.getLangText(languagekeys.pin) }}
+    />
     <Drawer.Screen name="SetPinCode" component={SetPinCode} />
     <Drawer.Screen
       name="userProfile"

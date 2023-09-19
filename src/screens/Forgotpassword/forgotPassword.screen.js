@@ -24,7 +24,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
       <TextInput
         testID="email-input"
         style={styles.input}
-        placeholder={'Email'}
+        placeholder={LanguageUtils.getLangText(languagekeys.emailAddress)}
         value={email}
         onChangeText={setEmail}
       />

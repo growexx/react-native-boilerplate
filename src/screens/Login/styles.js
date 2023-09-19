@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
     fontFamily: fonts.BOLD,
     color: colors.light.primary,
     textAlign: 'center',
-    fontSize: fontSize.small
+    fontSize: fontSize.small,
+    textDecorationLine: 'underline'
   },
   focused: {
     borderWidth: 3,

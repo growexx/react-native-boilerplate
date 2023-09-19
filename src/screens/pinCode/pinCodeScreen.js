@@ -61,7 +61,7 @@ const PinCodeScreen = ({ navigation }) => {
           onPress: async () => {
             // do nothing
             // await resetPinCodeInternalStates();
-            navigation.navigate('ReactNative Boilerplate')
+            navigation.navigate(' ')
           }
         }
       ])

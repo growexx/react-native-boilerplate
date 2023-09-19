@@ -1,65 +1,89 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
-import SQLite from 'react-native-sqlite-storage';
-import styles from './styles';
-import LanguageUtils from '../../../localization/languageUtils';
-import languagekeys from '../../../localization/languagekeys';
+import React, { useState, useEffect } from 'react'
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
+import SQLite from 'react-native-sqlite-storage'
+import styles from './styles'
+import LanguageUtils from '../../../localization/languageUtils'
+import languagekeys from '../../../localization/languagekeys'
+import { useIsFocused } from '@react-navigation/native'
 
-const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' });
+const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' })
 
 const AddTodo = ({ navigation }) => {
-  const [todoTitle, setTodoTitle] = useState('');
-  const [todoDesription, setTodoDescription] = useState('');
+  const isFocused = useIsFocused()
+
+  const getAppLanguage = async () => {
+    await getItem(constants.APP_LANGUAGE)
+  }
+
+  useEffect(() => {
+    getAppLanguage()
+  }, [isFocused])
+  const [todoTitle, setTodoTitle] = useState('')
+  const [todoDesription, setTodoDescription] = useState('')
 
   const addTodo = () => {
     if (todoTitle.trim() === '' || todoDesription.trim() === '') {
-      Alert.alert('Please enter a valid todo.');
-      return;
+      Alert.alert(LanguageUtils.getLangText(languagekeys.validtodo), '', [
+        {
+          text: LanguageUtils.getLangText(languagekeys.ok)
+        }
+      ])
+      return
     }
 
-    db.transaction((tx) => {
+    db.transaction(tx => {
       tx.executeSql(
         'INSERT INTO todos (title, description) VALUES (?,?)',
         [todoTitle, todoDesription],
         (tx, results) => {
           if (results.rowsAffected > 0) {
-            Alert.alert('Todo added successfully!');
-            setTodoTitle('');
-            setTodoDescription('');
-            navigation.navigate('Todo');
+            Alert.alert(LanguageUtils.getLangText(languagekeys.addsucess), '', [
+              {
+                text: LanguageUtils.getLangText(languagekeys.ok)
+              }
+            ])
+            setTodoTitle('')
+            setTodoDescription('')
+            navigation.navigate('Todo')
           } else {
-           Alert.alert('Error adding todo. Please try again.');
+            Alert.alert('Error adding todo. Please try again.')
           }
         },
-        (error) => {
+        error => {
           Alert.alert('Error adding todo:' + error.toString())
-          console.error('Error adding todo:', error);
+          console.error('Error adding todo:', error)
         }
-      );
-    });
-  };
+      )
+    })
+  }
 
   return (
-    <View style={styles.container} >
-      <Text style={styles.label}>Title:</Text>
+    <View style={styles.container}>
+      <Text style={styles.label}>
+        {LanguageUtils.getLangText(languagekeys.title1)}
+      </Text>
       <TextInput
         style={styles.input}
-        placeholder="Enter todo title"
-        onChangeText={(text) => setTodoTitle(text)}
+        placeholder={LanguageUtils.getLangText(languagekeys.entertitle)}
+        onChangeText={text => setTodoTitle(text)}
         value={todoTitle}
       />
-      <Text style={styles.label}>Description:</Text>
+      <Text style={styles.label}>
+        {LanguageUtils.getLangText(languagekeys.description)}
+      </Text>
       <TextInput
         style={styles.input}
-        placeholder="Enter todo description"
-        onChangeText={(text) => setTodoDescription(text)}
+        placeholder={LanguageUtils.getLangText(languagekeys.enterdes)}
+        onChangeText={text => setTodoDescription(text)}
         value={todoDesription}
       />
       <TouchableOpacity style={styles.addButton} onPress={addTodo}>
-        <Text style={styles.addButtonText}>{LanguageUtils.getLangText(languagekeys.addTodo)}</Text>
+        <Text style={styles.addButtonText}>
+          {LanguageUtils.getLangText(languagekeys.addTodo)}
+        </Text>
       </TouchableOpacity>
     </View>
-  );
+  )
 }
 
-export default AddTodo;
+export default AddTodo

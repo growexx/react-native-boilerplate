@@ -122,7 +122,7 @@ const OtpScreen = ({ navigation, route }) => {
             onPress={onResendOtpButtonPress}>
             <View style={styles.resendCodeContainer}>
               <Text style={styles.resendCode}>
-                {LanguageUtils.getLangText(languagekeys.resendCode)}
+                {LanguageUtils.getLangText(languagekeys.resend)}
               </Text>
             </View>
           </TouchableOpacity>

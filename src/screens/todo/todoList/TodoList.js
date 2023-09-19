@@ -5,10 +5,20 @@ import styles from './styles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import LanguageUtils from '../../../localization/languageUtils'
 import languagekeys from '../../../localization/languagekeys'
+import { useIsFocused } from '@react-navigation/native'
 
 const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' })
 
 function TodoList({ navigation }) {
+  const isFocused = useIsFocused()
+
+  const getAppLanguage = async () => {
+    await getItem(constants.APP_LANGUAGE)
+  }
+
+  useEffect(() => {
+    getAppLanguage()
+  }, [isFocused])
   const [todos, setTodos] = useState([
     {
       id: 'id',
@@ -44,10 +54,16 @@ function TodoList({ navigation }) {
         [id],
         (tx, results) => {
           if (results.rowsAffected > 0) {
-            Alert.alert('Todo deleted successfully!')
+            Alert.alert(
+              LanguageUtils.getLangText(languagekeys.tododelete),
+              '',
+              [
+                {
+                  text: LanguageUtils.getLangText(languagekeys.ok)
+                }
+              ]
+            )
             fetchTodos()
-          } else {
-            Alert.alert('Failed to delete todo. Please try again.')
           }
         },
         error => {
@@ -79,20 +95,22 @@ function TodoList({ navigation }) {
       <TouchableOpacity
         testID="delete-button"
         style={styles.deleteButton}
-        onPress={() => Alert.alert("Delete todo", "Are you sure ?", [
-          {
-            text: LanguageUtils.getLangText(languagekeys.ok),
-            onPress: async () => {
-              deleteTodo(item.id)
+        onPress={() =>
+          Alert.alert(LanguageUtils.getLangText(languagekeys.areYouSure), '', [
+            {
+              text: LanguageUtils.getLangText(languagekeys.ok),
+              onPress: async () => {
+                deleteTodo(item.id)
+              }
             },
-          },
-          {
-            text: LanguageUtils.getLangText(languagekeys.cancel),
-            onPress: async () => {
-              //do nothing
-            },
-          },
-        ])}>
+            {
+              text: LanguageUtils.getLangText(languagekeys.cancel),
+              onPress: async () => {
+                //do nothing
+              }
+            }
+          ])
+        }>
         <Icon name="delete" size={24} color="black" />
       </TouchableOpacity>
     </View>
@@ -107,7 +125,7 @@ function TodoList({ navigation }) {
       />
       <TouchableOpacity
         style={styles.addButton}
-        testID='add-todo'
+        testID="add-todo"
         onPress={() => navigation.navigate('AddTodo')}>
         <Text style={styles.addButtonText}>
           {LanguageUtils.getLangText(languagekeys.addTodo)}

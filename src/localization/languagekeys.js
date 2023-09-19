@@ -27,6 +27,7 @@ const languagekeys = {
   pickImage: 'pickImage',
   createAccount: 'createAccount',
   resendCode: 'resendCode',
+  resend: 'resend',
   verificationCode: 'verificationCode',
   registerHere: 'registerHere',
   dontHaveAccount: 'dontHaveAccount',
@@ -62,7 +63,14 @@ const languagekeys = {
   deleteTodo: 'deleteTodo',
   areYouSure: 'areYouSure',
   ok: 'ok',
-  cancel: 'cancel'
+  cancel: 'cancel',
+  title: 'title',
+  title1: 'title1',
+  description: 'Description:',
+  enteremail: 'enteremail',
+  entername: 'entername',
+  enterdes: 'enterdes',
+  entertitle: 'entertitle'
 }
 
 export default languagekeys

@@ -18,7 +18,7 @@ const SetPinCode = ({ navigation }) => {
           title: 'Ok',
           onPress: () => {
             // do nothing
-            navigation.navigate('ReactNative Boilerplate')
+            navigation.navigate(' ')
           }
         }
       ])
@@ -30,14 +30,14 @@ const SetPinCode = ({ navigation }) => {
       <View style={styles.container}>
         <Text style={styles.title}>Create a PIN code</Text>
         <PINCode
-          status='choose'
+          status="choose"
           finishProcess={_finishProcess}
           storePin={setPin}
           vibrationEnabled={false}
         />
       </View>
     </>
-  );
-};
+  )
+}
 
 export default SetPinCode

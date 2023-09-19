@@ -74,7 +74,7 @@ const EditProfileScreen = ({ navigation }) => {
             ]}
             onChangeText={setName}
             value={name}
-            placeholder="Enter your name"
+            placeholder={LanguageUtils.getLangText(languagekeys.entername)}
             autoComplete="off"
             autoCorrect={false}
             testID="name-input"
@@ -85,14 +85,14 @@ const EditProfileScreen = ({ navigation }) => {
             ]}
             onChangeText={setEmail}
             value={email}
-            placeholder="Enter your email"
+            placeholder={LanguageUtils.getLangText(languagekeys.enteremail)}
             autoComplete="off"
             autoCorrect={false}
             testID="email-input"
           />
           <PhoneInput
             ref={phoneInput}
-            placeholder="Enter phone number"
+            placeholder={LanguageUtils.getLangText(languagekeys.enterphone)}
             value={mobile}
             onChangeText={text => {
               setMobile(text)

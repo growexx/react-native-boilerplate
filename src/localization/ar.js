@@ -24,13 +24,14 @@ const ar = {
   [languagekeys.confirmNewPassword]: 'تأكيد كلمة المرور الجديدة',
   [languagekeys.passwordValidation]:
     'يجب أن تحتوي كلمة المرور على حرف كبير وحرف صغير وحرف خاص ورقم واحد على الأقل',
-  [languagekeys.forgotPassword]: 'نسيت كلمة المرور',
+  [languagekeys.forgotPassword]: 'هل نسيت كلمة المرور؟',
   [languagekeys.goBackLogin]: 'العودة إلى تسجيل الدخول',
   [languagekeys.signup]: 'إنشاء حساب',
   [languagekeys.alreadyHaveAccount]: 'هل لديك حساب بالفعل؟',
   [languagekeys.pickImage]: 'اختيار صورة',
   [languagekeys.createAccount]: 'إنشاء حساب',
-  [languagekeys.resendCode]: 'إعادة إرسال رمز التفويض',
+  [languagekeys.resendCode]: 'إعادة إرسال رمز التفويض في',
+  [languagekeys.resend]: 'إعادة إرسال رمز التفويض',
   [languagekeys.verificationCode]: 'التحقق من رمز التفويض',
   [languagekeys.dontHaveAccount]: 'ليس لديك حساب؟',
   [languagekeys.registerHere]: 'سجل هنا',
@@ -66,7 +67,20 @@ const ar = {
   [languagekeys.deleteTodo]: 'حذف المهمة',
   [languagekeys.areYouSure]: 'هل أنت متأكد؟',
   [languagekeys.ok]: 'موافق',
-  [languagekeys.cancel]: 'إلغاء'
+  [languagekeys.cancel]: 'إلغاء',
+  [languagekeys.title]: 'بنية رياكت نيتيف',
+  [languagekeys.title1]: 'العنوان:',
+  [languagekeys.description]: 'الوصف:',
+  [languagekeys.entername]: 'أدخل اسمك',
+  [languagekeys.enteremail]: 'أدخل بريدك الإلكتروني',
+  [languagekeys.enterpass]: 'ادخل كلمة المرور الخاصة بك',
+  [languagekeys.entername]: 'أدخل رقم الهاتف',
+  [languagekeys.entertitle]: 'أدخل عنوان المهمة',
+  [languagekeys.enterdes]: 'أدخل وصف المهمة',
+  [languagekeys.editsucess]: 'تم تحديث المهمة بنجاح!',
+  [languagekeys.addsucess]: 'تمت إضافة المهمة بنجاح!',
+  [languagekeys.tododelete]: 'تم حذف المهمة بنجاح!',
+  [languagekeys.validtodo]: 'الرجاء إدخال مهمة صالحة'
 }
 
 export default ar

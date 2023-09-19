@@ -140,7 +140,7 @@ const Login = props => {
             redirectUrl="https://www.growexx.com/"
             scopes={['user_profile']}
             onLoginSuccess={() => dispatch(signInWithInstagram())}
-            onLoginFailure={data => { }}
+            onLoginFailure={data => {}}
           />
           {Platform.OS === 'ios' && loginControl.Apple && (
             <AppleButton

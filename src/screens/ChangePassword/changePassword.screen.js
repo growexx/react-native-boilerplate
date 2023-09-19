@@ -133,7 +133,9 @@ const ChangePasswordScreen = () => {
           }}
           testID="submit-button">
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Submit</Text>
+            <Text style={styles.buttonText}>
+              {LanguageUtils.getLangText(languagekeys.submit)}
+            </Text>
           </View>
         </TouchableOpacity>
       </View>

@@ -1,6 +1,8 @@
 import { View, TextInput, StyleSheet, useColorScheme } from 'react-native'
 import React, { useState } from 'react'
-import { spacing, fontSize, colors, fonts } from '@constants';
+import { spacing, fontSize, colors, fonts } from '@constants'
+import LanguageUtils from '../localization/languageUtils'
+import languagekeys from '../localization/languagekeys'
 
 const AuthInput = ({ email, setEmail, password, setPassword }) => {
   const [focused, setFocused] = useState(false)
@@ -11,13 +13,13 @@ const AuthInput = ({ email, setEmail, password, setPassword }) => {
       <TextInput
         style={[
           colorScheme === 'dark' ? styles.inputTextDark : styles.inputText,
-          focused && styles.focused ,  
+          focused && styles.focused
         ]}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         onChangeText={setEmail}
         value={email}
-        placeholder="Enter e-mail address"
+        placeholder={LanguageUtils.getLangText(languagekeys.enteremail)}
         autoComplete="email"
         autoCorrect={false}
         inputMode="email"
@@ -26,12 +28,15 @@ const AuthInput = ({ email, setEmail, password, setPassword }) => {
         placeholderTextColor={colors.darkText}
       />
       <TextInput
-        style={[colorScheme === 'dark' ? styles.inputTextDark : styles.inputText, passWordFocus && styles.focused]}
+        style={[
+          colorScheme === 'dark' ? styles.inputTextDark : styles.inputText,
+          passWordFocus && styles.focused
+        ]}
         onFocus={() => setPassWordFocus(true)}
         onBlur={() => setPassWordFocus(false)}
         onChangeText={setPassword}
         value={password}
-        placeholder="Enter your password"
+        placeholder={LanguageUtils.getLangText(languagekeys.enterpass)}
         autoComplete="off"
         autoCorrect={false}
         secureTextEntry={true}
