@@ -69,8 +69,11 @@ const languagekeys = {
   description: 'Description:',
   enteremail: 'enteremail',
   entername: 'entername',
+  enterphone: 'enterphone',
   enterdes: 'enterdes',
-  entertitle: 'entertitle'
+  entertitle: 'entertitle',
+  enterpass: 'enterpass',
+  reenterpass: 'reenterpass'
 }
 
 export default languagekeys

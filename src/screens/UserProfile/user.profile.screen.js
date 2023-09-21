@@ -99,7 +99,7 @@ const UserProfileScreen = ({ navigation }) => {
           />
         </View>
         <Text style={colorScheme === 'dark' ? styles.textDark : styles.text}>
-          Name : {data?.name ?? ''}
+          {data?.name ?? ''}
         </Text>
         <Text style={colorScheme === 'dark' ? styles.textDark : styles.text}>
           {data?.email ?? ''}

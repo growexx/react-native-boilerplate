@@ -79,7 +79,7 @@ const RegisterScreen = ({ navigation }) => {
               ]}
               onChangeText={setName}
               value={name}
-              placeholder="Enter your name"
+              placeholder={LanguageUtils.getLangText(languagekeys.entername)}
               autoComplete="off"
               autoCorrect={false}
               testID="name-input"
@@ -101,7 +101,7 @@ const RegisterScreen = ({ navigation }) => {
               onBlur={() => setConfirmPasswordFocus(false)}
               onChangeText={setconfirmPassword}
               value={confirmPassword}
-              placeholder="Re-Enter your password"
+              placeholder={LanguageUtils.getLangText(languagekeys.reenterpass)}
               autoComplete="off"
               autoCorrect={false}
               secureTextEntry={true}
@@ -110,7 +110,7 @@ const RegisterScreen = ({ navigation }) => {
             />
             <PhoneInput
               ref={phoneInput}
-              placeholder="Enter phone number"
+              placeholder={LanguageUtils.getLangText(languagekeys.enterphone)}
               value={mobile}
               onChangeText={text => {
                 setMobile(text)
@@ -180,21 +180,16 @@ const styles = StyleSheet.create({
     fontFamily: fonts.BOLD,
     color: colors.text,
     textAlign: 'center',
-    fontSize: fontSize.small
+    fontSize: fontSize.small,
+    textDecorationLine: 'underline'
   },
   loginDark: {
     fontFamily: fonts.BOLD,
     color: colors.text,
     textAlign: 'center',
     fontSize: fontSize.small,
-    color: colors.dark.text
-  },
-  loginDark: {
-    fontFamily: fonts.BOLD,
-    color: colors.text,
-    textAlign: 'center',
-    fontSize: fontSize.small,
-    color: colors.dark.text
+    color: colors.dark.text,
+    textDecorationLine: 'underline'
   },
   signup_text: {
     fontFamily: fonts.BOLD,

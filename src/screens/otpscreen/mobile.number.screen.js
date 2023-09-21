@@ -22,7 +22,7 @@ const PhoneInputScreen = ({ navigation }) => {
     <View style={styles.root}>
       <PhoneInput
         ref={phoneInput}
-        placeholder="Enter phone number"
+        placeholder={LanguageUtils.getLangText(languagekeys.enterphone)}
         value={mobile}
         onChangeText={text => {
           setMobile(text)
