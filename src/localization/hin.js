@@ -70,7 +70,18 @@ const hin = {
   [languagekeys.deleteTodo]: 'टोडो हटाएं',
   [languagekeys.areYouSure]: 'क्या आप सुनिश्चित हैं?',
   [languagekeys.ok]: 'ठीक है',
-  [languagekeys.cancel]: 'रद्द करें'
+  [languagekeys.cancel]: 'रद्द करें',
+  [languagekeys.success]: 'सफलता',
+  [languagekeys.error]: 'त्रुटि',
+  [languagekeys.pinCodeScreen.biometricsPromptMessage]: 'अपने बायोमेट्रिक्स से प्रमाणित करें',
+  [languagekeys.pinCodeScreen.correctPin]: 'पिन कोड सही है!',
+  [languagekeys.pinCodeScreen.invalidPinMessage]: 'पिन 4- अंकीय नंबर होना चाहिए।',
+  [languagekeys.pinCodeScreen.errorMessage]: 'कुछ गलत हो गया',
+  [languagekeys.pinCodeScreen.incorrectPin]: 'गलत पिन कोड। कृपया पुनः प्रयास करें।',
+  [languagekeys.pinCodeScreen.successMessage]: 'प्रमाणीकरण सफल!',
+  [languagekeys.pinCodeScreen.enablePinText]: 'पिन कोड सक्षम करें',
+  [languagekeys.pinCodeScreen.enterPinTitle]: 'पिन कोड दर्ज करें',
+  [languagekeys.pinCodeScreen.submit]: 'प्रस्तुत करें',
 }
 
 export default hin
