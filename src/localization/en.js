@@ -24,14 +24,15 @@ const en = {
   [languagekeys.confirmNewPassword]: 'Confirm New Password',
   [languagekeys.passwordValidation]:
     'Password must contain atleast 1 upper case, 1 lower case letter, 1 special chracter and 1 number',
-  [languagekeys.forgotPassword]: 'Forgot Password',
+  [languagekeys.forgotPassword]: 'Forgot Password?',
   [languagekeys.submit]: 'Submit',
   [languagekeys.goBackLogin]: 'Go back to login',
   [languagekeys.signup]: 'Sign Up',
   [languagekeys.alreadyHaveAccount]: 'Alread have an account?',
   [languagekeys.pickImage]: 'Pick Image',
   [languagekeys.createAccount]: 'Create Account',
-  [languagekeys.resendCode]: 'Resend Authorisation Code',
+  [languagekeys.resendCode]: 'Resend OTP in',
+  [languagekeys.resend]: 'Resend OTP',
   [languagekeys.verificationCode]: 'Verify the Authorisation Code',
   [languagekeys.dontHaveAccount]: `Don't have an Account?`,
   [languagekeys.registerHere]: 'Register here',
@@ -79,6 +80,19 @@ const en = {
   [languagekeys.pinCodeScreen.errorMessage]:'Something went wrong',
   [languagekeys.pinCodeScreen.incorrectPin]:'Incorrect PIN code. Please try again.',
   [languagekeys.pinCodeScreen.successMessage]:'Authentication successful!',
+  [languagekeys.title1]: 'Title:',
+  [languagekeys.description]: 'Description:',
+  [languagekeys.title]: 'ReactNative Boilerplate',
+  [languagekeys.entername]: 'Enter your name',
+  [languagekeys.enteremail]: 'Enter your email',
+  [languagekeys.enterpass]: 'Enter your password',
+  [languagekeys.entername]: 'Enter phone number',
+  [languagekeys.entertitle]: 'Enter todo title',
+  [languagekeys.enterdes]: 'Enter todo description',
+  [languagekeys.editsucess]: 'Todo updated successfully!',
+  [languagekeys.addsucess]: 'Todo added successfully!',
+  [languagekeys.tododelete]: 'Todo deleted successfully!',
+  [languagekeys.validtodo]: 'Please enter a valid todo'
 }
 
 export default en

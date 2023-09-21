@@ -16,7 +16,7 @@ const DrawerContent = ({ navigation }) => {
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.drawerItem}
-        onPress={() => navigation.navigate('ReactNative Boilerplate')}>
+        onPress={() => navigation.navigate(' ')}>
         <Icon
           name="home"
           size={24}
