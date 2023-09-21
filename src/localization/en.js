@@ -67,7 +67,18 @@ const en = {
   [languagekeys.deleteTodo]: 'Delete Todo',
   [languagekeys.areYouSure]: 'Are you sure?',
   [languagekeys.ok]: 'Ok',
-  [languagekeys.cancel]: 'Cancel'
+  [languagekeys.cancel]: 'Cancel',
+  [languagekeys.pinCodeScreen.enablePinText]: 'Enable PIN Code',
+  [languagekeys.pinCodeScreen.enterPinTitle]: 'Enter PIN Code',
+  [languagekeys.pinCodeScreen.submit]: 'Submit',
+  [languagekeys.success]: 'Success',
+  [languagekeys.error]: 'Error',
+  [languagekeys.pinCodeScreen.biometricsPromptMessage]: 'Authenticate with your biometrics',
+  [languagekeys.pinCodeScreen.correctPin]:'PIN code is correct!',
+  [languagekeys.pinCodeScreen.invalidPinMessage]: 'PIN must be a 4-digit number.',
+  [languagekeys.pinCodeScreen.errorMessage]:'Something went wrong',
+  [languagekeys.pinCodeScreen.incorrectPin]:'Incorrect PIN code. Please try again.',
+  [languagekeys.pinCodeScreen.successMessage]:'Authentication successful!',
 }
 
 export default en

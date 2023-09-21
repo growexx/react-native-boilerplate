@@ -7,7 +7,7 @@ import {
   Image,
   useColorScheme
 } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { colors, fonts } from '@constants'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -15,11 +15,18 @@ import { useSelector } from 'react-redux'
 import languagekeys from '../../localization/languagekeys'
 import LanguageUtils from '../../localization/languageUtils'
 import { useIsFocused } from '@react-navigation/native'
-import { getItem } from '../../utils/StorageService'
+import { getItem, saveItem } from '../../utils/StorageService'
 import constants from '../../constants/constants'
+import SwitchToggle from 'react-native-switch-toggle';
 
 const UserProfileScreen = ({ navigation }) => {
   const isFocused = useIsFocused()
+  const [isEnabled, setIsEnabled] = useState(false);
+
+  const checkPinEnabled = async () => {
+    var isPinEnabled = await getItem('pinEnabled');
+    setIsEnabled(isPinEnabled);
+  }
 
   const getAppLanguage = async () => {
     await getItem(constants.APP_LANGUAGE)
@@ -27,6 +34,7 @@ const UserProfileScreen = ({ navigation }) => {
 
   useEffect(() => {
     getAppLanguage()
+    checkPinEnabled()
   }, [isFocused])
   const data = useSelector(state => state.authReducer.loginData)
   const colorScheme = useColorScheme()
@@ -85,6 +93,14 @@ const UserProfileScreen = ({ navigation }) => {
     </TouchableOpacity>
   )
 
+  const toggleSwitch = () => {
+    setIsEnabled((previousState) => {
+      console.log('pinEnabled is ', !previousState)
+      saveItem('pinEnabled', !previousState)
+      return !previousState;
+    });
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -106,6 +122,20 @@ const UserProfileScreen = ({ navigation }) => {
         </Text>
 
         {/* Account Settings */}
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Text
+            style={colorScheme === 'dark'
+              ? styles.headingTextDark
+              : styles.headingText}>
+            {LanguageUtils.getLangText(languagekeys.pinCodeScreen.enablePinText)}    
+          </Text>
+          <SwitchToggle
+            containerStyle={styles.toggleContainer}
+            circleStyle={styles.toggleCircle}
+            switchOn={isEnabled}
+            onPress={toggleSwitch}
+          />
+        </View>
         <View style={{ marginBottom: 12 }}>
           <Text
             style={
@@ -183,10 +213,23 @@ const UserProfileScreen = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaView >
   )
 }
 const styles = StyleSheet.create({
+  toggleContainer: {
+    width: 60,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: '#ccc',
+    padding: 5,
+  },
+  toggleCircle: {
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    backgroundColor: 'white',
+  },
   container: {
     alignSelf: 'center',
     width: 150,

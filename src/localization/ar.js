@@ -66,7 +66,18 @@ const ar = {
   [languagekeys.deleteTodo]: 'حذف المهمة',
   [languagekeys.areYouSure]: 'هل أنت متأكد؟',
   [languagekeys.ok]: 'موافق',
-  [languagekeys.cancel]: 'إلغاء'
+  [languagekeys.cancel]: 'إلغاء',
+  [languagekeys.success]: 'نجاح',
+  [languagekeys.error]: 'خطأ',
+  [languagekeys.pinCodeScreen.biometricsPromptMessage]: 'المصادقة باستخدام القياسات الحيوية الخاصة بك',
+  [languagekeys.pinCodeScreen.correctPin]: 'تم قبول رمز PIN!',
+  [languagekeys.pinCodeScreen.invalidPinMessage]: 'يجب أن يتكون رقم التعريف الشخصي من 4 أرقام.',
+  [languagekeys.pinCodeScreen.errorMessage]: 'حدث خطأ ما',
+  [languagekeys.pinCodeScreen.incorrectPin]: 'رمز PIN غير صحيح. يرجى المحاولة مرة أخرى.',
+  [languagekeys.pinCodeScreen.successMessage]: 'تم التوثيق بنجاح!',
+  [languagekeys.pinCodeScreen.enablePinText]: 'تمكين رمز التعريف الشخصي',
+  [languagekeys.pinCodeScreen.enterPinTitle]: 'أدخل رمز التعريف الشخصي',
+  [languagekeys.pinCodeScreen.submit]: 'إرسال',
 }
 
 export default ar

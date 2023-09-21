@@ -28,7 +28,6 @@ import TodoList from '../screens/todo/todoList/TodoList.js'
 import AddTodo from '../screens/todo/addTodo/AddTodo.js'
 import EditTodo from '../screens/todo/editTodo/EditTodo.js'
 import PinCodeScreen from '../screens/pinCode/pinCodeScreen.js'
-import SetPinCode from '../screens/pinCode/setPinCode.js'
 import LanguageUtils from '../localization/languageUtils'
 import languagekeys from '../localization/languagekeys'
 import UserProfileScreen from '../screens/UserProfile/user.profile.screen.js'
@@ -151,7 +150,7 @@ const AppDrawerNavigator = () => (
     <Drawer.Screen name="AddTodo" component={AddTodo} />
     <Drawer.Screen name="EditTodo" component={EditTodo} />
     <Drawer.Screen name="PinCodeScreen" component={PinCodeScreen} />
-    <Drawer.Screen name="SetPinCode" component={SetPinCode} />
+    {/* <Drawer.Screen name="SetPinCode" component={SetPinCode} /> */}
     <Drawer.Screen
       name="userProfile"
       component={UserProfileScreen}

@@ -62,7 +62,19 @@ const languagekeys = {
   deleteTodo: 'deleteTodo',
   areYouSure: 'areYouSure',
   ok: 'ok',
-  cancel: 'cancel'
+  cancel: 'cancel',
+  success: 'success',
+  error: 'error',
+  pinCodeScreen: {
+    enterPinTitle: 'enterPinTitle',
+    enablePinText: 'enablePinText',
+    biometricsPromptMessage: 'biometricsPromptMessage',
+    successMessage: 'successMessage',
+    errorMessage: 'errorMessage',
+    invalidPinMessage: 'invalidPinMessage',
+    correctPin: 'correctPin',
+    incorrectPin: 'incorrectPin',
+  }
 }
 
 export default languagekeys
