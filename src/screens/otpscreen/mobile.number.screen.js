@@ -41,9 +41,9 @@ const PhoneInputScreen = ({ navigation }) => {
           if (val) {
             navigation.navigate('signwithotp', { mobile })
           } else if (mobile === '') {
-            showToast('All fields are required.')
+            showToast(LanguageUtils.getLangText(languagekeys.allfields))
           } else {
-            showToast('Please Enter Valid Phone Number.')
+            showToast(LanguageUtils.getLangText(languagekeys.validphone))
           }
         }}>
         <Text style={styles.number_text}>

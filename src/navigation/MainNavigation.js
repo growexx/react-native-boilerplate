@@ -166,7 +166,6 @@ const AppDrawerNavigator = () => (
       component={PinCodeScreen}
       options={{ title: LanguageUtils.getLangText(languagekeys.pin) }}
     />
-    <Drawer.Screen name="SetPinCode" component={SetPinCode} />
     <Drawer.Screen
       name="userProfile"
       component={UserProfileScreen}

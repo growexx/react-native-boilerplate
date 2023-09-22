@@ -4,23 +4,28 @@ import {
   isNonEmptyField,
   isPasswordValid
 } from '../utils/validations'
-
-const handleRegistration = async (email, password, cpassword,name, navigation) => {
+import languagekeys from '../localization/languagekeys'
+import LanguageUtils from '../localization/languageUtils'
+const handleRegistration = async (
+  email,
+  password,
+  cpassword,
+  name,
+  navigation
+) => {
   if (
     !isNonEmptyField(email) ||
     !isNonEmptyField(password) ||
     !isNonEmptyField(cpassword) ||
     !isNonEmptyField(name)
   ) {
-    showToast('All fields are required.')
+    showToast(LanguageUtils.getLangText(languagekeys.allfields))
   } else if (!isEmailValid(email)) {
-    showToast(
-      'You have entered invalid email address, Please, enter a valid email address.'
-    )
+    showToast(LanguageUtils.getLangText(languagekeys.invalidemail))
   } else if (!isPasswordValid(password)) {
-    showToast('Please enter a valid password.')
+    showToast(LanguageUtils.getLangText(languagekeys.validpassword))
   } else if (password !== cpassword) {
-    showToast('Your passwords are not matching.')
+    showToast(LanguageUtils.getLangText(languagekeys.matchpassword))
   } else {
     navigation.navigate('Login')
   }

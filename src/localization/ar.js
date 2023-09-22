@@ -70,11 +70,14 @@ const ar = {
   [languagekeys.cancel]: 'إلغاء',
   [languagekeys.success]: 'نجاح',
   [languagekeys.error]: 'خطأ',
-  [languagekeys.pinCodeScreen.biometricsPromptMessage]: 'المصادقة باستخدام القياسات الحيوية الخاصة بك',
+  [languagekeys.pinCodeScreen.biometricsPromptMessage]:
+    'المصادقة باستخدام القياسات الحيوية الخاصة بك',
   [languagekeys.pinCodeScreen.correctPin]: 'تم قبول رمز PIN!',
-  [languagekeys.pinCodeScreen.invalidPinMessage]: 'يجب أن يتكون رقم التعريف الشخصي من 4 أرقام.',
+  [languagekeys.pinCodeScreen.invalidPinMessage]:
+    'يجب أن يتكون رقم التعريف الشخصي من 4 أرقام.',
   [languagekeys.pinCodeScreen.errorMessage]: 'حدث خطأ ما',
-  [languagekeys.pinCodeScreen.incorrectPin]: 'رمز PIN غير صحيح. يرجى المحاولة مرة أخرى.',
+  [languagekeys.pinCodeScreen.incorrectPin]:
+    'رمز PIN غير صحيح. يرجى المحاولة مرة أخرى.',
   [languagekeys.pinCodeScreen.successMessage]: 'تم التوثيق بنجاح!',
   [languagekeys.pinCodeScreen.enablePinText]: 'تمكين رمز التعريف الشخصي',
   [languagekeys.pinCodeScreen.enterPinTitle]: 'أدخل رمز التعريف الشخصي',
@@ -92,7 +95,22 @@ const ar = {
   [languagekeys.editsucess]: 'تم تحديث المهمة بنجاح!',
   [languagekeys.addsucess]: 'تمت إضافة المهمة بنجاح!',
   [languagekeys.tododelete]: 'تم حذف المهمة بنجاح!',
-  [languagekeys.validtodo]: 'الرجاء إدخال مهمة صالحة'
+  [languagekeys.validtodo]: 'الرجاء إدخال مهمة صالحة',
+  [languagekeys.allfields]: 'جميع الحقول مطلوبة',
+  [languagekeys.validphone]: 'الرجاء إدخال رقم هاتف صحيح.',
+  [languagekeys.passwordnotmatch]:
+    'كلمة المرور وتأكيد كلمة المرور غير متطابقين',
+  [languagekeys.passwordfailed]: 'فشل التحقق من كلمة المرور',
+  [languagekeys.passwordsuccess]: 'تم تغيير كلمة المرور بنجاح!',
+  [languagekeys.validemail]: 'الرجاء إدخال بريد إلكتروني صحيح',
+  [languagekeys.reqemail]: 'حقل البريد الإلكتروني مطلوب',
+  [languagekeys.validcode]: 'الرجاء إدخال رمز صحيح.',
+  [languagekeys.validpassword]: 'الرجاء إدخال كلمة مرور صحيحة.',
+  [languagekeys.matchpassword]: 'كلمات المرور الخاصة بك غير متطابقة.',
+  [languagekeys.emailsent]:
+    'تم إرسال البريد الإلكتروني بنجاح. الرجاء التحقق من صندوق الوارد الخاص بك.',
+  [languagekeys.invalidemail]:
+    'لقد أدخلت عنوان بريد إلكتروني غير صحيح. الرجاء إدخال عنوان بريد إلكتروني صحيح.'
 }
 
 export default ar

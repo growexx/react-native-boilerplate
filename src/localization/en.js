@@ -74,12 +74,15 @@ const en = {
   [languagekeys.pinCodeScreen.submit]: 'Submit',
   [languagekeys.success]: 'Success',
   [languagekeys.error]: 'Error',
-  [languagekeys.pinCodeScreen.biometricsPromptMessage]: 'Authenticate with your biometrics',
-  [languagekeys.pinCodeScreen.correctPin]:'PIN code is correct!',
-  [languagekeys.pinCodeScreen.invalidPinMessage]: 'PIN must be a 4-digit number.',
-  [languagekeys.pinCodeScreen.errorMessage]:'Something went wrong',
-  [languagekeys.pinCodeScreen.incorrectPin]:'Incorrect PIN code. Please try again.',
-  [languagekeys.pinCodeScreen.successMessage]:'Authentication successful!',
+  [languagekeys.pinCodeScreen.biometricsPromptMessage]:
+    'Authenticate with your biometrics',
+  [languagekeys.pinCodeScreen.correctPin]: 'PIN code is correct!',
+  [languagekeys.pinCodeScreen.invalidPinMessage]:
+    'PIN must be a 4-digit number.',
+  [languagekeys.pinCodeScreen.errorMessage]: 'Something went wrong',
+  [languagekeys.pinCodeScreen.incorrectPin]:
+    'Incorrect PIN code. Please try again.',
+  [languagekeys.pinCodeScreen.successMessage]: 'Authentication successful!',
   [languagekeys.title1]: 'Title:',
   [languagekeys.description]: 'Description:',
   [languagekeys.title]: 'ReactNative Boilerplate',
@@ -93,7 +96,22 @@ const en = {
   [languagekeys.editsucess]: 'Todo updated successfully!',
   [languagekeys.addsucess]: 'Todo added successfully!',
   [languagekeys.tododelete]: 'Todo deleted successfully!',
-  [languagekeys.validtodo]: 'Please enter a valid todo'
+  [languagekeys.validtodo]: 'Please enter a valid todo',
+  [languagekeys.allfields]: 'All fields are required',
+  [languagekeys.validphone]: 'Please Enter Valid Phone Number.',
+  [languagekeys.passwordnotmatch]:
+    "Password and confirm password doesn't match",
+  [languagekeys.passwordfailed]: 'Password validation failed',
+  [languagekeys.passwordsuccess]: 'Password changed successfully!',
+  [languagekeys.validemail]: 'Please enter a valid email',
+  [languagekeys.reqemail]: 'Email field is required',
+  [languagekeys.validcode]: 'Please enter valid code.',
+  [languagekeys.validpassword]: 'Please enter a valid password.',
+  [languagekeys.matchpassword]: 'Your passwords are not matching.',
+  [languagekeys.emailsent]:
+    'Email has been sent successfully.Please Check your inbox.',
+  [languagekeys.invalidemail]:
+    'You have entered invalid email address, Please, enter a valid email address.'
 }
 
 export default en

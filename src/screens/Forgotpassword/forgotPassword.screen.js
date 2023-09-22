@@ -33,18 +33,14 @@ const ForgotPasswordScreen = ({ navigation }) => {
         style={styles.button}
         onPress={() => {
           if (email === '') {
-            showToast('Email field is required.')
+            showToast(LanguageUtils.getLangText(languagekeys.reqemail))
           } else if (isEmailValid(email)) {
-            showToast(
-              'Email has been sent successfully.Please Check your inbox .'
-            )
+            showToast(LanguageUtils.getLangText(languagekeys.emailsent))
             setTimeout(() => {
               navigation.navigate('Login')
             }, 2000)
           } else {
-            showToast(
-              'You have entered invalid email address, Please, enter a valid email address.'
-            )
+            showToast(LanguageUtils.getLangText(languagekeys.invalidemail))
           }
         }}>
         <Text style={styles.buttonText}>

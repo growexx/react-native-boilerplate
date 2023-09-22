@@ -110,12 +110,12 @@ const EditProfileScreen = ({ navigation }) => {
               if (isEmailValid(email)) {
                 navigation.goBack()
               } else {
-                showToast('Please enter a valid email')
+                showToast(LanguageUtils.getLangText(languagekeys.validemail))
               }
             } else if (mobile === '') {
-              showToast('All fields are required.')
+              showToast(LanguageUtils.getLangText(languagekeys.allfields))
             } else {
-              showToast('Please Enter Valid Phone Number.')
+              showToast(LanguageUtils.getLangText(languagekeys.validphone))
             }
           }}
           style={styles.signup}>

@@ -135,7 +135,7 @@ const OtpScreen = ({ navigation, route }) => {
               if (value === '123456') {
                 dispatch(loginSuccess({ number: mobile }))
               } else {
-                showToast('Please enter valid code.')
+                showToast(LanguageUtils.getLangText(languagekeys.validcode))
               }
             }}>
             <Text style={styles.otp_text}>

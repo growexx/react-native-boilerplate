@@ -134,9 +134,9 @@ const RegisterScreen = ({ navigation }) => {
                   navigation
                 )
               } else if (mobile === '') {
-                showToast('All fields are required.')
+                showToast(LanguageUtils.getLangText(languagekeys.allfields))
               } else {
-                showToast('Please Enter Valid Phone Number.')
+                showToast(LanguageUtils.getLangText(languagekeys.validphone))
               }
             }}
             style={styles.signup}>

@@ -1,5 +1,7 @@
 import { isNonEmptyField, isPasswordValid } from '../utils/validations'
 import showToast from '../components/toast'
+import languagekeys from '../localization/languagekeys'
+import LanguageUtils from '../localization/languageUtils'
 const handleChangePassword = async (
   oldPassword,
   newPassword,
@@ -14,15 +16,15 @@ const handleChangePassword = async (
     !isNonEmptyField(newPassword) ||
     !isNonEmptyField(confirmPassword)
   ) {
-    showToast('All fields are required')
+    showToast(LanguageUtils.getLangText(languagekeys.allfields))
   } else if (newPassword !== confirmPassword) {
-    showToast("Password and confirm password doesn't match")
+    showToast(LanguageUtils.getLangText(languagekeys.passwordnotmatch))
   } else if (!isPasswordValid(newPassword)) {
-    showToast('Password validation failed')
+    showToast(LanguageUtils.getLangText(languagekeys.passwordfailed))
     setMenuVisiblilty(true)
   } else {
     setMenuVisiblilty(false)
-    showToast('Password changed successfully!')
+    showToast(LanguageUtils.getLangText(languagekeys.passwordsuccess))
     setOldPassword('')
     setNewPassword('')
     setConfirmPassword('')
