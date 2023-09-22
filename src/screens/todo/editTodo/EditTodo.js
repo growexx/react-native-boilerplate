@@ -41,7 +41,6 @@ function EditTodo({ route, navigation }) {
           if (results.rowsAffected > 0) {
             Alert.alert(
               LanguageUtils.getLangText(languagekeys.editsucess),
-              '',
               [
                 {
                   text: LanguageUtils.getLangText(languagekeys.ok)

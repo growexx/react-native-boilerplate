@@ -59,6 +59,7 @@ const languagekeys = {
   addTodo: 'addTodo',
   updateTodo: 'updateTodo',
   validtodo: 'validTodo',
+  editsucess: 'editSuccess',
   chat: 'chat',
   payment: 'payment',
   userProfile: 'userProfile',
