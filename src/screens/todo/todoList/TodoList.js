@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import LanguageUtils from '../../../localization/languageUtils'
 import languagekeys from '../../../localization/languagekeys'
 import { useIsFocused } from '@react-navigation/native'
+import { getItem } from '../../../utils/StorageService'
 
 const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' })
 
@@ -19,13 +20,7 @@ function TodoList({ navigation }) {
   useEffect(() => {
     getAppLanguage()
   }, [isFocused])
-  const [todos, setTodos] = useState([
-    {
-      id: 'id',
-      title: 'title',
-      description: 'description'
-    }
-  ])
+  const [todos, setTodos] = useState()
 
   const fetchTodos = () => {
     db.transaction(tx => {

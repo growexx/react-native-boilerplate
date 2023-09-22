@@ -52,6 +52,7 @@ const Home = props => {
   useEffect(() => {
     clearRedux()
     dispatch(fetchNews(page, activeFilter))
+    updateText()
   }, [])
 
   const updateText = () => {
@@ -166,7 +167,7 @@ const Home = props => {
         style={getFilterItemStyle(isActiveFilter)}
         onPress={() => onFilterClick(item)}>
         <Text style={getFilterItemTextStyle(isActiveFilter)}>
-          {texts[item]}
+          {LanguageUtils.getLangText(languagekeys[item])}
         </Text>
       </TouchableOpacity>
     )

@@ -5,6 +5,7 @@ import styles from './styles'
 import LanguageUtils from '../../../localization/languageUtils'
 import languagekeys from '../../../localization/languagekeys'
 import { useIsFocused } from '@react-navigation/native'
+import { getItem } from '../../../utils/StorageService'
 
 const db = SQLite.openDatabase({ name: 'todos.db', location: 'default' })
 
@@ -37,13 +38,13 @@ const AddTodo = ({ navigation }) => {
         [todoTitle, todoDesription],
         (tx, results) => {
           if (results.rowsAffected > 0) {
-            Alert.alert(LanguageUtils.getLangText(languagekeys.addsucess), '', [
+            Alert.alert(LanguageUtils.getLangText(languagekeys.success), '', [
               {
                 text: LanguageUtils.getLangText(languagekeys.ok)
               }
             ])
-            setTodoTitle('')
             setTodoDescription('')
+            setTodoTitle('')
             navigation.navigate('Todo')
           } else {
             Alert.alert('Error adding todo. Please try again.')
