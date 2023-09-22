@@ -25,6 +25,7 @@ const en = {
   [languagekeys.passwordValidation]:
     'Password must contain atleast 1 upper case, 1 lower case letter, 1 special chracter and 1 number',
   [languagekeys.forgotPassword]: 'Forgot Password?',
+  [languagekeys.forgotPasswordT]: 'Forgot Password',
   [languagekeys.submit]: 'Submit',
   [languagekeys.goBackLogin]: 'Go back to login',
   [languagekeys.signup]: 'Sign Up',
@@ -36,7 +37,10 @@ const en = {
   [languagekeys.verificationCode]: 'Verify the Authorisation Code',
   [languagekeys.dontHaveAccount]: `Don't have an Account?`,
   [languagekeys.registerHere]: 'Register here',
+  [languagekeys.registeration]: 'Create Account',
   [languagekeys.loginWithOtp]: 'Login With Otp',
+  [languagekeys.sentto]: 'Sent to',
+  [languagekeys.sec]: 'sec',
   [languagekeys.editProfile]: 'Edit Profile',
   [languagekeys.googlePay]: 'Google Pay',
   [languagekeys.payWithGooglePay]: 'Pay with Google Pay',

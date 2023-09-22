@@ -199,27 +199,39 @@ const MainNavigation = props => {
           <Stack.Screen
             name="Login"
             component={Login}
-            options={{ headerShown: false }}
+            options={{ headerShown: false, headerBackTitleVisible: false }}
           />
           <Stack.Screen
             name="registration"
             component={RegisterScreen}
-            options={{ title: '' }}
+            options={{
+              title: LanguageUtils.getLangText(languagekeys.registeration),
+              headerBackTitleVisible: false
+            }}
           />
           <Stack.Screen
             name="forgotPassword"
             component={ForgotPasswordScreen}
-            options={{ title: 'Forgot Password' }}
+            options={{
+              title: LanguageUtils.getLangText(languagekeys.forgotPasswordT),
+              headerBackTitleVisible: false
+            }}
           />
           <Stack.Screen
             name="signwithotp"
             component={OtpScreen}
-            options={{ title: 'Sign with OTP' }}
+            options={{
+              title: LanguageUtils.getLangText(languagekeys.loginWithOtp),
+              headerBackTitleVisible: false
+            }}
           />
           <Stack.Screen
             name="phoneNumberScreen"
             component={PhoneInputScreen}
-            options={{ title: 'Sign with OTP' }}
+            options={{
+              title: LanguageUtils.getLangText(languagekeys.loginWithOtp),
+              headerBackTitleVisible: false
+            }}
           />
         </Stack.Navigator>
       ) : (
@@ -228,7 +240,8 @@ const MainNavigation = props => {
             name="MAIN"
             component={AppDrawerNavigator}
             options={{
-              headerShown: false
+              headerShown: false,
+              headerBackTitleVisible: false
             }}
           />
         </Stack.Navigator>

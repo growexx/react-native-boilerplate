@@ -25,6 +25,7 @@ const ar = {
   [languagekeys.passwordValidation]:
     'يجب أن تحتوي كلمة المرور على حرف كبير وحرف صغير وحرف خاص ورقم واحد على الأقل',
   [languagekeys.forgotPassword]: 'هل نسيت كلمة المرور؟',
+  [languagekeys.forgotPasswordT]: 'هل نسيت كلمة المرور',
   [languagekeys.goBackLogin]: 'العودة إلى تسجيل الدخول',
   [languagekeys.signup]: 'إنشاء حساب',
   [languagekeys.alreadyHaveAccount]: 'هل لديك حساب بالفعل؟',
@@ -35,6 +36,9 @@ const ar = {
   [languagekeys.verificationCode]: 'التحقق من رمز التفويض',
   [languagekeys.dontHaveAccount]: 'ليس لديك حساب؟',
   [languagekeys.registerHere]: 'سجل هنا',
+  [languagekeys.sentto]: 'تم الإرسال إلى',
+  [languagekeys.sec]: 'ثانية',
+  [languagekeys.registeration]: 'إنشاء حساب',
   [languagekeys.loginWithOtp]: 'تسجيل الدخول بواسطة رمز التفويض',
   [languagekeys.editProfile]: 'تعديل الملف الشخصي',
   [languagekeys.googlePay]: 'جوجل يدفع',

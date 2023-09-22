@@ -18,11 +18,21 @@ import { loginSuccess } from '../../stores/actions/auth.action'
 import showToast from '../../components/toast'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
+import { useIsFocused } from '@react-navigation/native'
 
 const CELL_COUNT = 6
 const RESEND_OTP_TIME_LIMIT = 30
 
 const OtpScreen = ({ navigation, route }) => {
+  const isFocused = useIsFocused()
+
+  const getAppLanguage = async () => {
+    await getItem(constants.APP_LANGUAGE)
+  }
+
+  useEffect(() => {
+    getAppLanguage()
+  }, [isFocused])
   const colorScheme = useColorScheme()
   const { mobile } = route.params
   const dispatch = useDispatch()
@@ -84,7 +94,7 @@ const OtpScreen = ({ navigation, route }) => {
           style={
             colorScheme === 'dark' ? styles.subTitleDark : styles.subTitle
           }>
-          Sent to {mobile}
+          {LanguageUtils.getLangText(languagekeys.sentto)} {mobile}
         </Text>
         <CodeField
           testID="otp-input"
@@ -114,7 +124,8 @@ const OtpScreen = ({ navigation, route }) => {
         {resendButtonDisabledTime > 0 ? (
           <Text style={styleForResendText}>
             {LanguageUtils.getLangText(languagekeys.resendCode)}{' '}
-            {resendButtonDisabledTime} sec
+            {resendButtonDisabledTime}{' '}
+            {LanguageUtils.getLangText(languagekeys.sec)}
           </Text>
         ) : (
           <TouchableOpacity

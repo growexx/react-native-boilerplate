@@ -9,7 +9,7 @@ import {
   Image,
   useColorScheme
 } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { colors, fonts, fontSize, spacing } from '@constants'
 import handleRegistration from '../../controllers/registrationController'
 import PhoneInput from 'react-native-phone-number-input'
@@ -18,8 +18,18 @@ import ImagePicker from 'react-native-image-crop-picker'
 import AuthInput from '../../components/auth.Input'
 import languagekeys from '../../localization/languagekeys'
 import LanguageUtils from '../../localization/languageUtils'
+import { useIsFocused } from '@react-navigation/native'
 
 const RegisterScreen = ({ navigation }) => {
+  const isFocused = useIsFocused()
+
+  const getAppLanguage = async () => {
+    await getItem(constants.APP_LANGUAGE)
+  }
+
+  useEffect(() => {
+    getAppLanguage()
+  }, [isFocused])
   const [confirmPasswordFocus, setConfirmPasswordFocus] = useState(false)
   const [nameFocus, setNameFocus] = useState(false)
   const [email, setEmail] = useState('')

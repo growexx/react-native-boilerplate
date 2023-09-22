@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   View,
   Text,
@@ -12,8 +12,19 @@ import showToast from '../../components/toast'
 import colors from '../../constants/colors'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
+import { useIsFocused } from '@react-navigation/native'
 
 const ForgotPasswordScreen = ({ navigation }) => {
+  const isFocused = useIsFocused()
+
+  const getAppLanguage = async () => {
+    await getItem(constants.APP_LANGUAGE)
+  }
+
+  useEffect(() => {
+    getAppLanguage()
+  }, [isFocused])
+
   const colorScheme = useColorScheme()
   const [email, setEmail] = useState('')
   return (

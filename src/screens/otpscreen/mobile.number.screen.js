@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   useColorScheme
 } from 'react-native'
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import PhoneInput from 'react-native-phone-number-input'
 import showToast from '../../components/toast'
 import spacing from '../../constants/spacing'
@@ -14,10 +14,21 @@ import colors from '../../constants/colors'
 import fonts from '../../constants/fonts'
 import LanguageUtils from '../../localization/languageUtils'
 import languagekeys from '../../localization/languagekeys'
+import { useIsFocused } from '@react-navigation/native'
+
 const PhoneInputScreen = ({ navigation }) => {
   const colorScheme = useColorScheme()
   const [mobile, setMobile] = useState('')
   const phoneInput = useRef()
+  const isFocused = useIsFocused()
+
+  const getAppLanguage = async () => {
+    await getItem(constants.APP_LANGUAGE)
+  }
+
+  useEffect(() => {
+    getAppLanguage()
+  }, [isFocused])
   return (
     <View style={styles.root}>
       <PhoneInput
